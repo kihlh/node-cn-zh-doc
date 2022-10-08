@@ -1,0 +1,1244 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>async_hooks 异步钩子 | Node.js API 文档</title>
+<link rel="icon" sizes="32x32" type="image/png" href="//img.nodejs.cn/favicon.png">
+<link href="./_static/css/api.css?t=20220728214329" rel="stylesheet">
+</head>
+<body class="alt apidoc api_page_async_hooks" id="page_api">
+<div id="content" class="clearfix">
+<div id="column2" class="interior">
+<div id="intro" class="interior">
+<a href="/" rel="nofollow">
+Node.js 中文网
+</a>
+</div>
+<div class="line"></div>
+<ul>
+<li><a href="documentation.html" class="nav-documentation" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" class="nav-synopsis" rel="nofollow">用法与示例</a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="assert.html" class="nav-assert" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" class="nav-async_hooks active" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" class="nav-buffer" rel="nofollow">buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="addons.html" class="nav-addons" rel="nofollow">C++插件</a></li>
+<li><a href="n-api.html" class="nav-n-api" rel="nofollow"><span style="font-size:14px;">C/C++插件(使用Node-API)</span></a></li>
+<li><a href="embedding.html" class="nav-embedding" rel="nofollow">C++嵌入器</a></li>
+<li><a href="child_process.html" class="nav-child_process" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" class="nav-cluster" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="cli.html" class="nav-cli" rel="nofollow">CLI<span class="api_nav_cn_name">命令行</span></a></li>
+<li><a href="console.html" class="nav-console" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" class="nav-crypto" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" class="nav-debugger" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="deprecations.html" class="nav-deprecations" rel="nofollow">deprecation<span class="api_nav_cn_name">弃用</span></a></li>
+<li><a href="dgram.html" class="nav-dgram" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="dns.html" class="nav-dns" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" class="nav-domain" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" class="nav-errors" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" class="nav-events" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" class="nav-fs" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" class="nav-globals" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" class="nav-http" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" class="nav-http2" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" class="nav-https" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" class="nav-inspector" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" class="nav-intl" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" class="nav-module" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="modules.html" class="nav-modules" rel="nofollow"><span style="font-size:14px;">module/cjs</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">CommonJS模块</span></a></li>
+<li><a href="esm.html" class="nav-esm" rel="nofollow"><span style="font-size:14px;">module/esm</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">ECMAScript模块</span></a></li>
+<li><a href="packages.html" class="nav-packages" rel="nofollow"><span style="font-size:14px;">module/package</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">包模块</span></a></li>
+<li><a href="net.html" class="nav-net" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" class="nav-os" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" class="nav-path" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" class="nav-perf_hooks" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="policy.html" class="nav-policy" rel="nofollow">policy<span class="api_nav_cn_name">安全策略</span></a></li>
+<li><a href="process.html" class="nav-process" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" class="nav-punycode" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" class="nav-querystring" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" class="nav-readline" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" class="nav-repl" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" class="nav-report" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" class="nav-stream" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" class="nav-string_decoder" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" class="nav-timers" rel="nofollow">timers<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" class="nav-tls" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" class="nav-tracing" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" class="nav-tty" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" class="nav-url" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" class="nav-util" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" class="nav-v8" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" class="nav-vm" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" class="nav-wasi" rel="nofollow">wasi<span class="api_nav_cn_name">网络汇编系统接口</span></a></li>
+<li><a href="worker_threads.html" class="nav-worker_threads" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" class="nav-zlib" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+</div>
+<div id="column1" data-id="async_hooks" class="interior">
+<header class="header">
+<div class="header-container">
+<h1>Node.js v12.22.12 文档</h1>
+<button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+<path fill="none" d="M0 0h24v24H0z"></path>
+<path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+<path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+<path d="M0 0h24v24H0z" fill="none"></path>
+<path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+</svg>
+</button>
+</div>
+<div id="gtoc">
+<ul>
+<li class="pinned-header">Node.js 12.22.12</li>
+<li class="picker-header" id="header_toc">
+<a href="#">
+<span class="collapsed-arrow">►</span><span class="expanded-arrow">▼</span>
+目录
+</a>
+<div class="picker"><div class="toc"><ul>
+<li><span class="stability_1"><a href="#async-hooks">async_hooks 异步钩子</a></span>
+<ul>
+<li><a href="#terminology">术语</a></li>
+<li><a href="#public-api">Public API</a>
+<ul>
+<li><a href="#overview">概述</a>
+<ul>
+<li><a href="#async_hookscreatehookcallbacks"><code>async_hooks.createHook(callbacks)</code></a>
+<ul>
+<li><a href="#error-handling">异常处理</a></li>
+<li><a href="#printing-in-asynchooks-callbacks">在异步钩子回调中打印日志</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#class-asynchook"><code>AsyncHook</code> 类</a>
+<ul>
+<li><a href="#asynchookenable"><code>asyncHook.enable()</code></a></li>
+<li><a href="#asynchookdisable"><code>asyncHook.disable()</code></a></li>
+<li><a href="#hook-callbacks">钩子回调</a>
+<ul>
+<li><a href="#initasyncid-type-triggerasyncid-resource"><code>init(asyncId, type, triggerAsyncId, resource)</code></a>
+<ul>
+<li><a href="#type"><code>type</code></a></li>
+<li><a href="#triggerasyncid"><code>triggerAsyncId</code></a></li>
+<li><a href="#resource"><code>resource</code></a></li>
+<li><a href="#asynchronous-context-example">异步上下文的示例</a></li>
+</ul>
+</li>
+<li><a href="#beforeasyncid"><code>before(asyncId)</code></a></li>
+<li><a href="#afterasyncid"><code>after(asyncId)</code></a></li>
+<li><a href="#destroyasyncid"><code>destroy(asyncId)</code></a></li>
+<li><a href="#promiseresolveasyncid"><code>promiseResolve(asyncId)</code></a></li>
+</ul>
+</li>
+<li><a href="#async_hooksexecutionasyncresource"><code>async_hooks.executionAsyncResource()</code></a></li>
+<li><a href="#async_hooksexecutionasyncid"><code>async_hooks.executionAsyncId()</code></a></li>
+<li><a href="#async_hookstriggerasyncid"><code>async_hooks.triggerAsyncId()</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#promise-execution-tracking">Promise 执行跟踪</a></li>
+<li><a href="#javascript-embedder-api">JavaScript 嵌入的接口</a>
+<ul>
+<li><a href="#class-asyncresource"><code>AsyncResource</code> 类</a>
+<ul>
+<li><a href="#new-asyncresourcetype-options"><code>new AsyncResource(type[, options])</code></a></li>
+<li><a href="#static-method-asyncresourcebindfn-type"><code>AsyncResource.bind(fn[, type])</code></a></li>
+<li><a href="#asyncresourcebindfn"><code>asyncResource.bind(fn)</code></a></li>
+<li><a href="#asyncresourceruninasyncscopefn-thisarg-args"><code>asyncResource.runInAsyncScope(fn[, thisArg, ...args])</code></a></li>
+<li><a href="#asyncresourceemitdestroy"><code>asyncResource.emitDestroy()</code></a></li>
+<li><a href="#asyncresourceasyncid"><code>asyncResource.asyncId()</code></a></li>
+<li><a href="#asyncresourcetriggerasyncid"><code>asyncResource.triggerAsyncId()</code></a></li>
+</ul>
+</li>
+<li><a href="#using-asyncresource-for-a-worker-thread-pool">对工作线程池使用 AsyncResource</a></li>
+<li><a href="#integrating-asyncresource-with-eventemitter">将 EventEmitter 集成到 AsyncResource</a></li>
+</ul>
+</li>
+<li><a href="#class-asynclocalstorage"><code>AsyncLocalStorage</code> 类</a>
+<ul>
+<li><a href="#new-asynclocalstorage"><code>new AsyncLocalStorage()</code></a></li>
+<li><a href="#asynclocalstoragedisable"><code>asyncLocalStorage.disable()</code></a></li>
+<li><a href="#asynclocalstoragegetstore"><code>asyncLocalStorage.getStore()</code></a></li>
+<li><a href="#asynclocalstorageenterwithstore"><code>asyncLocalStorage.enterWith(store)</code></a></li>
+<li><a href="#asynclocalstoragerunstore-callback-args"><code>asyncLocalStorage.run(store, callback[, ...args])</code></a></li>
+<li><a href="#asynclocalstorageexitcallback-args"><code>asyncLocalStorage.exit(callback[, ...args])</code></a></li>
+<li><a href="#usage-with-asyncawait">async/await 的用法</a></li>
+<li><a href="#troubleshooting">故障排除</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div>
+</li>
+<li class="picker-header">
+<a href="#">
+<span class="collapsed-arrow">►</span><span class="expanded-arrow">▼</span>
+索引
+</a>
+<div class="picker"><ul>
+<li><a href="documentation.html" class="nav-documentation">关于本文档</a></li>
+<li><a href="synopsis.html" class="nav-synopsis">用法与示例</a></li>
+<li>
+<a href="index.html">首页</a>
+</li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="assert.html" class="nav-assert">assert 断言</a></li>
+<li><a href="async_hooks.html" class="nav-async_hooks active">async_hooks 异步钩子</a></li>
+<li><a href="buffer.html" class="nav-buffer">buffer 缓冲区</a></li>
+<li><a href="addons.html" class="nav-addons">C++插件</a></li>
+<li><a href="n-api.html" class="nav-n-api">C/C++插件(使用Node-API)</a></li>
+<li><a href="embedding.html" class="nav-embedding">C++嵌入器</a></li>
+<li><a href="child_process.html" class="nav-child_process">child_process 子进程</a></li>
+<li><a href="cluster.html" class="nav-cluster">cluster 集群</a></li>
+<li><a href="cli.html" class="nav-cli">CLI 命令行</a></li>
+<li><a href="console.html" class="nav-console">console 控制台</a></li>
+<li><a href="crypto.html" class="nav-crypto">crypto 加密</a></li>
+<li><a href="debugger.html" class="nav-debugger">debugger 调试器</a></li>
+<li><a href="deprecations.html" class="nav-deprecations">deprecation 弃用</a></li>
+<li><a href="dgram.html" class="nav-dgram">dgram 数据报</a></li>
+<li><a href="dns.html" class="nav-dns">dns 域名服务器</a></li>
+<li><a href="domain.html" class="nav-domain">domain 域</a></li>
+<li><a href="errors.html" class="nav-errors">Error 错误</a></li>
+<li><a href="events.html" class="nav-events">events 事件触发器</a></li>
+<li><a href="fs.html" class="nav-fs">fs 文件系统</a></li>
+<li><a href="globals.html" class="nav-globals">global 全局变量</a></li>
+<li><a href="http.html" class="nav-http">http 超文本传输协议</a></li>
+<li><a href="http2.html" class="nav-http2">http2 超文本传输协议2.0</a></li>
+<li><a href="https.html" class="nav-https">https 安全超文本传输协议</a></li>
+<li><a href="inspector.html" class="nav-inspector">inspector 检查器</a></li>
+<li><a href="intl.html" class="nav-intl">Intl 国际化</a></li>
+<li><a href="module.html" class="nav-module">module 模块</a></li>
+<li><a href="modules.html" class="nav-modules">module/cjs CommonJS模块</a></li>
+<li><a href="esm.html" class="nav-esm">module/esm ECMAScript模块</a></li>
+<li><a href="packages.html" class="nav-packages">module/package 包模块</a></li>
+<li><a href="net.html" class="nav-net">net 网络</a></li>
+<li><a href="os.html" class="nav-os">os 操作系统</a></li>
+<li><a href="path.html" class="nav-path">path 路径</a></li>
+<li><a href="perf_hooks.html" class="nav-perf_hooks">perf_hooks 性能钩子</a></li>
+<li><a href="policy.html" class="nav-policy">policy 安全策略</a></li>
+<li><a href="process.html" class="nav-process">process 进程</a></li>
+<li><a href="punycode.html" class="nav-punycode">punycode 域名代码</a></li>
+<li><a href="querystring.html" class="nav-querystring">querystring 查询字符串</a></li>
+<li><a href="readline.html" class="nav-readline">readline 逐行读取</a></li>
+<li><a href="repl.html" class="nav-repl">repl 交互式解释器</a></li>
+<li><a href="report.html" class="nav-report">report 诊断报告</a></li>
+<li><a href="stream.html" class="nav-stream">stream 流</a></li>
+<li><a href="string_decoder.html" class="nav-string_decoder">string_decoder 字符串解码器</a></li>
+<li><a href="timers.html" class="nav-timers">timers 定时器</a></li>
+<li><a href="tls.html" class="nav-tls">tls 安全传输层</a></li>
+<li><a href="tracing.html" class="nav-tracing">trace_events 跟踪事件</a></li>
+<li><a href="tty.html" class="nav-tty">tty 终端</a></li>
+<li><a href="url.html" class="nav-url">url 网址</a></li>
+<li><a href="util.html" class="nav-util">util 实用工具</a></li>
+<li><a href="v8.html" class="nav-v8">v8 引擎</a></li>
+<li><a href="vm.html" class="nav-vm">vm 虚拟机</a></li>
+<li><a href="wasi.html" class="nav-wasi">wasi 网络汇编系统接口</a></li>
+<li><a href="worker_threads.html" class="nav-worker_threads">worker_threads 工作线程</a></li>
+<li><a href="zlib.html" class="nav-zlib">zlib 压缩</a></li>
+</ul></div>
+</li>
+<li class="picker-header">
+<a href="#">
+<span class="collapsed-arrow">&#x25ba;</span><span class="expanded-arrow">&#x25bc;</span>
+其他版本
+</a>
+<div class="picker"><ol id="alt-docs">
+<li><a href="/api/async_hooks.html">18.7.0</a></li><li><a href="/api-v16/async_hooks.html">16.16.0</a></li><li><a href="/api-v14/async_hooks.html">14.20.0</a></li><li><a href="/api-v12/async_hooks.html">12.22.12</a></li>
+</ol></div>
+</li>
+<li>
+<a href="http://api.nodejs.cn/?v=12">文档搜索</a>
+</li>
+</ul>
+</div>
+<hr>
+</header>
+<details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_1"><a href="#async-hooks">async_hooks 异步钩子</a></span>
+<ul>
+<li><a href="#terminology">术语</a></li>
+<li><a href="#public-api">Public API</a>
+<ul>
+<li><a href="#overview">概述</a>
+<ul>
+<li><a href="#async_hookscreatehookcallbacks"><code>async_hooks.createHook(callbacks)</code></a>
+<ul>
+<li><a href="#error-handling">异常处理</a></li>
+<li><a href="#printing-in-asynchooks-callbacks">在异步钩子回调中打印日志</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#class-asynchook"><code>AsyncHook</code> 类</a>
+<ul>
+<li><a href="#asynchookenable"><code>asyncHook.enable()</code></a></li>
+<li><a href="#asynchookdisable"><code>asyncHook.disable()</code></a></li>
+<li><a href="#hook-callbacks">钩子回调</a>
+<ul>
+<li><a href="#initasyncid-type-triggerasyncid-resource"><code>init(asyncId, type, triggerAsyncId, resource)</code></a>
+<ul>
+<li><a href="#type"><code>type</code></a></li>
+<li><a href="#triggerasyncid"><code>triggerAsyncId</code></a></li>
+<li><a href="#resource"><code>resource</code></a></li>
+<li><a href="#asynchronous-context-example">异步上下文的示例</a></li>
+</ul>
+</li>
+<li><a href="#beforeasyncid"><code>before(asyncId)</code></a></li>
+<li><a href="#afterasyncid"><code>after(asyncId)</code></a></li>
+<li><a href="#destroyasyncid"><code>destroy(asyncId)</code></a></li>
+<li><a href="#promiseresolveasyncid"><code>promiseResolve(asyncId)</code></a></li>
+</ul>
+</li>
+<li><a href="#async_hooksexecutionasyncresource"><code>async_hooks.executionAsyncResource()</code></a></li>
+<li><a href="#async_hooksexecutionasyncid"><code>async_hooks.executionAsyncId()</code></a></li>
+<li><a href="#async_hookstriggerasyncid"><code>async_hooks.triggerAsyncId()</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#promise-execution-tracking">Promise 执行跟踪</a></li>
+<li><a href="#javascript-embedder-api">JavaScript 嵌入的接口</a>
+<ul>
+<li><a href="#class-asyncresource"><code>AsyncResource</code> 类</a>
+<ul>
+<li><a href="#new-asyncresourcetype-options"><code>new AsyncResource(type[, options])</code></a></li>
+<li><a href="#static-method-asyncresourcebindfn-type"><code>AsyncResource.bind(fn[, type])</code></a></li>
+<li><a href="#asyncresourcebindfn"><code>asyncResource.bind(fn)</code></a></li>
+<li><a href="#asyncresourceruninasyncscopefn-thisarg-args"><code>asyncResource.runInAsyncScope(fn[, thisArg, ...args])</code></a></li>
+<li><a href="#asyncresourceemitdestroy"><code>asyncResource.emitDestroy()</code></a></li>
+<li><a href="#asyncresourceasyncid"><code>asyncResource.asyncId()</code></a></li>
+<li><a href="#asyncresourcetriggerasyncid"><code>asyncResource.triggerAsyncId()</code></a></li>
+</ul>
+</li>
+<li><a href="#using-asyncresource-for-a-worker-thread-pool">对工作线程池使用 AsyncResource</a></li>
+<li><a href="#integrating-asyncresource-with-eventemitter">将 EventEmitter 集成到 AsyncResource</a></li>
+</ul>
+</li>
+<li><a href="#class-asynclocalstorage"><code>AsyncLocalStorage</code> 类</a>
+<ul>
+<li><a href="#new-asynclocalstorage"><code>new AsyncLocalStorage()</code></a></li>
+<li><a href="#asynclocalstoragedisable"><code>asyncLocalStorage.disable()</code></a></li>
+<li><a href="#asynclocalstoragegetstore"><code>asyncLocalStorage.getStore()</code></a></li>
+<li><a href="#asynclocalstorageenterwithstore"><code>asyncLocalStorage.enterWith(store)</code></a></li>
+<li><a href="#asynclocalstoragerunstore-callback-args"><code>asyncLocalStorage.run(store, callback[, ...args])</code></a></li>
+<li><a href="#asynclocalstorageexitcallback-args"><code>asyncLocalStorage.exit(callback[, ...args])</code></a></li>
+<li><a href="#usage-with-asyncawait">async/await 的用法</a></li>
+<li><a href="#troubleshooting">故障排除</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+<div id="apicontent">
+<h2>async_hooks 异步钩子<span><a class="mark" href="#async-hooks" id="async-hooks">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_async_hooks"></a></h2><p class="tip_wrap" data-show_trans="1" data-item_id="#async-hooks">
+<a href="async_hooks/async_hooks.html" class="tip_trans">中英对照</a>
+</p>
+<p></p><div class="api_stability api_stability_1"><a href="/api/documentation.html#stability-index">稳定性: 1</a> - 实验</div><p></p>
+<p><strong>源代码:</strong> <a rel="nofollow" href="https://github.com/nodejs/node/blob/v12.22.12/lib/async_hooks.js">lib/async_hooks.js</a></p>
+<p><code>async_hooks</code>模块提供了 API 来跟踪异步的资源。
+可以使用以下方式访问它：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> async_hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);</code></pre>
+<section><h3>术语<span><a class="mark" href="#terminology" id="terminology">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_terminology"></a></h3><p class="tip_wrap" data-show_trans="1" data-item_id="#terminology">
+<a href="async_hooks/terminology.html" class="tip_trans">中英对照</a>
+</p>
+<p>异步的资源表示具有关联回调的对象。</p>
+<p>资源也可以在调用回调之前关闭。
+<code>AsyncHook</code> 没有明确区分这些不同的情况，而是将它们表示为抽象的概念，即资源。</p>
+<p>如果使用 <a href="worker_threads.html#worker_threads_class_worker"><code>Worker</code></a>，则每个线程都有独立的 <code>async_hooks</code> 接口，并且每个线程都会使用一组新的异步 ID。</p>
+</section><section><h3>Public API<span><a class="mark" href="#public-api" id="public-api">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_public_api"></a></h3>
+<h4>概述<span><a class="mark" href="#overview" id="overview">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_overview"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#overview">
+<a href="async_hooks/overview.html" class="tip_trans">中英对照</a>
+</p>
+<p>以下是公共 API 的简单概述。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> async_hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-comment">// 返回当前执行上下文的 ID。</span>
+<span class="hljs-keyword">const</span> eid = async_hooks.<span class="hljs-title function_">executionAsyncId</span>();
+
+<span class="hljs-comment">// 返回负责触发当前</span>
+<span class="hljs-comment">// 执行范围回调的句柄ID。</span>
+<span class="hljs-keyword">const</span> tid = async_hooks.<span class="hljs-title function_">triggerAsyncId</span>();
+
+<span class="hljs-comment">// 创建新的 AsyncHook 实例。所有这些回调都是可选的。</span>
+<span class="hljs-keyword">const</span> asyncHook =
+    async_hooks.<span class="hljs-title function_">createHook</span>({ init, before, after, destroy, promiseResolve });
+
+<span class="hljs-comment">// 允许调用此 AsyncHook 实例的回调。</span>
+<span class="hljs-comment">// 这不是运行构造函数后的隐式操作，</span>
+<span class="hljs-comment">// 必须显式运行才能开始执行回调。</span>
+asyncHook.<span class="hljs-title function_">enable</span>();
+
+<span class="hljs-comment">// 禁用监听新的异步事件。</span>
+asyncHook.<span class="hljs-title function_">disable</span>();
+
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// 以下是可以传给 createHook() 的回调。</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-comment">// init 在对象构造过程中被调用。</span>
+<span class="hljs-comment">// 当此回调运行时，资源可能尚未完成构造，</span>
+<span class="hljs-comment">// 因此 "asyncId" 引用的资源的所有字段可能尚未填充。</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId, resource</span>) { }
+
+<span class="hljs-comment">// </span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">before</span>(<span class="hljs-params">asyncId</span>) { }
+
+<span class="hljs-comment">// After 在资源的回调完成后被调用。</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">after</span>(<span class="hljs-params">asyncId</span>) { }
+
+<span class="hljs-comment">// 资源销毁时调用销毁。</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">destroy</span>(<span class="hljs-params">asyncId</span>) { }
+
+<span class="hljs-comment">// promiseResolve 仅在调用传给 `Promise` 构造函数的 `resolve` 函数时</span>
+<span class="hljs-comment">// （直接或通过其他解决 promise）</span>
+<span class="hljs-comment">// 时调用 promise 资源。</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">promiseResolve</span>(<span class="hljs-params">asyncId</span>) { }</code></pre>
+<h5><code>async_hooks.createHook(callbacks)</code><span><a class="mark" href="#async_hookscreatehookcallbacks" id="async_hookscreatehookcallbacks">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_async_hooks_createhook_callbacks"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#async_hookscreatehookcallbacks">
+<a href="async_hooks/async_hooks_createhook_callbacks.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v8.1.0</span>
+</div>
+<ul>
+<li><code>callbacks</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type" target="_blank">&lt;Object&gt;</a> 要注册的<a href="/api-v12/async_hooks.html#async_hooks_hook_callbacks">钩子回调</a>
+<ul>
+<li><code>init</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> <a href="/api-v12/async_hooks.html#async_hooks_init_asyncid_type_triggerasyncid_resource"><code>init</code> 回调</a>。</li>
+<li><code>before</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> <a href="/api-v12/async_hooks.html#async_hooks_before_asyncid"><code>before</code> 回调</a>。</li>
+<li><code>after</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> <a href="/api-v12/async_hooks.html#async_hooks_after_asyncid"><code>after</code> 回调</a>。</li>
+<li><code>destroy</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> <a href="/api-v12/async_hooks.html#async_hooks_destroy_asyncid"><code>destroy</code> 回调</a>。</li>
+<li><code>promiseResolve</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> <a href="/api-v12/async_hooks.html#async_hooks_promiseresolve_asyncid"><code>promiseResolve</code> 回调</a>。</li>
+</ul>
+</li>
+<li>返回: <a href="/api/async_hooks.html#async_hookscreatehookcallbacks" rel="nofollow" class="type">&lt;AsyncHook&gt;</a> 用于禁用和启用钩子的实例</li>
+</ul>
+<p>为每个异步操作的不同生命周期事件注册要调用的函数。</p>
+<p>回调 <code>init()</code>/<code>before()</code>/<code>after()</code>/<code>destroy()</code> 在资源的生命周期内为相应的异步事件调用。</p>
+<p>所有回调都是可选的。
+比如，如果只需要跟踪资源清理，则只需要传入 <code>destroy</code> 回调。
+可以传给 <code>callbacks</code> 的所有函数的细节都在<a href="/api-v12/async_hooks.html#async_hooks_hook_callbacks">钩子回调</a>章节。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> async_hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-keyword">const</span> asyncHook = async_hooks.<span class="hljs-title function_">createHook</span>({
+  <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId, resource</span>) { },
+  <span class="hljs-title function_">destroy</span>(<span class="hljs-params">asyncId</span>) { }
+});</code></pre>
+<p>回调将通过原型链继承：</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyAsyncCallbacks</span> {
+  <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId, resource</span>) { }
+  <span class="hljs-title function_">destroy</span>(<span class="hljs-params">asyncId</span>) {}
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyAddedCallbacks</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">MyAsyncCallbacks</span> {
+  <span class="hljs-title function_">before</span>(<span class="hljs-params">asyncId</span>) { }
+  <span class="hljs-title function_">after</span>(<span class="hljs-params">asyncId</span>) { }
+}
+
+<span class="hljs-keyword">const</span> asyncHook = async_hooks.<span class="hljs-title function_">createHook</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyAddedCallbacks</span>());</code></pre>
+<h6>异常处理<span><a class="mark" href="#error-handling" id="error-handling">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_error_handling"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#error-handling">
+<a href="async_hooks/error_handling.html" class="tip_trans">中英对照</a>
+</p>
+<p>如果任何 <code>AsyncHook</code> 回调抛出，则应用程序将打印堆栈跟踪并退出。
+退出路径确实遵循未捕获异常的路径，但所有 <code>'uncaughtException'</code> 监听器都被删除，从而强制进程退出。
+除非应用程序使用 <code>--abort-on-uncaught-exception</code> 运行，否则仍将调用 <code>'exit'</code> 回调，在这种情况下，将打印堆栈跟踪并且应用程序退出，留下核心文件。</p>
+<p>这种错误处理行为的原因是这些回调在对象生命周期中的潜在不稳定点运行，例如在类构造和销毁期间。
+因此，认为有必要迅速关闭进程，以防止将来意外中止。
+如果进行综合分析以确保异常可以遵循正常的控制流程而不会产生意外的副作用，这可能会在未来发生变化。</p>
+<h6>在异步钩子回调中打印日志<span><a class="mark" href="#printing-in-asynchooks-callbacks" id="printing-in-asynchooks-callbacks">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_printing_in_asynchooks_callbacks"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#printing-in-asynchooks-callbacks">
+<a href="async_hooks/printing_in_asynchooks_callbacks.html" class="tip_trans">中英对照</a>
+</p>
+<p>当调试时，一个简单的解决方案是使用同步的日志记录操作，例如 <code>fs.writeFileSync(file, msg, flag)</code>。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">...args</span>) {
+  <span class="hljs-comment">// </span>
+  fs.<span class="hljs-title function_">writeFileSync</span>(<span class="hljs-string">'log.out'</span>, <span class="hljs-string">`<span class="hljs-subst">${util.format(...args)}</span>\n`</span>, { <span class="hljs-attr">flag</span>: <span class="hljs-string">'a'</span> });
+}</code></pre>
+<h4><code>AsyncHook</code> 类<span><a class="mark" href="#class-asynchook" id="class-asynchook">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_class_asynchook"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#class-asynchook">
+<a href="async_hooks/class_asynchook.html" class="tip_trans">中英对照</a>
+</p>
+<p><code>AsyncHook</code> 类公开了一个用于跟踪异步操作的生命周期事件的接口。</p>
+<h5><code>asyncHook.enable()</code><span><a class="mark" href="#asynchookenable" id="asynchookenable">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynchook_enable"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#asynchookenable">
+<a href="async_hooks/asynchook_enable.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="/api/async_hooks.html#async_hookscreatehookcallbacks" rel="nofollow" class="type">&lt;AsyncHook&gt;</a> <code>asyncHook</code> 的引用。</li>
+</ul>
+<p>启用给定 <code>AsyncHook</code> 实例的回调。</p>
+<p>默认禁用 <code>AsyncHook</code> 实例。
+如果 <code>AsyncHook</code> 实例应该在创建后立即启用，则可以使用以下模式。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> async_hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-keyword">const</span> hook = async_hooks.<span class="hljs-title function_">createHook</span>(callbacks).<span class="hljs-title function_">enable</span>();</code></pre>
+<h5><code>asyncHook.disable()</code><span><a class="mark" href="#asynchookdisable" id="asynchookdisable">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynchook_disable"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#asynchookdisable">
+<a href="async_hooks/asynchook_disable.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="/api/async_hooks.html#async_hookscreatehookcallbacks" rel="nofollow" class="type">&lt;AsyncHook&gt;</a> <code>asyncHook</code> 的引用。</li>
+</ul>
+<p>从要执行的 <code>AsyncHook</code> 回调全局池中禁用给定 <code>AsyncHook</code> 实例的回调。
+一旦一个钩子被禁用，则它在启用之前不会被再次调用。</p>
+<p>为了 API 一致性，<code>disable()</code> 也返回 <code>AsyncHook</code> 实例。</p>
+<h5>钩子回调<span><a class="mark" href="#hook-callbacks" id="hook-callbacks">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_hook_callbacks"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#hook-callbacks">
+<a href="async_hooks/hook_callbacks.html" class="tip_trans">中英对照</a>
+</p>
+<p>异步事件生命周期中的关键事件分为四个区域：实例化、回调调用前后、实例销毁时。</p>
+<h6><code>init(asyncId, type, triggerAsyncId, resource)</code><span><a class="mark" href="#initasyncid-type-triggerasyncid-resource" id="initasyncid-type-triggerasyncid-resource">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_init_asyncid_type_triggerasyncid_resource"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#initasyncid-type-triggerasyncid-resource">
+<a href="async_hooks/init_asyncid_type_triggerasyncid_resource.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li><code>asyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 异步资源的唯一 ID。</li>
+<li><code>type</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type" target="_blank">&lt;string&gt;</a> 异步资源的类型。</li>
+<li><code>triggerAsyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 在其执行上下文中创建此异步资源的异步资源的唯一 ID。</li>
+<li><code>resource</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type" target="_blank">&lt;Object&gt;</a> 对代表异步操作的资源的引用，需要在销毁时释放。</li>
+</ul>
+<p>当构造有可能触发异步事件的类时调用。
+这并不意味着实例必须在调用 <code>destroy</code> 之前调用 <code>before</code>/<code>after</code>，只是存在这种可能性。</p>
+<p>此行为可以通过打开资源然后在资源可以使用之前关闭它来观察。
+以下代码片段演示了这一点。</p>
+<pre><code class="language-js"><span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>).<span class="hljs-title function_">createServer</span>().<span class="hljs-title function_">listen</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">close</span>(); });
+<span class="hljs-comment">// 或者</span>
+<span class="hljs-built_in">clearTimeout</span>(<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {}, <span class="hljs-number">10</span>));</code></pre>
+<p>每个新资源都分配了一个在当前 Node.js 实例范围内唯一的 ID。</p>
+<h6><code>type</code><span><a class="mark" href="#type" id="type">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_type"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#type">
+<a href="async_hooks/type.html" class="tip_trans">中英对照</a>
+</p>
+<p><code>type</code> 是字符串，标识导致调用 <code>init</code> 的资源类型。
+一般会对应资源的构造函数名。</p>
+<pre><code class="language-text">FSEVENTWRAP, FSREQCALLBACK, GETADDRINFOREQWRAP, GETNAMEINFOREQWRAP, HTTPINCOMINGMESSAGE,
+HTTPCLIENTREQUEST, JSSTREAM, PIPECONNECTWRAP, PIPEWRAP, PROCESSWRAP, QUERYWRAP,
+SHUTDOWNWRAP, SIGNALWRAP, STATWATCHER, TCPCONNECTWRAP, TCPSERVERWRAP, TCPWRAP,
+TTYWRAP, UDPSENDWRAP, UDPWRAP, WRITEWRAP, ZLIB, SSLCONNECTION, PBKDF2REQUEST,
+RANDOMBYTESREQUEST, TLSWRAP, Microtask, Timeout, Immediate, TickObject</code></pre>
+<p>还有 <code>PROMISE</code> 资源类型，用于跟踪 <code>Promise</code> 实例以及它们调度的异步工作。</p>
+<p>用户可以在使用公共嵌入器 API 时定义自己的 <code>type</code>。</p>
+<p>可能存在类型名称冲突。
+鼓励嵌入器使用唯一的前缀，例如 npm 包名，以防止在监听钩子时发生冲突。</p>
+<h6><code>triggerAsyncId</code><span><a class="mark" href="#triggerasyncid" id="triggerasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_triggerasyncid"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#triggerasyncid">
+<a href="async_hooks/triggerasyncid.html" class="tip_trans">中英对照</a>
+</p>
+<p><code>triggerAsyncId</code> 是导致（或“触发”）新资源初始化并导致 <code>init</code> 调用的资源的 <code>asyncId</code>。</p>
+<p>下面是 <code>triggerAsyncId</code> 的简单演示：</p>
+<pre><code class="language-js">async_hooks.<span class="hljs-title function_">createHook</span>({
+  <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId</span>) {
+    <span class="hljs-keyword">const</span> eid = async_hooks.<span class="hljs-title function_">executionAsyncId</span>();
+    fs.<span class="hljs-title function_">writeSync</span>(
+      process.<span class="hljs-property">stdout</span>.<span class="hljs-property">fd</span>,
+      <span class="hljs-string">`<span class="hljs-subst">${type}</span>(<span class="hljs-subst">${asyncId}</span>): trigger: <span class="hljs-subst">${triggerAsyncId}</span> execution: <span class="hljs-subst">${eid}</span>\n`</span>);
+  }
+}).<span class="hljs-title function_">enable</span>();
+
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>).<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">conn</span>) =&gt;</span> {}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">8080</span>);</code></pre>
+<p>当使用 <code>nc localhost 8080</code> 访问服务器时的输出：</p>
+<pre><code class="language-console">TCPSERVERWRAP(5): trigger: 1 execution: 1
+TCPWRAP(7): trigger: 5 execution: 0</code></pre>
+<p><code>TCPSERVERWRAP</code> 是接收连接的服务器。</p>
+<p><code>TCPWRAP</code> 是来自客户端的新连接。
+当建立新连接时，则立即构造 <code>TCPWrap</code> 实例。
+这发生在任何 JavaScript 堆栈之外。
+（<code>0</code> 的 <code>executionAsyncId()</code> 表示其是从 C++ 执行的，上面没有 JavaScript 堆栈。）只有这些信息，就不可能将资源链接在一起，因为它们是什么导致它们被创建，所以 <code>triggerAsyncId</code> 被赋予传播什么资源对新资源的存在负责的任务。</p>
+<h6><code>resource</code><span><a class="mark" href="#resource" id="resource">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_resource"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#resource">
+<a href="async_hooks/resource.html" class="tip_trans">中英对照</a>
+</p>
+<p><code>resource</code> 是一个对象，表示已初始化的实际异步资源。
+这可能包含有用的信息，这些信息可能会根据 <code>type</code> 的值而有所不同。
+例如，对于 <code>GETADDRINFOREQWRAP</code> 资源类型，<code>resource</code> 提供了在 <code>net.Server.listen()</code> 中查找主机 IP 地址时使用的主机名。
+不支持访问此信息的 API，但使用 Embedder API，用户可以提供和记录自己的资源对象。
+例如，这样的资源对象可能包含正在执行的 SQL 查询。</p>
+<p>在某些情况下，出于性能原因，资源对象会被重用，因此将其用作 <code>WeakMap</code> 中的键或向其添加属性是不安全的。</p>
+<h6>异步上下文的示例<span><a class="mark" href="#asynchronous-context-example" id="asynchronous-context-example">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynchronous_context_example"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#asynchronous-context-example">
+<a href="async_hooks/asynchronous_context_example.html" class="tip_trans">中英对照</a>
+</p>
+<p>以下是一个示例，其中包含有关 <code>before</code> 和 <code>after</code> 调用之间对 <code>init</code> 的调用的附加信息，特别是对 <code>listen()</code> 的回调将是什么样子。
+输出格式稍微复杂一点，使调用上下文更容易看到。</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> indent = <span class="hljs-number">0</span>;
+async_hooks.<span class="hljs-title function_">createHook</span>({
+  <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId</span>) {
+    <span class="hljs-keyword">const</span> eid = async_hooks.<span class="hljs-title function_">executionAsyncId</span>();
+    <span class="hljs-keyword">const</span> indentStr = <span class="hljs-string">' '</span>.<span class="hljs-title function_">repeat</span>(indent);
+    fs.<span class="hljs-title function_">writeSync</span>(
+      process.<span class="hljs-property">stdout</span>.<span class="hljs-property">fd</span>,
+      <span class="hljs-string">`<span class="hljs-subst">${indentStr}</span><span class="hljs-subst">${type}</span>(<span class="hljs-subst">${asyncId}</span>):`</span> +
+      <span class="hljs-string">` trigger: <span class="hljs-subst">${triggerAsyncId}</span> execution: <span class="hljs-subst">${eid}</span>\n`</span>);
+  },
+  <span class="hljs-title function_">before</span>(<span class="hljs-params">asyncId</span>) {
+    <span class="hljs-keyword">const</span> indentStr = <span class="hljs-string">' '</span>.<span class="hljs-title function_">repeat</span>(indent);
+    fs.<span class="hljs-title function_">writeSync</span>(process.<span class="hljs-property">stdout</span>.<span class="hljs-property">fd</span>, <span class="hljs-string">`<span class="hljs-subst">${indentStr}</span>before:  <span class="hljs-subst">${asyncId}</span>\n`</span>);
+    indent += <span class="hljs-number">2</span>;
+  },
+  <span class="hljs-title function_">after</span>(<span class="hljs-params">asyncId</span>) {
+    indent -= <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> indentStr = <span class="hljs-string">' '</span>.<span class="hljs-title function_">repeat</span>(indent);
+    fs.<span class="hljs-title function_">writeSync</span>(process.<span class="hljs-property">stdout</span>.<span class="hljs-property">fd</span>, <span class="hljs-string">`<span class="hljs-subst">${indentStr}</span>after:  <span class="hljs-subst">${asyncId}</span>\n`</span>);
+  },
+  <span class="hljs-title function_">destroy</span>(<span class="hljs-params">asyncId</span>) {
+    <span class="hljs-keyword">const</span> indentStr = <span class="hljs-string">' '</span>.<span class="hljs-title function_">repeat</span>(indent);
+    fs.<span class="hljs-title function_">writeSync</span>(process.<span class="hljs-property">stdout</span>.<span class="hljs-property">fd</span>, <span class="hljs-string">`<span class="hljs-subst">${indentStr}</span>destroy:  <span class="hljs-subst">${asyncId}</span>\n`</span>);
+  },
+}).<span class="hljs-title function_">enable</span>();
+
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>).<span class="hljs-title function_">createServer</span>(<span class="hljs-function">() =&gt;</span> {}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">8080</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// 让我们在记录服务器启动之前等待 10 毫秒。</span>
+  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'&gt;&gt;&gt;'</span>, async_hooks.<span class="hljs-title function_">executionAsyncId</span>());
+  }, <span class="hljs-number">10</span>);
+});</code></pre>
+<p>仅启动服务器的输出：</p>
+<pre><code class="language-console">TCPSERVERWRAP(5): trigger: 1 execution: 1
+TickObject(6): trigger: 5 execution: 1
+before:  6
+  Timeout(7): trigger: 6 execution: 6
+after:   6
+destroy: 6
+before:  7
+<span class="hljs-meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; 7</span>
+  TickObject(8): trigger: 7 execution: 7
+after:   7
+before:  8
+after:   8</code></pre>
+<p>如示例所示，<code>executionAsyncId()</code> 和 <code>execution</code> 各自指定当前执行上下文的值；通过调用 <code>before</code> 和 <code>after</code> 来描述。</p>
+<p>仅使用 <code>execution</code> 绘制资源分配图结果如下：</p>
+<pre><code class="language-console">  root(1)
+     ^
+     |
+TickObject(6)
+     ^
+     |
+ Timeout(7)</code></pre>
+<p><code>TCPSERVERWRAP</code> 不是这个图表的一部分，尽管它是调用 <code>console.log()</code> 的原因。</p>
+<p>这就是为什么 <code>TickObject</code> 出现在输出中并且是 <code>.listen()</code> 回调的'父调用'。</p>
+<p>可以用下图表示：</p>
+<pre><code class="language-console"> bootstrap(1)
+     |
+     ˅
+TCPSERVERWRAP(5)
+     |
+     ˅
+ TickObject(6)
+     |
+     ˅
+  Timeout(7)</code></pre>
+<h6><code>before(asyncId)</code><span><a class="mark" href="#beforeasyncid" id="beforeasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_before_asyncid"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#beforeasyncid">
+<a href="async_hooks/before_asyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li><code>asyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a></li>
+</ul>
+<p>当异步操作启动（如 TCP 服务器接收新连接）或完成（如将数据写入磁盘）时，会调用回调通知用户。
+<code>before</code> 回调在所述回调执行之前被调用。
+<code>asyncId</code> 是分配给即将执行回调的资源的唯一标识符。</p>
+<p><code>before</code> 回调将被调用 0 到 N 次。
+如果异步操作被取消，或者例如，如果 TCP 服务器没有接收到连接，则 <code>before</code> 回调通常会被调用 0 次。
+像 TCP 服务器这样的持久异步资源通常会多次调用 <code>before</code> 回调，而像 <code>fs.open()</code> 等其他操作只会调用一次。</p>
+<h6><code>after(asyncId)</code><span><a class="mark" href="#afterasyncid" id="afterasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_after_asyncid"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#afterasyncid">
+<a href="async_hooks/after_asyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li><code>asyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a></li>
+</ul>
+<p>在 <code>before</code> 中指定的回调完成后立即调用。</p>
+<h6><code>destroy(asyncId)</code><span><a class="mark" href="#destroyasyncid" id="destroyasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_destroy_asyncid"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#destroyasyncid">
+<a href="async_hooks/destroy_asyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li><code>asyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a></li>
+</ul>
+<p><code>asyncId</code> 对应的资源销毁后调用。
+它也从嵌入器 API <code>emitDestroy()</code> 异步调用。</p>
+<p>有些资源依赖垃圾回收来清理，所以如果引用传给 <code>init</code> 的 <code>resource</code> 对象，可能永远不会调用 <code>destroy</code>，从而导致应用程序内存泄漏。
+如果资源不依赖垃圾回收，则这不是问题。</p>
+<h6><code>promiseResolve(asyncId)</code><span><a class="mark" href="#promiseresolveasyncid" id="promiseresolveasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_promiseresolve_asyncid"></a></h6><p class="tip_wrap" data-show_trans="1" data-item_id="#promiseresolveasyncid">
+<a href="async_hooks/promiseresolve_asyncid.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v8.6.0</span>
+</div>
+<ul>
+<li><code>asyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a></li>
+</ul>
+<p>当调用传给 <code>Promise</code> 构造函数的 <code>resolve</code> 函数时调用（直接或通过其他解决 promise 的方法）。</p>
+<p><code>resolve()</code> 不做任何可观察到的同步工作。</p>
+<p>如果 <code>Promise</code> 是通过假设另一个 <code>Promise</code> 的状态来解决的，则此时 <code>Promise</code> 不一定满足或拒绝。</p>
+<pre><code class="language-js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-literal">true</span>)).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">a</span>) =&gt;</span> {});</code></pre>
+<p>调用以下回调：</p>
+<pre><code class="language-text">init for PROMISE with id 5, trigger id: 1
+  promise resolve 5      # 对应于 resolve(true)
+init for PROMISE with id 6, trigger id: 5  # then() 返回的 Promise
+  before 6               # 输入 then() 回调
+  promise resolve 6      # then() 回调通过返回来解决 promise
+  after 6</code></pre>
+<h5><code>async_hooks.executionAsyncResource()</code><span><a class="mark" href="#async_hooksexecutionasyncresource" id="async_hooksexecutionasyncresource">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_async_hooks_executionasyncresource"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#async_hooksexecutionasyncresource">
+<a href="async_hooks/async_hooks_executionasyncresource.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type" target="_blank">&lt;Object&gt;</a> 代表当前执行的资源。
+用于在资源中存储数据。</li>
+</ul>
+<p><code>executionAsyncResource()</code> 返回的资源对象通常是带有未记录 API 的内部 Node.js 句柄对象。
+在对象上使用任何函数或属性都可能使您的应用程序崩溃，应该避免。</p>
+<p>在顶层执行上下文中使用 <code>executionAsyncResource()</code> 将返回空的对象，因为没有要使用的句柄或请求对象，但是有一个代表顶层的对象可能会有所帮助。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { open } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">const</span> { executionAsyncId, executionAsyncResource } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">executionAsyncId</span>(), <span class="hljs-title function_">executionAsyncResource</span>());  <span class="hljs-comment">// 1 {}</span>
+<span class="hljs-title function_">open</span>(__filename, <span class="hljs-string">'r'</span>, <span class="hljs-function">(<span class="hljs-params">err, fd</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">executionAsyncId</span>(), <span class="hljs-title function_">executionAsyncResource</span>());  <span class="hljs-comment">// 7 FSReqWrap</span>
+});</code></pre>
+<p>这可用于实现连续本地存储，无需使用跟踪 <code>Map</code> 来存储元数据：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { createServer } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">const</span> {
+  executionAsyncId,
+  executionAsyncResource,
+  createHook
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+<span class="hljs-keyword">const</span> sym = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">'state'</span>); <span class="hljs-comment">// 避免污染的私有符号</span>
+
+<span class="hljs-title function_">createHook</span>({
+  <span class="hljs-title function_">init</span>(<span class="hljs-params">asyncId, type, triggerAsyncId, resource</span>) {
+    <span class="hljs-keyword">const</span> cr = <span class="hljs-title function_">executionAsyncResource</span>();
+    <span class="hljs-keyword">if</span> (cr) {
+      resource[sym] = cr[sym];
+    }
+  }
+}).<span class="hljs-title function_">enable</span>();
+
+<span class="hljs-keyword">const</span> server = <span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  <span class="hljs-title function_">executionAsyncResource</span>()[sym] = { <span class="hljs-attr">state</span>: req.<span class="hljs-property">url</span> };
+  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    res.<span class="hljs-title function_">end</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(<span class="hljs-title function_">executionAsyncResource</span>()[sym]));
+  }, <span class="hljs-number">100</span>);
+}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">3000</span>);</code></pre>
+<h5><code>async_hooks.executionAsyncId()</code><span><a class="mark" href="#async_hooksexecutionasyncid" id="async_hooksexecutionasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_async_hooks_executionasyncid"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#async_hooksexecutionasyncid">
+<a href="async_hooks/async_hooks_executionasyncid.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v8.2.0</td>
+<td></td></tr>
+<tr><td>v8.1.0</td>
+<td><p><span>新增于: v8.1.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 当前执行上下文的 <code>asyncId</code>。
+当有调用时对跟踪很有用。</li>
+</ul>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> async_hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(async_hooks.<span class="hljs-title function_">executionAsyncId</span>());  <span class="hljs-comment">// 1 - 引导</span>
+fs.<span class="hljs-title function_">open</span>(path, <span class="hljs-string">'r'</span>, <span class="hljs-function">(<span class="hljs-params">err, fd</span>) =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(async_hooks.<span class="hljs-title function_">executionAsyncId</span>());  <span class="hljs-comment">// 6 - open()</span>
+});</code></pre>
+<p><code>executionAsyncId()</code> 返回的 ID 与执行时机有关，与因果无关（被 <code>triggerAsyncId()</code> 涵盖）：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> server = net.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">conn</span>) =&gt;</span> {
+  <span class="hljs-comment">// 返回服务器的 ID，而不是新连接的 ID，</span>
+  <span class="hljs-comment">// 因为回调在服务器的 MakeCallback() 的执行范围内运行。</span>
+  async_hooks.<span class="hljs-title function_">executionAsyncId</span>();
+
+}).<span class="hljs-title function_">listen</span>(port, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// </span>
+  async_hooks.<span class="hljs-title function_">executionAsyncId</span>();
+});</code></pre>
+<p>默认情况下，promise 上下文可能无法获得精确的 <code>executionAsyncIds</code>。
+请参阅 <a href="/api-v12/async_hooks.html#async_hooks_promise_execution_tracking">promise 执行跟踪</a>部分。</p>
+<h5><code>async_hooks.triggerAsyncId()</code><span><a class="mark" href="#async_hookstriggerasyncid" id="async_hookstriggerasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_async_hooks_triggerasyncid"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#async_hookstriggerasyncid">
+<a href="async_hooks/async_hooks_triggerasyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 负责调用当前正在执行的回调的资源 ID。</li>
+</ul>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> server = net.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">conn</span>) =&gt;</span> {
+  <span class="hljs-comment">// 导致（或触发）此回调被调用的资源是新连接的资源。</span>
+  <span class="hljs-comment">// 因此 triggerAsyncId() 的返回值是 "conn" 的 asyncId。</span>
+  async_hooks.<span class="hljs-title function_">triggerAsyncId</span>();
+
+}).<span class="hljs-title function_">listen</span>(port, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// 即使传给 .listen() 的所有回调都包含在 nextTick() 中，</span>
+  <span class="hljs-comment">// 但回调本身仍然存在，因为对服务器的 .listen() 进行了调用。</span>
+  <span class="hljs-comment">// 所以返回值将是服务器的 ID。</span>
+  async_hooks.<span class="hljs-title function_">triggerAsyncId</span>();
+});</code></pre>
+<p>默认情况下，promise 上下文可能无法获得有效的 <code>triggerAsyncId</code>。
+请参阅 <a href="/api-v12/async_hooks.html#async_hooks_promise_execution_tracking">promise 执行跟踪</a>部分。</p>
+</section><section><h3>Promise 执行跟踪<span><a class="mark" href="#promise-execution-tracking" id="promise-execution-tracking">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_promise_execution_tracking"></a></h3><p class="tip_wrap" data-show_trans="1" data-item_id="#promise-execution-tracking">
+<a href="async_hooks/promise_execution_tracking.html" class="tip_trans">中英对照</a>
+</p>
+<p>默认情况下，由于 V8 提供的 <a href="http://url.nodejs.cn/YyWiBo" rel="nofollow" target="_blank">promise 自省 API</a> 相对昂贵，因此不会为 promise 执行分配 <code>asyncId</code>。
+这意味着默认情况下，使用 promise 或 <code>async</code>/<code>await</code> 的程序将无法正确执行并触发 promise 回调上下文的 id。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> ah = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+<span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-number">1729</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`eid <span class="hljs-subst">${ah.executionAsyncId()}</span> tid <span class="hljs-subst">${ah.triggerAsyncId()}</span>`</span>);
+});
+<span class="hljs-comment">// 产生：</span>
+<span class="hljs-comment">// eid 1 tid 0</span></code></pre>
+<p>注意 <code>then()</code> 回调声称已在外部范围的上下文中执行，即使涉及异步的跃点。
+另外，<code>triggerAsyncId</code> 的值是 <code>0</code>，这意味着我们缺少有关导致（触发）<code>then()</code> 回调被执行的资源的上下文。</p>
+<p>通过 <code>async_hooks.createHook</code> 安装异步钩子启用 promise 执行跟踪：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> ah = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+ah.<span class="hljs-title function_">createHook</span>({ <span class="hljs-title function_">init</span>(<span class="hljs-params"></span>) {} }).<span class="hljs-title function_">enable</span>(); <span class="hljs-comment">// 强制启用 PromiseHooks。</span>
+<span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-number">1729</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`eid <span class="hljs-subst">${ah.executionAsyncId()}</span> tid <span class="hljs-subst">${ah.triggerAsyncId()}</span>`</span>);
+});
+<span class="hljs-comment">// 产生：</span>
+<span class="hljs-comment">// eid 7 tid 6</span></code></pre>
+<p>在这个示例中，添加任何实际的钩子函数启用了对 promise 的跟踪。
+上面的示例中有两个 promise；由 <code>Promise.resolve()</code> 创建的 promise 和调用 <code>then()</code> 返回的 promise。
+在上面的示例中，第一个 promise 得到 <code>asyncId</code> <code>6</code>，后者得到 <code>asyncId</code> <code>7</code>。
+在执行 <code>then()</code> 回调期间，我们在 <code>asyncId</code> <code>7</code> 的 promise 上下文中执行。
+此 promise 由异步资源 <code>6</code> 触发。</p>
+<p>promise 的另一个微妙之处是 <code>before</code> 和 <code>after</code> 回调仅在链式 promise 上运行。
+这意味着不是由 <code>then()</code>/<code>catch()</code> 创建的 promise 不会触发 <code>before</code> 和 <code>after</code> 回调。
+更多详细信息请参见 V8 <a href="http://url.nodejs.cn/YyWiBo" rel="nofollow" target="_blank">PromiseHooks</a> API 的详细信息。</p>
+</section><section><h3>JavaScript 嵌入的接口<span><a class="mark" href="#javascript-embedder-api" id="javascript-embedder-api">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_javascript_embedder_api"></a></h3><p class="tip_wrap" data-show_trans="1" data-item_id="#javascript-embedder-api">
+<a href="async_hooks/javascript_embedder_api.html" class="tip_trans">中英对照</a>
+</p>
+<p>处理自己的异步资源执行 I/O、连接池或管理回调队列等任务的库开发者可以使用 <code>AsyncResource</code> JavaScript API 以便调用所有适当的回调。</p>
+<h4><code>AsyncResource</code> 类<span><a class="mark" href="#class-asyncresource" id="class-asyncresource">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_class_asyncresource"></a></h4><p class="tip_wrap"></p>
+<p>The class <code>AsyncResource</code> is designed to be extended by the embedder's async
+resources. Using this, users can easily trigger the lifetime events of their
+own resources.</p>
+<p>The <code>init</code> hook will trigger when an <code>AsyncResource</code> is instantiated.</p>
+<p>The following is an overview of the <code>AsyncResource</code> API.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { <span class="hljs-title class_">AsyncResource</span>, executionAsyncId } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-comment">// AsyncResource() is meant to be extended. Instantiating a</span>
+<span class="hljs-comment">// new AsyncResource() also triggers init. If triggerAsyncId is omitted then</span>
+<span class="hljs-comment">// async_hook.executionAsyncId() is used.</span>
+<span class="hljs-keyword">const</span> asyncResource = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AsyncResource</span>(
+  type, { <span class="hljs-attr">triggerAsyncId</span>: <span class="hljs-title function_">executionAsyncId</span>(), <span class="hljs-attr">requireManualDestroy</span>: <span class="hljs-literal">false</span> }
+);
+
+<span class="hljs-comment">// Run a function in the execution context of the resource. This will</span>
+<span class="hljs-comment">// * establish the context of the resource</span>
+<span class="hljs-comment">// * trigger the AsyncHooks before callbacks</span>
+<span class="hljs-comment">// * call the provided function `fn` with the supplied arguments</span>
+<span class="hljs-comment">// * trigger the AsyncHooks after callbacks</span>
+<span class="hljs-comment">// * restore the original execution context</span>
+asyncResource.<span class="hljs-title function_">runInAsyncScope</span>(fn, thisArg, ...args);
+
+<span class="hljs-comment">// Call AsyncHooks destroy callbacks.</span>
+asyncResource.<span class="hljs-title function_">emitDestroy</span>();
+
+<span class="hljs-comment">// Return the unique ID assigned to the AsyncResource instance.</span>
+asyncResource.<span class="hljs-title function_">asyncId</span>();
+
+<span class="hljs-comment">// Return the trigger ID for the AsyncResource instance.</span>
+asyncResource.<span class="hljs-title function_">triggerAsyncId</span>();</code></pre>
+<h5><code>new AsyncResource(type[, options])</code><span><a class="mark" href="#new-asyncresourcetype-options" id="new-asyncresourcetype-options">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_new_asyncresource_type_options"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#new-asyncresourcetype-options">
+<a href="async_hooks/new_asyncresource_type_options.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li><code>type</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type" target="_blank">&lt;string&gt;</a> 异步事件的类型。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type" target="_blank">&lt;Object&gt;</a>
+<ul>
+<li><code>triggerAsyncId</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 创建此异步事件的执行上下文的 ID。 <strong>默认值:</strong> <code>executionAsyncId()</code>。</li>
+<li><code>requireManualDestroy</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type" target="_blank">&lt;boolean&gt;</a> 如果设置为 <code>true</code>，则当对象被垃圾回收时禁用 <code>emitDestroy</code>。
+这通常不需要设置（即使手动调用 <code>emitDestroy</code>），除非检索到资源的 <code>asyncId</code> 并调用敏感 API 的 <code>emitDestroy</code>。
+当设置为 <code>false</code> 时，则只有在至少有一个活动的 <code>destroy</code> 钩子时才会调用 <code>emitDestroy</code> 垃圾回收。
+<strong>默认值:</strong> <code>false</code>。</li>
+</ul>
+</li>
+</ul>
+<p>用法示例：</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">DBQuery</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">AsyncResource</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">db</span>) {
+    <span class="hljs-variable language_">super</span>(<span class="hljs-string">'DBQuery'</span>);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">db</span> = db;
+  }
+
+  <span class="hljs-title function_">getInfo</span>(<span class="hljs-params">query, callback</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">db</span>.<span class="hljs-title function_">get</span>(query, <span class="hljs-function">(<span class="hljs-params">err, data</span>) =&gt;</span> {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">runInAsyncScope</span>(callback, <span class="hljs-literal">null</span>, err, data);
+    });
+  }
+
+  <span class="hljs-title function_">close</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">db</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">emitDestroy</span>();
+  }
+}</code></pre>
+<h5><code>AsyncResource.bind(fn[, type])</code><span><a class="mark" href="#static-method-asyncresourcebindfn-type" id="static-method-asyncresourcebindfn-type">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_static_method_asyncresource_bind_fn_type"></a></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.19.0</span>
+</div>
+<ul>
+<li><code>fn</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> The function to bind to the current execution context.</li>
+<li><code>type</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type" target="_blank">&lt;string&gt;</a> An optional name to associate with the underlying
+<code>AsyncResource</code>.</li>
+</ul>
+<p>Binds the given function to the current execution context.</p>
+<p>The returned function will have an <code>asyncResource</code> property referencing
+the <code>AsyncResource</code> to which the function is bound.</p>
+<h5><code>asyncResource.bind(fn)</code><span><a class="mark" href="#asyncresourcebindfn" id="asyncresourcebindfn">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asyncresource_bind_fn"></a></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.19.0</span>
+</div>
+<ul>
+<li><code>fn</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> The function to bind to the current <code>AsyncResource</code>.</li>
+</ul>
+<p>Binds the given function to execute to this <code>AsyncResource</code>'s scope.</p>
+<p>The returned function will have an <code>asyncResource</code> property referencing
+the <code>AsyncResource</code> to which the function is bound.</p>
+<h5><code>asyncResource.runInAsyncScope(fn[, thisArg, ...args])</code><span><a class="mark" href="#asyncresourceruninasyncscopefn-thisarg-args" id="asyncresourceruninasyncscopefn-thisarg-args">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asyncresource_runinasyncscope_fn_thisarg_args"></a></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v9.6.0</span>
+</div>
+<ul>
+<li><code>fn</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a> The function to call in the execution context of this async
+resource.</li>
+<li><code>thisArg</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a> The receiver to be used for the function call.</li>
+<li><code>...args</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a> Optional arguments to pass to the function.</li>
+</ul>
+<p>Call the provided function with the provided arguments in the execution context
+of the async resource. This will establish the context, trigger the AsyncHooks
+before callbacks, call the function, trigger the AsyncHooks after callbacks, and
+then restore the original execution context.</p>
+<h5><code>asyncResource.emitDestroy()</code><span><a class="mark" href="#asyncresourceemitdestroy" id="asyncresourceemitdestroy">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asyncresource_emitdestroy"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#asyncresourceemitdestroy">
+<a href="async_hooks/asyncresource_emitdestroy.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="/api/async_hooks.html#class-asyncresource" rel="nofollow" class="type">&lt;AsyncResource&gt;</a> <code>asyncResource</code> 的引用。</li>
+</ul>
+<p>调用所有的 <code>destroy</code> 钩子。
+这应该只被调用一次。
+如果多次调用，则会报错。
+这个<strong>必须</strong>手动调用。
+如果资源留给 GC 收集，则永远不会调用 <code>destroy</code> 钩子。</p>
+<h5><code>asyncResource.asyncId()</code><span><a class="mark" href="#asyncresourceasyncid" id="asyncresourceasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asyncresource_asyncid"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#asyncresourceasyncid">
+<a href="async_hooks/asyncresource_asyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 分配给资源的唯一 <code>asyncId</code>。</li>
+</ul>
+<h5><code>asyncResource.triggerAsyncId()</code><span><a class="mark" href="#asyncresourcetriggerasyncid" id="asyncresourcetriggerasyncid">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asyncresource_triggerasyncid"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#asyncresourcetriggerasyncid">
+<a href="async_hooks/asyncresource_triggerasyncid.html" class="tip_trans">中英对照</a>
+</p>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type" target="_blank">&lt;number&gt;</a> 传给 <code>AsyncResource</code> 构造函数的同一个 <code>triggerAsyncId</code>。</li>
+</ul>
+<p><a id="async-resource-worker-pool"></a></p>
+<h4>对工作线程池使用 AsyncResource<span><a class="mark" href="#using-asyncresource-for-a-worker-thread-pool" id="using-asyncresource-for-a-worker-thread-pool">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_using_asyncresource_for_a_worker_thread_pool"></a></h4><p class="tip_wrap"></p>
+<p>The following example shows how to use the <code>AsyncResource</code> class to properly
+provide async tracking for a <a href="worker_threads.html#worker_threads_class_worker"><code>Worker</code></a> pool. Other resource pools, such as
+database connection pools, can follow a similar model.</p>
+<p>Assuming that the task is adding two numbers, using a file named
+<code>task_processor.js</code> with the following content:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { parentPort } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'worker_threads'</span>);
+parentPort.<span class="hljs-title function_">on</span>(<span class="hljs-string">'message'</span>, <span class="hljs-function">(<span class="hljs-params">task</span>) =&gt;</span> {
+  parentPort.<span class="hljs-title function_">postMessage</span>(task.<span class="hljs-property">a</span> + task.<span class="hljs-property">b</span>);
+});</code></pre>
+<p>a Worker pool around it could use the following structure:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { <span class="hljs-title class_">AsyncResource</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">EventEmitter</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'events'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">Worker</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'worker_threads'</span>);
+
+<span class="hljs-keyword">const</span> kTaskInfo = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">'kTaskInfo'</span>);
+<span class="hljs-keyword">const</span> kWorkerFreedEvent = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">'kWorkerFreedEvent'</span>);
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">WorkerPoolTaskInfo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">AsyncResource</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">callback</span>) {
+    <span class="hljs-variable language_">super</span>(<span class="hljs-string">'WorkerPoolTaskInfo'</span>);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">callback</span> = callback;
+  }
+
+  <span class="hljs-title function_">done</span>(<span class="hljs-params">err, result</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">runInAsyncScope</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">callback</span>, <span class="hljs-literal">null</span>, err, result);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">emitDestroy</span>();  <span class="hljs-comment">// `TaskInfo`s are used only once.</span>
+  }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">WorkerPool</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">EventEmitter</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">numThreads</span>) {
+    <span class="hljs-variable language_">super</span>();
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">numThreads</span> = numThreads;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">workers</span> = [];
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">freeWorkers</span> = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numThreads; i++)
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">addNewWorker</span>();
+  }
+
+  <span class="hljs-title function_">addNewWorker</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> worker = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Worker</span>(path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'task_processor.js'</span>));
+    worker.<span class="hljs-title function_">on</span>(<span class="hljs-string">'message'</span>, <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+      <span class="hljs-comment">// In case of success: Call the callback that was passed to `runTask`,</span>
+      <span class="hljs-comment">// remove the `TaskInfo` associated with the Worker, and mark it as free</span>
+      <span class="hljs-comment">// again.</span>
+      worker[kTaskInfo].<span class="hljs-title function_">done</span>(<span class="hljs-literal">null</span>, result);
+      worker[kTaskInfo] = <span class="hljs-literal">null</span>;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">freeWorkers</span>.<span class="hljs-title function_">push</span>(worker);
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">emit</span>(kWorkerFreedEvent);
+    });
+    worker.<span class="hljs-title function_">on</span>(<span class="hljs-string">'error'</span>, <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+      <span class="hljs-comment">// In case of an uncaught exception: Call the callback that was passed to</span>
+      <span class="hljs-comment">// `runTask` with the error.</span>
+      <span class="hljs-keyword">if</span> (worker[kTaskInfo])
+        worker[kTaskInfo].<span class="hljs-title function_">done</span>(err, <span class="hljs-literal">null</span>);
+      <span class="hljs-keyword">else</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">emit</span>(<span class="hljs-string">'error'</span>, err);
+      <span class="hljs-comment">// Remove the worker from the list and start a new Worker to replace the</span>
+      <span class="hljs-comment">// current one.</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">workers</span>.<span class="hljs-title function_">splice</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">workers</span>.<span class="hljs-title function_">indexOf</span>(worker), <span class="hljs-number">1</span>);
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">addNewWorker</span>();
+    });
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">workers</span>.<span class="hljs-title function_">push</span>(worker);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">freeWorkers</span>.<span class="hljs-title function_">push</span>(worker);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">emit</span>(kWorkerFreedEvent);
+  }
+
+  <span class="hljs-title function_">runTask</span>(<span class="hljs-params">task, callback</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">freeWorkers</span>.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-comment">// No free threads, wait until a worker thread becomes free.</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">once</span>(kWorkerFreedEvent, <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">runTask</span>(task, callback));
+      <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">const</span> worker = <span class="hljs-variable language_">this</span>.<span class="hljs-property">freeWorkers</span>.<span class="hljs-title function_">pop</span>();
+    worker[kTaskInfo] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WorkerPoolTaskInfo</span>(callback);
+    worker.<span class="hljs-title function_">postMessage</span>(task);
+  }
+
+  <span class="hljs-title function_">close</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> worker <span class="hljs-keyword">of</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">workers</span>) worker.<span class="hljs-title function_">terminate</span>();
+  }
+}
+
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title class_">WorkerPool</span>;</code></pre>
+<p>Without the explicit tracking added by the <code>WorkerPoolTaskInfo</code> objects,
+it would appear that the callbacks are associated with the individual <code>Worker</code>
+objects. However, the creation of the <code>Worker</code>s is not associated with the
+creation of the tasks and does not provide information about when tasks
+were scheduled.</p>
+<p>This pool could be used as follows:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">WorkerPool</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./worker_pool.js'</span>);
+<span class="hljs-keyword">const</span> os = <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>);
+
+<span class="hljs-keyword">const</span> pool = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WorkerPool</span>(os.<span class="hljs-title function_">cpus</span>().<span class="hljs-property">length</span>);
+
+<span class="hljs-keyword">let</span> finished = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  pool.<span class="hljs-title function_">runTask</span>({ <span class="hljs-attr">a</span>: <span class="hljs-number">42</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">100</span> }, <span class="hljs-function">(<span class="hljs-params">err, result</span>) =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i, err, result);
+    <span class="hljs-keyword">if</span> (++finished === <span class="hljs-number">10</span>)
+      pool.<span class="hljs-title function_">close</span>();
+  });
+}</code></pre>
+<h4>将 EventEmitter 集成到 AsyncResource<span><a class="mark" href="#integrating-asyncresource-with-eventemitter" id="integrating-asyncresource-with-eventemitter">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_integrating_asyncresource_with_eventemitter"></a></h4><p class="tip_wrap"></p>
+<p>Event listeners triggered by an <a href="events.html#events_class_eventemitter"><code>EventEmitter</code></a> may be run in a different
+execution context than the one that was active when <code>eventEmitter.on()</code> was
+called.</p>
+<p>The following example shows how to use the <code>AsyncResource</code> class to properly
+associate an event listener with the correct execution context. The same
+approach can be applied to a <a href="stream.html#stream_stream"><code>Stream</code></a> or a similar event-driven class.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { createServer } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">AsyncResource</span>, executionAsyncId } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-keyword">const</span> server = <span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  req.<span class="hljs-title function_">on</span>(<span class="hljs-string">'close'</span>, <span class="hljs-title class_">AsyncResource</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-comment">// Execution context is bound to the current outer scope.</span>
+  }));
+  req.<span class="hljs-title function_">on</span>(<span class="hljs-string">'close'</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-comment">// Execution context is bound to the scope that caused 'close' to emit.</span>
+  });
+  res.<span class="hljs-title function_">end</span>();
+}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">3000</span>);</code></pre>
+</section><section><h3><code>AsyncLocalStorage</code> 类<span><a class="mark" href="#class-asynclocalstorage" id="class-asynclocalstorage">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_class_asynclocalstorage"></a></h3><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<p>This class is used to create asynchronous state within callbacks and promise
+chains. It allows storing data throughout the lifetime of a web request
+or any other asynchronous duration. It is similar to thread-local storage
+in other languages.</p>
+<p>The following example uses <code>AsyncLocalStorage</code> to build a simple logger
+that assigns IDs to incoming HTTP requests and includes them in messages
+logged within each request.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">AsyncLocalStorage</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'async_hooks'</span>);
+
+<span class="hljs-keyword">const</span> asyncLocalStorage = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AsyncLocalStorage</span>();
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">logWithId</span>(<span class="hljs-params">msg</span>) {
+  <span class="hljs-keyword">const</span> id = asyncLocalStorage.<span class="hljs-title function_">getStore</span>();
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${id !== <span class="hljs-literal">undefined</span> ? id : <span class="hljs-string">'-'</span>}</span>:`</span>, msg);
+}
+
+<span class="hljs-keyword">let</span> idSeq = <span class="hljs-number">0</span>;
+http.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  asyncLocalStorage.<span class="hljs-title function_">run</span>(idSeq++, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">logWithId</span>(<span class="hljs-string">'start'</span>);
+    <span class="hljs-comment">// Imagine any chain of async operations here</span>
+    <span class="hljs-title function_">setImmediate</span>(<span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-title function_">logWithId</span>(<span class="hljs-string">'finish'</span>);
+      res.<span class="hljs-title function_">end</span>();
+    });
+  });
+}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">8080</span>);
+
+http.<span class="hljs-title function_">get</span>(<span class="hljs-string">'http://localhost:8080'</span>);
+http.<span class="hljs-title function_">get</span>(<span class="hljs-string">'http://localhost:8080'</span>);
+<span class="hljs-comment">// Prints:</span>
+<span class="hljs-comment">//   0: start</span>
+<span class="hljs-comment">//   1: start</span>
+<span class="hljs-comment">//   0: finish</span>
+<span class="hljs-comment">//   1: finish</span></code></pre>
+<p>When having multiple instances of <code>AsyncLocalStorage</code>, they are independent
+from each other. It is safe to instantiate this class multiple times.</p>
+<h4><code>new AsyncLocalStorage()</code><span><a class="mark" href="#new-asynclocalstorage" id="new-asynclocalstorage">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_new_asynclocalstorage"></a></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<p>Creates a new instance of <code>AsyncLocalStorage</code>. Store is only provided within a
+<code>run</code> method call.</p>
+<h4><code>asyncLocalStorage.disable()</code><span><a class="mark" href="#asynclocalstoragedisable" id="asynclocalstoragedisable">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynclocalstorage_disable"></a></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<p>This method disables the instance of <code>AsyncLocalStorage</code>. All subsequent calls
+to <code>asyncLocalStorage.getStore()</code> will return <code>undefined</code> until
+<code>asyncLocalStorage.run()</code> is called again.</p>
+<p>When calling <code>asyncLocalStorage.disable()</code>, all current contexts linked to the
+instance will be exited.</p>
+<p>Calling <code>asyncLocalStorage.disable()</code> is required before the
+<code>asyncLocalStorage</code> can be garbage collected. This does not apply to stores
+provided by the <code>asyncLocalStorage</code>, as those objects are garbage collected
+along with the corresponding async resources.</p>
+<p>This method is to be used when the <code>asyncLocalStorage</code> is not in use anymore
+in the current process.</p>
+<h4><code>asyncLocalStorage.getStore()</code><span><a class="mark" href="#asynclocalstoragegetstore" id="asynclocalstoragegetstore">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynclocalstorage_getstore"></a></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a></li>
+</ul>
+<p>This method returns the current store.
+If this method is called outside of an asynchronous context initialized by
+calling <code>asyncLocalStorage.run</code>, it will return <code>undefined</code>.</p>
+<h4><code>asyncLocalStorage.enterWith(store)</code><span><a class="mark" href="#asynclocalstorageenterwithstore" id="asynclocalstorageenterwithstore">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynclocalstorage_enterwith_store"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#asynclocalstorageenterwithstore">
+<a href="async_hooks/asynclocalstorage_enterwith_store.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<ul>
+<li><code>store</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a></li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> store = { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> };
+asyncLocalStorage.<span class="hljs-title function_">enterWith</span>(store);
+asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+<span class="hljs-title function_">someAsyncOperation</span>(<span class="hljs-function">() =&gt;</span> {
+  asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+});</code></pre>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> store = { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> };
+
+emitter.<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-function">() =&gt;</span> {
+  asyncLocalStorage.<span class="hljs-title function_">enterWith</span>(store);
+});
+emitter.<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-function">() =&gt;</span> {
+  asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+});
+
+asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+emitter.<span class="hljs-title function_">emit</span>(<span class="hljs-string">'my-event'</span>);
+asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span></code></pre>
+<h4><code>asyncLocalStorage.run(store, callback[, ...args])</code><span><a class="mark" href="#asynclocalstoragerunstore-callback-args" id="asynclocalstoragerunstore-callback-args">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynclocalstorage_run_store_callback_args"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#asynclocalstoragerunstore-callback-args">
+<a href="async_hooks/asynclocalstorage_run_store_callback_args.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<ul>
+<li><code>store</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a></li>
+<li><code>...args</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a></li>
+</ul>
+<p>可选地，参数可以传给函数。</p>
+<p>示例：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> store = { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">try</span> {
+  asyncLocalStorage.<span class="hljs-title function_">run</span>(store, <span class="hljs-function">() =&gt;</span> {
+    asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>();
+  });
+} <span class="hljs-keyword">catch</span> (e) {
+  asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+  <span class="hljs-comment">// </span>
+}</code></pre>
+<h4><code>asyncLocalStorage.exit(callback[, ...args])</code><span><a class="mark" href="#asynclocalstorageexitcallback-args" id="asynclocalstorageexitcallback-args">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_asynclocalstorage_exit_callback_args"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#asynclocalstorageexitcallback-args">
+<a href="async_hooks/asynclocalstorage_exit_callback_args.html" class="tip_trans">中英对照</a>
+</p>
+<div class="api_metadata">
+<span>新增于: v12.17.0</span>
+</div>
+<ul>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type" target="_blank">&lt;Function&gt;</a></li>
+<li><code>...args</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type" target="_blank">&lt;any&gt;</a></li>
+</ul>
+<p>可选地，参数可以传给函数。</p>
+<p>示例：</p>
+<pre><code class="language-js"><span class="hljs-comment">// </span>
+<span class="hljs-keyword">try</span> {
+  asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+  asyncLocalStorage.<span class="hljs-title function_">exit</span>(<span class="hljs-function">() =&gt;</span> {
+    asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>();
+  });
+} <span class="hljs-keyword">catch</span> (e) {
+  asyncLocalStorage.<span class="hljs-title function_">getStore</span>(); <span class="hljs-comment">// </span>
+  <span class="hljs-comment">// </span>
+}</code></pre>
+<h4>async/await 的用法<span><a class="mark" href="#usage-with-asyncawait" id="usage-with-asyncawait">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_usage_with_async_await"></a></h4><p class="tip_wrap"></p>
+<p>If, within an async function, only one <code>await</code> call is to run within a context,
+the following pattern should be used:</p>
+<pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">await</span> asyncLocalStorage.<span class="hljs-title function_">run</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>(), <span class="hljs-function">() =&gt;</span> {
+    asyncLocalStorage.<span class="hljs-title function_">getStore</span>().<span class="hljs-title function_">set</span>(<span class="hljs-string">'key'</span>, value);
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">foo</span>(); <span class="hljs-comment">// The return value of foo will be awaited</span>
+  });
+}</code></pre>
+<p>In this example, the store is only available in the callback function and the
+functions called by <code>foo</code>. Outside of <code>run</code>, calling <code>getStore</code> will return
+<code>undefined</code>.</p>
+<h4>故障排除<span><a class="mark" href="#troubleshooting" id="troubleshooting">#</a></span><a aria-hidden="true" class="legacy" id="async_hooks_troubleshooting"></a></h4><p class="tip_wrap"></p>
+<p>In most cases your application or library code should have no issues with
+<code>AsyncLocalStorage</code>. But in rare cases you may face situations when the
+current store is lost in one of asynchronous operations. In those cases,
+consider the following options.</p>
+<p>If your code is callback-based, it is enough to promisify it with
+<a href="util.html#util_util_promisify_original"><code>util.promisify()</code></a>, so it starts working with native promises.</p>
+<p>If you need to keep using callback-based API, or your code assumes
+a custom thenable implementation, use the <a href="/api-v12/async_hooks.html#async_hooks_class_asyncresource"><code>AsyncResource</code></a> class
+to associate the asynchronous operation with the correct execution context.</p></section>
+</div>
+</div>
+</div>
+<div id="scroll_top" onclick="window.scrollTo(0,0);">返回顶部</div>
+<div id="wxcode_box" style="display: none;">
+<div id="wxcode_img_box">
+<img id="wxcode_img">
+<div id="wxcode_img_tips">微信扫码登录</div>
+</div>
+</div>
+<script>
+    window._API_NAME = "async_hooks";
+    window._UPDATE_TIME = "20220728214329";
+  </script>
+
+</body></html>
