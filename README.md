@@ -7,3 +7,4 @@ node12中文文档
 项目图标为 iconfont 下载 请自行询问授权
 
 #### 无法打开请安装 [Webview2](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
+#### 程序是单文件（编译完成）
