@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>policy 安全策略 | Node.js API 文档</title>
+<link rel="icon" sizes="32x32" type="image/png" href="//img.nodejs.cn/favicon.png">
+<link href="./_static/css/api.css?t=20220728214329" rel="stylesheet">
+</head>
+<body class="alt apidoc api_page_policy" id="page_api">
+<div id="content" class="clearfix">
+<div id="column2" class="interior">
+<div id="intro" class="interior">
+<a href="/" rel="nofollow">
+Node.js 中文网
+</a>
+</div>
+<div class="line"></div>
+<ul>
+<li><a href="documentation.html" class="nav-documentation" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" class="nav-synopsis" rel="nofollow">用法与示例</a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="assert.html" class="nav-assert" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" class="nav-async_hooks" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" class="nav-buffer" rel="nofollow">buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="addons.html" class="nav-addons" rel="nofollow">C++插件</a></li>
+<li><a href="n-api.html" class="nav-n-api" rel="nofollow"><span style="font-size:14px;">C/C++插件(使用Node-API)</span></a></li>
+<li><a href="embedding.html" class="nav-embedding" rel="nofollow">C++嵌入器</a></li>
+<li><a href="child_process.html" class="nav-child_process" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" class="nav-cluster" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="cli.html" class="nav-cli" rel="nofollow">CLI<span class="api_nav_cn_name">命令行</span></a></li>
+<li><a href="console.html" class="nav-console" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" class="nav-crypto" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" class="nav-debugger" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="deprecations.html" class="nav-deprecations" rel="nofollow">deprecation<span class="api_nav_cn_name">弃用</span></a></li>
+<li><a href="dgram.html" class="nav-dgram" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="dns.html" class="nav-dns" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" class="nav-domain" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" class="nav-errors" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" class="nav-events" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" class="nav-fs" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" class="nav-globals" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" class="nav-http" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" class="nav-http2" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" class="nav-https" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" class="nav-inspector" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" class="nav-intl" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" class="nav-module" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="modules.html" class="nav-modules" rel="nofollow"><span style="font-size:14px;">module/cjs</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">CommonJS模块</span></a></li>
+<li><a href="esm.html" class="nav-esm" rel="nofollow"><span style="font-size:14px;">module/esm</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">ECMAScript模块</span></a></li>
+<li><a href="packages.html" class="nav-packages" rel="nofollow"><span style="font-size:14px;">module/package</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">包模块</span></a></li>
+<li><a href="net.html" class="nav-net" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" class="nav-os" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" class="nav-path" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" class="nav-perf_hooks" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="policy.html" class="nav-policy active" rel="nofollow">policy<span class="api_nav_cn_name">安全策略</span></a></li>
+<li><a href="process.html" class="nav-process" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" class="nav-punycode" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" class="nav-querystring" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" class="nav-readline" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" class="nav-repl" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" class="nav-report" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" class="nav-stream" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" class="nav-string_decoder" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" class="nav-timers" rel="nofollow">timers<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" class="nav-tls" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" class="nav-tracing" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" class="nav-tty" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" class="nav-url" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" class="nav-util" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" class="nav-v8" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" class="nav-vm" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" class="nav-wasi" rel="nofollow">wasi<span class="api_nav_cn_name">网络汇编系统接口</span></a></li>
+<li><a href="worker_threads.html" class="nav-worker_threads" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" class="nav-zlib" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+</div>
+<div id="column1" data-id="policy" class="interior">
+<header class="header">
+<div class="header-container">
+<h1>Node.js v12.22.12 文档</h1>
+<button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+<path fill="none" d="M0 0h24v24H0z"></path>
+<path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+<path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+<path d="M0 0h24v24H0z" fill="none"></path>
+<path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+</svg>
+</button>
+</div>
+<div id="gtoc">
+<ul>
+<li class="pinned-header">Node.js 12.22.12</li>
+<li class="picker-header" id="header_toc">
+<a href="#">
+<span class="collapsed-arrow">►</span><span class="expanded-arrow">▼</span>
+目录
+</a>
+<div class="picker"><div class="toc"><ul>
+<li><span class="stability_1"><a href="#policies">policy 安全策略</a></span>
+<ul>
+<li><a href="#enabling">启用</a></li>
+<li><a href="#features">特性</a>
+<ul>
+<li><a href="#error-behavior">错误的行为</a></li>
+<li><a href="#integrity-checks">完整性检查</a></li>
+<li><a href="#dependency-redirection">依赖项重定向</a>
+<ul>
+<li><a href="#example-patched-dependency">示例：修补依赖项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div>
+</li>
+<li class="picker-header">
+<a href="#">
+<span class="collapsed-arrow">►</span><span class="expanded-arrow">▼</span>
+索引
+</a>
+<div class="picker"><ul>
+<li><a href="documentation.html" class="nav-documentation">关于本文档</a></li>
+<li><a href="synopsis.html" class="nav-synopsis">用法与示例</a></li>
+<li>
+<a href="index.html">首页</a>
+</li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="assert.html" class="nav-assert">assert 断言</a></li>
+<li><a href="async_hooks.html" class="nav-async_hooks">async_hooks 异步钩子</a></li>
+<li><a href="buffer.html" class="nav-buffer">buffer 缓冲区</a></li>
+<li><a href="addons.html" class="nav-addons">C++插件</a></li>
+<li><a href="n-api.html" class="nav-n-api">C/C++插件(使用Node-API)</a></li>
+<li><a href="embedding.html" class="nav-embedding">C++嵌入器</a></li>
+<li><a href="child_process.html" class="nav-child_process">child_process 子进程</a></li>
+<li><a href="cluster.html" class="nav-cluster">cluster 集群</a></li>
+<li><a href="cli.html" class="nav-cli">CLI 命令行</a></li>
+<li><a href="console.html" class="nav-console">console 控制台</a></li>
+<li><a href="crypto.html" class="nav-crypto">crypto 加密</a></li>
+<li><a href="debugger.html" class="nav-debugger">debugger 调试器</a></li>
+<li><a href="deprecations.html" class="nav-deprecations">deprecation 弃用</a></li>
+<li><a href="dgram.html" class="nav-dgram">dgram 数据报</a></li>
+<li><a href="dns.html" class="nav-dns">dns 域名服务器</a></li>
+<li><a href="domain.html" class="nav-domain">domain 域</a></li>
+<li><a href="errors.html" class="nav-errors">Error 错误</a></li>
+<li><a href="events.html" class="nav-events">events 事件触发器</a></li>
+<li><a href="fs.html" class="nav-fs">fs 文件系统</a></li>
+<li><a href="globals.html" class="nav-globals">global 全局变量</a></li>
+<li><a href="http.html" class="nav-http">http 超文本传输协议</a></li>
+<li><a href="http2.html" class="nav-http2">http2 超文本传输协议2.0</a></li>
+<li><a href="https.html" class="nav-https">https 安全超文本传输协议</a></li>
+<li><a href="inspector.html" class="nav-inspector">inspector 检查器</a></li>
+<li><a href="intl.html" class="nav-intl">Intl 国际化</a></li>
+<li><a href="module.html" class="nav-module">module 模块</a></li>
+<li><a href="modules.html" class="nav-modules">module/cjs CommonJS模块</a></li>
+<li><a href="esm.html" class="nav-esm">module/esm ECMAScript模块</a></li>
+<li><a href="packages.html" class="nav-packages">module/package 包模块</a></li>
+<li><a href="net.html" class="nav-net">net 网络</a></li>
+<li><a href="os.html" class="nav-os">os 操作系统</a></li>
+<li><a href="path.html" class="nav-path">path 路径</a></li>
+<li><a href="perf_hooks.html" class="nav-perf_hooks">perf_hooks 性能钩子</a></li>
+<li><a href="policy.html" class="nav-policy active">policy 安全策略</a></li>
+<li><a href="process.html" class="nav-process">process 进程</a></li>
+<li><a href="punycode.html" class="nav-punycode">punycode 域名代码</a></li>
+<li><a href="querystring.html" class="nav-querystring">querystring 查询字符串</a></li>
+<li><a href="readline.html" class="nav-readline">readline 逐行读取</a></li>
+<li><a href="repl.html" class="nav-repl">repl 交互式解释器</a></li>
+<li><a href="report.html" class="nav-report">report 诊断报告</a></li>
+<li><a href="stream.html" class="nav-stream">stream 流</a></li>
+<li><a href="string_decoder.html" class="nav-string_decoder">string_decoder 字符串解码器</a></li>
+<li><a href="timers.html" class="nav-timers">timers 定时器</a></li>
+<li><a href="tls.html" class="nav-tls">tls 安全传输层</a></li>
+<li><a href="tracing.html" class="nav-tracing">trace_events 跟踪事件</a></li>
+<li><a href="tty.html" class="nav-tty">tty 终端</a></li>
+<li><a href="url.html" class="nav-url">url 网址</a></li>
+<li><a href="util.html" class="nav-util">util 实用工具</a></li>
+<li><a href="v8.html" class="nav-v8">v8 引擎</a></li>
+<li><a href="vm.html" class="nav-vm">vm 虚拟机</a></li>
+<li><a href="wasi.html" class="nav-wasi">wasi 网络汇编系统接口</a></li>
+<li><a href="worker_threads.html" class="nav-worker_threads">worker_threads 工作线程</a></li>
+<li><a href="zlib.html" class="nav-zlib">zlib 压缩</a></li>
+</ul></div>
+</li>
+<li class="picker-header">
+<a href="#">
+<span class="collapsed-arrow">&#x25ba;</span><span class="expanded-arrow">&#x25bc;</span>
+其他版本
+</a>
+<div class="picker"><ol id="alt-docs">
+<li><a href="/api/policy.html">18.7.0</a></li><li><a href="/api-v16/policy.html">16.16.0</a></li><li><a href="/api-v14/policy.html">14.20.0</a></li><li><a href="/api-v12/policy.html">12.22.12</a></li>
+</ol></div>
+</li>
+<li>
+<a href="http://api.nodejs.cn/?v=12">文档搜索</a>
+</li>
+</ul>
+</div>
+<hr>
+</header>
+<details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_1"><a href="#policies">policy 安全策略</a></span>
+<ul>
+<li><a href="#enabling">启用</a></li>
+<li><a href="#features">特性</a>
+<ul>
+<li><a href="#error-behavior">错误的行为</a></li>
+<li><a href="#integrity-checks">完整性检查</a></li>
+<li><a href="#dependency-redirection">依赖项重定向</a>
+<ul>
+<li><a href="#example-patched-dependency">示例：修补依赖项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+<div id="apicontent">
+<h2>policy 安全策略<span><a class="mark" href="#policies" id="policies">#</a></span><a aria-hidden="true" class="legacy" id="policy_policies"></a></h2><p class="tip_wrap" data-show_trans="1" data-item_id="#policies">
+<a href="policy/policies.html" class="tip_trans">中英对照</a>
+</p>
+<p></p><div class="api_stability api_stability_1"><a href="/api/documentation.html#stability-index">稳定性: 1</a> - 实验</div><p></p>
+<p>Node.js 包含了对创建加载代码的策略的实验性支持。</p>
+<p>策略是一个安全特性，旨在保证 Node.js 能够加载哪些代码。
+策略的使用假定策略文件的安全实践，例如确保 Node.js 应用程序不能使用文件权限覆盖策略文件。</p>
+<p>一个典型的设置是将策略文件创建为与运行 Node.js 的用户 ID 不同的用户 ID，并向运行 Node.js 的用户 ID 授予读取权限。</p>
+<section><h3>启用<span><a class="mark" href="#enabling" id="enabling">#</a></span><a aria-hidden="true" class="legacy" id="policy_enabling"></a></h3><p class="tip_wrap" data-show_trans="1" data-item_id="#enabling">
+<a href="policy/enabling.html" class="tip_trans">中英对照</a>
+</p>
+<p><code>--experimental-policy</code> 标志可用于在加载模块时启用策略特性。</p>
+<p>一旦设置好，则所有模块都必须符合传给标志的策略清单文件：</p>
+<pre><code class="language-bash">node --experimental-policy=policy.json app.js</code></pre>
+<p>策略清单将用于对 Node.js 加载的代码实施约束。</p>
+<p>为了减少对磁盘上策略文件的篡改，可以通过 <code>--policy-integrity</code> 提供策略文件本身的完整性。
+这允许运行 <code>node</code> 并断言策略文件内容，即使文件在磁盘上被更改。</p>
+<pre><code class="language-bash">node --experimental-policy=policy.json --policy-integrity=<span class="hljs-string">"sha384-SggXRQHwCG8g+DktYYzxkXRIkTiEYWBHqev0xnpCxYlqMBufKZHAHQM3/boDaI/0"</span> app.js</code></pre>
+</section><section><h3>特性<span><a class="mark" href="#features" id="features">#</a></span><a aria-hidden="true" class="legacy" id="policy_features"></a></h3>
+<h4>错误的行为<span><a class="mark" href="#error-behavior" id="error-behavior">#</a></span><a aria-hidden="true" class="legacy" id="policy_error_behavior"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#error-behavior">
+<a href="policy/error_behavior.html" class="tip_trans">中英对照</a>
+</p>
+<p>当策略检查失败时，Node.js 默认会抛出错误。
+通过在策略清单中定义 “onerror” 字段，可以将错误行为更改为几种可能性之一。
+以下值可用于更改行为：</p>
+<ul>
+<li><code>"exit"</code>: 将立即退出进程。
+不允许运行任何清理代码。</li>
+<li><code>"log"</code>: 将在发生故障的地方记录错误。</li>
+<li><code>"throw"</code>: 将在失败的地方抛出 JS 错误。
+这是默认值。</li>
+</ul>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"onerror"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"log"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"resources"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"./app/checked.js"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"integrity"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"sha384-SggXRQHwCG8g+DktYYzxkXRIkTiEYWBHqev0xnpCxYlqMBufKZHAHQM3/boDaI/0"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
+<h4>完整性检查<span><a class="mark" href="#integrity-checks" id="integrity-checks">#</a></span><a aria-hidden="true" class="legacy" id="policy_integrity_checks"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#integrity-checks">
+<a href="policy/integrity_checks.html" class="tip_trans">中英对照</a>
+</p>
+<p>策略文件必须使用与绝对 URL 关联的浏览器<a href="http://url.nodejs.cn/JDfR74" rel="nofollow" target="_blank">完整性属性</a>兼容的子资源完整性字符串的完整性检查。</p>
+<p>如果资源与清单中列出的完整性不匹配，则会抛出错误。</p>
+<p>允许加载文件 <code>checked.js</code> 的示例策略文件：</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"resources"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"./app/checked.js"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"integrity"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"sha384-SggXRQHwCG8g+DktYYzxkXRIkTiEYWBHqev0xnpCxYlqMBufKZHAHQM3/boDaI/0"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
+<p>策略清单中列出的每个资源都可以采用以下格式之一来确定其位置：</p>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<p>当加载资源时，整个 URL 必须匹配，包括搜索参数和哈希片段。
+尝试加载 <code>./a.js</code> 时不会使用 <code>./a.js?b</code>，反之亦然。</p>
+<p>要生成完整性字符串，则可以使用 <code>printf "sha384-$(cat checked.js | openssl dgst -sha384 -binary | base64)"</code> 等脚本。</p>
+<p>完整性可以指定为布尔值 <code>true</code>，以接受任何对本地开发有用的资源主体。
+不建议在生产中这样做，因为它会允许资源的意外更改被认为是有效的。</p>
+<h4>依赖项重定向<span><a class="mark" href="#dependency-redirection" id="dependency-redirection">#</a></span><a aria-hidden="true" class="legacy" id="policy_dependency_redirection"></a></h4><p class="tip_wrap" data-show_trans="1" data-item_id="#dependency-redirection">
+<a href="policy/dependency_redirection.html" class="tip_trans">中英对照</a>
+</p>
+<p>应用程序可能需要发布模块的补丁版本或阻止模块允许所有模块访问所有其他模块。
+可以通过拦截加载希望被替换的模块的尝试来使用重定向。</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"builtins"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"resources"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"./app/checked.js"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"dependencies"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"fs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"os"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./app/node_modules/alt-os"</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
+<p>可以指定依赖项映射的布尔值 <code>true</code> 以允许模块加载任何说明符而无需重定向。
+这对本地开发很有用，并且在生产中可能有一些有效的用途，但只有在审核模块以确保其行为有效后才应谨慎使用。</p>
+<h5>示例：修补依赖项<span><a class="mark" href="#example-patched-dependency" id="example-patched-dependency">#</a></span><a aria-hidden="true" class="legacy" id="policy_example_patched_dependency"></a></h5><p class="tip_wrap" data-show_trans="1" data-item_id="#example-patched-dependency">
+<a href="policy/example_patched_dependency.html" class="tip_trans">中英对照</a>
+</p>
+<p>重定向的依赖可以提供适合应用程序的衰减或修改功能。
+例如，通过封装原始记录有关函数持续时间的计时数据：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> original = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fn'</span>);
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">function</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params">...args</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">time</span>();
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>.<span class="hljs-property">target</span> ?
+      <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">construct</span>(original, args) :
+      <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">apply</span>(original, <span class="hljs-variable language_">this</span>, args);
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">timeEnd</span>();
+  }
+};</code></pre></section>
+</div>
+</div>
+</div>
+<div id="scroll_top" onclick="window.scrollTo(0,0);">返回顶部</div>
+<div id="wxcode_box" style="display: none;">
+<div id="wxcode_img_box">
+<img id="wxcode_img">
+<div id="wxcode_img_tips">微信扫码登录</div>
+</div>
+</div>
+<script>
+    window._API_NAME = "policy";
+    window._UPDATE_TIME = "20220728214329";
+  </script>
+
+</body></html>
