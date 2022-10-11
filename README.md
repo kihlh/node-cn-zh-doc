@@ -8,3 +8,4 @@ node12中文文档
 
 #### 无法打开请安装 [Webview2](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
 #### 程序是单文件（编译完成）
+##### 其他平台请自行编译(tauri)（因为我使用的是win 不知道如何编译跨平台）
