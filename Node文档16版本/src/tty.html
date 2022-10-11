@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>tty 终端 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411161333" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="tty" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_2"><a href="#tty_tty">tty 终端</a></span>
+<ul>
+<li><a href="#tty_class_tty_readstream"><code>tty.ReadStream</code> 类</a>
+<ul>
+<li><a href="#tty_readstream_israw"><code>readStream.isRaw</code></a></li>
+<li><a href="#tty_readstream_istty"><code>readStream.isTTY</code></a></li>
+<li><a href="#tty_readstream_setrawmode_mode"><code>readStream.setRawMode(mode)</code></a></li>
+</ul>
+</li>
+<li><a href="#tty_class_tty_writestream"><code>tty.WriteStream</code> 类</a>
+<ul>
+<li><a href="#tty_event_resize"><code>'resize'</code> 事件</a></li>
+<li><a href="#tty_writestream_clearline_dir_callback"><code>writeStream.clearLine(dir[, callback])</code></a></li>
+<li><a href="#tty_writestream_clearscreendown_callback"><code>writeStream.clearScreenDown([callback])</code></a></li>
+<li><a href="#tty_writestream_columns"><code>writeStream.columns</code></a></li>
+<li><a href="#tty_writestream_cursorto_x_y_callback"><code>writeStream.cursorTo(x[, y][, callback])</code></a></li>
+<li><a href="#tty_writestream_getcolordepth_env"><code>writeStream.getColorDepth([env])</code></a></li>
+<li><a href="#tty_writestream_getwindowsize"><code>writeStream.getWindowSize()</code></a></li>
+<li><a href="#tty_writestream_hascolors_count_env"><code>writeStream.hasColors([count][, env])</code></a></li>
+<li><a href="#tty_writestream_istty"><code>writeStream.isTTY</code></a></li>
+<li><a href="#tty_writestream_movecursor_dx_dy_callback"><code>writeStream.moveCursor(dx, dy[, callback])</code></a></li>
+<li><a href="#tty_writestream_rows"><code>writeStream.rows</code></a></li>
+</ul>
+</li>
+<li><a href="#tty_tty_isatty_fd"><code>tty.isatty(fd)</code></a></li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>tty 终端<span><a class="mark" href="#tty_tty" id="tty_tty">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="tty">
+                <a href="tty/tty.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.10.0-->
+<p></p><div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> - 稳定</div><p></p>
+<p><strong>源代码:</strong> <a rel="nofollow" href="http://url.nodejs.cn/b54Arr">lib/tty.js</a></p>
+<p><code>tty</code> 模块提供了 <code>tty.ReadStream</code> 和 <code>tty.WriteStream</code> 类。
+在大多数情况中，不需要也不可能直接地使用此模块。
+当然，它可以被使用以下方式访问：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> tty = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tty'</span>);</code></pre>
+<p>当 Node.js 检测到它被运行时附加了一个文本终端（TTY），则默认情况下，<a href="process.html#process_process_stdin"><code>process.stdin</code></a> 会被初始化为 <code>tty.ReadStream</code> 的实例，<a href="process.html#process_process_stdout"><code>process.stdout</code></a> 和 <a href="process.html#process_process_stderr"><code>process.stderr</code></a> 会被初始化为 <code>tty.WriteStream</code> 的实例。
+判断 Node.js 是否被运行在一个 TTY 上下文中的首选方法是检查 <code>process.stdout.isTTY</code> 属性的值是否为 <code>true</code>：</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node -p -e <span class="hljs-string">"Boolean(process.stdout.isTTY)"</span></span>
+true
+<span class="hljs-meta">$</span><span class="bash"> node -p -e <span class="hljs-string">"Boolean(process.stdout.isTTY)"</span> | cat</span>
+false</code></pre>
+<p>在大多数情况下，应用程序几乎没有理由手动地创建 <code>tty.ReadStream</code> 和 <code>tty.WriteStream</code> 类的实例。</p>
+<section><h3><code>tty.ReadStream</code> 类<span><a class="mark" href="#tty_class_tty_readstream" id="tty_class_tty_readstream">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_tty_readstream">
+                <a href="tty/class_tty_readstream.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.5.8</span>
+</div>
+<ul>
+<li>继承自: <a href="net.html#net_class_net_socket" rel="nofollow" class="type">&lt;net.Socket&gt;</a></li>
+</ul>
+<p>表示 TTY 的可读端。
+在正常情况中，<a href="process.html#process_process_stdin"><code>process.stdin</code></a> 将会是 Node.js 进程中唯一的 <code>tty.ReadStream</code> 实例，并且没有理由创建其他的实例。</p>
+<h4><code>readStream.isRaw</code><span><a class="mark" href="#tty_readstream_israw" id="tty_readstream_israw">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="readstream_israw">
+                <a href="tty/readstream_israw.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<p>一个 <code>boolean</code>，如果 TTY 当前被配置为作为原始设备运行，则为 <code>true</code>。
+默认为 <code>false</code>。</p>
+<h4><code>readStream.isTTY</code><span><a class="mark" href="#tty_readstream_istty" id="tty_readstream_istty">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="readstream_istty">
+                <a href="tty/readstream_istty.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.5.8</span>
+</div>
+<p>一个 <code>boolean</code>，对于 <code>tty.ReadStream</code> 实例始终为 <code>true</code>。</p>
+<h4><code>readStream.setRawMode(mode)</code><span><a class="mark" href="#tty_readstream_setrawmode_mode" id="tty_readstream_setrawmode_mode">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="readstream_setrawmode_mode">
+                <a href="tty/readstream_setrawmode_mode.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<ul>
+<li><code>mode</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果为 <code>true</code>，则将 <code>tty.ReadStream</code> 配置为作为原始设备运行。
+如果为 <code>false</code>，则将 <code>tty.ReadStream</code> 配置为以其默认模式运行。
+<code>readStream.isRaw</code> 属性将会按最终的模式设置。</li>
+<li>返回: <a href="http://url.nodejs.cn/v7Fsu2" rel="nofollow" class="type">&lt;this&gt;</a> 读取流的实例。</li>
+</ul>
+<p>允许配置 <code>tty.ReadStream</code>，使其作为原始设备运行。</p>
+<p>在原始模式中，输入始终可以逐个字符，但不包括修饰符。
+此外，终端对字符的所有特殊处理都会被禁用，包括回显的输入字符。
+在此模式中，<kbd>Ctrl</kbd>+<kbd>C</kbd> 将不再产生 <code>SIGINT</code>。</p>
+</section><section><h3><code>tty.WriteStream</code> 类<span><a class="mark" href="#tty_class_tty_writestream" id="tty_class_tty_writestream">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_tty_writestream">
+                <a href="tty/class_tty_writestream.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.5.8</span>
+</div>
+<ul>
+<li>继承自: <a href="net.html#net_class_net_socket" rel="nofollow" class="type">&lt;net.Socket&gt;</a></li>
+</ul>
+<p>表示 TTY 的可写端。
+在正常情况中，<a href="process.html#process_process_stdout"><code>process.stdout</code></a> 和 <a href="process.html#process_process_stderr"><code>process.stderr</code></a> 将会是为 Node.js 进程创建的唯一的 <code>tty.WriteStream</code> 实例，并且没有理由创建其他的实例。</p>
+<h4><code>'resize'</code> 事件<span><a class="mark" href="#tty_event_resize" id="tty_event_resize">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="event_resize">
+                <a href="tty/event_resize.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<p>每当 <code>writeStream.columns</code> 或 <code>writeStream.rows</code> 属性发生变化时，则触发 <code>'resize'</code> 事件。
+当调用时，没有参数传给监听器回调。</p>
+<pre><code class="language-js">process.stdout.on(<span class="hljs-string">'resize'</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'屏幕大小已改变'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${process.stdout.columns}</span>x<span class="hljs-subst">${process.stdout.rows}</span>`</span>);
+});</code></pre>
+<h4><code>writeStream.clearLine(dir[, callback])</code><span><a class="mark" href="#tty_writestream_clearline_dir_callback" id="tty_writestream_clearline_dir_callback">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_clearline_dir_callback">
+                <a href="tty/writestream_clearline_dir_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.7.0</td>
+<td><p>流的 write() 回调和返回值会被导出。</p></td></tr>
+<tr><td>v0.7.7</td>
+<td><p><span>新增于: v0.7.7</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>dir</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a>
+<ul>
+<li><code>-1</code>: 从光标向左。</li>
+<li><code>1</code>: 从光标向右。</li>
+<li><code>0</code>: 整行。</li>
+</ul>
+</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 当操作完成时调用。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果流期望调用的代码在继续写入其他数据之前等待 <code>'drain'</code> 事件触发，则为 <code>false</code>，否则为 <code>true</code>。</li>
+</ul>
+<p><code>writeStream.clearLine()</code> 会以 <code>dir</code> 指定的方向清理此 <code>WriteStream</code> 的当前行。</p>
+<h4><code>writeStream.clearScreenDown([callback])</code><span><a class="mark" href="#tty_writestream_clearscreendown_callback" id="tty_writestream_clearscreendown_callback">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_clearscreendown_callback">
+                <a href="tty/writestream_clearscreendown_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.7.0</td>
+<td><p>流的 write() 回调和返回值会被导出。</p></td></tr>
+<tr><td>v0.7.7</td>
+<td><p><span>新增于: v0.7.7</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 当操作完成时调用。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果流期望调用的代码在继续写入其他数据之前等待 <code>'drain'</code> 事件触发，则为 <code>false</code>，否则为 <code>true</code>。</li>
+</ul>
+<p><code>writeStream.clearScreenDown()</code> 会从当前的光标向下清理此 <code>WriteStream</code>。</p>
+<h4><code>writeStream.columns</code><span><a class="mark" href="#tty_writestream_columns" id="tty_writestream_columns">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_columns">
+                <a href="tty/writestream_columns.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<p>一个 <code>number</code>，表明 TTY 当前具有的列数。
+每当 <code>'resize'</code> 事件被触发时，此属性会被更新。</p>
+<h4><code>writeStream.cursorTo(x[, y][, callback])</code><span><a class="mark" href="#tty_writestream_cursorto_x_y_callback" id="tty_writestream_cursorto_x_y_callback">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_cursorto_x_y_callback">
+                <a href="tty/writestream_cursorto_x_y_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.7.0</td>
+<td><p>流的 write() 回调和返回值会被导出。</p></td></tr>
+<tr><td>v0.7.7</td>
+<td><p><span>新增于: v0.7.7</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>x</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+<li><code>y</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 当操作完成时调用。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果流期望调用的代码在继续写入其他数据之前等待 <code>'drain'</code> 事件触发，则为 <code>false</code>，否则为 <code>true</code>。</li>
+</ul>
+<p><code>writeStream.cursorTo()</code> 会将 <code>WriteStream</code> 的光标移动到指定的位置。</p>
+<h4><code>writeStream.getColorDepth([env])</code><span><a class="mark" href="#tty_writestream_getcolordepth_env" id="tty_writestream_getcolordepth_env">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_getcolordepth_env">
+                <a href="tty/writestream_getcolordepth_env.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v9.9.0</span>
+</div>
+<ul>
+<li><code>env</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 包含要检查的环境变量的对象。这使得能够模拟特定终端的使用。<strong>默认值:</strong> <code>process.env</code>。</li>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+</ul>
+<p>返回:</p>
+<ul>
+<li><code>1</code> 表示支持 2 种颜色，</li>
+<li><code>4</code> 表示支持 16 种颜色，</li>
+<li><code>8</code> 表示支持 256 种颜色，</li>
+<li><code>24</code> 表示支持 16,777,216 种颜色。</li>
+</ul>
+<p>使用此函数可以检测终端支持的颜色数。
+鉴于终端中颜色的特性，可能存在假的正数或假的负数。
+这取决于进程信息与环境变量（可能会隐瞒使用的终端）。
+可以传入 <code>env</code> 对象来模拟特定终端的使用。
+这对于检查特定环境设置的行为很有用。</p>
+<p>如果要强制执行特定的颜色支持，则使用以下的环境设置之一。</p>
+<ul>
+<li>2 种颜色: <code>FORCE_COLOR = 0</code> (禁用颜色)</li>
+<li>16 种颜色: <code>FORCE_COLOR = 1</code></li>
+<li>256 种颜色: <code>FORCE_COLOR = 2</code></li>
+<li>16,777,216 种颜色: <code>FORCE_COLOR = 3</code></li>
+</ul>
+<p>也可以使用 <code>NO_COLOR</code> 和 <code>NODE_DISABLE_COLORS</code> 环境变量来禁用颜色支持。</p>
+<h4><code>writeStream.getWindowSize()</code><span><a class="mark" href="#tty_writestream_getwindowsize" id="tty_writestream_getwindowsize">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_getwindowsize">
+                <a href="tty/writestream_getwindowsize.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number[]&gt;</a></li>
+</ul>
+<p><code>writeStream.getWindowSize()</code> 会返回与此 <code>WriteStream</code> 对应的 <a href="tty.html">TTY</a> 的大小。
+该数组的类型为 <code>[numColumns, numRows]</code>，其中 <code>numColumns</code> 和 <code>numRows</code> 分别表示对应的 <a href="tty.html">TTY</a> 中的列数和行数。</p>
+<h4><code>writeStream.hasColors([count][, env])</code><span><a class="mark" href="#tty_writestream_hascolors_count_env" id="tty_writestream_hascolors_count_env">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_hascolors_count_env">
+                <a href="tty/writestream_hascolors_count_env.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v11.13.0, v10.16.0</span>
+</div>
+<ul>
+<li><code>count</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 要求的颜色数（最小为 2）。<strong>默认值:</strong> 16。</li>
+<li><code>env</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 包含要检查的环境变量的对象。这使得能够模拟特定终端的使用。<strong>默认值:</strong> <code>process.env</code>。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a></li>
+</ul>
+<p>如果 <code>writeStream</code> 支持至少与 <code>count</code> 中提供的颜色数一样多，则返回 <code>true</code>。
+最小的支持为 2（黑色和白色）。</p>
+<p>这也存在与 <a href="tty.html#tty_writestream_getcolordepth_env"><code>writeStream.getColorDepth()</code></a> 中描述的相同的假正数或假负数。</p>
+<pre><code class="language-js">process.stdout.hasColors();
+<span class="hljs-comment">// 返回 true 或 false，取决于 `stdout` 是否支持至少 16 种颜色。</span>
+process.stdout.hasColors(<span class="hljs-number">256</span>);
+<span class="hljs-comment">// 返回 true 或 false，取决于 `stdout` 是否支持至少 256 种颜色。</span>
+process.stdout.hasColors({ <span class="hljs-attr">TMUX</span>: <span class="hljs-string">'1'</span> });
+<span class="hljs-comment">// 返回 true。</span>
+process.stdout.hasColors(<span class="hljs-number">2</span> ** <span class="hljs-number">24</span>, { <span class="hljs-attr">TMUX</span>: <span class="hljs-string">'1'</span> });
+<span class="hljs-comment">// 返回 false (环境设置假设支持 2 ** 8 种颜色)。</span></code></pre>
+<h4><code>writeStream.isTTY</code><span><a class="mark" href="#tty_writestream_istty" id="tty_writestream_istty">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_istty">
+                <a href="tty/writestream_istty.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.5.8</span>
+</div>
+<p>一个 <code>boolean</code>，始终为 <code>true</code>。</p>
+<h4><code>writeStream.moveCursor(dx, dy[, callback])</code><span><a class="mark" href="#tty_writestream_movecursor_dx_dy_callback" id="tty_writestream_movecursor_dx_dy_callback">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_movecursor_dx_dy_callback">
+                <a href="tty/writestream_movecursor_dx_dy_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.7.0</td>
+<td><p>流的 write() 回调和返回值会被导出。</p></td></tr>
+<tr><td>v0.7.7</td>
+<td><p><span>新增于: v0.7.7</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>dx</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+<li><code>dy</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 当操作完成时调用。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果流期望调用的代码在继续写入其他数据之前等待 <code>'drain'</code> 事件触发，则为 <code>false</code>，否则为 <code>true</code>。</li>
+</ul>
+<p><code>writeStream.moveCursor()</code> 会将 <code>WriteStream</code> 的光标相对于其当前的位置移动。</p>
+<h4><code>writeStream.rows</code><span><a class="mark" href="#tty_writestream_rows" id="tty_writestream_rows">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="writestream_rows">
+                <a href="tty/writestream_rows.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<p>一个 <code>number</code>，表明 TTY 当前具有的行数。
+每当 <code>'resize'</code> 事件被触发时，此属性会被更新。</p>
+</section><section><h3><code>tty.isatty(fd)</code><span><a class="mark" href="#tty_tty_isatty_fd" id="tty_tty_isatty_fd">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="tty_isatty_fd">
+                <a href="tty/tty_isatty_fd.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.5.8</span>
+</div>
+<ul>
+<li><code>fd</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 数字型的文件描述符。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a></li>
+</ul>
+<p>如果给定的 <code>fd</code> 与 TTY 相关联，则 <code>tty.isatty()</code> 方法返回 <code>true</code>，否则返回 <code>false</code>（包括当 <code>fd</code> 不是一个非负整数时）。</p></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

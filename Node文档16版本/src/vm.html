@@ -1,0 +1,1403 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>vm 虚拟机 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411163697" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="vm" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_2"><a href="#vm_vm_executing_javascript">vm 虚拟机</a></span>
+<ul>
+<li><a href="#vm_class_vm_script"><code>vm.Script</code> 类</a>
+<ul>
+<li><a href="#vm_new_vm_script_code_options"><code>new vm.Script(code[, options])</code></a></li>
+<li><a href="#vm_script_createcacheddata"><code>script.createCachedData()</code></a></li>
+<li><a href="#vm_script_runincontext_contextifiedobject_options"><code>script.runInContext(contextifiedObject[, options])</code></a></li>
+<li><a href="#vm_script_runinnewcontext_contextobject_options"><code>script.runInNewContext([contextObject[, options]])</code></a></li>
+<li><a href="#vm_script_runinthiscontext_options"><code>script.runInThisContext([options])</code></a></li>
+</ul>
+</li>
+<li><span class="stability_1"><a href="#vm_vm_measurememory_options"><code>vm.measureMemory([options])</code></a></span></li>
+<li><span class="stability_1"><a href="#vm_class_vm_module"><code>vm.Module</code> 类</a></span>
+<ul>
+<li><a href="#vm_module_dependencyspecifiers"><code>module.dependencySpecifiers</code></a></li>
+<li><a href="#vm_module_error"><code>module.error</code></a></li>
+<li><a href="#vm_module_evaluate_options"><code>module.evaluate([options])</code></a></li>
+<li><a href="#vm_module_identifier"><code>module.identifier</code></a></li>
+<li><a href="#vm_module_link_linker"><code>module.link(linker)</code></a></li>
+<li><a href="#vm_module_namespace"><code>module.namespace</code></a></li>
+<li><a href="#vm_module_status"><code>module.status</code></a></li>
+</ul>
+</li>
+<li><span class="stability_1"><a href="#vm_class_vm_sourcetextmodule"><code>vm.SourceTextModule</code> 类</a></span>
+<ul>
+<li><a href="#vm_new_vm_sourcetextmodule_code_options"><code>new vm.SourceTextModule(code[, options])</code></a></li>
+<li><a href="#vm_sourcetextmodule_createcacheddata"><code>sourceTextModule.createCachedData()</code></a></li>
+</ul>
+</li>
+<li><span class="stability_1"><a href="#vm_class_vm_syntheticmodule"><code>vm.SyntheticModule</code> 类</a></span>
+<ul>
+<li><a href="#vm_new_vm_syntheticmodule_exportnames_evaluatecallback_options"><code>new vm.SyntheticModule(exportNames, evaluateCallback[, options])</code></a></li>
+<li><a href="#vm_syntheticmodule_setexport_name_value"><code>syntheticModule.setExport(name, value)</code></a></li>
+</ul>
+</li>
+<li><a href="#vm_vm_compilefunction_code_params_options"><code>vm.compileFunction(code[, params[, options]])</code></a></li>
+<li><a href="#vm_vm_createcontext_contextobject_options"><code>vm.createContext([contextObject[, options]])</code></a></li>
+<li><a href="#vm_vm_iscontext_object"><code>vm.isContext(object)</code></a></li>
+<li><a href="#vm_vm_runincontext_code_contextifiedobject_options"><code>vm.runInContext(code, contextifiedObject[, options])</code></a></li>
+<li><a href="#vm_vm_runinnewcontext_code_contextobject_options"><code>vm.runInNewContext(code[, contextObject[, options]])</code></a></li>
+<li><a href="#vm_vm_runinthiscontext_code_options"><code>vm.runInThisContext(code[, options])</code></a></li>
+<li><a href="#vm_example_running_an_http_server_within_a_vm">示例：在 VM 中运行 HTTP Server</a></li>
+<li><a href="#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化一个对象意味着什么？</a></li>
+<li><a href="#vm_timeout_interactions_with_asynchronous_tasks_and_promises">与异步任务和 Promise 的超时交互</a></li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>vm 虚拟机<span><a class="mark" href="#vm_vm_executing_javascript" id="vm_vm_executing_javascript">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="vm_executing_javascript">
+                <a href="vm/vm_executing_javascript.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.10.0-->
+<p></p><div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> - 稳定</div><p></p>
+<!--name=vm-->
+<p><strong>源代码:</strong> <a rel="nofollow" href="http://url.nodejs.cn/3thRQ9">lib/vm.js</a></p>
+<p><code>vm</code> 模块使能够在 V8 虚拟机上下文中编译和运行代码。
+<strong><code>vm</code> 模块不是一个安全的机制。
+不要使用它来运行不受信任的代码。</strong></p>
+<p>JavaScript 代码可以被立即地编译并且运行，或者编译、保存并且稍后运行。</p>
+<p>一个常见的用例是在一个不同的 V8 上下文中运行代码。
+这意味着被调用的代码与调用的代码具有一个不同的全局对象。</p>
+<p>通过<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>一个对象可以提供上下文。
+被调用的代码将上下文中的任何属性视为一个全局变量。
+由被调用的代码引起的对全局变量的任何更改都被反映在上下文对象中。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">const</span> context = { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span> };
+vm.createContext(context); <span class="hljs-comment">// 上下文隔离化该对象。</span>
+
+<span class="hljs-keyword">const</span> code = <span class="hljs-string">'x += 40; var y = 17;'</span>;
+<span class="hljs-comment">// `x` 和 `y` 是上下文中的全局变量。</span>
+<span class="hljs-comment">// 最初，x 具有值 2，因为这是 context.x 的值。</span>
+vm.runInContext(code, context);
+
+<span class="hljs-built_in">console</span>.log(context.x); <span class="hljs-comment">// 42</span>
+<span class="hljs-built_in">console</span>.log(context.y); <span class="hljs-comment">// 17</span>
+
+<span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">// 1; y 是未定义的。</span></code></pre>
+<section><h3><code>vm.Script</code> 类<span><a class="mark" href="#vm_class_vm_script" id="vm_class_vm_script">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_vm_script">
+                <a href="vm/class_vm_script.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.3.1</span>
+</div>
+<p><code>vm.Script</code> 类的实例包含可以在特定上下文中执行的预编译脚本。</p>
+<h4><code>new vm.Script(code[, options])</code><span><a class="mark" href="#vm_new_vm_script_code_options" id="vm_new_vm_script_code_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="new_vm_script_code_options">
+                <a href="vm/new_vm_script_code_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v10.6.0</td>
+<td><p>The <code>produceCachedData</code> is deprecated in favour of <code>script.createCachedData()</code>.</p></td></tr>
+<tr><td>v5.7.0</td>
+<td><p>The <code>cachedData</code> and <code>produceCachedData</code> options are supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 需要被解析的 JavaScript 代码。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a>
+<ul>
+<li><code>filename</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 定义供脚本生成的堆栈跟踪信息所使用的文件名。<strong>默认值:</strong> <code>'evalmachine.&lt;anonymous&gt;'</code>。</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的行号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的列号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> 为源码提供一个可选的存有 V8 代码缓存数据的 <code>Buffer</code>、<code>TypedArray</code> 或 <code>TypedArray</code>。
+如果提供了，则 <code>cachedDataRejected</code> 的值将会被设为要么为 <code>true</code> 要么为 <code>false</code>，这取决于 v8 引擎对数据的接受状况。</li>
+<li><code>produceCachedData</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 且 <code>cachedData</code> 不存在的时候，V8 将会试图为 <code>code</code> 生成代码缓存数据。
+一旦成功，则一个有 V8 代码缓存数据的 <code>Buffer</code> 将会被生成和储存在返回的 <code>vm.Script</code> 实例的 <code>cachedData</code> 属性里。
+<code>cachedDataProduced</code> 的值会被设置为 <code>true</code> 或者 <code>false</code>，这取决于代码缓存数据是否被成功生成。
+不推荐使用此选项，而应该使用 <code>script.createCachedData()</code>。<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>importModuleDynamically</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 在调用 <code>import()</code> 时评估此模块期间调用。
+如果未指定此选项，则对 <code>import()</code> 的调用将拒绝 <a href="errors.html#ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING"><code>ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING</code></a>。
+此选项是实验的模块的 API 的一部分。
+不建议在生产环境中使用。
+<ul>
+<li><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 传给 <code>import()</code> 的说明符。</li>
+<li><code>script</code> <a href="vm.html#vm_class_vm_script" rel="nofollow" class="type">&lt;vm.Script&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/uwQPrn" rel="nofollow" class="type">&lt;Module Namespace Object&gt;</a> | <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> 返回 <code>vm.Module</code> 以利用错误跟踪，并避免出现包含 <code>then</code> 函数导出的命名空间问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp; &nbsp;
+如果 <code>options</code> 是字符串，则它指定文件名。</p>
+<p>创建一个新的 <code>vm.Script</code> 对象只编译 <code>code</code> 但不会执行它。
+编译过的 <code>vm.Script</code> 此后可以被多次执行。
+<code>code</code> 是不绑定于任何全局对象的，相反，它仅仅绑定于每次执行它的对象。</p>
+<h4><code>script.createCachedData()</code><span><a class="mark" href="#vm_script_createcacheddata" id="vm_script_createcacheddata">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="script_createcacheddata">
+                <a href="vm/script_createcacheddata.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>创建一个可以被 <code>Script</code> 构造函数中 <code>cachedData</code> 选项使用的代码缓存。返回 <code>Buffer</code>。可以在任何时候不限次数地调用该方法。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> script = <span class="hljs-keyword">new</span> vm.Script(<span class="hljs-string">`
+function add(a, b) {
+  return a + b;
+}
+
+const x = add(1, 2);
+`</span>);
+
+<span class="hljs-keyword">const</span> cacheWithoutX = script.createCachedData();
+
+script.runInThisContext();
+
+<span class="hljs-keyword">const</span> cacheWithX = script.createCachedData();</code></pre>
+<h4><code>script.runInContext(contextifiedObject[, options])</code><span><a class="mark" href="#vm_script_runincontext_contextifiedobject_options" id="vm_script_runincontext_contextifiedobject_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="script_runincontext_contextifiedobject_options">
+                <a href="vm/script_runincontext_contextifiedobject_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v6.3.0</td>
+<td><p>The <code>breakOnSigint</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>contextifiedObject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 由 <code>vm.createContext()</code> 返回的<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>的对象。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p>在指定的 <code>contextifiedObject</code> 中执行 <code>vm.Script</code> 对象中被编译后的代码并返回其结果。被执行的代码无法获取本地作用域。</p>
+<p>以下的例子会编译一段代码，该代码会递增一个全局变量，给另外一个全局变量赋值。同时该代码被编译后会被多次执行。全局变量会被置于 <code>context</code> 对象内。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> context = {
+  <span class="hljs-attr">animal</span>: <span class="hljs-string">'cat'</span>,
+  <span class="hljs-attr">count</span>: <span class="hljs-number">2</span>
+};
+
+<span class="hljs-keyword">const</span> script = <span class="hljs-keyword">new</span> vm.Script(<span class="hljs-string">'count += 1; name = "kitty";'</span>);
+
+vm.createContext(context);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
+  script.runInContext(context);
+}
+
+<span class="hljs-built_in">console</span>.log(context);
+<span class="hljs-comment">// 打印: { animal: 'cat', count: 12, name: 'kitty' }</span></code></pre>
+<p>使用 <code>timeout</code> 或者 <code>breakOnSigint</code> 选项会导致若干新的事件循环以及对应的线程，这有一个非零的性能消耗。</p>
+<h4><code>script.runInNewContext([contextObject[, options]])</code><span><a class="mark" href="#vm_script_runinnewcontext_contextobject_options" id="vm_script_runinnewcontext_contextobject_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="script_runinnewcontext_contextobject_options">
+                <a href="vm/script_runinnewcontext_contextobject_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.6.0</td>
+<td><p>The <code>microtaskMode</code> option is supported now.</p></td></tr>
+<tr><td>v10.0.0</td>
+<td><p>The <code>contextCodeGeneration</code> option is supported now.</p></td></tr>
+<tr><td>v6.3.0</td>
+<td><p>The <code>breakOnSigint</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>contextObject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 一个将会被<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>的对象。如果是 <code>undefined</code>, 则会生成一个新的对象。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>contextName</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 新创建的上下文的人类可读名称。 <strong>默认值:</strong> <code>'VM Context i'</code>，其中 <code>i</code> 是创建的上下文的升序数字索引。</li>
+<li><code>contextOrigin</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 对应于新创建用于显示目的的上下文的<a href="http://url.nodejs.cn/SYyZxA">原点</a>。
+原点应格式化为类似一个 URL，但只包含协议，主机和端口（如果需要），例如 <a href="url.html#url_class_url"><code>URL</code></a> 对象的 <a href="url.html#url_url_origin"><code>url.origin</code></a> 属性的值。 最值得注意的是，此字符串应省略尾部斜杠，因为它表示路径。 <strong>默认值:</strong> <code>''</code>。</li>
+<li><code>contextCodeGeneration</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>strings</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则对 <code>eval</code> 或函数构造函数（<code>Function</code>、<code>GeneratorFunction</code> 等）的任何调用都将抛出 <code>EvalError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>wasm</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则任何编译 WebAssembly 模块的尝试都将抛出 <code>WebAssembly.CompileError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+</ul>
+</li>
+<li><code>microtaskMode</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> If set to <code>afterEvaluate</code>, microtasks (tasks
+scheduled through <code>Promise</code>s and <code>async function</code>s) will be run immediately
+after the script has run. They are included in the <code>timeout</code> and
+<code>breakOnSigint</code> scopes in that case.</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p>首先给指定的 <code>contextObject</code> 提供一个隔离的上下文, 再在此上下文中执行 <code>vm.Script</code> 中被编译的代码，最后返回结果。运行中的代码无法获取本地作用域。</p>
+<p>以下的例子会编译一段代码，该代码会递增一个全局变量，给另外一个全局变量赋值。同时该代码被编译后会被多次执行。全局变量会被置于各个独立的 <code>context</code> 对象内。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> script = <span class="hljs-keyword">new</span> vm.Script(<span class="hljs-string">'globalVar = "set"'</span>);
+
+<span class="hljs-keyword">const</span> contexts = [{}, {}, {}];
+contexts.forEach(<span class="hljs-function">(<span class="hljs-params">context</span>) =&gt;</span> {
+  script.runInNewContext(context);
+});
+
+<span class="hljs-built_in">console</span>.log(contexts);
+<span class="hljs-comment">// 打印: [{ globalVar: 'set' }, { globalVar: 'set' }, { globalVar: 'set' }]</span></code></pre>
+<h4><code>script.runInThisContext([options])</code><span><a class="mark" href="#vm_script_runinthiscontext_options" id="vm_script_runinthiscontext_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="script_runinthiscontext_options">
+                <a href="vm/script_runinthiscontext_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.3.1</span>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p>在指定的 <code>global</code> 对象的上下文中执行 <code>vm.Script</code> 对象里被编译的代码并返回其结果。被执行的代码虽然无法获取本地作用域，但是能获取 <code>global</code> 对象。</p>
+<p>以下的例子会编译一段代码，该代码会递增一个 <code>global</code> 变量。同时该代码被编译后会被多次执行。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-built_in">global</span>.globalVar = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">const</span> script = <span class="hljs-keyword">new</span> vm.Script(<span class="hljs-string">'globalVar += 1'</span>, { <span class="hljs-attr">filename</span>: <span class="hljs-string">'myfile.vm'</span> });
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; ++i) {
+  script.runInThisContext();
+}
+
+<span class="hljs-built_in">console</span>.log(globalVar);
+
+<span class="hljs-comment">// 1000</span></code></pre>
+</section><section><h3><code>vm.measureMemory([options])</code><span><a class="mark" href="#vm_vm_measurememory_options" id="vm_vm_measurememory_options">#</a></span></h3><p class="tip_wrap" data-item_id="vm_measurememory_options"></p>
+<div class="api_metadata">
+<span>新增于: v13.10.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Measure the memory known to V8 and used by all contexts known to the
+current V8 isolate, or the main context.</p>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> Optional.
+<ul>
+<li><code>mode</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Either <code>'summary'</code> or <code>'detailed'</code>. In summary mode,
+only the memory measured for the main context will be returned. In
+detailed mode, the measure measured for all contexts known to the
+current V8 isolate will be returned.
+<strong>默认值:</strong> <code>'summary'</code></li>
+<li><code>execution</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Either <code>'default'</code> or <code>'eager'</code>. With default
+execution, the promise will not resolve until after the next scheduled
+garbage collection starts, which may take a while (or never if the program
+exits before the next GC). With eager execution, the GC will be started
+right away to measure the memory.
+<strong>默认值:</strong> <code>'default'</code></li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/ri1kj8" rel="nofollow" class="type">&lt;Promise&gt;</a> If the memory is successfully measured the promise will
+resolve with an object containing information about the memory usage.</li>
+</ul>
+<p>The format of the object that the returned Promise may resolve with is
+specific to the V8 engine and may change from one version of V8 to the next.</p>
+<p>The returned result is different from the statistics returned by
+<code>v8.getHeapSpaceStatistics()</code> in that <code>vm.measureMemory()</code> measure the
+memory reachable by each V8 specific contexts in the current instance of
+the V8 engine, while the result of <code>v8.getHeapSpaceStatistics()</code> measure
+the memory occupied by each heap space in the current V8 instance.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+<span class="hljs-comment">// Measure the memory used by the main context.</span>
+vm.measureMemory({ <span class="hljs-attr">mode</span>: <span class="hljs-string">'summary'</span> })
+  <span class="hljs-comment">// This is the same as vm.measureMemory()</span>
+  .then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+    <span class="hljs-comment">// The current format is:</span>
+    <span class="hljs-comment">// {</span>
+    <span class="hljs-comment">//   total: {</span>
+    <span class="hljs-comment">//      jsMemoryEstimate: 2418479, jsMemoryRange: [ 2418479, 2745799 ]</span>
+    <span class="hljs-comment">//    }</span>
+    <span class="hljs-comment">// }</span>
+    <span class="hljs-built_in">console</span>.log(result);
+  });
+
+<span class="hljs-keyword">const</span> context = vm.createContext({ <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> });
+vm.measureMemory({ <span class="hljs-attr">mode</span>: <span class="hljs-string">'detailed'</span>, <span class="hljs-attr">execution</span>: <span class="hljs-string">'eager'</span> })
+  .then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+    <span class="hljs-comment">// Reference the context here so that it won't be GC'ed</span>
+    <span class="hljs-comment">// until the measurement is complete.</span>
+    <span class="hljs-built_in">console</span>.log(context.a);
+    <span class="hljs-comment">// {</span>
+    <span class="hljs-comment">//   total: {</span>
+    <span class="hljs-comment">//     jsMemoryEstimate: 2574732,</span>
+    <span class="hljs-comment">//     jsMemoryRange: [ 2574732, 2904372 ]</span>
+    <span class="hljs-comment">//   },</span>
+    <span class="hljs-comment">//   current: {</span>
+    <span class="hljs-comment">//     jsMemoryEstimate: 2438996,</span>
+    <span class="hljs-comment">//     jsMemoryRange: [ 2438996, 2768636 ]</span>
+    <span class="hljs-comment">//   },</span>
+    <span class="hljs-comment">//   other: [</span>
+    <span class="hljs-comment">//     {</span>
+    <span class="hljs-comment">//       jsMemoryEstimate: 135736,</span>
+    <span class="hljs-comment">//       jsMemoryRange: [ 135736, 465376 ]</span>
+    <span class="hljs-comment">//     }</span>
+    <span class="hljs-comment">//   ]</span>
+    <span class="hljs-comment">// }</span>
+    <span class="hljs-built_in">console</span>.log(result);
+  });</code></pre>
+</section><section><h3><code>vm.Module</code> 类<span><a class="mark" href="#vm_class_vm_module" id="vm_class_vm_module">#</a></span></h3><p class="tip_wrap" data-item_id="class_vm_module"></p>
+<div class="api_metadata">
+<span>新增于: v13.0.0, v12.16.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>This feature is only available with the <code>--experimental-vm-modules</code> command
+flag enabled.</p>
+<p>The <code>vm.Module</code> class provides a low-level interface for using
+ECMAScript modules in VM contexts. It is the counterpart of the <code>vm.Script</code>
+class that closely mirrors <a href="http://url.nodejs.cn/V6bsLN">Module Record</a>s as defined in the ECMAScript
+specification.</p>
+<p>Unlike <code>vm.Script</code> however, every <code>vm.Module</code> object is bound to a context from
+its creation. Operations on <code>vm.Module</code> objects are intrinsically asynchronous,
+in contrast with the synchronous nature of <code>vm.Script</code> objects. The use of
+'async' functions can help with manipulating <code>vm.Module</code> objects.</p>
+<p>Using a <code>vm.Module</code> object requires three distinct steps: creation/parsing,
+linking, and evaluation. These three steps are illustrated in the following
+example.</p>
+<p>This implementation lies at a lower level than the <a href="esm.html#esm_modules_ecmascript_modules">ECMAScript Module
+loader</a>. There is also no way to interact with the Loader yet, though
+support is planned.</p>
+
+<pre><input class="js-flavor-selector" type="checkbox" checked="" aria-label="Show modern ES modules syntax"><code class="language-js mjs"><span class="hljs-keyword">import</span> vm <span class="hljs-keyword">from</span> <span class="hljs-string">'vm'</span>;
+
+<span class="hljs-keyword">const</span> contextifiedObject = vm.createContext({
+  <span class="hljs-attr">secret</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">print</span>: <span class="hljs-built_in">console</span>.log,
+});
+
+<span class="hljs-comment">// Step 1</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Create a Module by constructing a new `vm.SourceTextModule` object. This</span>
+<span class="hljs-comment">// parses the provided source text, throwing a `SyntaxError` if anything goes</span>
+<span class="hljs-comment">// wrong. By default, a Module is created in the top context. But here, we</span>
+<span class="hljs-comment">// specify `contextifiedObject` as the context this Module belongs to.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Here, we attempt to obtain the default export from the module "foo", and</span>
+<span class="hljs-comment">// put it into local binding "secret".</span>
+
+<span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">`
+  import s from 'foo';
+  s;
+  print(s);
+`</span>, { <span class="hljs-attr">context</span>: contextifiedObject });
+
+<span class="hljs-comment">// Step 2</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// "Link" the imported dependencies of this Module to it.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// The provided linking callback (the "linker") accepts two arguments: the</span>
+<span class="hljs-comment">// parent module (`bar` in this case) and the string that is the specifier of</span>
+<span class="hljs-comment">// the imported module. The callback is expected to return a Module that</span>
+<span class="hljs-comment">// corresponds to the provided specifier, with certain requirements documented</span>
+<span class="hljs-comment">// in `module.link()`.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// If linking has not started for the returned Module, the same linker</span>
+<span class="hljs-comment">// callback will be called on the returned Module.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Even top-level Modules without dependencies must be explicitly linked. The</span>
+<span class="hljs-comment">// callback provided would never be called, however.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// The link() method returns a Promise that will be resolved when all the</span>
+<span class="hljs-comment">// Promises returned by the linker resolve.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Note: This is a contrived example in that the linker function creates a new</span>
+<span class="hljs-comment">// "foo" module every time it is called. In a full-fledged module system, a</span>
+<span class="hljs-comment">// cache would probably be used to avoid duplicated modules.</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">linker</span>(<span class="hljs-params">specifier, referencingModule</span>) </span>{
+  <span class="hljs-keyword">if</span> (specifier === <span class="hljs-string">'foo'</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">`
+      // The "secret" variable refers to the global variable we added to
+      // "contextifiedObject" when creating the context.
+      export default secret;
+    `</span>, { <span class="hljs-attr">context</span>: referencingModule.context });
+
+    <span class="hljs-comment">// Using `contextifiedObject` instead of `referencingModule.context`</span>
+    <span class="hljs-comment">// here would work as well.</span>
+  }
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unable to resolve dependency: <span class="hljs-subst">${specifier}</span>`</span>);
+}
+<span class="hljs-keyword">await</span> bar.link(linker);
+
+<span class="hljs-comment">// Step 3</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Evaluate the Module. The evaluate() method returns a promise which will</span>
+<span class="hljs-comment">// resolve after the module has finished evaluating.</span>
+
+<span class="hljs-comment">// Prints 42.</span>
+<span class="hljs-keyword">await</span> bar.evaluate();</code><code class="language-js cjs"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> contextifiedObject = vm.createContext({
+  <span class="hljs-attr">secret</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">print</span>: <span class="hljs-built_in">console</span>.log,
+});
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-comment">// Step 1</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// Create a Module by constructing a new `vm.SourceTextModule` object. This</span>
+  <span class="hljs-comment">// parses the provided source text, throwing a `SyntaxError` if anything goes</span>
+  <span class="hljs-comment">// wrong. By default, a Module is created in the top context. But here, we</span>
+  <span class="hljs-comment">// specify `contextifiedObject` as the context this Module belongs to.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// Here, we attempt to obtain the default export from the module "foo", and</span>
+  <span class="hljs-comment">// put it into local binding "secret".</span>
+
+  <span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">`
+    import s from 'foo';
+    s;
+    print(s);
+  `</span>, { <span class="hljs-attr">context</span>: contextifiedObject });
+
+  <span class="hljs-comment">// Step 2</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// "Link" the imported dependencies of this Module to it.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// The provided linking callback (the "linker") accepts two arguments: the</span>
+  <span class="hljs-comment">// parent module (`bar` in this case) and the string that is the specifier of</span>
+  <span class="hljs-comment">// the imported module. The callback is expected to return a Module that</span>
+  <span class="hljs-comment">// corresponds to the provided specifier, with certain requirements documented</span>
+  <span class="hljs-comment">// in `module.link()`.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// If linking has not started for the returned Module, the same linker</span>
+  <span class="hljs-comment">// callback will be called on the returned Module.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// Even top-level Modules without dependencies must be explicitly linked. The</span>
+  <span class="hljs-comment">// callback provided would never be called, however.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// The link() method returns a Promise that will be resolved when all the</span>
+  <span class="hljs-comment">// Promises returned by the linker resolve.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// Note: This is a contrived example in that the linker function creates a new</span>
+  <span class="hljs-comment">// "foo" module every time it is called. In a full-fledged module system, a</span>
+  <span class="hljs-comment">// cache would probably be used to avoid duplicated modules.</span>
+
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">linker</span>(<span class="hljs-params">specifier, referencingModule</span>) </span>{
+    <span class="hljs-keyword">if</span> (specifier === <span class="hljs-string">'foo'</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">`
+        // The "secret" variable refers to the global variable we added to
+        // "contextifiedObject" when creating the context.
+        export default secret;
+      `</span>, { <span class="hljs-attr">context</span>: referencingModule.context });
+
+      <span class="hljs-comment">// Using `contextifiedObject` instead of `referencingModule.context`</span>
+      <span class="hljs-comment">// here would work as well.</span>
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unable to resolve dependency: <span class="hljs-subst">${specifier}</span>`</span>);
+  }
+  <span class="hljs-keyword">await</span> bar.link(linker);
+
+  <span class="hljs-comment">// Step 3</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// Evaluate the Module. The evaluate() method returns a promise which will</span>
+  <span class="hljs-comment">// resolve after the module has finished evaluating.</span>
+
+  <span class="hljs-comment">// Prints 42.</span>
+  <span class="hljs-keyword">await</span> bar.evaluate();
+})();</code></pre>
+<h4><code>module.dependencySpecifiers</code><span><a class="mark" href="#vm_module_dependencyspecifiers" id="vm_module_dependencyspecifiers">#</a></span></h4><p class="tip_wrap" data-item_id="module_dependencyspecifiers"></p>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+<p>The specifiers of all dependencies of this module. The returned array is frozen
+to disallow any changes to it.</p>
+<p>Corresponds to the <code>[[RequestedModules]]</code> field of <a href="http://url.nodejs.cn/pe2Fus">Cyclic Module Record</a>s in
+the ECMAScript specification.</p>
+<h4><code>module.error</code><span><a class="mark" href="#vm_module_error" id="vm_module_error">#</a></span></h4><p class="tip_wrap" data-item_id="module_error"></p>
+<ul>
+<li><a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a></li>
+</ul>
+<p>If the <code>module.status</code> is <code>'errored'</code>, this property contains the exception
+thrown by the module during evaluation. If the status is anything else,
+accessing this property will result in a thrown exception.</p>
+<p>The value <code>undefined</code> cannot be used for cases where there is not a thrown
+exception due to possible ambiguity with <code>throw undefined;</code>.</p>
+<p>Corresponds to the <code>[[EvaluationError]]</code> field of <a href="http://url.nodejs.cn/pe2Fus">Cyclic Module Record</a>s
+in the ECMAScript specification.</p>
+<h4><code>module.evaluate([options])</code><span><a class="mark" href="#vm_module_evaluate_options" id="vm_module_evaluate_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="module_evaluate_options">
+                <a href="vm/module_evaluate_options.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> Specifies the number of milliseconds to evaluate
+before terminating execution. If execution is interrupted, an <a href="errors.html#errors_class_error"><code>Error</code></a>
+will be thrown. This value must be a strictly positive integer.</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If <code>true</code>, receiving <code>SIGINT</code>
+(<kbd>Ctrl</kbd>+<kbd>C</kbd>) will terminate execution and throw an
+<a href="errors.html#errors_class_error"><code>Error</code></a>. Existing handlers for the event that have been attached via
+<code>process.on('SIGINT')</code> are disabled during script execution, but continue to
+work after that. <strong>默认值:</strong> <code>false</code>。</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/ri1kj8" rel="nofollow" class="type">&lt;Promise&gt;</a> 成功时将使用 <code>undefined</code> 履行。</li>
+</ul>
+<p>Evaluate the module.</p>
+<p>This must be called after the module has been linked; otherwise it will reject.
+It could be called also when the module has already been evaluated, in which
+case it will either do nothing if the initial evaluation ended in success
+(<code>module.status</code> is <code>'evaluated'</code>) or it will re-throw the exception that the
+initial evaluation resulted in (<code>module.status</code> is <code>'errored'</code>).</p>
+<p>This method cannot be called while the module is being evaluated
+(<code>module.status</code> is <code>'evaluating'</code>).</p>
+<p>Corresponds to the <a href="http://url.nodejs.cn/J4YRhE">Evaluate() concrete method</a> field of <a href="http://url.nodejs.cn/pe2Fus">Cyclic Module
+Record</a>s in the ECMAScript specification.</p>
+<h4><code>module.identifier</code><span><a class="mark" href="#vm_module_identifier" id="vm_module_identifier">#</a></span></h4><p class="tip_wrap" data-item_id="module_identifier"></p>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>The identifier of the current module, as set in the constructor.</p>
+<h4><code>module.link(linker)</code><span><a class="mark" href="#vm_module_link_linker" id="vm_module_link_linker">#</a></span></h4><p class="tip_wrap" data-item_id="module_link_linker"></p>
+<ul>
+<li><code>linker</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li>
+<p><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The specifier of the requested module:</p>
+<pre><code class="language-js mjs"><span class="hljs-keyword">import</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">'foo'</span>;
+<span class="hljs-comment">//              ^^^^^ the module specifier</span></code></pre>
+</li>
+<li>
+<p><code>extra</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></p>
+<ul>
+<li><code>assert</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> The data from the assertion:
+<!-- eslint-skip -->
+<pre><code class="language-js"><span class="hljs-keyword">import</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">'foo'</span> assert { <span class="hljs-attr">name</span>: <span class="hljs-string">'value'</span> };
+<span class="hljs-comment">//                           ^^^^^^^^^^^^^^^^^ the assertion</span></code></pre>
+Per ECMA-262, hosts are expected to ignore assertions that they do not
+support, as opposed to, for example, triggering an error if an
+unsupported assertion is present.</li>
+</ul>
+</li>
+<li>
+<p><code>referencingModule</code> <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> The <code>Module</code> object <code>link()</code> is called on.</p>
+</li>
+<li>
+<p>返回: <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> | <a href="http://url.nodejs.cn/ri1kj8" rel="nofollow" class="type">&lt;Promise&gt;</a></p>
+</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/ri1kj8" rel="nofollow" class="type">&lt;Promise&gt;</a></li>
+</ul>
+<p>Link module dependencies. This method must be called before evaluation, and
+can only be called once per module.</p>
+<p>The function is expected to return a <code>Module</code> object or a <code>Promise</code> that
+eventually resolves to a <code>Module</code> object. The returned <code>Module</code> must satisfy the
+following two invariants:</p>
+<ul>
+<li>It must belong to the same context as the parent <code>Module</code>.</li>
+<li>Its <code>status</code> must not be <code>'errored'</code>.</li>
+</ul>
+<p>If the returned <code>Module</code>'s <code>status</code> is <code>'unlinked'</code>, this method will be
+recursively called on the returned <code>Module</code> with the same provided <code>linker</code>
+function.</p>
+<p><code>link()</code> returns a <code>Promise</code> that will either get resolved when all linking
+instances resolve to a valid <code>Module</code>, or rejected if the linker function either
+throws an exception or returns an invalid <code>Module</code>.</p>
+<p>The linker function roughly corresponds to the implementation-defined
+<a href="http://url.nodejs.cn/DjcMRi">HostResolveImportedModule</a> abstract operation in the ECMAScript
+specification, with a few key differences:</p>
+<ul>
+<li>The linker function is allowed to be asynchronous while
+<a href="http://url.nodejs.cn/DjcMRi">HostResolveImportedModule</a> is synchronous.</li>
+</ul>
+<p>The actual <a href="http://url.nodejs.cn/DjcMRi">HostResolveImportedModule</a> implementation used during module
+linking is one that returns the modules linked during linking. Since at
+that point all modules would have been fully linked already, the
+<a href="http://url.nodejs.cn/DjcMRi">HostResolveImportedModule</a> implementation is fully synchronous per
+specification.</p>
+<p>Corresponds to the <a href="http://url.nodejs.cn/NSenof">Link() concrete method</a> field of <a href="http://url.nodejs.cn/pe2Fus">Cyclic Module
+Record</a>s in the ECMAScript specification.</p>
+<h4><code>module.namespace</code><span><a class="mark" href="#vm_module_namespace" id="vm_module_namespace">#</a></span></h4><p class="tip_wrap" data-item_id="module_namespace"></p>
+<ul>
+<li><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+<p>The namespace object of the module. This is only available after linking
+(<code>module.link()</code>) has completed.</p>
+<p>Corresponds to the <a href="http://url.nodejs.cn/8AR3t2">GetModuleNamespace</a> abstract operation in the ECMAScript
+specification.</p>
+<h4><code>module.status</code><span><a class="mark" href="#vm_module_status" id="vm_module_status">#</a></span></h4><p class="tip_wrap" data-item_id="module_status"></p>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>The current status of the module. Will be one of:</p>
+<ul>
+<li>
+<p><code>'unlinked'</code>: <code>module.link()</code> has not yet been called.</p>
+</li>
+<li>
+<p><code>'linking'</code>: <code>module.link()</code> has been called, but not all Promises returned
+by the linker function have been resolved yet.</p>
+</li>
+<li>
+<p><code>'linked'</code>: The module has been linked successfully, and all of its
+dependencies are linked, but <code>module.evaluate()</code> has not yet been called.</p>
+</li>
+<li>
+<p><code>'evaluating'</code>: The module is being evaluated through a <code>module.evaluate()</code> on
+itself or a parent module.</p>
+</li>
+<li>
+<p><code>'evaluated'</code>: The module has been successfully evaluated.</p>
+</li>
+<li>
+<p><code>'errored'</code>: The module has been evaluated, but an exception was thrown.</p>
+</li>
+</ul>
+<p>Other than <code>'errored'</code>, this status string corresponds to the specification's
+<a href="http://url.nodejs.cn/pe2Fus">Cyclic Module Record</a>'s <code>[[Status]]</code> field. <code>'errored'</code> corresponds to
+<code>'evaluated'</code> in the specification, but with <code>[[EvaluationError]]</code> set to a
+value that is not <code>undefined</code>.</p>
+</section><section><h3><code>vm.SourceTextModule</code> 类<span><a class="mark" href="#vm_class_vm_sourcetextmodule" id="vm_class_vm_sourcetextmodule">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_vm_sourcetextmodule">
+                <a href="vm/class_vm_sourcetextmodule.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v9.6.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p><em>This feature is only available with the <code>--experimental-vm-modules</code> command
+flag enabled.</em></p>
+<ul>
+<li>继承自: <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+</ul>
+<p>The <code>vm.SourceTextModule</code> class provides the <a href="http://url.nodejs.cn/gCBZGk">Source Text Module Record</a> as
+defined in the ECMAScript specification.</p>
+<h4><code>new vm.SourceTextModule(code[, options])</code><span><a class="mark" href="#vm_new_vm_sourcetextmodule_code_options" id="vm_new_vm_sourcetextmodule_code_options">#</a></span></h4><p class="tip_wrap" data-item_id="new_vm_sourcetextmodule_code_options"></p>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> JavaScript Module code to parse</li>
+<li><code>options</code>
+<ul>
+<li><code>identifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> String used in stack traces.
+<strong>默认值:</strong> <code>'vm:module(i)'</code> where <code>i</code> is a context-specific ascending
+index.</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> Provides an optional <code>Buffer</code> or
+<code>TypedArray</code>, or <code>DataView</code> with V8's code cache data for the supplied
+source. The <code>code</code> must be the same as the module from which this
+<code>cachedData</code> was created.</li>
+<li><code>context</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> The <a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">contextified</a> object as returned by the
+<code>vm.createContext()</code> method, to compile and evaluate this <code>Module</code> in.</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> Specifies the line number offset that is displayed
+in stack traces produced by this <code>Module</code>. <strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> Specifies the first-line column number offset that
+is displayed in stack traces produced by this <code>Module</code>. <strong>默认值:</strong> <code>0</code>。</li>
+<li><code>initializeImportMeta</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> Called during evaluation of this <code>Module</code>
+to initialize the <code>import.meta</code>.
+<ul>
+<li><code>meta</code> <a href="esm.html#esm_import_meta" rel="nofollow" class="type">&lt;import.meta&gt;</a></li>
+<li><code>module</code> <a href="vm.html#vm_class_vm_sourcetextmodule" rel="nofollow" class="type">&lt;vm.SourceTextModule&gt;</a></li>
+</ul>
+</li>
+<li><code>importModuleDynamically</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> Called during evaluation of this module
+when <code>import()</code> is called. If this option is not specified, calls to
+<code>import()</code> will reject with <a href="errors.html#ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING"><code>ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING</code></a>.
+<ul>
+<li><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> specifier passed to <code>import()</code></li>
+<li><code>module</code> <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/uwQPrn" rel="nofollow" class="type">&lt;Module Namespace Object&gt;</a> | <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> Returning a <code>vm.Module</code> is
+recommended in order to take advantage of error tracking, and to avoid
+issues with namespaces that contain <code>then</code> function exports.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Creates a new <code>SourceTextModule</code> instance.</p>
+<p>Properties assigned to the <code>import.meta</code> object that are objects may
+allow the module to access information outside the specified <code>context</code>. Use
+<code>vm.runInContext()</code> to create objects in a specific context.</p>
+
+<pre><input class="js-flavor-selector" type="checkbox" checked="" aria-label="Show modern ES modules syntax"><code class="language-js mjs"><span class="hljs-keyword">import</span> vm <span class="hljs-keyword">from</span> <span class="hljs-string">'vm'</span>;
+
+<span class="hljs-keyword">const</span> contextifiedObject = vm.createContext({ <span class="hljs-attr">secret</span>: <span class="hljs-number">42</span> });
+
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">module</span> = <span class="hljs-keyword">new</span> vm.SourceTextModule(
+  <span class="hljs-string">'Object.getPrototypeOf(import.meta.prop).secret = secret;'</span>,
+  {
+    <span class="hljs-function"><span class="hljs-title">initializeImportMeta</span>(<span class="hljs-params">meta</span>)</span> {
+      <span class="hljs-comment">// Note: this object is created in the top context. As such,</span>
+      <span class="hljs-comment">// Object.getPrototypeOf(import.meta.prop) points to the</span>
+      <span class="hljs-comment">// Object.prototype in the top context rather than that in</span>
+      <span class="hljs-comment">// the contextified object.</span>
+      meta.prop = {};
+    }
+  });
+<span class="hljs-comment">// Since module has no dependencies, the linker function will never be called.</span>
+<span class="hljs-keyword">await</span> <span class="hljs-built_in">module</span>.link(<span class="hljs-function">() =&gt;</span> {});
+<span class="hljs-keyword">await</span> <span class="hljs-built_in">module</span>.evaluate();
+
+<span class="hljs-comment">// Now, Object.prototype.secret will be equal to 42.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// To fix this problem, replace</span>
+<span class="hljs-comment">//     meta.prop = {};</span>
+<span class="hljs-comment">// above with</span>
+<span class="hljs-comment">//     meta.prop = vm.runInContext('{}', contextifiedObject);</span></code><code class="language-js cjs"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+<span class="hljs-keyword">const</span> contextifiedObject = vm.createContext({ <span class="hljs-attr">secret</span>: <span class="hljs-number">42</span> });
+(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> <span class="hljs-built_in">module</span> = <span class="hljs-keyword">new</span> vm.SourceTextModule(
+    <span class="hljs-string">'Object.getPrototypeOf(import.meta.prop).secret = secret;'</span>,
+    {
+      <span class="hljs-function"><span class="hljs-title">initializeImportMeta</span>(<span class="hljs-params">meta</span>)</span> {
+        <span class="hljs-comment">// Note: this object is created in the top context. As such,</span>
+        <span class="hljs-comment">// Object.getPrototypeOf(import.meta.prop) points to the</span>
+        <span class="hljs-comment">// Object.prototype in the top context rather than that in</span>
+        <span class="hljs-comment">// the contextified object.</span>
+        meta.prop = {};
+      }
+    });
+  <span class="hljs-comment">// Since module has no dependencies, the linker function will never be called.</span>
+  <span class="hljs-keyword">await</span> <span class="hljs-built_in">module</span>.link(<span class="hljs-function">() =&gt;</span> {});
+  <span class="hljs-keyword">await</span> <span class="hljs-built_in">module</span>.evaluate();
+  <span class="hljs-comment">// Now, Object.prototype.secret will be equal to 42.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// To fix this problem, replace</span>
+  <span class="hljs-comment">//     meta.prop = {};</span>
+  <span class="hljs-comment">// above with</span>
+  <span class="hljs-comment">//     meta.prop = vm.runInContext('{}', contextifiedObject);</span>
+})();</code></pre>
+<h4><code>sourceTextModule.createCachedData()</code><span><a class="mark" href="#vm_sourcetextmodule_createcacheddata" id="vm_sourcetextmodule_createcacheddata">#</a></span></h4><p class="tip_wrap" data-item_id="sourcetextmodule_createcacheddata"></p>
+<div class="api_metadata">
+<span>新增于: v13.7.0, v12.17.0</span>
+</div>
+<ul>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>Creates a code cache that can be used with the <code>SourceTextModule</code> constructor's
+<code>cachedData</code> option. Returns a <code>Buffer</code>. This method may be called any number
+of times before the module has been evaluated.</p>
+<pre><code class="language-js"><span class="hljs-comment">// Create an initial module</span>
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">module</span> = <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">'const a = 1;'</span>);
+
+<span class="hljs-comment">// Create cached data from this module</span>
+<span class="hljs-keyword">const</span> cachedData = <span class="hljs-built_in">module</span>.createCachedData();
+
+<span class="hljs-comment">// Create a new module using the cached data. The code must be the same.</span>
+<span class="hljs-keyword">const</span> module2 = <span class="hljs-keyword">new</span> vm.SourceTextModule(<span class="hljs-string">'const a = 1;'</span>, { cachedData });</code></pre>
+</section><section><h3><code>vm.SyntheticModule</code> 类<span><a class="mark" href="#vm_class_vm_syntheticmodule" id="vm_class_vm_syntheticmodule">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_vm_syntheticmodule">
+                <a href="vm/class_vm_syntheticmodule.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v13.0.0, v12.16.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p><em>This feature is only available with the <code>--experimental-vm-modules</code> command
+flag enabled.</em></p>
+<ul>
+<li>继承自: <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+</ul>
+<p>The <code>vm.SyntheticModule</code> class provides the <a href="http://url.nodejs.cn/bCp8jt">Synthetic Module Record</a> as
+defined in the WebIDL specification. The purpose of synthetic modules is to
+provide a generic interface for exposing non-JavaScript sources to ECMAScript
+module graphs.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> source = <span class="hljs-string">'{ "a": 1 }'</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">module</span> = <span class="hljs-keyword">new</span> vm.SyntheticModule([<span class="hljs-string">'default'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">JSON</span>.parse(source);
+  <span class="hljs-built_in">this</span>.setExport(<span class="hljs-string">'default'</span>, obj);
+});
+
+<span class="hljs-comment">// Use `module` in linking...</span></code></pre>
+<h4><code>new vm.SyntheticModule(exportNames, evaluateCallback[, options])</code><span><a class="mark" href="#vm_new_vm_syntheticmodule_exportnames_evaluatecallback_options" id="vm_new_vm_syntheticmodule_exportnames_evaluatecallback_options">#</a></span></h4><p class="tip_wrap" data-item_id="new_vm_syntheticmodule_exportnames_evaluatecallback_options"></p>
+<div class="api_metadata">
+<span>新增于: v13.0.0, v12.16.0</span>
+</div>
+<ul>
+<li><code>exportNames</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> Array of names that will be exported from the module.</li>
+<li><code>evaluateCallback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> Called when the module is evaluated.</li>
+<li><code>options</code>
+<ul>
+<li><code>identifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> String used in stack traces.</li>
+</ul>
+<strong>默认值:</strong> <code>'vm:module(i)'</code> where <code>i</code> is a context-specific ascending
+index.
+<ul>
+<li><code>context</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> The <a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">contextified</a> object as returned by the
+<code>vm.createContext()</code> method, to compile and evaluate this <code>Module</code> in.</li>
+</ul>
+</li>
+</ul>
+<p>Creates a new <code>SyntheticModule</code> instance.</p>
+<p>Objects assigned to the exports of this instance may allow importers of
+the module to access information outside the specified <code>context</code>. Use
+<code>vm.runInContext()</code> to create objects in a specific context.</p>
+<h4><code>syntheticModule.setExport(name, value)</code><span><a class="mark" href="#vm_syntheticmodule_setexport_name_value" id="vm_syntheticmodule_setexport_name_value">#</a></span></h4><p class="tip_wrap" data-item_id="syntheticmodule_setexport_name_value"></p>
+<div class="api_metadata">
+<span>新增于: v13.0.0, v12.16.0</span>
+</div>
+<ul>
+<li><code>name</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Name of the export to set.</li>
+<li><code>value</code> <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> The value to set the export to.</li>
+</ul>
+<p>This method is used after the module is linked to set the values of exports. If
+it is called before the module is linked, an <a href="errors.html#ERR_VM_MODULE_STATUS"><code>ERR_VM_MODULE_STATUS</code></a> error
+will be thrown.</p>
+
+<pre><input class="js-flavor-selector" type="checkbox" checked="" aria-label="Show modern ES modules syntax"><code class="language-js mjs"><span class="hljs-keyword">import</span> vm <span class="hljs-keyword">from</span> <span class="hljs-string">'vm'</span>;
+
+<span class="hljs-keyword">const</span> m = <span class="hljs-keyword">new</span> vm.SyntheticModule([<span class="hljs-string">'x'</span>], <span class="hljs-function">() =&gt;</span> {
+  m.setExport(<span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>);
+});
+
+<span class="hljs-keyword">await</span> m.link(<span class="hljs-function">() =&gt;</span> {});
+<span class="hljs-keyword">await</span> m.evaluate();
+
+assert.strictEqual(m.namespace.x, <span class="hljs-number">1</span>);</code><code class="language-js cjs"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> m = <span class="hljs-keyword">new</span> vm.SyntheticModule([<span class="hljs-string">'x'</span>], <span class="hljs-function">() =&gt;</span> {
+    m.setExport(<span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>);
+  });
+  <span class="hljs-keyword">await</span> m.link(<span class="hljs-function">() =&gt;</span> {});
+  <span class="hljs-keyword">await</span> m.evaluate();
+  assert.strictEqual(m.namespace.x, <span class="hljs-number">1</span>);
+})();</code></pre>
+</section><section><h3><code>vm.compileFunction(code[, params[, options]])</code><span><a class="mark" href="#vm_vm_compilefunction_code_params_options" id="vm_vm_compilefunction_code_params_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_compilefunction_code_params_options">
+                <a href="vm/vm_compilefunction_code_params_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.3.0</td>
+<td><p>Removal of <code>importModuleDynamically</code> due to compatibility issues.</p></td></tr>
+<tr><td>v14.1.0, v13.14.0</td>
+<td><p>The <code>importModuleDynamically</code> option is now supported.</p></td></tr>
+<tr><td>v10.10.0</td>
+<td><p><span>新增于: v10.10.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 需要编译的函数体。</li>
+<li><code>params</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> 包含所有函数参数的字符串数组。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>filename</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 定义此脚本生成的堆栈跟踪信息中使用的文件名。 <strong>默认值:</strong> <code>''</code>。</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义此脚本生成的堆栈跟踪信息中显示的行号偏移量。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义此脚本生成的堆栈跟踪中显示的列偏移量。 <strong>默认值:</strong> <code>0</code>。</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> 为源码提供一个 <code>Buffer</code>、<code>TypedArray</code> 或 <code>DataView</code> 格式的 V8 代码缓存。</li>
+<li><code>produceCachedData</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 定义是否需要生成新的缓存数据。<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>parsingContext</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 编译函数的<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>的对象。</li>
+<li><code>contextExtensions</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a>  包含要在编译时应用的上下文扩展（包装当前范围的对象）的集合的数组。<strong>默认值:</strong> <code>[]</code>。</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a></li>
+</ul>
+<p>将给定的代码编译到提供的上下文中（如果没有提供上下文，则使用当前上下文），并返回包装了给定 <code>params</code> 的函数。</p>
+</section><section><h3><code>vm.createContext([contextObject[, options]])</code><span><a class="mark" href="#vm_vm_createcontext_contextobject_options" id="vm_vm_createcontext_contextobject_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_createcontext_contextobject_options">
+                <a href="vm/vm_createcontext_contextobject_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.6.0</td>
+<td><p>The <code>microtaskMode</code> option is supported now.</p></td></tr>
+<tr><td>v10.0.0</td>
+<td><p>The first argument can no longer be a function.</p></td></tr>
+<tr><td>v10.0.0</td>
+<td><p>The <code>codeGeneration</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>contextObject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>name</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 新创建的上下文的人类可读名称。 <strong>默认值:</strong> <code>'VM Context i'</code>，其中 <code>i</code> 是创建的上下文的升序数字索引。</li>
+<li><code>origin</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 对应于新创建用于显示目的的上下文的<a href="http://url.nodejs.cn/SYyZxA">原点</a>。
+原点应格式化为类似一个 URL，但只包含协议，主机和端口（如果需要），例如 <a href="url.html#url_class_url"><code>URL</code></a> 对象的 <a href="url.html#url_url_origin"><code>url.origin</code></a> 属性的值。 最值得注意的是，此字符串应省略尾部斜杠，因为它表示路径。 <strong>默认值:</strong> <code>''</code>。</li>
+<li><code>codeGeneration</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>strings</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则对 <code>eval</code> 或函数构造函数（<code>Function</code>、<code>GeneratorFunction</code> 等）的任何调用都将抛出 <code>EvalError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>wasm</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则任何编译 WebAssembly 模块的尝试都将抛出 <code>WebAssembly.CompileError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+</ul>
+</li>
+<li><code>microtaskMode</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> If set to <code>afterEvaluate</code>, microtasks (tasks
+scheduled through <code>Promise</code>s and <code>async function</code>s) will be run immediately
+after a script has run through <a href="vm.html#vm_script_runincontext_contextifiedobject_options"><code>script.runInContext()</code></a>.
+They are included in the <code>timeout</code> and <code>breakOnSigint</code> scopes in that case.</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 上下文隔离化的沙盒。</li>
+</ul>
+<p>给定一个 <code>contextObject</code> 对象，<code>vm.createContext()</code> 会<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">设置此沙盒</a>，从而让它具备在 <a href="vm.html#vm_vm_runincontext_code_contextifiedobject_options"><code>vm.runInContext()</code></a> 或者 <a href="vm.html#vm_script_runincontext_contextifiedobject_options"><code>script.runInContext()</code></a> 中被使用的能力。
+在此类脚本中，<code>contextObject</code> 将会是全局对象，保留其所有现有属性，但还具有任何标准的<a href="http://url.nodejs.cn/hKgpea">全局对象</a>具有的内置对象和函数。
+在 <code>vm</code> 模块运行的脚本之外，全局变量将会保持不变。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-built_in">global</span>.globalVar = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">const</span> context = { <span class="hljs-attr">globalVar</span>: <span class="hljs-number">1</span> };
+vm.createContext(context);
+
+vm.runInContext(<span class="hljs-string">'globalVar *= 2;'</span>, context);
+
+<span class="hljs-built_in">console</span>.log(context);
+<span class="hljs-comment">// 打印: { globalVar: 2 }</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">global</span>.globalVar);
+<span class="hljs-comment">// 打印: 3</span></code></pre>
+<p>如果未提供 <code>contextObject</code>（或者传入<code>undefined</code>），那么会返回一个全新的空的<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>对象。</p>
+<p><code>vm.createContext()</code> 主要是用于创建一个能运行多个脚本的上下文。
+比如说，在模拟一个网页浏览器时，此方法可以被用于创建一个单独的上下文来代表一个窗口的全局对象，然后所有的 <code>&lt;script&gt;</code> 标签都可以在这个上下文中运行。</p>
+<p>通过 Inspector API 可以看到提供的上下文的 <code>name</code> 和 <code>origin</code>。</p>
+</section><section><h3><code>vm.isContext(object)</code><span><a class="mark" href="#vm_vm_iscontext_object" id="vm_vm_iscontext_object">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_iscontext_object">
+                <a href="vm/vm_iscontext_object.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.7</span>
+</div>
+<ul>
+<li><code>object</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a></li>
+</ul>
+<p>当给定的 <code>object</code> 对象已经被 <a href="vm.html#vm_vm_createcontext_contextobject_options"><code>vm.createContext()</code></a> <a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>，则返回 <code>true</code>。</p>
+</section><section><h3><code>vm.runInContext(code, contextifiedObject[, options])</code><span><a class="mark" href="#vm_vm_runincontext_code_contextifiedobject_options" id="vm_vm_runincontext_code_contextifiedobject_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_runincontext_code_contextifiedobject_options">
+                <a href="vm/vm_runincontext_code_contextifiedobject_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v6.3.0</td>
+<td><p>The <code>breakOnSigint</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 将被编译和运行的 JavaScript 代码。</li>
+<li><code>contextifiedObject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 一个被<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>过的对象，会在 <code>code</code> 被编译和执行之后充当 <code>global</code> 对象。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a>
+<ul>
+<li><code>filename</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 定义供脚本生成的堆栈跟踪信息所使用的文件名。<strong>默认值:</strong> <code>'evalmachine.&lt;anonymous&gt;'</code>。</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的行号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的列号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> 为源码提供一个可选的存有 V8 代码缓存数据的 <code>Buffer</code>、<code>TypedArray</code> 或 <code>TypedArray</code>。
+如果提供了，则 <code>cachedDataRejected</code> 的值将会被设为要么为 <code>true</code> 要么为 <code>false</code>，这取决于 v8 引擎对数据的接受状况。</li>
+<li><code>produceCachedData</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 且 <code>cachedData</code> 不存在的时候，V8 将会试图为 <code>code</code> 生成代码缓存数据。
+一旦成功，则一个有 V8 代码缓存数据的 <code>Buffer</code> 将会被生成和储存在返回的 <code>vm.Script</code> 实例的 <code>cachedData</code> 属性里。
+<code>cachedDataProduced</code> 的值会被设置为 <code>true</code> 或者 <code>false</code>，这取决于代码缓存数据是否被成功生成。
+不推荐使用此选项，而应该使用 <code>script.createCachedData()</code>。<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>importModuleDynamically</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 在调用 <code>import()</code> 时评估此模块期间调用。
+如果未指定此选项，则对 <code>import()</code> 的调用将拒绝 <a href="errors.html#ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING"><code>ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING</code></a>。
+此选项是实验的模块的 API 的一部分，不应被视为稳定。
+<ul>
+<li><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 传给 <code>import()</code> 的说明符。</li>
+<li><code>module</code> <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/uwQPrn" rel="nofollow" class="type">&lt;Module Namespace Object&gt;</a> | <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> 返回 <code>vm.Module</code> 以利用错误跟踪，并避免出现包含 <code>then</code> 函数导出的命名空间问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p><code>vm.runInContext()</code> 方法会编译 <code>code</code>，然后在指定的 <code>contextifiedObject</code> 的上下文里执行它并返回其结果。
+被执行的代码无法获取本地作用域。
+<code>contextifiedObject</code> 必须是事先被 <a href="vm.html#vm_vm_createcontext_contextobject_options"><code>vm.createContext()</code></a> 方法<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>过的对象。</p>
+<p>如果 <code>options</code> 是字符串，则它指定文件名。</p>
+<p>以下例子使用一个单独的<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>过的对象来编译并运行几个不同的脚本：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> contextObject = { <span class="hljs-attr">globalVar</span>: <span class="hljs-number">1</span> };
+vm.createContext(contextObject);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
+  vm.runInContext(<span class="hljs-string">'globalVar *= 2;'</span>, contextObject);
+}
+<span class="hljs-built_in">console</span>.log(contextObject);
+<span class="hljs-comment">// 打印: { globalVar: 1024 }</span></code></pre>
+</section><section><h3><code>vm.runInNewContext(code[, contextObject[, options]])</code><span><a class="mark" href="#vm_vm_runinnewcontext_code_contextobject_options" id="vm_vm_runinnewcontext_code_contextobject_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_runinnewcontext_code_contextobject_options">
+                <a href="vm/vm_runinnewcontext_code_contextobject_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.6.0</td>
+<td><p>The <code>microtaskMode</code> option is supported now.</p></td></tr>
+<tr><td>v10.0.0</td>
+<td><p>The <code>contextCodeGeneration</code> option is supported now.</p></td></tr>
+<tr><td>v6.3.0</td>
+<td><p>The <code>breakOnSigint</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 将被编译和运行的 JavaScript 代码。</li>
+<li><code>contextObject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> 一个将会被<a href="vm.html#vm_what_does_it_mean_to_contextify_an_object">上下文隔离化</a>的对象。如果是 <code>undefined</code>, 则会生成一个新的对象。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a>
+<ul>
+<li><code>filename</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 定义供脚本生成的堆栈跟踪信息所使用的文件名。<strong>默认值:</strong> <code>'evalmachine.&lt;anonymous&gt;'</code>。</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的行号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的列号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>contextName</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 新创建的上下文的人类可读名称。 <strong>默认值:</strong> <code>'VM Context i'</code>，其中 <code>i</code> 是创建的上下文的升序数字索引。</li>
+<li><code>contextOrigin</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 对应于新创建用于显示目的的上下文的<a href="http://url.nodejs.cn/SYyZxA">原点</a>。
+原点应格式化为类似一个 URL，但只包含协议，主机和端口（如果需要），例如 <a href="url.html#url_class_url"><code>URL</code></a> 对象的 <a href="url.html#url_url_origin"><code>url.origin</code></a> 属性的值。 最值得注意的是，此字符串应省略尾部斜杠，因为它表示路径。 <strong>默认值:</strong> <code>''</code>。</li>
+<li><code>contextCodeGeneration</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>strings</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则对 <code>eval</code> 或函数构造函数（<code>Function</code>、<code>GeneratorFunction</code> 等）的任何调用都将抛出 <code>EvalError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>wasm</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 如果设置为 <code>false</code>，则任何编译 WebAssembly 模块的尝试都将抛出 <code>WebAssembly.CompileError</code>。<strong>默认值:</strong> <code>true</code>。</li>
+</ul>
+</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> 为源码提供一个可选的存有 V8 代码缓存数据的 <code>Buffer</code>、<code>TypedArray</code> 或 <code>TypedArray</code>。
+如果提供了，则 <code>cachedDataRejected</code> 的值将会被设为要么为 <code>true</code> 要么为 <code>false</code>，这取决于 v8 引擎对数据的接受状况。</li>
+<li><code>produceCachedData</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 且 <code>cachedData</code> 不存在的时候，V8 将会试图为 <code>code</code> 生成代码缓存数据。
+一旦成功，则一个有 V8 代码缓存数据的 <code>Buffer</code> 将会被生成和储存在返回的 <code>vm.Script</code> 实例的 <code>cachedData</code> 属性里。
+<code>cachedDataProduced</code> 的值会被设置为 <code>true</code> 或者 <code>false</code>，这取决于代码缓存数据是否被成功生成。
+不推荐使用此选项，而应该使用 <code>script.createCachedData()</code>。<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>importModuleDynamically</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 在调用 <code>import()</code> 时评估此模块期间调用。
+如果未指定此选项，则对 <code>import()</code> 的调用将拒绝 <a href="errors.html#ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING"><code>ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING</code></a>。
+此选项是实验的模块的 API 的一部分，不应被视为稳定。
+<ul>
+<li><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 传给 <code>import()</code> 的说明符。</li>
+<li><code>module</code> <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/uwQPrn" rel="nofollow" class="type">&lt;Module Namespace Object&gt;</a> | <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> 返回 <code>vm.Module</code> 以利用错误跟踪，并避免出现包含 <code>then</code> 函数导出的命名空间问题。</li>
+</ul>
+</li>
+<li><code>microtaskMode</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> If set to <code>afterEvaluate</code>, microtasks (tasks
+scheduled through <code>Promise</code>s and <code>async function</code>s) will be run immediately
+after the script has run. They are included in the <code>timeout</code> and
+<code>breakOnSigint</code> scopes in that case.</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p><code>vm.runInNewContext()</code> 首先给指定的 <code>contextObject</code>（若为 <code>undefined</code>，则会新建一个<code> contextObject</code>）提供一个隔离的上下文, 再在此上下文中执行编译的 <code>code</code>，最后返回结果。
+运行中的代码无法获取本地作用域。</p>
+<p>如果 <code>options</code> 是字符串，则它指定文件名。</p>
+<p>以下的例子会编译一段代码，该代码会递增一个全局变量，给另外一个全局变量赋值。同时该代码被编译后会被多次执行。全局变量会被置于 <code>contextObject</code> 对象内。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> contextObject = {
+  <span class="hljs-attr">animal</span>: <span class="hljs-string">'cat'</span>,
+  <span class="hljs-attr">count</span>: <span class="hljs-number">2</span>
+};
+
+vm.runInNewContext(<span class="hljs-string">'count += 1; name = "kitty"'</span>, contextObject);
+<span class="hljs-built_in">console</span>.log(contextObject);
+<span class="hljs-comment">// 打印: { animal: 'cat', count: 3, name: 'kitty' }</span></code></pre>
+</section><section><h3><code>vm.runInThisContext(code[, options])</code><span><a class="mark" href="#vm_vm_runinthiscontext_code_options" id="vm_vm_runinthiscontext_code_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="vm_runinthiscontext_code_options">
+                <a href="vm/vm_runinthiscontext_code_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v6.3.0</td>
+<td><p>The <code>breakOnSigint</code> option is supported now.</p></td></tr>
+<tr><td>v0.3.1</td>
+<td><p><span>新增于: v0.3.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>code</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 将被编译和运行的 JavaScript 代码。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a>
+<ul>
+<li><code>filename</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 定义供脚本生成的堆栈跟踪信息所使用的文件名。<strong>默认值:</strong> <code>'evalmachine.&lt;anonymous&gt;'</code>。</li>
+<li><code>lineOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的行号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>columnOffset</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 定义脚本生成的堆栈跟踪信息所显示的列号偏移。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>displayErrors</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 的时候，假如在解析代码的时候发生错误 <a href="errors.html#errors_class_error"><code>Error</code></a>，引起错误的行将会被加入堆栈跟踪信息。<strong>默认值:</strong> <code>true</code>。</li>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 定义在被终止执行之前此 <code>code</code> 被允许执行的最大毫秒数。假如执行被终止，将会抛出一个错误 <a href="errors.html#errors_class_error"><code>Error</code></a>。该值必须是严格正整数。</li>
+<li><code>breakOnSigint</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 若值为 <code>true</code>，接收到 <code>SIGINT</code>（<kbd>Ctrl</kbd>+<kbd>C</kbd>）会终止执行并抛出 <a href="errors.html#errors_class_error"><code>Error</code></a>。
+通过 <code>process.on('SIGINT')</code> 方法所设置的消息响应机制在代码被执行时会被屏蔽，但代码被终止后会被恢复。
+<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>cachedData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> 为源码提供一个可选的存有 V8 代码缓存数据的 <code>Buffer</code>、<code>TypedArray</code> 或 <code>TypedArray</code>。
+如果提供了，则 <code>cachedDataRejected</code> 的值将会被设为要么为 <code>true</code> 要么为 <code>false</code>，这取决于 v8 引擎对数据的接受状况。</li>
+<li><code>produceCachedData</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为 <code>true</code> 且 <code>cachedData</code> 不存在的时候，V8 将会试图为 <code>code</code> 生成代码缓存数据。
+一旦成功，则一个有 V8 代码缓存数据的 <code>Buffer</code> 将会被生成和储存在返回的 <code>vm.Script</code> 实例的 <code>cachedData</code> 属性里。
+<code>cachedDataProduced</code> 的值会被设置为 <code>true</code> 或者 <code>false</code>，这取决于代码缓存数据是否被成功生成。
+不推荐使用此选项，而应该使用 <code>script.createCachedData()</code>。<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>importModuleDynamically</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 在调用 <code>import()</code> 时评估此模块期间调用。
+如果未指定此选项，则对 <code>import()</code> 的调用将拒绝 <a href="errors.html#ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING"><code>ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING</code></a>。
+此选项是实验的模块的 API 的一部分，不应被视为稳定。
+<ul>
+<li><code>specifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 传给 <code>import()</code> 的说明符。</li>
+<li><code>module</code> <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a></li>
+<li>返回: <a href="http://url.nodejs.cn/uwQPrn" rel="nofollow" class="type">&lt;Module Namespace Object&gt;</a> | <a href="vm.html#vm_class_vm_module" rel="nofollow" class="type">&lt;vm.Module&gt;</a> 返回 <code>vm.Module</code> 以利用错误跟踪，并避免出现包含 <code>then</code> 函数导出的命名空间问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回: <a href="http://url.nodejs.cn/6sTGdS" rel="nofollow" class="type">&lt;any&gt;</a> 脚本中执行的最后一个语句的结果。</li>
+</ul>
+<p><code>vm.runInThisContext()</code> 在当前的 <code>global</code> 对象的上下文中编译并执行 <code>code</code>，最后返回结果。
+运行中的代码无法获取本地作用域，但可以获取当前的 <code>global</code> 对象。</p>
+<p>如果 <code>options</code> 是字符串，则它指定文件名。</p>
+<p>下面的例子演示了使用 <code>vm.runInThisContext()</code> 和 JavaScript 的 <a href="http://url.nodejs.cn/qHvCuM"><code>eval()</code></a> 方法去执行相同的一段代码：</p>
+<!-- eslint-disable prefer-const -->
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+<span class="hljs-keyword">let</span> localVar = <span class="hljs-string">'initial value'</span>;
+
+<span class="hljs-keyword">const</span> vmResult = vm.runInThisContext(<span class="hljs-string">'localVar = "vm";'</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vmResult: '<span class="hljs-subst">${vmResult}</span>', localVar: '<span class="hljs-subst">${localVar}</span>'`</span>);
+<span class="hljs-comment">// 打印: vmResult: 'vm', localVar: 'initial value'</span>
+
+<span class="hljs-keyword">const</span> evalResult = <span class="hljs-built_in">eval</span>(<span class="hljs-string">'localVar = "eval";'</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`evalResult: '<span class="hljs-subst">${evalResult}</span>', localVar: '<span class="hljs-subst">${localVar}</span>'`</span>);
+<span class="hljs-comment">// 打印: evalResult: 'eval', localVar: 'eval'</span></code></pre>
+<p>正因 <code>vm.runInThisContext()</code> 无法获取本地作用域，故 <code>localVar</code> 的值不变。
+相反，<a href="http://url.nodejs.cn/qHvCuM"><code>eval()</code></a> 确实能获取本地作用域，所以 <code>localVar</code> 的值被改变了。
+如此看来，<code>vm.runInThisContext()</code> 更像是<a href="http://url.nodejs.cn/RBapQS">间接的执行 <code>eval()</code></a>, 就像 <code>(0,eval)('code')</code>。</p>
+</section><section><h3>示例：在 VM 中运行 HTTP Server<span><a class="mark" href="#vm_example_running_an_http_server_within_a_vm" id="vm_example_running_an_http_server_within_a_vm">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="example_running_an_http_server_within_a_vm">
+                <a href="vm/example_running_an_http_server_within_a_vm.html" class="tip_trans">中英对照</a>
+                </p>
+<p>在使用 <a href="vm.html#vm_script_runinthiscontext_options"><code>script.runInThisContext()</code></a> 或者 <a href="vm.html#vm_vm_runinthiscontext_code_options"><code>vm.runInThisContext()</code></a> 时，目标代码是在当前的V8全局对象的上下文中执行的。被传入此虚拟机上下文的目标代码会有自己独立的作用域。</p>
+<p>要想用 <code>http</code> 模块搭建一个简易的服务器，被传入的代码必须要么自己执行 <code>require('http')</code>，要么引用一个 <code>http</code>，比如：</p>
+<pre><code class="language-js"><span class="hljs-meta">'use strict'</span>;
+<span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-keyword">const</span> code = <span class="hljs-string">`
+((require) =&gt; {
+  const http = require('http');
+
+  http.createServer((request, response) =&gt; {
+    response.writeHead(200, { 'Content-Type': 'text/plain' });
+    response.end('你好世界\\n');
+  }).listen(8124);
+
+  console.log('服务器运行在 http://127.0.0.1:8124/');
+})`</span>;
+
+vm.runInThisContext(code)(<span class="hljs-built_in">require</span>);</code></pre>
+<p>上述例子中的 <code>require()</code> 和导出它的上下文共享状态。这在运行未经认证的代码时可能会引入风险，比如在不理想的情况下修改上下文中的对象。</p>
+</section><section><h3>上下文隔离化一个对象意味着什么？<span><a class="mark" href="#vm_what_does_it_mean_to_contextify_an_object" id="vm_what_does_it_mean_to_contextify_an_object">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="what_does_it_mean_to_contextify_an_object">
+                <a href="vm/what_does_it_mean_to_contextify_an_object.html" class="tip_trans">中英对照</a>
+                </p>
+<p>所有用 Node.js 所运行的 JavaScript 代码都是在一个“上下文”的作用域中被执行的。
+根据 <a href="http://url.nodejs.cn/SBcUmh">V8 嵌入式指南</a>：</p>
+<blockquote>
+<p>在 V8 中，一个上下文是一个执行环境，它允许分离的，无关的 JavaScript 应用在一个 V8 的单例中被运行。
+必须明确地指定用于运行所有 JavaScript 代码的上下文。</p>
+</blockquote>
+<p>当调用 <code>vm.createContext()</code> 方法时，<code>contextObject</code>参数（如果 <code>contextObject</code> 为 <code>undefined</code>，则为新创建的对象）在内部与 V8 上下文的新实例相关联。
+该 V8 上下文提供了使用 <code>vm</code> 模块的方法运行的 <code>code</code> 以及可在其中运行的隔离的全局环境。
+创建 V8 上下文并将其与 <code>contextObject</code> 关联的过程是本文档所称的“上下文隔离化”对象。</p>
+</section><section><h3>与异步任务和 Promise 的超时交互<span><a class="mark" href="#vm_timeout_interactions_with_asynchronous_tasks_and_promises" id="vm_timeout_interactions_with_asynchronous_tasks_and_promises">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="timeout_interactions_with_asynchronous_tasks_and_promises">
+                <a href="vm/timeout_interactions_with_asynchronous_tasks_and_promises.html" class="tip_trans">中英对照</a>
+                </p>
+<p><code>Promise</code>s and <code>async function</code>s can schedule tasks run by the JavaScript
+engine asynchronously. By default, these tasks are run after all JavaScript
+functions on the current stack are done executing.
+This allows escaping the functionality of the <code>timeout</code> and
+<code>breakOnSigint</code> options.</p>
+<p>例如，<code>vm.runInNewContext()</code> 执行的以下代码（超时为 5 毫秒）会在 promise 解决后调度无限循环。
+调度的循环永远不会被超时中断：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'entering loop'</span>);
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now());
+}
+
+vm.runInNewContext(
+  <span class="hljs-string">'Promise.resolve().then(() =&gt; loop());'</span>,
+  { loop, <span class="hljs-built_in">console</span> },
+  { <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span> }
+);
+<span class="hljs-comment">// This is printed *before* 'entering loop' (!)</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'done executing'</span>);</code></pre>
+<p>This can be addressed by passing <code>microtaskMode: 'afterEvaluate'</code> to the code
+that creates the <code>Context</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> vm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vm'</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now());
+}
+
+vm.runInNewContext(
+  <span class="hljs-string">'Promise.resolve().then(() =&gt; loop());'</span>,
+  { loop, <span class="hljs-built_in">console</span> },
+  { <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">microtaskMode</span>: <span class="hljs-string">'afterEvaluate'</span> }
+);</code></pre>
+<p>In this case, the microtask scheduled through <code>promise.then()</code> will be run
+before returning from <code>vm.runInNewContext()</code>, and will be interrupted
+by the <code>timeout</code> functionality. This applies only to code running in a
+<code>vm.Context</code>, so e.g. <a href="vm.html#vm_vm_runinthiscontext_code_options"><code>vm.runInThisContext()</code></a> does not take this option.</p>
+<p>Promise callbacks are entered into the microtask queue of the context in which
+they were created. For example, if <code>() =&gt; loop()</code> is replaced with just <code>loop</code>
+in the above example, then <code>loop</code> will be pushed into the global microtask
+queue, because it is a function from the outer (main) context, and thus will
+also be able to escape the timeout.</p>
+<p>If asynchronous scheduling functions such as <code>process.nextTick()</code>,
+<code>queueMicrotask()</code>, <code>setTimeout()</code>, <code>setImmediate()</code>, etc. are made available
+inside a <code>vm.Context</code>, functions passed to them will be added to global queues,
+which are shared by all contexts. Therefore, callbacks passed to those functions
+are not controllable through the timeout either.</p></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>trace_events 跟踪事件 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411161079" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="tracing" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_1"><a href="#tracing_trace_events">trace_events 跟踪事件</a></span>
+<ul>
+<li><a href="#tracing_the_trace_events_module">`trace_events` 模块</a>
+<ul>
+<li><a href="#tracing_tracing_object">`Tracing` 对象</a>
+<ul>
+<li><a href="#tracing_tracing_categories"><code>tracing.categories</code></a></li>
+<li><a href="#tracing_tracing_disable"><code>tracing.disable()</code></a></li>
+<li><a href="#tracing_tracing_enable"><code>tracing.enable()</code></a></li>
+<li><a href="#tracing_tracing_enabled"><code>tracing.enabled</code></a></li>
+</ul>
+</li>
+<li><a href="#tracing_trace_events_createtracing_options"><code>trace_events.createTracing(options)</code></a></li>
+<li><a href="#tracing_trace_events_getenabledcategories"><code>trace_events.getEnabledCategories()</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>trace_events 跟踪事件<span><a class="mark" href="#tracing_trace_events" id="tracing_trace_events">#</a></span></h2><p class="tip_wrap"></p>
+<!--introduced_in=v7.7.0-->
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p><strong>源代码:</strong> <a rel="nofollow" href="http://url.nodejs.cn/SNVF26">lib/trace_events.js</a></p>
+<p>The <code>trace_events</code> module provides a mechanism to centralize tracing information
+generated by V8, Node.js core, and userspace code.</p>
+<p>Tracing can be enabled with the <code>--trace-event-categories</code> command-line flag
+or by using the <code>trace_events</code> module. The <code>--trace-event-categories</code> flag
+accepts a list of comma-separated category names.</p>
+<p>The available categories are:</p>
+<ul>
+<li><code>node</code>: An empty placeholder.</li>
+<li><code>node.async_hooks</code>: Enables capture of detailed <a href="async_hooks.html"><code>async_hooks</code></a> trace data.
+The <a href="async_hooks.html"><code>async_hooks</code></a> events have a unique <code>asyncId</code> and a special <code>triggerId</code>
+<code>triggerAsyncId</code> property.</li>
+<li><code>node.bootstrap</code>: Enables capture of Node.js bootstrap milestones.</li>
+<li><code>node.console</code>: Enables capture of <code>console.time()</code> and <code>console.count()</code>
+output.</li>
+<li><code>node.dns.native</code>: Enables capture of trace data for DNS queries.</li>
+<li><code>node.environment</code>: Enables capture of Node.js Environment milestones.</li>
+<li><code>node.fs.sync</code>: Enables capture of trace data for file system sync methods.</li>
+<li><code>node.perf</code>: Enables capture of <a href="perf_hooks.html">Performance API</a> measurements.
+<ul>
+<li><code>node.perf.usertiming</code>: Enables capture of only Performance API User Timing
+measures and marks.</li>
+<li><code>node.perf.timerify</code>: Enables capture of only Performance API timerify
+measurements.</li>
+</ul>
+</li>
+<li><code>node.promises.rejections</code>: Enables capture of trace data tracking the number
+of unhandled Promise rejections and handled-after-rejections.</li>
+<li><code>node.vm.script</code>: Enables capture of trace data for the <code>vm</code> module's
+<code>runInNewContext()</code>, <code>runInContext()</code>, and <code>runInThisContext()</code> methods.</li>
+<li><code>v8</code>: The <a href="v8.html">V8</a> events are GC, compiling, and execution related.</li>
+</ul>
+<p>By default the <code>node</code>, <code>node.async_hooks</code>, and <code>v8</code> categories are enabled.</p>
+<pre><code class="language-bash">node --trace-event-categories v8,node,node.async_hooks server.js</code></pre>
+<p>Prior versions of Node.js required the use of the <code>--trace-events-enabled</code>
+flag to enable trace events. This requirement has been removed. However, the
+<code>--trace-events-enabled</code> flag <em>may</em> still be used and will enable the
+<code>node</code>, <code>node.async_hooks</code>, and <code>v8</code> trace event categories by default.</p>
+<pre><code class="language-bash">node --trace-events-enabled
+
+<span class="hljs-comment"># is equivalent to</span>
+
+node --trace-event-categories v8,node,node.async_hooks</code></pre>
+<p>Alternatively, trace events may be enabled using the <code>trace_events</code> module:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> trace_events = <span class="hljs-built_in">require</span>(<span class="hljs-string">'trace_events'</span>);
+<span class="hljs-keyword">const</span> tracing = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'node.perf'</span>] });
+tracing.enable();  <span class="hljs-comment">// Enable trace event capture for the 'node.perf' category</span>
+
+<span class="hljs-comment">// do work</span>
+
+tracing.disable();  <span class="hljs-comment">// Disable trace event capture for the 'node.perf' category</span></code></pre>
+<p>Running Node.js with tracing enabled will produce log files that can be opened
+in the <a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool"><code>chrome://tracing</code></a>
+tab of Chrome.</p>
+<p>The logging file is by default called <code>node_trace.${rotation}.log</code>, where
+<code>${rotation}</code> is an incrementing log-rotation id. The filepath pattern can
+be specified with <code>--trace-event-file-pattern</code> that accepts a template
+string that supports <code>${rotation}</code> and <code>${pid}</code>:</p>
+<pre><code class="language-bash">node --trace-event-categories v8 --trace-event-file-pattern <span class="hljs-string">'${pid}-${rotation}.log'</span> server.js</code></pre>
+<p>The tracing system uses the same time source
+as the one used by <code>process.hrtime()</code>.
+However the trace-event timestamps are expressed in microseconds,
+unlike <code>process.hrtime()</code> which returns nanoseconds.</p>
+<p>The features from this module are not available in <a href="worker_threads.html#worker_threads_class_worker"><code>Worker</code></a> threads.</p>
+<section><h3>`trace_events` 模块<span><a class="mark" href="#tracing_the_trace_events_module" id="tracing_the_trace_events_module">#</a></span></h3><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<h4>`Tracing` 对象<span><a class="mark" href="#tracing_tracing_object" id="tracing_tracing_object">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<p>The <code>Tracing</code> object is used to enable or disable tracing for sets of
+categories. Instances are created using the <code>trace_events.createTracing()</code>
+method.</p>
+<p>When created, the <code>Tracing</code> object is disabled. Calling the
+<code>tracing.enable()</code> method adds the categories to the set of enabled trace event
+categories. Calling <code>tracing.disable()</code> will remove the categories from the
+set of enabled trace event categories.</p>
+<h5><code>tracing.categories</code><span><a class="mark" href="#tracing_tracing_categories" id="tracing_tracing_categories">#</a></span></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>A comma-separated list of the trace event categories covered by this
+<code>Tracing</code> object.</p>
+<h5><code>tracing.disable()</code><span><a class="mark" href="#tracing_tracing_disable" id="tracing_tracing_disable">#</a></span></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<p>Disables this <code>Tracing</code> object.</p>
+<p>Only trace event categories <em>not</em> covered by other enabled <code>Tracing</code> objects
+and <em>not</em> specified by the <code>--trace-event-categories</code> flag will be disabled.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> trace_events = <span class="hljs-built_in">require</span>(<span class="hljs-string">'trace_events'</span>);
+<span class="hljs-keyword">const</span> t1 = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'node'</span>, <span class="hljs-string">'v8'</span>] });
+<span class="hljs-keyword">const</span> t2 = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'node.perf'</span>, <span class="hljs-string">'node'</span>] });
+t1.enable();
+t2.enable();
+
+<span class="hljs-comment">// Prints 'node,node.perf,v8'</span>
+<span class="hljs-built_in">console</span>.log(trace_events.getEnabledCategories());
+
+t2.disable(); <span class="hljs-comment">// Will only disable emission of the 'node.perf' category</span>
+
+<span class="hljs-comment">// Prints 'node,v8'</span>
+<span class="hljs-built_in">console</span>.log(trace_events.getEnabledCategories());</code></pre>
+<h5><code>tracing.enable()</code><span><a class="mark" href="#tracing_tracing_enable" id="tracing_tracing_enable">#</a></span></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<p>Enables this <code>Tracing</code> object for the set of categories covered by the
+<code>Tracing</code> object.</p>
+<h5><code>tracing.enabled</code><span><a class="mark" href="#tracing_tracing_enabled" id="tracing_tracing_enabled">#</a></span></h5><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> <code>true</code> only if the <code>Tracing</code> object has been enabled.</li>
+</ul>
+<h4><code>trace_events.createTracing(options)</code><span><a class="mark" href="#tracing_trace_events_createtracing_options" id="tracing_trace_events_createtracing_options">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>categories</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> An array of trace category names. Values included
+in the array are coerced to a string when possible. An error will be
+thrown if the value cannot be coerced.</li>
+</ul>
+</li>
+<li>返回: <a href="tracing.html#tracing_tracing_object" rel="nofollow" class="type">&lt;Tracing&gt;</a>.</li>
+</ul>
+<p>Creates and returns a <code>Tracing</code> object for the given set of <code>categories</code>.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> trace_events = <span class="hljs-built_in">require</span>(<span class="hljs-string">'trace_events'</span>);
+<span class="hljs-keyword">const</span> categories = [<span class="hljs-string">'node.perf'</span>, <span class="hljs-string">'node.async_hooks'</span>];
+<span class="hljs-keyword">const</span> tracing = trace_events.createTracing({ categories });
+tracing.enable();
+<span class="hljs-comment">// do stuff</span>
+tracing.disable();</code></pre>
+<h4><code>trace_events.getEnabledCategories()</code><span><a class="mark" href="#tracing_trace_events_getenabledcategories" id="tracing_trace_events_getenabledcategories">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Returns a comma-separated list of all currently-enabled trace event
+categories. The current set of enabled trace event categories is determined
+by the <em>union</em> of all currently-enabled <code>Tracing</code> objects and any categories
+enabled using the <code>--trace-event-categories</code> flag.</p>
+<p>Given the file <code>test.js</code> below, the command
+<code>node --trace-event-categories node.perf test.js</code> will print
+<code>'node.async_hooks,node.perf'</code> to the console.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> trace_events = <span class="hljs-built_in">require</span>(<span class="hljs-string">'trace_events'</span>);
+<span class="hljs-keyword">const</span> t1 = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'node.async_hooks'</span>] });
+<span class="hljs-keyword">const</span> t2 = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'node.perf'</span>] });
+<span class="hljs-keyword">const</span> t3 = trace_events.createTracing({ <span class="hljs-attr">categories</span>: [<span class="hljs-string">'v8'</span>] });
+
+t1.enable();
+t2.enable();
+
+<span class="hljs-built_in">console</span>.log(trace_events.getEnabledCategories());</code></pre></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

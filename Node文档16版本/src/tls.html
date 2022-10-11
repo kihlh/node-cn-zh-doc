@@ -1,0 +1,1964 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>tls 安全传输层 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411160621" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="tls" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_2"><a href="#tls_tls_ssl">tls 安全传输层</a></span>
+<ul>
+<li><a href="#tls_tls_ssl_concepts">TLS/SSL 概念</a>
+<ul>
+<li><a href="#tls_perfect_forward_secrecy">完全前向保密</a></li>
+<li><a href="#tls_alpn_and_sni">ALPN 和 SNI</a></li>
+<li><a href="#tls_pre_shared_keys">预共享的密钥</a></li>
+<li><a href="#tls_client_initiated_renegotiation_attack_mitigation">客户端发起的重协商攻击缓解</a></li>
+<li><a href="#tls_session_resumption">会话恢复</a>
+<ul>
+<li><a href="#tls_session_identifiers">会话标识符</a></li>
+<li><a href="#tls_session_tickets">会话票证</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tls_modifying_the_default_tls_cipher_suite">修改默认的 TLS 加密组件</a></li>
+<li><a href="#tls_x509_certificate_error_codes">X509 证书的错误码</a></li>
+<li><span class="stability_0"><a href="#tls_class_tls_cryptostream"><code>tls.CryptoStream</code> 类</a></span>
+<ul>
+<li><a href="#tls_cryptostream_byteswritten"><code>cryptoStream.bytesWritten</code></a></li>
+</ul>
+</li>
+<li><span class="stability_0"><a href="#tls_class_tls_securepair"><code>tls.SecurePair</code> 类</a></span>
+<ul>
+<li><a href="#tls_event_secure"><code>'secure'</code> 事件</a></li>
+</ul>
+</li>
+<li><a href="#tls_class_tls_server"><code>tls.Server</code> 类</a>
+<ul>
+<li><a href="#tls_event_connection"><code>'connection'</code> 事件</a></li>
+<li><a href="#tls_event_keylog"><code>'keylog'</code> 事件</a></li>
+<li><a href="#tls_event_newsession"><code>'newSession'</code> 事件</a></li>
+<li><a href="#tls_event_ocsprequest"><code>'OCSPRequest'</code> 事件</a></li>
+<li><a href="#tls_event_resumesession"><code>'resumeSession'</code> 事件</a></li>
+<li><a href="#tls_event_secureconnection"><code>'secureConnection'</code> 事件</a></li>
+<li><a href="#tls_event_tlsclienterror"><code>'tlsClientError'</code> 事件</a></li>
+<li><a href="#tls_server_addcontext_hostname_context"><code>server.addContext(hostname, context)</code></a></li>
+<li><a href="#tls_server_address"><code>server.address()</code></a></li>
+<li><a href="#tls_server_close_callback"><code>server.close([callback])</code></a></li>
+<li><a href="#tls_server_getticketkeys"><code>server.getTicketKeys()</code></a></li>
+<li><a href="#tls_server_listen"><code>server.listen()</code></a></li>
+<li><a href="#tls_server_setsecurecontext_options"><code>server.setSecureContext(options)</code></a></li>
+<li><a href="#tls_server_setticketkeys_keys"><code>server.setTicketKeys(keys)</code></a></li>
+</ul>
+</li>
+<li><a href="#tls_class_tls_tlssocket"><code>tls.TLSSocket</code> 类</a>
+<ul>
+<li><a href="#tls_new_tls_tlssocket_socket_options"><code>new tls.TLSSocket(socket[, options])</code></a></li>
+<li><a href="#tls_event_keylog_1"><code>'keylog'</code> 事件</a></li>
+<li><a href="#tls_event_ocspresponse"><code>'OCSPResponse'</code> 事件</a></li>
+<li><a href="#tls_event_secureconnect"><code>'secureConnect'</code> 事件</a></li>
+<li><a href="#tls_event_session"><code>'session'</code> 事件</a></li>
+<li><a href="#tls_tlssocket_address"><code>tlsSocket.address()</code></a></li>
+<li><a href="#tls_tlssocket_authorizationerror"><code>tlsSocket.authorizationError</code></a></li>
+<li><a href="#tls_tlssocket_authorized"><code>tlsSocket.authorized</code></a></li>
+<li><a href="#tls_tlssocket_disablerenegotiation"><code>tlsSocket.disableRenegotiation()</code></a></li>
+<li><a href="#tls_tlssocket_enabletrace"><code>tlsSocket.enableTrace()</code></a></li>
+<li><a href="#tls_tlssocket_encrypted"><code>tlsSocket.encrypted</code></a></li>
+<li><a href="#tls_tlssocket_exportkeyingmaterial_length_label_context"><code>tlsSocket.exportKeyingMaterial(length, label[, context])</code></a></li>
+<li><a href="#tls_tlssocket_getcertificate"><code>tlsSocket.getCertificate()</code></a></li>
+<li><a href="#tls_tlssocket_getcipher"><code>tlsSocket.getCipher()</code></a></li>
+<li><a href="#tls_tlssocket_getephemeralkeyinfo"><code>tlsSocket.getEphemeralKeyInfo()</code></a></li>
+<li><a href="#tls_tlssocket_getfinished"><code>tlsSocket.getFinished()</code></a></li>
+<li><a href="#tls_tlssocket_getpeercertificate_detailed"><code>tlsSocket.getPeerCertificate([detailed])</code></a>
+<ul>
+<li><a href="#tls_certificate_object">证书对象</a></li>
+</ul>
+</li>
+<li><a href="#tls_tlssocket_getpeerfinished"><code>tlsSocket.getPeerFinished()</code></a></li>
+<li><a href="#tls_tlssocket_getpeerx509certificate"><code>tlsSocket.getPeerX509Certificate()</code></a></li>
+<li><a href="#tls_tlssocket_getprotocol"><code>tlsSocket.getProtocol()</code></a></li>
+<li><a href="#tls_tlssocket_getsession"><code>tlsSocket.getSession()</code></a></li>
+<li><a href="#tls_tlssocket_getsharedsigalgs"><code>tlsSocket.getSharedSigalgs()</code></a></li>
+<li><a href="#tls_tlssocket_gettlsticket"><code>tlsSocket.getTLSTicket()</code></a></li>
+<li><a href="#tls_tlssocket_getx509certificate"><code>tlsSocket.getX509Certificate()</code></a></li>
+<li><a href="#tls_tlssocket_issessionreused"><code>tlsSocket.isSessionReused()</code></a></li>
+<li><a href="#tls_tlssocket_localaddress"><code>tlsSocket.localAddress</code></a></li>
+<li><a href="#tls_tlssocket_localport"><code>tlsSocket.localPort</code></a></li>
+<li><a href="#tls_tlssocket_remoteaddress"><code>tlsSocket.remoteAddress</code></a></li>
+<li><a href="#tls_tlssocket_remotefamily"><code>tlsSocket.remoteFamily</code></a></li>
+<li><a href="#tls_tlssocket_remoteport"><code>tlsSocket.remotePort</code></a></li>
+<li><a href="#tls_tlssocket_renegotiate_options_callback"><code>tlsSocket.renegotiate(options, callback)</code></a></li>
+<li><a href="#tls_tlssocket_setmaxsendfragment_size"><code>tlsSocket.setMaxSendFragment(size)</code></a></li>
+</ul>
+</li>
+<li><a href="#tls_tls_checkserveridentity_hostname_cert"><code>tls.checkServerIdentity(hostname, cert)</code></a></li>
+<li><a href="#tls_tls_connect_options_callback"><code>tls.connect(options[, callback])</code></a></li>
+<li><a href="#tls_tls_connect_path_options_callback"><code>tls.connect(path[, options][, callback])</code></a></li>
+<li><a href="#tls_tls_connect_port_host_options_callback"><code>tls.connect(port[, host][, options][, callback])</code></a></li>
+<li><a href="#tls_tls_createsecurecontext_options"><code>tls.createSecureContext([options])</code></a></li>
+<li><span class="stability_0"><a href="#tls_tls_createsecurepair_context_isserver_requestcert_rejectunauthorized_options"><code>tls.createSecurePair([context][, isServer][, requestCert][, rejectUnauthorized][, options])</code></a></span></li>
+<li><a href="#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer([options][, secureConnectionListener])</code></a></li>
+<li><a href="#tls_tls_getciphers"><code>tls.getCiphers()</code></a></li>
+<li><a href="#tls_tls_rootcertificates"><code>tls.rootCertificates</code></a></li>
+<li><a href="#tls_tls_default_ecdh_curve"><code>tls.DEFAULT_ECDH_CURVE</code></a></li>
+<li><a href="#tls_tls_default_max_version"><code>tls.DEFAULT_MAX_VERSION</code></a></li>
+<li><a href="#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a></li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>tls 安全传输层<span><a class="mark" href="#tls_tls_ssl" id="tls_tls_ssl">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="tls_ssl">
+                <a href="tls/tls_ssl.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.10.0-->
+<p></p><div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> - 稳定</div><p></p>
+<p><strong>源代码:</strong> <a rel="nofollow" href="http://url.nodejs.cn/zLujJr">lib/tls.js</a></p>
+<p><code>tls</code> 模块是对安全传输层（TLS）及安全套接层（SSL）协议的实现，建立在OpenSSL的基础上。
+按如下方式引用此模块:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> tls = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tls'</span>);</code></pre>
+<section><h3>TLS/SSL 概念<span><a class="mark" href="#tls_tls_ssl_concepts" id="tls_tls_ssl_concepts">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="tls_ssl_concepts">
+                <a href="tls/tls_ssl_concepts.html" class="tip_trans">中英对照</a>
+                </p>
+<p>TLS/SSL 是公共/私人的密钥基础设施（PKI）。
+大部分情况下，每个服务器和客户端都应该有一个私钥。</p>
+<p>私钥能有多种生成方式，下面举一个例子。
+用 OpenSSL 的命令行来生成一个 2048 位的 RSA 私钥：</p>
+<pre><code class="language-sh">openssl genrsa -out ryans-key.pem 2048</code></pre>
+<p>通过 TLS/SSL，所有的服务器（和一些客户端）必须要一个证书。
+证书是相似于私钥的公钥,它由 CA 或者私钥拥有者数字签名，特别地，私钥拥有者所签名的被称为自签名。
+获取证书的第一步是生成一个证书申请文件（CSR)。</p>
+<p>用 OpenSSL 能生成一个私钥的 CSR 文件：</p>
+<pre><code class="language-sh">openssl req -new -sha256 -key ryans-key.pem -out ryans-csr.pem</code></pre>
+<p>CSR 文件被生成以后，它既能被 CA 签名也能被用户自签名。
+用 OpenSSL 生成一个自签名证书的命令如下：</p>
+<pre><code class="language-sh">openssl x509 -req -<span class="hljs-keyword">in</span> ryans-csr.pem -signkey ryans-key.pem -out ryans-cert.pem</code></pre>
+<p>证书被生成以后，它又能用来生成一个 <code>.pfx</code> 或者 <code>.p12</code> 文件：</p>
+<pre><code class="language-sh">openssl pkcs12 -<span class="hljs-built_in">export</span> -<span class="hljs-keyword">in</span> ryans-cert.pem -inkey ryans-key.pem \
+      -certfile ca-cert.pem -out ryans.pfx</code></pre>
+<p>命令行参数:</p>
+<ul>
+<li><code>in</code>: 被签名的证书。</li>
+<li><code>inkey</code>: 有关的私钥。</li>
+<li><code>certfile</code>: 签入文件的证书串，比如： <code>cat ca1-cert.pem ca2-cert.pem &gt; ca-cert.pem</code>。</li>
+</ul>
+<h4>完全前向保密<span><a class="mark" href="#tls_perfect_forward_secrecy" id="tls_perfect_forward_secrecy">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="perfect_forward_secrecy">
+                <a href="tls/perfect_forward_secrecy.html" class="tip_trans">中英对照</a>
+                </p>
+<!-- type=misc -->
+<p>术语“<a href="http://url.nodejs.cn/wybzZg">前向保密</a>”或“完全前向保密”是一种密钥协商（或称做密钥交换）方法。
+通过这种方法,客户端与服务端在当前会话中，协商一个临时生成的密钥进行对称加密的密钥交换。
+这意味着即使服务器端私钥发生泄漏，窃密者与攻击者也无法解密通信内容，除非他们能得到当前会话的临时密钥。</p>
+<p>TLS/SSL 握手时，使用完全前向即每次会话都会随机生成一个临时密钥对用于对称加密密钥协商(区别于每次会话都是用相同的密钥)。
+实现这个技术的密钥交换算法称为“ephemeral”。</p>
+<p>当前最常用的两种实现完全前向保密的算法（注意算法结尾的"E"）：</p>
+<ul>
+<li><a href="http://url.nodejs.cn/iDZV96">DHE</a> - 使用临时密钥的 Diffie-Hellman 密钥交换算法。</li>
+<li><a href="http://url.nodejs.cn/p9zTGn">ECDHE</a> - 使用临时密钥的椭圆曲线 Diffie-Hellman 密钥交换算法。</li>
+</ul>
+<p>使用临时密钥会带来性能损失，因为密钥生成的过程十分消耗 CPU 计算性能。</p>
+<p>如需使用完全前向加密，例如使用 <code>tls</code> 模块的 <code>DHE</code> 算法，使用之前需要生成一个 Diffie-Hellman 参数并将其用 <code>dhparam</code> 声明在 <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> 中。
+如下例子展示了如何使用 OpenSSL 命令生成参数：</p>
+<pre><code class="language-bash">openssl dhparam -outform PEM -out dhparam.pem 2048</code></pre>
+<p>如需使用 <code>ECDHE</code> 算法，则不需要生成 Diffie-Hellman 参数，因为可以使用默认的 ECDHE 曲线。
+在创建 TLS Server 时，可使用 <code>ecdhCurve</code> 属性声明服务器支持的曲线名词，详请参见 <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>。</p>
+<p>完全前向保密在 TLSv1.2 之前是可选的，但它不是 TLSv1.3 的可选项，因为所有 TLSv1.3 密码套件都使用 ECDHE。</p>
+<h4>ALPN 和 SNI<span><a class="mark" href="#tls_alpn_and_sni" id="tls_alpn_and_sni">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="alpn_and_sni">
+                <a href="tls/alpn_and_sni.html" class="tip_trans">中英对照</a>
+                </p>
+<!-- type=misc -->
+<p>ALPN（Application-Layer Protocol Negotiation Extension，应用层协议协商扩展）和SNI（Server Name Indication，服务器名称指示）是 TLS 的握手扩展：</p>
+<ul>
+<li>ALPN：允许将一个 TLS 服务器用于多种协议（HTTP、HTTP/2）。</li>
+<li>SNI：允许将一个 TLS 服务器用于具有不同 SSL 证书的多个主机名。</li>
+</ul>
+<h4>预共享的密钥<span><a class="mark" href="#tls_pre_shared_keys" id="tls_pre_shared_keys">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="pre_shared_keys">
+                <a href="tls/pre_shared_keys.html" class="tip_trans">中英对照</a>
+                </p>
+<!-- type=misc -->
+<p>TLS-PSK(Pre-Shared-Key:预共享密钥)是一种身份认证方式，有别于普通的基于证书认证的身份认证，
+TLS握手中，PSK使用预共享密钥来代替证书认证，提供多样化的认证手段。TLS-PSK和PKI（公钥基础设施）
+不是互斥的，客户端和服务器端在密钥套件的协商过程中，可以共用两种或者使用其中一种方式来完成协商。</p>
+<p>仅当通信双方有安全的密钥共享信道时，才考虑使用TLS-PSK来进行身份认证。基于这个原因，PSK
+不会替换PKI在TLS中的重要用途。近年来，在OpenSSL的实现中发现了许多TLS-PSK的安全缺陷，因为
+它仅仅在少数的应用中使用，所以，在使用PSK密钥套件前，请充分考虑替代方案。在<a href="http://url.nodejs.cn/qw1PMn">RFC 4086</a>
+中讨论了生成PSK过程中，充分无序的密钥是非常重要的，从固定密码和低无序性源中获取预共享密钥
+是不安全的。</p>
+<p>默认情况下，PSK相关的密钥套件是被禁用的，如果需要使用基于TLS-PSK密钥套件，需要使用<code>ciphers</code>参数显式声明。
+使用<code>openssl ciphers -v 'PSK'</code>可以查询到所有可用的基于PSK密钥套件。所有TLS 1.3协议支持的密钥套件均是
+合法的PSK密钥套件，但当前仅支持SHA256摘要算法的套件，可以通过<code>openssl ciphers -v -s -tls1_3 -psk</code>
+查询符合要求的密钥套件。</p>
+<p>根据<a href="http://url.nodejs.cn/Gq5awY">RFC 4279</a>，PSK标识符最大长度应大于128bytes，PSK密钥最大长度应大于64bytes。
+在OpenSSL 1.1.0版本中，最大PSK标识符长度为128byte，最大PSK密钥长度为256btyes。</p>
+<p>因为底层OpenSSL API的限制，当前的实现不支持异步PSK回调。</p>
+<h4>客户端发起的重协商攻击缓解<span><a class="mark" href="#tls_client_initiated_renegotiation_attack_mitigation" id="tls_client_initiated_renegotiation_attack_mitigation">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="client_initiated_renegotiation_attack_mitigation">
+                <a href="tls/client_initiated_renegotiation_attack_mitigation.html" class="tip_trans">中英对照</a>
+                </p>
+<!-- type=misc -->
+<p>TLS 协议允许客户端在 TLS 会话中进行重协商，用于安全因素的考量。
+不幸的是，会话重协商需要消耗大量的服务器端资源，这将导致服务器存在潜在的被 DDoS 攻击的可能。</p>
+<p>为了减轻这个风险，限制每十分钟只能使用三次重协商，超过这个限制将会在 <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> 实例中产生一个 <code>error</code> 事件。
+这个限制是可配置的:</p>
+<ul>
+<li><code>tls.CLIENT_RENEG_LIMIT</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 指定重协商请求的次数限制，默认为 <code>3</code>。</li>
+<li><code>tls.CLIENT_RENEG_WINDOW</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 指定限制次数的生效时间段，默认为 <code>600</code>（10 分钟）。</li>
+</ul>
+<p>不应在未充分理解其含义与影响的情况下修改上述参数。</p>
+<p>TLSv1.3 不支持重协商。</p>
+<h4>会话恢复<span><a class="mark" href="#tls_session_resumption" id="tls_session_resumption">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="session_resumption">
+                <a href="tls/session_resumption.html" class="tip_trans">中英对照</a>
+                </p>
+<p>建立一个TLS会话是比较耗时的，会话复用通过保存会话和复用会话状态加快TLS会话建立过程。
+这里讨论老的（Session ID会话复用）和新的（Session Ticket会话复用，当前推荐的）
+两种会话复用机制。</p>
+<h5>会话标识符<span><a class="mark" href="#tls_session_identifiers" id="tls_session_identifiers">#</a></span></h5><p class="tip_wrap" data-show_trans="1" data-item_id="session_identifiers">
+                <a href="tls/session_identifiers.html" class="tip_trans">中英对照</a>
+                </p>
+<p>服务器在与客户端新建连接的时候生成一个唯一的Session ID发送给客户端，客户端与服务器均保存这个
+会话的状态。当需要重新建立SSL会话时，客户端发送保存的ID和会话状态给服务器，如果服务器
+也有这个ID的会话状态，则可以复用这个ID的会话信息，否则就会创建新的会话。祥见<a href="http://url.nodejs.cn/uEXxgB">RFC 2246</a>
+第23-30页。</p>
+<p>绝大多数浏览器支持在HTTPS中使用Session ID会话复用技术来恢复已有会话。</p>
+<p>在Node.js中，客户端通过等待 <a href="tls.html#tls_event_session"><code>'session'</code></a>事件来获取会话信息，并提供<a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>中的
+<code>session</code>选项来复用会话。服务器必须实现<a href="tls.html#tls_event_newsession"><code>'newSession'</code></a>和<a href="tls.html#tls_event_resumesession"><code>'resumeSession'</code></a>事件的
+hander，并使用会话ID作为查找的key来保存和恢复会话信息。在负载均衡和集群下，想要复用会话需要使用
+类似Redis的共享缓存机制来存储会话信息。</p>
+<h5>会话票证<span><a class="mark" href="#tls_session_tickets" id="tls_session_tickets">#</a></span></h5><p class="tip_wrap" data-show_trans="1" data-item_id="session_tickets">
+                <a href="tls/session_tickets.html" class="tip_trans">中英对照</a>
+                </p>
+<p>服务器加密整个会话状态，并将其发送给客户端，被称为“票据（ticket）”。当需要复用会话时，客户端
+在握手阶段将ticket发送给服务器。这种机制的优点是服务器端不需要缓存会话状态。如果基于任何
+原因（包括解密ticket内容失败，ticket信息超时等情况），服务器不使用ticket，则会新建一个会话，并
+发送新的ticket给客户端，详见<a href="http://url.nodejs.cn/ZpmZTP">RFC 5077</a>。</p>
+<p>基于tickets的会话复用方式正在被越来越多的主流浏览器支持。</p>
+<p>在Node.js中，客户端的两种会话复用使用相同的API。在调试时，如果<a href="tls.html#tls_tlssocket_gettlsticket"><code>tls.TLSSocket.getTLSTicket()</code></a>
+返回了会话信息，并且会话信息中包含ticket，则使用了Session Ticket会话复用，
+否则使用了Session ID会话复用。</p>
+<p>在TLS1.3中，需要注意服务器可能会发送多个ticket，这会触发多个<code>'session'</code>事件，详见<a href="tls.html#tls_event_session"><code>'session'</code></a>
+事件中的介绍。</p>
+<p>单个服务器使用session ticket会话复用不需要特别的实现，但如果需要在服务器重启后或者在使用
+负载均衡的情况下，任然能够复用成功，则所有服务器必须要使用相同的密钥来生成ticket。这个密钥
+由三个16字节的密钥组成，但在API实现中，为了方便使用了一个48字节的缓存保存。</p>
+<p>服务器实例使用<a href="tls.html#tls_server_getticketkeys"><code>server.getTicketKeys()</code></a>可以获取ticket密钥，并将其分发给其他服务器。
+但出于安全考虑，最好是生成48字节随机的数据并通过<a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>的<code>ticketKeys</code>
+参数来设置。密钥最好定时重新生成并通过<a href="tls.html#tls_server_setticketkeys_keys"><code>server.setTicketKeys()</code></a>在服务器中更新。</p>
+<p>Session ticket是TLS协商过程的加密密钥之一，因此ticket<em><strong>必须安全的存储</strong></em>。在TLS1.2及TLS1.2以下版本，
+如果为了妥协而使用相同的ticket加密所有会话，则最好不要将ticket存储在磁盘上，并且应该定期更新ticket的生成密钥。</p>
+<p>如果客户端支持ticket，则服务器会在TLS协商过程中发送。如果服务器端需要禁用ticket，需要在
+<code>secureOptions</code>提供<code>require('constants').SSL_OP_NO_TICKET</code>来禁用。</p>
+<p>Session ID和session ticket会话复用都有超时，超时后服务器将创建新的会话。可以通过<a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>
+的<code>sessionTimeout</code>来设置超时时间。</p>
+<p>对上述所有机制，当会话复用失败时，服务器会创建一个新的会话，这不会导致TLS/HTTPS连接失败，因为TLS性能的影响，这显然不需要通知到TLS/HTTPS连接层面。
+在Openssl命令行中，可以通过如下方式验证服务器是否支持会话复用。可以使用<code>openssl s_client</code>的<code>-reconnect</code>参数, 例如：</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> openssl s_client -connect localhost:443 -reconnect</span></code></pre>
+<p>查看调试输出，第一条连接应该包括一个"New"字段，例如：</p>
+<pre><code class="language-text">New, TLSv1.2, Cipher is ECDHE-RSA-AES128-GCM-SHA256</code></pre>
+<p>接下来的连接应该包括"Reused"字段，例如：</p>
+<pre><code class="language-text">Reused, TLSv1.2, Cipher is ECDHE-RSA-AES128-GCM-SHA256</code></pre>
+</section><section><h3>修改默认的 TLS 加密组件<span><a class="mark" href="#tls_modifying_the_default_tls_cipher_suite" id="tls_modifying_the_default_tls_cipher_suite">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="modifying_the_default_tls_cipher_suite">
+                <a href="tls/modifying_the_default_tls_cipher_suite.html" class="tip_trans">中英对照</a>
+                </p>
+<p>Node.js 构造时包含了默认的 TLS 开启和关闭的加密套件。在构建自己的Node.js分发版本时，
+可以配置默认支持的加密套件列表。</p>
+<p>下表中的命令可以查看默认的加密套件：</p>
+<pre><code class="language-console">node -p crypto.constants.defaultCoreCipherList | tr ':' '\n'
+TLS_AES_256_GCM_SHA384
+TLS_CHACHA20_POLY1305_SHA256
+TLS_AES_128_GCM_SHA256
+ECDHE-RSA-AES128-GCM-SHA256
+ECDHE-ECDSA-AES128-GCM-SHA256
+ECDHE-RSA-AES256-GCM-SHA384
+ECDHE-ECDSA-AES256-GCM-SHA384
+DHE-RSA-AES128-GCM-SHA256
+ECDHE-RSA-AES128-SHA256
+DHE-RSA-AES128-SHA256
+ECDHE-RSA-AES256-SHA384
+DHE-RSA-AES256-SHA384
+ECDHE-RSA-AES256-SHA256
+DHE-RSA-AES256-SHA256
+HIGH
+!aNULL
+!eNULL
+!EXPORT
+!DES
+!RC4
+!MD5
+!PSK
+!SRP
+!CAMELLIA</code></pre>
+<p>默认加密组件可以使用 <a href="cli.html#cli_tls_cipher_list_list"><code>--tls-cipher-list</code></a> 命令进行替换（直接或通过 <a href="cli.html#cli_node_options_options"><code>NODE_OPTIONS</code></a> 环境变量）。
+比如，生成 <code>ECDHE-RSA-AES128-GCM-SHA256:!RC4</code> 的 TLS 加密组件：</p>
+<pre><code class="language-bash">node --tls-cipher-list=<span class="hljs-string">'ECDHE-RSA-AES128-GCM-SHA256:!RC4'</span> server.js
+
+<span class="hljs-built_in">export</span> NODE_OPTIONS=--tls-cipher-list=<span class="hljs-string">'ECDHE-RSA-AES128-GCM-SHA256:!RC4'</span>
+node server.js</code></pre>
+<p>默认的加密组件也可以通过客户端或者服务器的 <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> 方法的 <code>ciphers</code> 选项来进行替换，<a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a> 方法和 <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> 方法也可以使用 <code>ciphers</code> 选项进行设置，当然也可以在创建一个 <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> 时设置。</p>
+<p>密码列表可以包含 TLSv1.3 密码套件名称的混合，以 <code>'TLS_'</code> 开头的密码，以及 TLSv1.2 及以下密码套件的规范。
+TLSv1.2 密码支持传统规范格式，有关详细信息，请参见 OpenSSL <a href="http://url.nodejs.cn/XcPHdc">密码列表格式</a>文档，但这些规范不适用于 TLSv1.3 密码。
+只能通过在密码列表中包含其全名来启用 TLSv1.3 套件。
+例如，它们不能通过使用传统的 TLSv1.2 <code>'EECDH'</code>或 <code>'!EECDH'</code> 规范来启用或禁用。</p>
+<p>尽管 TLSv1.3 和 TLSv1.2 密码套件的相对顺序，TLSv1.3 协议明显比 TLSv1.2 更安全，并且如果握手表明它受支持，并且如果有任何 TLSv1.3 密码套件已启用，将始终选择 TLSv1.2 以上。</p>
+<p>Node.js 包含的默认的加密组件是经过精心挑选，能体现目前最好的安全实践和最低风险。
+改变默认的加密组件可以对应用的安全性有重大的影响。
+<code>--tls-cipher-list</code> 开关和 <code>ciphers</code> 选项应该只在必要的时候使用。</p>
+<p>默认加密组件倾向使用 GCM 加密作为 <a href="http://url.nodejs.cn/phZkVM">Chrome 现代加密设置</a>的选项，也倾向使用 ECDHE 和 DHE 加密算法实现完美的前向安全，同时向后兼容。</p>
+<p>依据<a href="http://url.nodejs.cn/Ai7HeQ">特殊攻击影响更大位数的 AES 密钥</a>，128 位的 AES 密钥优先于 192 位和 256 位的 AES 密钥。</p>
+<p>老的客户端依赖不安全的 RC4 或者基于 DES 的加密（比如 IE6）不能用默认配置完成握手的过程。
+如果必须支持这些客户端，<a href="http://url.nodejs.cn/PLgT7T">TLS 推荐规范</a>也许可以提供兼容的加密组件。
+欲知更多的格式的细节请参见 OpenSSL <a href="http://url.nodejs.cn/XcPHdc">加密列表格式</a>文档。</p>
+<p>只有 5 种 TLSv1.3 密码套件：</p>
+<ul>
+<li><code>'TLS_AES_256_GCM_SHA384'</code></li>
+<li><code>'TLS_CHACHA20_POLY1305_SHA256'</code></li>
+<li><code>'TLS_AES_128_GCM_SHA256'</code></li>
+<li><code>'TLS_AES_128_CCM_SHA256'</code></li>
+<li><code>'TLS_AES_128_CCM_8_SHA256'</code></li>
+</ul>
+<p>默认情况下启用前 3 个。
+TLSv1.3 支持最后 2 个基于 <code>CCM</code> 的套件，因为它们在受约束的系统上可能有更好的性能，但默认情况下它们不会启用，因为它们提供的安全性较低。</p>
+</section><section><h3>X509 证书的错误码<span><a class="mark" href="#tls_x509_certificate_error_codes" id="tls_x509_certificate_error_codes">#</a></span></h3><p class="tip_wrap" data-item_id="x509_certificate_error_codes"></p>
+<p>Multiple functions can fail due to certificate errors that are reported by
+OpenSSL. In such a case, the function provides an <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a> via its callback that
+has the property <code>code</code> which can take one of the following values:</p>
+<!--
+values are taken from src/crypto/crypto_common.cc
+description are taken from deps/openssl/openssl/crypto/x509/x509_txt.c
+-->
+<ul>
+<li><code>'UNABLE_TO_GET_ISSUER_CERT'</code>: Unable to get issuer certificate.</li>
+<li><code>'UNABLE_TO_GET_CRL'</code>: Unable to get certificate CRL.</li>
+<li><code>'UNABLE_TO_DECRYPT_CERT_SIGNATURE'</code>: Unable to decrypt certificate's
+signature.</li>
+<li><code>'UNABLE_TO_DECRYPT_CRL_SIGNATURE'</code>: Unable to decrypt CRL's signature.</li>
+<li><code>'UNABLE_TO_DECODE_ISSUER_PUBLIC_KEY'</code>: Unable to decode issuer public key.</li>
+<li><code>'CERT_SIGNATURE_FAILURE'</code>: Certificate signature failure.</li>
+<li><code>'CRL_SIGNATURE_FAILURE'</code>: CRL signature failure.</li>
+<li><code>'CERT_NOT_YET_VALID'</code>: Certificate is not yet valid.</li>
+<li><code>'CERT_HAS_EXPIRED'</code>: Certificate has expired.</li>
+<li><code>'CRL_NOT_YET_VALID'</code>: CRL is not yet valid.</li>
+<li><code>'CRL_HAS_EXPIRED'</code>: CRL has expired.</li>
+<li><code>'ERROR_IN_CERT_NOT_BEFORE_FIELD'</code>: Format error in certificate's notBefore
+field.</li>
+<li><code>'ERROR_IN_CERT_NOT_AFTER_FIELD'</code>: Format error in certificate's notAfter
+field.</li>
+<li><code>'ERROR_IN_CRL_LAST_UPDATE_FIELD'</code>: Format error in CRL's lastUpdate field.</li>
+<li><code>'ERROR_IN_CRL_NEXT_UPDATE_FIELD'</code>: Format error in CRL's nextUpdate field.</li>
+<li><code>'OUT_OF_MEM'</code>: Out of memory.</li>
+<li><code>'DEPTH_ZERO_SELF_SIGNED_CERT'</code>: Self signed certificate.</li>
+<li><code>'SELF_SIGNED_CERT_IN_CHAIN'</code>: Self signed certificate in certificate chain.</li>
+<li><code>'UNABLE_TO_GET_ISSUER_CERT_LOCALLY'</code>: Unable to get local issuer certificate.</li>
+<li><code>'UNABLE_TO_VERIFY_LEAF_SIGNATURE'</code>: Unable to verify the first certificate.</li>
+<li><code>'CERT_CHAIN_TOO_LONG'</code>: Certificate chain too long.</li>
+<li><code>'CERT_REVOKED'</code>: Certificate revoked.</li>
+<li><code>'INVALID_CA'</code>: Invalid CA certificate.</li>
+<li><code>'PATH_LENGTH_EXCEEDED'</code>: Path length constraint exceeded.</li>
+<li><code>'INVALID_PURPOSE'</code>: Unsupported certificate purpose.</li>
+<li><code>'CERT_UNTRUSTED'</code>: Certificate not trusted.</li>
+<li><code>'CERT_REJECTED'</code>: Certificate rejected.</li>
+<li><code>'HOSTNAME_MISMATCH'</code>: Hostname mismatch.</li>
+</ul>
+</section><section><h3><code>tls.CryptoStream</code> 类<span><a class="mark" href="#tls_class_tls_cryptostream" id="tls_class_tls_cryptostream">#</a></span></h3><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.4</span><span>弃用于: v0.11.3</span>
+</div>
+<p></p><div class="api_stability api_stability_0"><a href="documentation.html#documentation_stability_index">稳定性: 0</a> - 弃用: 改为使用 <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> 。</div><p></p>
+<p>The <code>tls.CryptoStream</code> class represents a stream of encrypted data. This class
+is deprecated and should no longer be used.</p>
+<h4><code>cryptoStream.bytesWritten</code><span><a class="mark" href="#tls_cryptostream_byteswritten" id="tls_cryptostream_byteswritten">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.4</span><span>弃用于: v0.11.3</span>
+</div>
+<p>The <code>cryptoStream.bytesWritten</code> property returns the total number of bytes
+written to the underlying socket <em>including</em> the bytes required for the
+implementation of the TLS protocol.</p>
+</section><section><h3><code>tls.SecurePair</code> 类<span><a class="mark" href="#tls_class_tls_securepair" id="tls_class_tls_securepair">#</a></span></h3><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span><span>弃用于: v0.11.3</span>
+</div>
+<p></p><div class="api_stability api_stability_0"><a href="documentation.html#documentation_stability_index">稳定性: 0</a> - 弃用: 改为使用 <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> 。</div><p></p>
+<p>Returned by <a href="tls.html#tls_tls_createsecurepair_context_isserver_requestcert_rejectunauthorized_options"><code>tls.createSecurePair()</code></a>.</p>
+<h4><code>'secure'</code> 事件<span><a class="mark" href="#tls_event_secure" id="tls_event_secure">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span><span>弃用于: v0.11.3</span>
+</div>
+<p>The <code>'secure'</code> event is emitted by the <code>SecurePair</code> object once a secure
+connection has been established.</p>
+<p>As with checking for the server
+<a href="#tls_event_secureconnection"><code>'secureConnection'</code></a>
+event, <code>pair.cleartext.authorized</code> should be inspected to confirm whether the
+certificate used is properly authorized.</p>
+</section><section><h3><code>tls.Server</code> 类<span><a class="mark" href="#tls_class_tls_server" id="tls_class_tls_server">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_tls_server">
+                <a href="tls/class_tls_server.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span>
+</div>
+<ul>
+<li>继承自: <a href="net.html#net_class_net_server" rel="nofollow" class="type">&lt;net.Server&gt;</a></li>
+</ul>
+<p>接受使用 TLS 或 SSL 的加密连接。</p>
+<h4><code>'connection'</code> 事件<span><a class="mark" href="#tls_event_connection" id="tls_event_connection">#</a></span></h4><p class="tip_wrap" data-item_id="event_connection"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span>
+</div>
+<ul>
+<li><code>socket</code> <a href="stream.html#stream_class_stream_duplex" rel="nofollow" class="type">&lt;stream.Duplex&gt;</a></li>
+</ul>
+<p>This event is emitted when a new TCP stream is established, before the TLS
+handshake begins. <code>socket</code> is typically an object of type <a href="net.html#net_class_net_socket"><code>net.Socket</code></a>.
+Usually users will not want to access this event.</p>
+<p>This event can also be explicitly emitted by users to inject connections
+into the TLS server. In that case, any <a href="stream.html#stream_class_stream_duplex"><code>Duplex</code></a> stream can be passed.</p>
+<h4><code>'keylog'</code> 事件<span><a class="mark" href="#tls_event_keylog" id="tls_event_keylog">#</a></span></h4><p class="tip_wrap" data-item_id="event_keylog"></p>
+<div class="api_metadata">
+<span>新增于: v12.3.0, v10.20.0</span>
+</div>
+<ul>
+<li><code>line</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> Line of ASCII text, in NSS <code>SSLKEYLOGFILE</code> format.</li>
+<li><code>tlsSocket</code> <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a> The <code>tls.TLSSocket</code> instance on which it was
+generated.</li>
+</ul>
+<p>The <code>keylog</code> event is emitted when key material is generated or received by
+a connection to this server (typically before handshake has completed, but not
+necessarily). This keying material can be stored for debugging, as it allows
+captured TLS traffic to be decrypted. It may be emitted multiple times for
+each socket.</p>
+<p>A typical use case is to append received lines to a common text file, which
+is later used by software (such as Wireshark) to decrypt the traffic:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> logFile = fs.createWriteStream(<span class="hljs-string">'/tmp/ssl-keys.log'</span>, { <span class="hljs-attr">flags</span>: <span class="hljs-string">'a'</span> });
+<span class="hljs-comment">// ...</span>
+server.on(<span class="hljs-string">'keylog'</span>, <span class="hljs-function">(<span class="hljs-params">line, tlsSocket</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (tlsSocket.remoteAddress !== <span class="hljs-string">'...'</span>)
+    <span class="hljs-keyword">return</span>; <span class="hljs-comment">// Only log keys for a particular IP</span>
+  logFile.write(line);
+});</code></pre>
+<h4><code>'newSession'</code> 事件<span><a class="mark" href="#tls_event_newsession" id="tls_event_newsession">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="event_newsession">
+                <a href="tls/event_newsession.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v0.11.12</td>
+<td><p>The <code>callback</code> argument is now supported.</p></td></tr>
+<tr><td>v0.9.2</td>
+<td><p><span>新增于: v0.9.2</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p><code>'newSession'</code> 事件在创建一个新的 TLS 会话时触发。
+这可能用于在外部存储保存会话。
+数据会被提供给 <a href="tls.html#tls_event_resumesession"><code>'resumeSession'</code></a> 回调。</p>
+<p>监听器回调被调用时传入三个参数：</p>
+<ul>
+<li><code>sessionId</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> TLS 会话识别符。</li>
+<li><code>sessionData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> TLS 会话数据。</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> 在安全连接时为了发送或者接收数据，无参的回调函数必须被调用。</li>
+</ul>
+<p>添加监听器后，监听器只在连接建立后生效。</p>
+<h4><code>'OCSPRequest'</code> 事件<span><a class="mark" href="#tls_event_ocsprequest" id="tls_event_ocsprequest">#</a></span></h4><p class="tip_wrap" data-item_id="event_ocsprequest"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.13</span>
+</div>
+<p>The <code>'OCSPRequest'</code> event is emitted when the client sends a certificate status
+request. The listener callback is passed three arguments when called:</p>
+<ul>
+<li><code>certificate</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The server certificate</li>
+<li><code>issuer</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The issuer's certificate</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> A callback function that must be invoked to provide
+the results of the OCSP request.</li>
+</ul>
+<p>The server's current certificate can be parsed to obtain the OCSP URL
+and certificate ID; after obtaining an OCSP response, <code>callback(null, resp)</code> is
+then invoked, where <code>resp</code> is a <code>Buffer</code> instance containing the OCSP response.
+Both <code>certificate</code> and <code>issuer</code> are <code>Buffer</code> DER-representations of the
+primary and issuer's certificates. These can be used to obtain the OCSP
+certificate ID and OCSP endpoint URL.</p>
+<p>Alternatively, <code>callback(null, null)</code> may be called, indicating that there was
+no OCSP response.</p>
+<p>Calling <code>callback(err)</code> will result in a <code>socket.destroy(err)</code> call.</p>
+<p>The typical flow of an OCSP Request is as follows:</p>
+<ol>
+<li>Client connects to the server and sends an <code>'OCSPRequest'</code> (via the status
+info extension in ClientHello).</li>
+<li>Server receives the request and emits the <code>'OCSPRequest'</code> event, calling the
+listener if registered.</li>
+<li>Server extracts the OCSP URL from either the <code>certificate</code> or <code>issuer</code> and
+performs an <a href="http://url.nodejs.cn/ughRFP">OCSP request</a> to the CA.</li>
+<li>Server receives <code>'OCSPResponse'</code> from the CA and sends it back to the client
+via the <code>callback</code> argument</li>
+<li>Client validates the response and either destroys the socket or performs a
+handshake.</li>
+</ol>
+<p>The <code>issuer</code> can be <code>null</code> if the certificate is either self-signed or the
+issuer is not in the root certificates list. (An issuer may be provided
+via the <code>ca</code> option when establishing the TLS connection.)</p>
+<p>Listening for this event will have an effect only on connections established
+after the addition of the event listener.</p>
+<p>An npm module like <a href="http://url.nodejs.cn/2C7nRg">asn1.js</a> may be used to parse the certificates.</p>
+<h4><code>'resumeSession'</code> 事件<span><a class="mark" href="#tls_event_resumesession" id="tls_event_resumesession">#</a></span></h4><p class="tip_wrap" data-item_id="event_resumesession"></p>
+<div class="api_metadata">
+<span>新增于: v0.9.2</span>
+</div>
+<p>The <code>'resumeSession'</code> event is emitted when the client requests to resume a
+previous TLS session. The listener callback is passed two arguments when
+called:</p>
+<ul>
+<li><code>sessionId</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The TLS session identifier</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> A callback function to be called when the prior session
+has been recovered: <code>callback([err[, sessionData]])</code>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>sessionData</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>The event listener should perform a lookup in external storage for the
+<code>sessionData</code> saved by the <a href="tls.html#tls_event_newsession"><code>'newSession'</code></a> event handler using the given
+<code>sessionId</code>. If found, call <code>callback(null, sessionData)</code> to resume the session.
+If not found, the session cannot be resumed. <code>callback()</code> must be called
+without <code>sessionData</code> so that the handshake can continue and a new session can
+be created. It is possible to call <code>callback(err)</code> to terminate the incoming
+connection and destroy the socket.</p>
+<p>Listening for this event will have an effect only on connections established
+after the addition of the event listener.</p>
+<p>The following illustrates resuming a TLS session:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> tlsSessionStore = {};
+server.on(<span class="hljs-string">'newSession'</span>, <span class="hljs-function">(<span class="hljs-params">id, data, cb</span>) =&gt;</span> {
+  tlsSessionStore[id.toString(<span class="hljs-string">'hex'</span>)] = data;
+  cb();
+});
+server.on(<span class="hljs-string">'resumeSession'</span>, <span class="hljs-function">(<span class="hljs-params">id, cb</span>) =&gt;</span> {
+  cb(<span class="hljs-literal">null</span>, tlsSessionStore[id.toString(<span class="hljs-string">'hex'</span>)] || <span class="hljs-literal">null</span>);
+});</code></pre>
+<h4><code>'secureConnection'</code> 事件<span><a class="mark" href="#tls_event_secureconnection" id="tls_event_secureconnection">#</a></span></h4><p class="tip_wrap" data-item_id="event_secureconnection"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span>
+</div>
+<p>The <code>'secureConnection'</code> event is emitted after the handshaking process for a
+new connection has successfully completed. The listener callback is passed a
+single argument when called:</p>
+<ul>
+<li><code>tlsSocket</code> <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a> The established TLS socket.</li>
+</ul>
+<p>The <code>tlsSocket.authorized</code> property is a <code>boolean</code> indicating whether the
+client has been verified by one of the supplied Certificate Authorities for the
+server. If <code>tlsSocket.authorized</code> is <code>false</code>, then <code>socket.authorizationError</code>
+is set to describe how authorization failed. Depending on the settings
+of the TLS server, unauthorized connections may still be accepted.</p>
+<p>The <code>tlsSocket.alpnProtocol</code> property is a string that contains the selected
+ALPN protocol. When ALPN has no selected protocol, <code>tlsSocket.alpnProtocol</code>
+equals <code>false</code>.</p>
+<p>The <code>tlsSocket.servername</code> property is a string containing the server name
+requested via SNI.</p>
+<h4><code>'tlsClientError'</code> 事件<span><a class="mark" href="#tls_event_tlsclienterror" id="tls_event_tlsclienterror">#</a></span></h4><p class="tip_wrap" data-item_id="event_tlsclienterror"></p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>The <code>'tlsClientError'</code> event is emitted when an error occurs before a secure
+connection is established. The listener callback is passed two arguments when
+called:</p>
+<ul>
+<li><code>exception</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a> The <code>Error</code> object describing the error</li>
+<li><code>tlsSocket</code> <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a> The <code>tls.TLSSocket</code> instance from which the
+error originated.</li>
+</ul>
+<h4><code>server.addContext(hostname, context)</code><span><a class="mark" href="#tls_server_addcontext_hostname_context" id="tls_server_addcontext_hostname_context">#</a></span></h4><p class="tip_wrap" data-item_id="server_addcontext_hostname_context"></p>
+<div class="api_metadata">
+<span>新增于: v0.5.3</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> A SNI host name or wildcard (e.g. <code>'*'</code>)</li>
+<li><code>context</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> An object containing any of the possible properties
+from the <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> <code>options</code> arguments (e.g. <code>key</code>,
+<code>cert</code>, <code>ca</code>, etc).</li>
+</ul>
+<p>The <code>server.addContext()</code> method adds a secure context that will be used if
+the client request's SNI name matches the supplied <code>hostname</code> (or wildcard).</p>
+<p>When there are multiple matching contexts, the most recently added one is
+used.</p>
+<h4><code>server.address()</code><span><a class="mark" href="#tls_server_address" id="tls_server_address">#</a></span></h4><p class="tip_wrap" data-item_id="server_address"></p>
+<div class="api_metadata">
+<span>新增于: v0.6.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+<p>Returns the bound address, the address family name, and port of the
+server as reported by the operating system. See <a href="net.html#net_server_address"><code>net.Server.address()</code></a> for
+more information.</p>
+<h4><code>server.close([callback])</code><span><a class="mark" href="#tls_server_close_callback" id="tls_server_close_callback">#</a></span></h4><p class="tip_wrap" data-item_id="server_close_callback"></p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span>
+</div>
+<ul>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> A listener callback that will be registered to listen
+for the server instance's <code>'close'</code> event.</li>
+<li>返回: <a href="tls.html#tls_class_tls_server" rel="nofollow" class="type">&lt;tls.Server&gt;</a></li>
+</ul>
+<p>The <code>server.close()</code> method stops the server from accepting new connections.</p>
+<p>This function operates asynchronously. The <code>'close'</code> event will be emitted
+when the server has no more open connections.</p>
+<h4><code>server.getTicketKeys()</code><span><a class="mark" href="#tls_server_getticketkeys" id="tls_server_getticketkeys">#</a></span></h4><p class="tip_wrap" data-item_id="server_getticketkeys"></p>
+<div class="api_metadata">
+<span>新增于: v3.0.0</span>
+</div>
+<ul>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> A 48-byte buffer containing the session ticket keys.</li>
+</ul>
+<p>Returns the session ticket keys.</p>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+<h4><code>server.listen()</code><span><a class="mark" href="#tls_server_listen" id="tls_server_listen">#</a></span></h4><p class="tip_wrap" data-item_id="server_listen"></p>
+<p>Starts the server listening for encrypted connections.
+This method is identical to <a href="net.html#net_server_listen"><code>server.listen()</code></a> from <a href="net.html#net_class_net_server"><code>net.Server</code></a>.</p>
+<h4><code>server.setSecureContext(options)</code><span><a class="mark" href="#tls_server_setsecurecontext_options" id="tls_server_setsecurecontext_options">#</a></span></h4><p class="tip_wrap" data-item_id="server_setsecurecontext_options"></p>
+<div class="api_metadata">
+<span>新增于: v11.0.0</span>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> An object containing any of the possible properties from
+the <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> <code>options</code> arguments (e.g. <code>key</code>, <code>cert</code>,
+<code>ca</code>, etc).</li>
+</ul>
+<p>The <code>server.setSecureContext()</code> method replaces the secure context of an
+existing server. Existing connections to the server are not interrupted.</p>
+<h4><code>server.setTicketKeys(keys)</code><span><a class="mark" href="#tls_server_setticketkeys_keys" id="tls_server_setticketkeys_keys">#</a></span></h4><p class="tip_wrap" data-item_id="server_setticketkeys_keys"></p>
+<div class="api_metadata">
+<span>新增于: v3.0.0</span>
+</div>
+<ul>
+<li><code>keys</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> A 48-byte buffer containing the session
+ticket keys.</li>
+</ul>
+<p>Sets the session ticket keys.</p>
+<p>Changes to the ticket keys are effective only for future server connections.
+Existing or currently pending server connections will use the previous keys.</p>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+</section><section><h3><code>tls.TLSSocket</code> 类<span><a class="mark" href="#tls_class_tls_tlssocket" id="tls_class_tls_tlssocket">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_tls_tlssocket">
+                <a href="tls/class_tls_tlssocket.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li>继承自: <a href="net.html#net_class_net_socket" rel="nofollow" class="type">&lt;net.Socket&gt;</a></li>
+</ul>
+<p>Performs transparent encryption of written data and all required TLS
+negotiation.</p>
+<p>Instances of <code>tls.TLSSocket</code> implement the duplex <a href="stream.html#stream_stream">Stream</a> interface.</p>
+<p>Methods that return TLS connection metadata (e.g.
+<a href="tls.html#tls_tlssocket_getpeercertificate_detailed"><code>tls.TLSSocket.getPeerCertificate()</code></a> will only return data while the
+connection is open.</p>
+<h4><code>new tls.TLSSocket(socket[, options])</code><span><a class="mark" href="#tls_new_tls_tlssocket_socket_options" id="tls_new_tls_tlssocket_socket_options">#</a></span></h4><p class="tip_wrap" data-item_id="new_tls_tlssocket_socket_options"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.2.0</td>
+<td><p>The <code>enableTrace</code> option is now supported.</p></td></tr>
+<tr><td>v5.0.0</td>
+<td><p>ALPN options are supported now.</p></td></tr>
+<tr><td>v0.11.4</td>
+<td><p><span>新增于: v0.11.4</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>socket</code> <a href="net.html#net_class_net_socket" rel="nofollow" class="type">&lt;net.Socket&gt;</a> | <a href="stream.html#stream_class_stream_duplex" rel="nofollow" class="type">&lt;stream.Duplex&gt;</a>
+On the server side, any <code>Duplex</code> stream. On the client side, any
+instance of <a href="net.html#net_class_net_socket"><code>net.Socket</code></a> (for generic <code>Duplex</code> stream support
+on the client side, <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> must be used).</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>enableTrace</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>isServer</code>: The SSL/TLS protocol is asymmetrical, TLSSockets must know if
+they are to behave as a server or a client. If <code>true</code> the TLS socket will be
+instantiated as a server. <strong>默认值:</strong> <code>false</code>。</li>
+<li><code>server</code> <a href="net.html#net_class_net_server" rel="nofollow" class="type">&lt;net.Server&gt;</a> A <a href="net.html#net_class_net_server"><code>net.Server</code></a> instance.</li>
+<li><code>requestCert</code>: Whether to authenticate the remote peer by requesting a
+certificate. Clients always request a server certificate. Servers
+(<code>isServer</code> is true) may set <code>requestCert</code> to true to request a client
+certificate.</li>
+<li><code>rejectUnauthorized</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>ALPNProtocols</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>SNICallback</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>session</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> A <code>Buffer</code> instance containing a TLS session.</li>
+<li><code>requestOCSP</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If <code>true</code>, specifies that the OCSP status request
+extension will be added to the client hello and an <code>'OCSPResponse'</code> event
+will be emitted on the socket before establishing a secure communication</li>
+<li><code>secureContext</code>: TLS context object created with
+<a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a>. If a <code>secureContext</code> is <em>not</em> provided, one
+will be created by passing the entire <code>options</code> object to
+<code>tls.createSecureContext()</code>.</li>
+<li>...: <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> options that are used if the
+<code>secureContext</code> option is missing. Otherwise, they are ignored.</li>
+</ul>
+</li>
+</ul>
+<p>Construct a new <code>tls.TLSSocket</code> object from an existing TCP socket.</p>
+<h4><code>'keylog'</code> 事件<span><a class="mark" href="#tls_event_keylog_1" id="tls_event_keylog_1">#</a></span></h4><p class="tip_wrap" data-item_id="event_keylog_1"></p>
+<div class="api_metadata">
+<span>新增于: v12.3.0, v10.20.0</span>
+</div>
+<ul>
+<li><code>line</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> Line of ASCII text, in NSS <code>SSLKEYLOGFILE</code> format.</li>
+</ul>
+<p>The <code>keylog</code> event is emitted on a <code>tls.TLSSocket</code> when key material
+is generated or received by the socket. This keying material can be stored
+for debugging, as it allows captured TLS traffic to be decrypted. It may
+be emitted multiple times, before or after the handshake completes.</p>
+<p>A typical use case is to append received lines to a common text file, which
+is later used by software (such as Wireshark) to decrypt the traffic:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> logFile = fs.createWriteStream(<span class="hljs-string">'/tmp/ssl-keys.log'</span>, { <span class="hljs-attr">flags</span>: <span class="hljs-string">'a'</span> });
+<span class="hljs-comment">// ...</span>
+tlsSocket.on(<span class="hljs-string">'keylog'</span>, <span class="hljs-function">(<span class="hljs-params">line</span>) =&gt;</span> logFile.write(line));</code></pre>
+<h4><code>'OCSPResponse'</code> 事件<span><a class="mark" href="#tls_event_ocspresponse" id="tls_event_ocspresponse">#</a></span></h4><p class="tip_wrap" data-item_id="event_ocspresponse"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.13</span>
+</div>
+<p>The <code>'OCSPResponse'</code> event is emitted if the <code>requestOCSP</code> option was set
+when the <code>tls.TLSSocket</code> was created and an OCSP response has been received.
+The listener callback is passed a single argument when called:</p>
+<ul>
+<li><code>response</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The server's OCSP response</li>
+</ul>
+<p>Typically, the <code>response</code> is a digitally signed object from the server's CA that
+contains information about server's certificate revocation status.</p>
+<h4><code>'secureConnect'</code> 事件<span><a class="mark" href="#tls_event_secureconnect" id="tls_event_secureconnect">#</a></span></h4><p class="tip_wrap" data-item_id="event_secureconnect"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<p>The <code>'secureConnect'</code> event is emitted after the handshaking process for a new
+connection has successfully completed. The listener callback will be called
+regardless of whether or not the server's certificate has been authorized. It
+is the client's responsibility to check the <code>tlsSocket.authorized</code> property to
+determine if the server certificate was signed by one of the specified CAs. If
+<code>tlsSocket.authorized === false</code>, then the error can be found by examining the
+<code>tlsSocket.authorizationError</code> property. If ALPN was used, the
+<code>tlsSocket.alpnProtocol</code> property can be checked to determine the negotiated
+protocol.</p>
+<p>The <code>'secureConnect'</code> event is not emitted when a <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a> is created
+using the <code>new tls.TLSSocket()</code> constructor.</p>
+<h4><code>'session'</code> 事件<span><a class="mark" href="#tls_event_session" id="tls_event_session">#</a></span></h4><p class="tip_wrap" data-item_id="event_session"></p>
+<div class="api_metadata">
+<span>新增于: v11.10.0</span>
+</div>
+<ul>
+<li><code>session</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>The <code>'session'</code> event is emitted on a client <code>tls.TLSSocket</code> when a new session
+or TLS ticket is available. This may or may not be before the handshake is
+complete, depending on the TLS protocol version that was negotiated. The event
+is not emitted on the server, or if a new session was not created, for example,
+when the connection was resumed. For some TLS protocol versions the event may be
+emitted multiple times, in which case all the sessions can be used for
+resumption.</p>
+<p>On the client, the <code>session</code> can be provided to the <code>session</code> option of
+<a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> to resume the connection.</p>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+<p>For TLSv1.2 and below, <a href="tls.html#tls_tlssocket_getsession"><code>tls.TLSSocket.getSession()</code></a> can be called once
+the handshake is complete. For TLSv1.3, only ticket-based resumption is allowed
+by the protocol, multiple tickets are sent, and the tickets aren't sent until
+after the handshake completes. So it is necessary to wait for the
+<code>'session'</code> event to get a resumable session. Applications
+should use the <code>'session'</code> event instead of <code>getSession()</code> to ensure
+they will work for all TLS versions. Applications that only expect to
+get or use one session should listen for this event only once:</p>
+<pre><code class="language-js">tlsSocket.once(<span class="hljs-string">'session'</span>, <span class="hljs-function">(<span class="hljs-params">session</span>) =&gt;</span> {
+  <span class="hljs-comment">// The session can be used immediately or later.</span>
+  tls.connect({
+    <span class="hljs-attr">session</span>: session,
+    <span class="hljs-comment">// Other connect options...</span>
+  });
+});</code></pre>
+<h4><code>tlsSocket.address()</code><span><a class="mark" href="#tls_tlssocket_address" id="tls_tlssocket_address">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_address"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+<p>Returns the bound <code>address</code>, the address <code>family</code> name, and <code>port</code> of the
+underlying socket as reported by the operating system:
+<code>{ port: 12346, family: 'IPv4', address: '127.0.0.1' }</code>.</p>
+<h4><code>tlsSocket.authorizationError</code><span><a class="mark" href="#tls_tlssocket_authorizationerror" id="tls_tlssocket_authorizationerror">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_authorizationerror"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<p>Returns the reason why the peer's certificate was not been verified. This
+property is set only when <code>tlsSocket.authorized === false</code>.</p>
+<h4><code>tlsSocket.authorized</code><span><a class="mark" href="#tls_tlssocket_authorized" id="tls_tlssocket_authorized">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_authorized"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a></li>
+</ul>
+<p>Returns <code>true</code> if the peer certificate was signed by one of the CAs specified
+when creating the <code>tls.TLSSocket</code> instance, otherwise <code>false</code>.</p>
+<h4><code>tlsSocket.disableRenegotiation()</code><span><a class="mark" href="#tls_tlssocket_disablerenegotiation" id="tls_tlssocket_disablerenegotiation">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_disablerenegotiation"></p>
+<div class="api_metadata">
+<span>新增于: v8.4.0</span>
+</div>
+<p>Disables TLS renegotiation for this <code>TLSSocket</code> instance. Once called, attempts
+to renegotiate will trigger an <code>'error'</code> event on the <code>TLSSocket</code>.</p>
+<h4><code>tlsSocket.enableTrace()</code><span><a class="mark" href="#tls_tlssocket_enabletrace" id="tls_tlssocket_enabletrace">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_enabletrace"></p>
+<div class="api_metadata">
+<span>新增于: v12.2.0</span>
+</div>
+<p>When enabled, TLS packet trace information is written to <code>stderr</code>. This can be
+used to debug TLS connection problems.</p>
+<p>Note: The format of the output is identical to the output of <code>openssl s_client -trace</code> or <code>openssl s_server -trace</code>. While it is produced by OpenSSL's
+<code>SSL_trace()</code> function, the format is undocumented, can change without notice,
+and should not be relied on.</p>
+<h4><code>tlsSocket.encrypted</code><span><a class="mark" href="#tls_tlssocket_encrypted" id="tls_tlssocket_encrypted">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_encrypted"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<p>Always returns <code>true</code>. This may be used to distinguish TLS sockets from regular
+<code>net.Socket</code> instances.</p>
+<h4><code>tlsSocket.exportKeyingMaterial(length, label[, context])</code><span><a class="mark" href="#tls_tlssocket_exportkeyingmaterial_length_label_context" id="tls_tlssocket_exportkeyingmaterial_length_label_context">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_exportkeyingmaterial_length_label_context"></p>
+<div class="api_metadata">
+<span>新增于: v13.10.0, v12.17.0</span>
+</div>
+<ul>
+<li>
+<p><code>length</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> number of bytes to retrieve from keying material</p>
+</li>
+<li>
+<p><code>label</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> an application specific label, typically this will be a
+value from the
+<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#exporter-labels">IANA Exporter Label Registry</a>.</p>
+</li>
+<li>
+<p><code>context</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> Optionally provide a context.</p>
+</li>
+<li>
+<p>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> requested bytes of the keying material</p>
+</li>
+</ul>
+<p>Keying material is used for validations to prevent different kind of attacks in
+network protocols, for example in the specifications of IEEE 802.1X.</p>
+<p>Example</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> keyingMaterial = tlsSocket.exportKeyingMaterial(
+  <span class="hljs-number">128</span>,
+  <span class="hljs-string">'client finished'</span>);
+
+<span class="hljs-comment">/**
+ Example return value of keyingMaterial:
+ &lt;Buffer 76 26 af 99 c5 56 8e 42 09 91 ef 9f 93 cb ad 6c 7b 65 f8 53 f1 d8 d9
+    12 5a 33 b8 b5 25 df 7b 37 9f e0 e2 4f b8 67 83 a3 2f cd 5d 41 42 4c 91
+    74 ef 2c ... 78 more bytes&gt;
+*/</span></code></pre>
+<p>See the OpenSSL <a href="http://url.nodejs.cn/f2X32c"><code>SSL_export_keying_material</code></a> documentation for more
+information.</p>
+<h4><code>tlsSocket.getCertificate()</code><span><a class="mark" href="#tls_tlssocket_getcertificate" id="tls_tlssocket_getcertificate">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getcertificate"></p>
+<div class="api_metadata">
+<span>新增于: v11.2.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+<p>Returns an object representing the local certificate. The returned object has
+some properties corresponding to the fields of the certificate.</p>
+<p>See <a href="tls.html#tls_tlssocket_getpeercertificate_detailed"><code>tls.TLSSocket.getPeerCertificate()</code></a> for an example of the certificate
+structure.</p>
+<p>If there is no local certificate, an empty object will be returned. If the
+socket has been destroyed, <code>null</code> will be returned.</p>
+<h4><code>tlsSocket.getCipher()</code><span><a class="mark" href="#tls_tlssocket_getcipher" id="tls_tlssocket_getcipher">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getcipher"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.4.0, v12.16.0</td>
+<td><p>Return the IETF cipher name as <code>standardName</code>.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>Return the minimum cipher version, instead of a fixed string (<code>'TLSv1/SSLv3'</code>).</p></td></tr>
+<tr><td>v0.11.4</td>
+<td><p><span>新增于: v0.11.4</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>name</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> OpenSSL name for the cipher suite.</li>
+<li><code>standardName</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> IETF name for the cipher suite.</li>
+<li><code>version</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The minimum TLS protocol version supported by this cipher
+suite.</li>
+</ul>
+</li>
+</ul>
+<p>Returns an object containing information on the negotiated cipher suite.</p>
+<p>For example:</p>
+<pre><code class="language-json">{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AES128-SHA256"</span>,
+    <span class="hljs-attr">"standardName"</span>: <span class="hljs-string">"TLS_RSA_WITH_AES_128_CBC_SHA256"</span>,
+    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"TLSv1.2"</span>
+}</code></pre>
+<p>See
+<a href="https://www.openssl.org/docs/man1.1.1/man3/SSL_CIPHER_get_name.html">SSL_CIPHER_get_name</a>
+for more information.</p>
+<h4><code>tlsSocket.getEphemeralKeyInfo()</code><span><a class="mark" href="#tls_tlssocket_getephemeralkeyinfo" id="tls_tlssocket_getephemeralkeyinfo">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getephemeralkeyinfo"></p>
+<div class="api_metadata">
+<span>新增于: v5.0.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+<p>Returns an object representing the type, name, and size of parameter of
+an ephemeral key exchange in <a href="tls.html#tls_perfect_forward_secrecy">perfect forward secrecy</a> on a client
+connection. It returns an empty object when the key exchange is not
+ephemeral. As this is only supported on a client socket; <code>null</code> is returned
+if called on a server socket. The supported types are <code>'DH'</code> and <code>'ECDH'</code>. The
+<code>name</code> property is available only when type is <code>'ECDH'</code>.</p>
+<p>For example: <code>{ type: 'ECDH', name: 'prime256v1', size: 256 }</code>.</p>
+<h4><code>tlsSocket.getFinished()</code><span><a class="mark" href="#tls_tlssocket_getfinished" id="tls_tlssocket_getfinished">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getfinished"></p>
+<div class="api_metadata">
+<span>新增于: v9.9.0</span>
+</div>
+<ul>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/8ym6ow" rel="nofollow" class="type">&lt;undefined&gt;</a> The latest <code>Finished</code> message that has been
+sent to the socket as part of a SSL/TLS handshake, or <code>undefined</code> if
+no <code>Finished</code> message has been sent yet.</li>
+</ul>
+<p>As the <code>Finished</code> messages are message digests of the complete handshake
+(with a total of 192 bits for TLS 1.0 and more for SSL 3.0), they can
+be used for external authentication procedures when the authentication
+provided by SSL/TLS is not desired or is not enough.</p>
+<p>Corresponds to the <code>SSL_get_finished</code> routine in OpenSSL and may be used
+to implement the <code>tls-unique</code> channel binding from <a href="http://url.nodejs.cn/Koa3CP">RFC 5929</a>.</p>
+<h4><code>tlsSocket.getPeerCertificate([detailed])</code><span><a class="mark" href="#tls_tlssocket_getpeercertificate_detailed" id="tls_tlssocket_getpeercertificate_detailed">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getpeercertificate_detailed"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><code>detailed</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> Include the full certificate chain if <code>true</code>, otherwise
+include just the peer's certificate.</li>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> A certificate object.</li>
+</ul>
+<p>Returns an object representing the peer's certificate. If the peer does not
+provide a certificate, an empty object will be returned. If the socket has been
+destroyed, <code>null</code> will be returned.</p>
+<p>If the full certificate chain was requested, each certificate will include an
+<code>issuerCertificate</code> property containing an object representing its issuer's
+certificate.</p>
+<h5>证书对象<span><a class="mark" href="#tls_certificate_object" id="tls_certificate_object">#</a></span></h5><p class="tip_wrap" data-item_id="certificate_object"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v11.4.0</td>
+<td><p>Support Elliptic Curve public key info.</p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>A certificate object has properties corresponding to the fields of the
+certificate.</p>
+<ul>
+<li><code>raw</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The DER encoded X.509 certificate data.</li>
+<li><code>subject</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> The certificate subject, described in terms of
+Country (<code>C:</code>), StateOrProvince (<code>ST</code>), Locality (<code>L</code>), Organization (<code>O</code>),
+OrganizationalUnit (<code>OU</code>), and CommonName (<code>CN</code>). The CommonName is typically
+a DNS name with TLS certificates. Example:
+<code>{C: 'UK', ST: 'BC', L: 'Metro', O: 'Node Fans', OU: 'Docs', CN: 'example.com'}</code>.</li>
+<li><code>issuer</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> The certificate issuer, described in the same terms as the
+<code>subject</code>.</li>
+<li><code>valid_from</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The date-time the certificate is valid from.</li>
+<li><code>valid_to</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The date-time the certificate is valid to.</li>
+<li><code>serialNumber</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The certificate serial number, as a hex string.
+Example: <code>'B9B0D332A1AA5635'</code>.</li>
+<li><code>fingerprint</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The SHA-1 digest of the DER encoded certificate. It is
+returned as a <code>:</code> separated hexadecimal string. Example: <code>'2A:7A:C2:DD:...'</code>.</li>
+<li><code>fingerprint256</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The SHA-256 digest of the DER encoded certificate.
+It is returned as a <code>:</code> separated hexadecimal string. Example:
+<code>'2A:7A:C2:DD:...'</code>.</li>
+<li><code>ext_key_usage</code> <a href="http://url.nodejs.cn/ZJSz23" rel="nofollow" class="type">&lt;Array&gt;</a> (Optional) The extended key usage, a set of OIDs.</li>
+<li><code>subjectaltname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> (Optional) A string containing concatenated names
+for the subject, an alternative to the <code>subject</code> names.</li>
+<li><code>infoAccess</code> <a href="http://url.nodejs.cn/ZJSz23" rel="nofollow" class="type">&lt;Array&gt;</a> (Optional) An array describing the AuthorityInfoAccess,
+used with OCSP.</li>
+<li><code>issuerCertificate</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> (Optional) The issuer certificate object. For
+self-signed certificates, this may be a circular reference.</li>
+</ul>
+<p>The certificate may contain information about the public key, depending on
+the key type.</p>
+<p>For RSA keys, the following properties may be defined:</p>
+<ul>
+<li><code>bits</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> The RSA bit size. Example: <code>1024</code>.</li>
+<li><code>exponent</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The RSA exponent, as a string in hexadecimal number
+notation. Example: <code>'0x010001'</code>.</li>
+<li><code>modulus</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The RSA modulus, as a hexadecimal string. Example:
+<code>'B56CE45CB7...'</code>.</li>
+<li><code>pubkey</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The public key.</li>
+</ul>
+<p>For EC keys, the following properties may be defined:</p>
+<ul>
+<li><code>pubkey</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> The public key.</li>
+<li><code>bits</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> The key size in bits. Example: <code>256</code>.</li>
+<li><code>asn1Curve</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> (Optional) The ASN.1 name of the OID of the elliptic
+curve. Well-known curves are identified by an OID. While it is unusual, it is
+possible that the curve is identified by its mathematical properties, in which
+case it will not have an OID. Example: <code>'prime256v1'</code>.</li>
+<li><code>nistCurve</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> (Optional) The NIST name for the elliptic curve, if it
+has one (not all well-known curves have been assigned names by NIST). Example:
+<code>'P-256'</code>.</li>
+</ul>
+<p>Example certificate:</p>
+<!-- eslint-skip -->
+<pre><code class="language-js">{ <span class="hljs-attr">subject</span>:
+   { <span class="hljs-attr">OU</span>: [ <span class="hljs-string">'Domain Control Validated'</span>, <span class="hljs-string">'PositiveSSL Wildcard'</span> ],
+     <span class="hljs-attr">CN</span>: <span class="hljs-string">'*.nodejs.org'</span> },
+  <span class="hljs-attr">issuer</span>:
+   { <span class="hljs-attr">C</span>: <span class="hljs-string">'GB'</span>,
+     <span class="hljs-attr">ST</span>: <span class="hljs-string">'Greater Manchester'</span>,
+     <span class="hljs-attr">L</span>: <span class="hljs-string">'Salford'</span>,
+     <span class="hljs-attr">O</span>: <span class="hljs-string">'COMODO CA Limited'</span>,
+     <span class="hljs-attr">CN</span>: <span class="hljs-string">'COMODO RSA Domain Validation Secure Server CA'</span> },
+  <span class="hljs-attr">subjectaltname</span>: <span class="hljs-string">'DNS:*.nodejs.org, DNS:nodejs.org'</span>,
+  <span class="hljs-attr">infoAccess</span>:
+   { <span class="hljs-string">'CA Issuers - URI'</span>:
+      [ <span class="hljs-string">'http://crt.comodoca.com/COMODORSADomainValidationSecureServerCA.crt'</span> ],
+     <span class="hljs-string">'OCSP - URI'</span>: [ <span class="hljs-string">'http://ocsp.comodoca.com'</span> ] },
+  <span class="hljs-attr">modulus</span>: <span class="hljs-string">'B56CE45CB740B09A13F64AC543B712FF9EE8E4C284B542A1708A27E82A8D151CA178153E12E6DDA15BF70FFD96CB8A88618641BDFCCA03527E665B70D779C8A349A6F88FD4EF6557180BD4C98192872BCFE3AF56E863C09DDD8BC1EC58DF9D94F914F0369102B2870BECFA1348A0838C9C49BD1C20124B442477572347047506B1FCD658A80D0C44BCC16BC5C5496CFE6E4A8428EF654CD3D8972BF6E5BFAD59C93006830B5EB1056BBB38B53D1464FA6E02BFDF2FF66CD949486F0775EC43034EC2602AEFBF1703AD221DAA2A88353C3B6A688EFE8387811F645CEED7B3FE46E1F8B9F59FAD028F349B9BC14211D5830994D055EEA3D547911E07A0ADDEB8A82B9188E58720D95CD478EEC9AF1F17BE8141BE80906F1A339445A7EB5B285F68039B0F294598A7D1C0005FC22B5271B0752F58CCDEF8C8FD856FB7AE21C80B8A2CE983AE94046E53EDE4CB89F42502D31B5360771C01C80155918637490550E3F555E2EE75CC8C636DDE3633CFEDD62E91BF0F7688273694EEEBA20C2FC9F14A2A435517BC1D7373922463409AB603295CEB0BB53787A334C9CA3CA8B30005C5A62FC0715083462E00719A8FA3ED0A9828C3871360A73F8B04A4FC1E71302844E9BB9940B77E745C9D91F226D71AFCAD4B113AAF68D92B24DDB4A2136B55A1CD1ADF39605B63CB639038ED0F4C987689866743A68769CC55847E4A06D6E2E3F1'</span>,
+  <span class="hljs-attr">exponent</span>: <span class="hljs-string">'0x10001'</span>,
+  <span class="hljs-attr">pubkey</span>: &lt;Buffer ... &gt;,
+  valid_from: 'Aug 14 00:00:00 2017 GMT',
+  valid_to: 'Nov 20 23:59:59 2019 GMT',
+  fingerprint: '01:02:59:D9:C3:D2:0D:08:F7:82:4E:44:A4:B4:53:C5:E2:3A:87:4D',
+  fingerprint256: '69:AE:1A:6A:D4:3D:C6:C1:1B:EA:C6:23:DE:BA:2A:14:62:62:93:5C:7A:EA:06:41:9B:0B:BC:87:CE:48:4E:02',
+  ext_key_usage: [ '1.3.6.1.5.5.7.3.1', '1.3.6.1.5.5.7.3.2' ],
+  serialNumber: '66593D57F20CBC573E433381B5FEC280',
+  raw: &lt;Buffer ... &gt; }</code></pre>
+<h4><code>tlsSocket.getPeerFinished()</code><span><a class="mark" href="#tls_tlssocket_getpeerfinished" id="tls_tlssocket_getpeerfinished">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getpeerfinished"></p>
+<div class="api_metadata">
+<span>新增于: v9.9.0</span>
+</div>
+<ul>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/8ym6ow" rel="nofollow" class="type">&lt;undefined&gt;</a> The latest <code>Finished</code> message that is expected
+or has actually been received from the socket as part of a SSL/TLS handshake,
+or <code>undefined</code> if there is no <code>Finished</code> message so far.</li>
+</ul>
+<p>As the <code>Finished</code> messages are message digests of the complete handshake
+(with a total of 192 bits for TLS 1.0 and more for SSL 3.0), they can
+be used for external authentication procedures when the authentication
+provided by SSL/TLS is not desired or is not enough.</p>
+<p>Corresponds to the <code>SSL_get_peer_finished</code> routine in OpenSSL and may be used
+to implement the <code>tls-unique</code> channel binding from <a href="http://url.nodejs.cn/Koa3CP">RFC 5929</a>.</p>
+<h4><code>tlsSocket.getPeerX509Certificate()</code><span><a class="mark" href="#tls_tlssocket_getpeerx509certificate" id="tls_tlssocket_getpeerx509certificate">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getpeerx509certificate"></p>
+<div class="api_metadata">
+<span>新增于: v15.9.0</span>
+</div>
+<ul>
+<li>返回: <a href="crypto.html#crypto_class_x509certificate" rel="nofollow" class="type">&lt;X509Certificate&gt;</a></li>
+</ul>
+<p>Returns the peer certificate as an <a href="crypto.html#crypto_class_x509certificate" rel="nofollow" class="type">&lt;X509Certificate&gt;</a> object.</p>
+<p>If there is no peer certificate, or the socket has been destroyed,
+<code>undefined</code> will be returned.</p>
+<h4><code>tlsSocket.getProtocol()</code><span><a class="mark" href="#tls_tlssocket_getprotocol" id="tls_tlssocket_getprotocol">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getprotocol"></p>
+<div class="api_metadata">
+<span>新增于: v5.7.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/334hvC" rel="nofollow" class="type">&lt;null&gt;</a></li>
+</ul>
+<p>Returns a string containing the negotiated SSL/TLS protocol version of the
+current connection. The value <code>'unknown'</code> will be returned for connected
+sockets that have not completed the handshaking process. The value <code>null</code> will
+be returned for server sockets or disconnected client sockets.</p>
+<p>Protocol versions are:</p>
+<ul>
+<li><code>'SSLv3'</code></li>
+<li><code>'TLSv1'</code></li>
+<li><code>'TLSv1.1'</code></li>
+<li><code>'TLSv1.2'</code></li>
+<li><code>'TLSv1.3'</code></li>
+</ul>
+<p>See the OpenSSL <a href="http://url.nodejs.cn/GqcYyf"><code>SSL_get_version</code></a> documentation for more information.</p>
+<h4><code>tlsSocket.getSession()</code><span><a class="mark" href="#tls_tlssocket_getsession" id="tls_tlssocket_getsession">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getsession"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>Returns the TLS session data or <code>undefined</code> if no session was
+negotiated. On the client, the data can be provided to the <code>session</code> option of
+<a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> to resume the connection. On the server, it may be useful
+for debugging.</p>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+<p>Note: <code>getSession()</code> works only for TLSv1.2 and below. For TLSv1.3, applications
+must use the <a href="tls.html#tls_event_session"><code>'session'</code></a> event (it also works for TLSv1.2 and below).</p>
+<h4><code>tlsSocket.getSharedSigalgs()</code><span><a class="mark" href="#tls_tlssocket_getsharedsigalgs" id="tls_tlssocket_getsharedsigalgs">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getsharedsigalgs"></p>
+<div class="api_metadata">
+<span>新增于: v12.11.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/ZJSz23" rel="nofollow" class="type">&lt;Array&gt;</a> List of signature algorithms shared between the server and
+the client in the order of decreasing preference.</li>
+</ul>
+<p>See
+<a href="https://www.openssl.org/docs/man1.1.1/man3/SSL_get_shared_sigalgs.html">SSL_get_shared_sigalgs</a>
+for more information.</p>
+<h4><code>tlsSocket.getTLSTicket()</code><span><a class="mark" href="#tls_tlssocket_gettlsticket" id="tls_tlssocket_gettlsticket">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_gettlsticket"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>For a client, returns the TLS session ticket if one is available, or
+<code>undefined</code>. For a server, always returns <code>undefined</code>.</p>
+<p>It may be useful for debugging.</p>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+<h4><code>tlsSocket.getX509Certificate()</code><span><a class="mark" href="#tls_tlssocket_getx509certificate" id="tls_tlssocket_getx509certificate">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_getx509certificate"></p>
+<div class="api_metadata">
+<span>新增于: v15.9.0</span>
+</div>
+<ul>
+<li>返回: <a href="crypto.html#crypto_class_x509certificate" rel="nofollow" class="type">&lt;X509Certificate&gt;</a></li>
+</ul>
+<p>Returns the local certificate as an <a href="crypto.html#crypto_class_x509certificate" rel="nofollow" class="type">&lt;X509Certificate&gt;</a> object.</p>
+<p>If there is no local certificate, or the socket has been destroyed,
+<code>undefined</code> will be returned.</p>
+<h4><code>tlsSocket.isSessionReused()</code><span><a class="mark" href="#tls_tlssocket_issessionreused" id="tls_tlssocket_issessionreused">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_issessionreused"></p>
+<div class="api_metadata">
+<span>新增于: v0.5.6</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> <code>true</code> if the session was reused, <code>false</code> otherwise.</li>
+</ul>
+<p>See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</p>
+<h4><code>tlsSocket.localAddress</code><span><a class="mark" href="#tls_tlssocket_localaddress" id="tls_tlssocket_localaddress">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_localaddress"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Returns the string representation of the local IP address.</p>
+<h4><code>tlsSocket.localPort</code><span><a class="mark" href="#tls_tlssocket_localport" id="tls_tlssocket_localport">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_localport"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+</ul>
+<p>Returns the numeric representation of the local port.</p>
+<h4><code>tlsSocket.remoteAddress</code><span><a class="mark" href="#tls_tlssocket_remoteaddress" id="tls_tlssocket_remoteaddress">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_remoteaddress"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Returns the string representation of the remote IP address. For example,
+<code>'74.125.127.100'</code> or <code>'2001:4860:a005::68'</code>.</p>
+<h4><code>tlsSocket.remoteFamily</code><span><a class="mark" href="#tls_tlssocket_remotefamily" id="tls_tlssocket_remotefamily">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_remotefamily"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Returns the string representation of the remote IP family. <code>'IPv4'</code> or <code>'IPv6'</code>.</p>
+<h4><code>tlsSocket.remotePort</code><span><a class="mark" href="#tls_tlssocket_remoteport" id="tls_tlssocket_remoteport">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_remoteport"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.4</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+</ul>
+<p>Returns the numeric representation of the remote port. For example, <code>443</code>.</p>
+<h4><code>tlsSocket.renegotiate(options, callback)</code><span><a class="mark" href="#tls_tlssocket_renegotiate_options_callback" id="tls_tlssocket_renegotiate_options_callback">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_renegotiate_options_callback"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.8</span>
+</div>
+<ul>
+<li>
+<p><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></p>
+<ul>
+<li><code>rejectUnauthorized</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If not <code>false</code>, the server certificate is
+verified against the list of supplied CAs. An <code>'error'</code> event is emitted if
+verification fails; <code>err.code</code> contains the OpenSSL error code. <strong>默认值:</strong>
+<code>true</code>.</li>
+<li><code>requestCert</code></li>
+</ul>
+</li>
+<li>
+<p><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> If <code>renegotiate()</code> returned <code>true</code>, callback is
+attached once to the <code>'secure'</code> event. If <code>renegotiate()</code> returned <code>false</code>,
+<code>callback</code> will be called in the next tick with an error, unless the
+<code>tlsSocket</code> has been destroyed, in which case <code>callback</code> will not be called
+at all.</p>
+</li>
+<li>
+<p>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> <code>true</code> if renegotiation was initiated, <code>false</code> otherwise.</p>
+</li>
+</ul>
+<p>The <code>tlsSocket.renegotiate()</code> method initiates a TLS renegotiation process.
+Upon completion, the <code>callback</code> function will be passed a single argument
+that is either an <code>Error</code> (if the request failed) or <code>null</code>.</p>
+<p>This method can be used to request a peer's certificate after the secure
+connection has been established.</p>
+<p>When running as the server, the socket will be destroyed with an error after
+<code>handshakeTimeout</code> timeout.</p>
+<p>For TLSv1.3, renegotiation cannot be initiated, it is not supported by the
+protocol.</p>
+<h4><code>tlsSocket.setMaxSendFragment(size)</code><span><a class="mark" href="#tls_tlssocket_setmaxsendfragment_size" id="tls_tlssocket_setmaxsendfragment_size">#</a></span></h4><p class="tip_wrap" data-item_id="tlssocket_setmaxsendfragment_size"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.11</span>
+</div>
+<ul>
+<li><code>size</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> The maximum TLS fragment size. The maximum value is <code>16384</code>.
+<strong>默认值:</strong> <code>16384</code>。</li>
+<li>返回: <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a></li>
+</ul>
+<p>The <code>tlsSocket.setMaxSendFragment()</code> method sets the maximum TLS fragment size.
+Returns <code>true</code> if setting the limit succeeded; <code>false</code> otherwise.</p>
+<p>Smaller fragment sizes decrease the buffering latency on the client: larger
+fragments are buffered by the TLS layer until the entire fragment is received
+and its integrity is verified; large fragments can span multiple roundtrips
+and their processing can be delayed due to packet loss or reordering. However,
+smaller fragments add extra TLS framing bytes and CPU overhead, which may
+decrease overall server throughput.</p>
+</section><section><h3><code>tls.checkServerIdentity(hostname, cert)</code><span><a class="mark" href="#tls_tls_checkserveridentity_hostname_cert" id="tls_tls_checkserveridentity_hostname_cert">#</a></span></h3><p class="tip_wrap" data-item_id="tls_checkserveridentity_hostname_cert"></p>
+<div class="api_metadata">
+<span>新增于: v0.8.4</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The host name or IP address to verify the certificate
+against.</li>
+<li><code>cert</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> A <a href="tls.html#tls_certificate_object">certificate object</a> representing the peer's certificate.</li>
+<li>返回: <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a> | <a href="http://url.nodejs.cn/8ym6ow" rel="nofollow" class="type">&lt;undefined&gt;</a></li>
+</ul>
+<p>Verifies the certificate <code>cert</code> is issued to <code>hostname</code>.</p>
+<p>Returns <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a> object, populating it with <code>reason</code>, <code>host</code>, and <code>cert</code> on
+failure. On success, returns <a href="http://url.nodejs.cn/8ym6ow" rel="nofollow" class="type">&lt;undefined&gt;</a>.</p>
+<p>This function can be overwritten by providing alternative function as part of
+the <code>options.checkServerIdentity</code> option passed to <code>tls.connect()</code>. The
+overwriting function can call <code>tls.checkServerIdentity()</code> of course, to augment
+the checks done with additional verification.</p>
+<p>This function is only called if the certificate passed all other checks, such as
+being issued by trusted CA (<code>options.ca</code>).</p>
+</section><section><h3><code>tls.connect(options[, callback])</code><span><a class="mark" href="#tls_tls_connect_options_callback" id="tls_tls_connect_options_callback">#</a></span></h3><p class="tip_wrap" data-item_id="tls_connect_options_callback"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v15.1.0</td>
+<td><p>Added <code>onread</code> option.</p></td></tr>
+<tr><td>v14.1.0, v13.14.0</td>
+<td><p>The <code>highWaterMark</code> option is accepted now.</p></td></tr>
+<tr><td>v13.6.0, v12.16.0</td>
+<td><p>The <code>pskCallback</code> option is now supported.</p></td></tr>
+<tr><td>v12.9.0</td>
+<td><p>Support the <code>allowHalfOpen</code> option.</p></td></tr>
+<tr><td>v12.4.0</td>
+<td><p>The <code>hints</code> option is now supported.</p></td></tr>
+<tr><td>v12.2.0</td>
+<td><p>The <code>enableTrace</code> option is now supported.</p></td></tr>
+<tr><td>v11.8.0, v10.16.0</td>
+<td><p>The <code>timeout</code> option is supported now.</p></td></tr>
+<tr><td>v8.0.0</td>
+<td><p>The <code>lookup</code> option is supported now.</p></td></tr>
+<tr><td>v8.0.0</td>
+<td><p>The <code>ALPNProtocols</code> option can be a <code>TypedArray</code> or <code>DataView</code> now.</p></td></tr>
+<tr><td>v5.0.0</td>
+<td><p>ALPN options are supported now.</p></td></tr>
+<tr><td>v5.3.0, v4.7.0</td>
+<td><p>The <code>secureContext</code> option is supported now.</p></td></tr>
+<tr><td>v0.11.3</td>
+<td><p><span>新增于: v0.11.3</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>enableTrace</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>host</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Host the client should connect to. <strong>默认值:</strong>
+<code>'localhost'</code>.</li>
+<li><code>port</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Port the client should connect to.</li>
+<li><code>path</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Creates Unix socket connection to path. If this option is
+specified, <code>host</code> and <code>port</code> are ignored.</li>
+<li><code>socket</code> <a href="stream.html#stream_class_stream_duplex" rel="nofollow" class="type">&lt;stream.Duplex&gt;</a> Establish secure connection on a given socket
+rather than creating a new socket. Typically, this is an instance of
+<a href="net.html#net_class_net_socket"><code>net.Socket</code></a>, but any <code>Duplex</code> stream is allowed.
+If this option is specified, <code>path</code>, <code>host</code> and <code>port</code> are ignored,
+except for certificate validation. Usually, a socket is already connected
+when passed to <code>tls.connect()</code>, but it can be connected later.
+Connection/disconnection/destruction of <code>socket</code> is the user's
+responsibility; calling <code>tls.connect()</code> will not cause <code>net.connect()</code> to be
+called.</li>
+<li><code>allowHalfOpen</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If set to <code>false</code>, then the socket will
+automatically end the writable side when the readable side ends. If the
+<code>socket</code> option is set, this option has no effect. See the <code>allowHalfOpen</code>
+option of <a href="net.html#net_class_net_socket"><code>net.Socket</code></a> for details. <strong>默认值:</strong> <code>false</code>。</li>
+<li><code>rejectUnauthorized</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If not <code>false</code>, the server certificate is
+verified against the list of supplied CAs. An <code>'error'</code> event is emitted if
+verification fails; <code>err.code</code> contains the OpenSSL error code. <strong>默认值:</strong>
+<code>true</code>.</li>
+<li><code>pskCallback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li>hint: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> optional message sent from the server to help client
+decide which identity to use during negotiation.
+Always <code>null</code> if TLS 1.3 is used.</li>
+<li>返回: <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> in the form
+<code>{ psk: &lt;Buffer|TypedArray|DataView&gt;, identity: &lt;string&gt; }</code>
+or <code>null</code> to stop the negotiation process. <code>psk</code> must be
+compatible with the selected cipher's digest.
+<code>identity</code> must use UTF-8 encoding.</li>
+</ul>
+When negotiating TLS-PSK (pre-shared keys), this function is called
+with optional identity <code>hint</code> provided by the server or <code>null</code>
+in case of TLS 1.3 where <code>hint</code> was removed.
+It will be necessary to provide a custom <code>tls.checkServerIdentity()</code>
+for the connection as the default one will try to check host name/IP
+of the server against the certificate but that's not applicable for PSK
+because there won't be a certificate present.
+More information can be found in the <a href="http://url.nodejs.cn/Gq5awY">RFC 4279</a>.</li>
+<li><code>ALPNProtocols</code>: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray[]&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a>
+An array of strings, <code>Buffer</code>s or <code>TypedArray</code>s or <code>DataView</code>s, or a
+single <code>Buffer</code> or <code>TypedArray</code> or <code>DataView</code> containing the supported ALPN
+protocols. <code>Buffer</code>s should have the format <code>[len][name][len][name]...</code>
+e.g. <code>'\x08http/1.1\x08http/1.0'</code>, where the <code>len</code> byte is the length of the
+next protocol name. Passing an array is usually much simpler, e.g.
+<code>['http/1.1', 'http/1.0']</code>. Protocols earlier in the list have higher
+preference than those later.</li>
+<li><code>servername</code>: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Server name for the SNI (Server Name Indication) TLS
+extension. It is the name of the host being connected to, and must be a host
+name, and not an IP address. It can be used by a multi-homed server to
+choose the correct certificate to present to the client, see the
+<code>SNICallback</code> option to <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>.</li>
+<li><code>checkServerIdentity(servername, cert)</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> A callback function
+to be used (instead of the builtin <code>tls.checkServerIdentity()</code> function)
+when checking the server's host name (or the provided <code>servername</code> when
+explicitly set) against the certificate. This should return an <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a> if
+verification fails. The method should return <code>undefined</code> if the <code>servername</code>
+and <code>cert</code> are verified.</li>
+<li><code>session</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> A <code>Buffer</code> instance, containing TLS session.</li>
+<li><code>minDHSize</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Minimum size of the DH parameter in bits to accept a
+TLS connection. When a server offers a DH parameter with a size less
+than <code>minDHSize</code>, the TLS connection is destroyed and an error is thrown.
+<strong>默认值:</strong> <code>1024</code>。</li>
+<li><code>highWaterMark</code>: <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Consistent with the readable stream <code>highWaterMark</code> parameter.
+<strong>默认值:</strong> <code>16 * 1024</code>。</li>
+<li><code>secureContext</code>: TLS context object created with
+<a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a>. If a <code>secureContext</code> is <em>not</em> provided, one
+will be created by passing the entire <code>options</code> object to
+<code>tls.createSecureContext()</code>.</li>
+<li><code>onread</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> If the <code>socket</code> option is missing, incoming data is
+stored in a single <code>buffer</code> and passed to the supplied <code>callback</code> when
+data arrives on the socket, otherwise the option is ignored. See the
+<code>onread</code> option of <a href="net.html#net_class_net_socket"><code>net.Socket</code></a> for details.</li>
+<li>...: <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> options that are used if the
+<code>secureContext</code> option is missing, otherwise they are ignored.</li>
+<li>...: Any <a href="net.html#net_socket_connect_options_connectlistener"><code>socket.connect()</code></a> option not already listed.</li>
+</ul>
+</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a></li>
+<li>返回: <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a></li>
+</ul>
+<p>The <code>callback</code> function, if specified, will be added as a listener for the
+<a href="tls.html#tls_event_secureconnect"><code>'secureConnect'</code></a> event.</p>
+<p><code>tls.connect()</code> returns a <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> object.</p>
+<p>Unlike the <code>https</code> API, <code>tls.connect()</code> does not enable the
+SNI (Server Name Indication) extension by default, which may cause some
+servers to return an incorrect certificate or reject the connection
+altogether. To enable SNI, set the <code>servername</code> option in addition
+to <code>host</code>.</p>
+<p>The following illustrates a client for the echo server example from
+<a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>:</p>
+<pre><code class="language-js"><span class="hljs-comment">// Assumes an echo server that is listening on port 8000.</span>
+<span class="hljs-keyword">const</span> tls = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tls'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-comment">// Necessary only if the server requires client certificate authentication.</span>
+  <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'client-key.pem'</span>),
+  <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'client-cert.pem'</span>),
+
+  <span class="hljs-comment">// Necessary only if the server uses a self-signed certificate.</span>
+  <span class="hljs-attr">ca</span>: [ fs.readFileSync(<span class="hljs-string">'server-cert.pem'</span>) ],
+
+  <span class="hljs-comment">// Necessary only if the server's cert isn't for "localhost".</span>
+  <span class="hljs-attr">checkServerIdentity</span>: <span class="hljs-function">() =&gt;</span> { <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>; },
+};
+
+<span class="hljs-keyword">const</span> socket = tls.connect(<span class="hljs-number">8000</span>, options, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'client connected'</span>,
+              socket.authorized ? <span class="hljs-string">'authorized'</span> : <span class="hljs-string">'unauthorized'</span>);
+  process.stdin.pipe(socket);
+  process.stdin.resume();
+});
+socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(data);
+});
+socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'server ends connection'</span>);
+});</code></pre>
+</section><section><h3><code>tls.connect(path[, options][, callback])</code><span><a class="mark" href="#tls_tls_connect_path_options_callback" id="tls_tls_connect_path_options_callback">#</a></span></h3><p class="tip_wrap" data-item_id="tls_connect_path_options_callback"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.3</span>
+</div>
+<ul>
+<li><code>path</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Default value for <code>options.path</code>.</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> See <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>.</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> See <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>.</li>
+<li>返回: <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a></li>
+</ul>
+<p>Same as <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> except that <code>path</code> can be provided
+as an argument instead of an option.</p>
+<p>A path option, if specified, will take precedence over the path argument.</p>
+</section><section><h3><code>tls.connect(port[, host][, options][, callback])</code><span><a class="mark" href="#tls_tls_connect_port_host_options_callback" id="tls_tls_connect_port_host_options_callback">#</a></span></h3><p class="tip_wrap" data-item_id="tls_connect_port_host_options_callback"></p>
+<div class="api_metadata">
+<span>新增于: v0.11.3</span>
+</div>
+<ul>
+<li><code>port</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Default value for <code>options.port</code>.</li>
+<li><code>host</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Default value for <code>options.host</code>.</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> See <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>.</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> See <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>.</li>
+<li>返回: <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a></li>
+</ul>
+<p>Same as <a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a> except that <code>port</code> and <code>host</code> can be provided
+as arguments instead of options.</p>
+<p>A port or host option, if specified, will take precedence over any port or host
+argument.</p>
+</section><section><h3><code>tls.createSecureContext([options])</code><span><a class="mark" href="#tls_tls_createsecurecontext_options" id="tls_tls_createsecurecontext_options">#</a></span></h3><p class="tip_wrap" data-item_id="tls_createsecurecontext_options"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.12.0</td>
+<td><p>Added <code>privateKeyIdentifier</code> and <code>privateKeyEngine</code> options to get private key from an OpenSSL engine.</p></td></tr>
+<tr><td>v12.11.0</td>
+<td><p>Added <code>sigalgs</code> option to override supported signature algorithms.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>TLSv1.3 support added.</p></td></tr>
+<tr><td>v11.5.0</td>
+<td><p>The <code>ca:</code> option now supports <code>BEGIN TRUSTED CERTIFICATE</code>.</p></td></tr>
+<tr><td>v11.4.0, v10.16.0</td>
+<td><p>The <code>minVersion</code> and <code>maxVersion</code> can be used to restrict the allowed TLS protocol versions.</p></td></tr>
+<tr><td>v10.0.0</td>
+<td><p>The <code>ecdhCurve</code> cannot be set to <code>false</code> anymore due to a change in OpenSSL.</p></td></tr>
+<tr><td>v9.3.0</td>
+<td><p>The <code>options</code> parameter can now include <code>clientCertEngine</code>.</p></td></tr>
+<tr><td>v9.0.0</td>
+<td><p>The <code>ecdhCurve</code> option can now be multiple <code>':'</code> separated curve names or <code>'auto'</code>.</p></td></tr>
+<tr><td>v7.3.0</td>
+<td><p>If the <code>key</code> option is an array, individual entries do not need a <code>passphrase</code> property anymore. <code>Array</code> entries can also just be <code>string</code>s or <code>Buffer</code>s now.</p></td></tr>
+<tr><td>v5.2.0</td>
+<td><p>The <code>ca</code> option can now be a single string containing multiple CA certificates.</p></td></tr>
+<tr><td>v0.11.13</td>
+<td><p><span>新增于: v0.11.13</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>ca</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> Optionally override the trusted CA
+certificates. Default is to trust the well-known CAs curated by Mozilla.
+Mozilla's CAs are completely replaced when CAs are explicitly specified
+using this option. The value can be a string or <code>Buffer</code>, or an <code>Array</code> of
+strings and/or <code>Buffer</code>s. Any string or <code>Buffer</code> can contain multiple PEM
+CAs concatenated together. The peer's certificate must be chainable to a CA
+trusted by the server for the connection to be authenticated. When using
+certificates that are not chainable to a well-known CA, the certificate's CA
+must be explicitly specified as a trusted or the connection will fail to
+authenticate.
+If the peer uses a certificate that doesn't match or chain to one of the
+default CAs, use the <code>ca</code> option to provide a CA certificate that the peer's
+certificate can match or chain to.
+For self-signed certificates, the certificate is its own CA, and must be
+provided.
+For PEM encoded certificates, supported types are "TRUSTED CERTIFICATE",
+"X509 CERTIFICATE", and "CERTIFICATE".
+See also <a href="tls.html#tls_tls_rootcertificates"><code>tls.rootCertificates</code></a>.</li>
+<li><code>cert</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> Cert chains in PEM format. One cert
+chain should be provided per private key. Each cert chain should consist of
+the PEM formatted certificate for a provided private <code>key</code>, followed by the
+PEM formatted intermediate certificates (if any), in order, and not
+including the root CA (the root CA must be pre-known to the peer, see <code>ca</code>).
+When providing multiple cert chains, they do not have to be in the same
+order as their private keys in <code>key</code>. If the intermediate certificates are
+not provided, the peer will not be able to validate the certificate, and the
+handshake will fail.</li>
+<li><code>sigalgs</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Colon-separated list of supported signature algorithms.
+The list can contain digest algorithms (<code>SHA256</code>, <code>MD5</code> etc.), public key
+algorithms (<code>RSA-PSS</code>, <code>ECDSA</code> etc.), combination of both (e.g
+'RSA+SHA384') or TLS v1.3 scheme names (e.g. <code>rsa_pss_pss_sha512</code>).
+See <a href="https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_set1_sigalgs_list.html">OpenSSL man pages</a>
+for more info.</li>
+<li><code>ciphers</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Cipher suite specification, replacing the default. For
+more information, see <a href="tls.html#tls_modifying_the_default_tls_cipher_suite">modifying the default cipher suite</a>. Permitted
+ciphers can be obtained via <a href="tls.html#tls_tls_getciphers"><code>tls.getCiphers()</code></a>. Cipher names must be
+uppercased in order for OpenSSL to accept them.</li>
+<li><code>clientCertEngine</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Name of an OpenSSL engine which can provide the
+client certificate.</li>
+<li><code>crl</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> PEM formatted CRLs (Certificate
+Revocation Lists).</li>
+<li><code>dhparam</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> Diffie-Hellman parameters, required for
+<a href="tls.html#tls_perfect_forward_secrecy">perfect forward secrecy</a>. Use <code>openssl dhparam</code> to create the parameters.
+The key length must be greater than or equal to 1024 bits or else an error
+will be thrown. Although 1024 bits is permissible, use 2048 bits or larger
+for stronger security. If omitted or invalid, the parameters are silently
+discarded and DHE ciphers will not be available.</li>
+<li><code>ecdhCurve</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> A string describing a named curve or a colon separated
+list of curve NIDs or names, for example <code>P-521:P-384:P-256</code>, to use for
+ECDH key agreement. Set to <code>auto</code> to select the
+curve automatically. Use <a href="crypto.html#crypto_crypto_getcurves"><code>crypto.getCurves()</code></a> to obtain a list of
+available curve names. On recent releases, <code>openssl ecparam -list_curves</code>
+will also display the name and description of each available elliptic curve.
+<strong>默认值:</strong> <a href="tls.html#tls_tls_default_ecdh_curve"><code>tls.DEFAULT_ECDH_CURVE</code></a>.</li>
+<li><code>honorCipherOrder</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> Attempt to use the server's cipher suite
+preferences instead of the client's. When <code>true</code>, causes
+<code>SSL_OP_CIPHER_SERVER_PREFERENCE</code> to be set in <code>secureOptions</code>, see
+<a href="crypto.html#crypto_openssl_options">OpenSSL Options</a> for more information.</li>
+<li><code>key</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a> Private keys in PEM format.
+PEM allows the option of private keys being encrypted. Encrypted keys will
+be decrypted with <code>options.passphrase</code>. Multiple keys using different
+algorithms can be provided either as an array of unencrypted key strings or
+buffers, or an array of objects in the form
+<code>{pem: &lt;string|buffer&gt;[, passphrase: &lt;string&gt;]}</code>. The object form can only
+occur in an array. <code>object.passphrase</code> is optional. Encrypted keys will be
+decrypted with <code>object.passphrase</code> if provided, or <code>options.passphrase</code> if
+it is not.</li>
+<li><code>privateKeyEngine</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Name of an OpenSSL engine to get private key
+from. Should be used together with <code>privateKeyIdentifier</code>.</li>
+<li><code>privateKeyIdentifier</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Identifier of a private key managed by
+an OpenSSL engine. Should be used together with <code>privateKeyEngine</code>.
+Should not be set together with <code>key</code>, because both options define a
+private key in different ways.</li>
+<li><code>maxVersion</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Optionally set the maximum TLS version to allow. One
+of <code>'TLSv1.3'</code>, <code>'TLSv1.2'</code>, <code>'TLSv1.1'</code>, or <code>'TLSv1'</code>. Cannot be specified
+along with the <code>secureProtocol</code> option; use one or the other.
+<strong>默认值:</strong> <a href="tls.html#tls_tls_default_max_version"><code>tls.DEFAULT_MAX_VERSION</code></a>.</li>
+<li><code>minVersion</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Optionally set the minimum TLS version to allow. One
+of <code>'TLSv1.3'</code>, <code>'TLSv1.2'</code>, <code>'TLSv1.1'</code>, or <code>'TLSv1'</code>. Cannot be specified
+along with the <code>secureProtocol</code> option; use one or the other. Avoid
+setting to less than TLSv1.2, but it may be required for
+interoperability.
+<strong>默认值:</strong> <a href="tls.html#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a>.</li>
+<li><code>passphrase</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Shared passphrase used for a single private key and/or
+a PFX.</li>
+<li><code>pfx</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> | <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a> PFX or PKCS12 encoded
+private key and certificate chain. <code>pfx</code> is an alternative to providing
+<code>key</code> and <code>cert</code> individually. PFX is usually encrypted, if it is,
+<code>passphrase</code> will be used to decrypt it. Multiple PFX can be provided either
+as an array of unencrypted PFX buffers, or an array of objects in the form
+<code>{buf: &lt;string|buffer&gt;[, passphrase: &lt;string&gt;]}</code>. The object form can only
+occur in an array. <code>object.passphrase</code> is optional. Encrypted PFX will be
+decrypted with <code>object.passphrase</code> if provided, or <code>options.passphrase</code> if
+it is not.</li>
+<li><code>secureOptions</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Optionally affect the OpenSSL protocol behavior,
+which is not usually necessary. This should be used carefully if at all!
+Value is a numeric bitmask of the <code>SSL_OP_*</code> options from
+<a href="crypto.html#crypto_openssl_options">OpenSSL Options</a>.</li>
+<li><code>secureProtocol</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Legacy mechanism to select the TLS protocol
+version to use, it does not support independent control of the minimum and
+maximum version, and does not support limiting the protocol to TLSv1.3. Use
+<code>minVersion</code> and <code>maxVersion</code> instead. The possible values are listed as
+<a href="http://url.nodejs.cn/CipgPu">SSL_METHODS</a>, use the function names as strings. For example, use
+<code>'TLSv1_1_method'</code> to force TLS version 1.1, or <code>'TLS_method'</code> to allow any
+TLS protocol version up to TLSv1.3. It is not recommended to use TLS
+versions less than 1.2, but it may be required for interoperability.
+<strong>默认值:</strong> none, see <code>minVersion</code>.</li>
+<li><code>sessionIdContext</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Opaque identifier used by servers to ensure
+session state is not shared between applications. Unused by clients.</li>
+<li><code>ticketKeys</code>: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> 48-bytes of cryptographically strong pseudorandom
+data. See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</li>
+<li><code>sessionTimeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> The number of seconds after which a TLS session
+created by the server will no longer be resumable. See
+<a href="tls.html#tls_session_resumption">Session Resumption</a> for more information. <strong>默认值:</strong> <code>300</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a> sets the default value of the <code>honorCipherOrder</code> option
+to <code>true</code>, other APIs that create secure contexts leave it unset.</p>
+<p><a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a> uses a 128 bit truncated SHA1 hash value generated
+from <code>process.argv</code> as the default value of the <code>sessionIdContext</code> option, other
+APIs that create secure contexts have no default value.</p>
+<p>The <code>tls.createSecureContext()</code> method creates a <code>SecureContext</code> object. It is
+usable as an argument to several <code>tls</code> APIs, such as <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a>
+and <a href="tls.html#tls_server_addcontext_hostname_context"><code>server.addContext()</code></a>, but has no public methods.</p>
+<p>A key is <em>required</em> for ciphers that use certificates. Either <code>key</code> or
+<code>pfx</code> can be used to provide it.</p>
+<p>If the <code>ca</code> option is not given, then Node.js will default to using
+<a href="http://url.nodejs.cn/jtCebP">Mozilla's publicly trusted list of CAs</a>.</p>
+</section><section><h3><code>tls.createSecurePair([context][, isServer][, requestCert][, rejectUnauthorized][, options])</code><span><a class="mark" href="#tls_tls_createsecurepair_context_isserver_requestcert_rejectunauthorized_options" id="tls_tls_createsecurepair_context_isserver_requestcert_rejectunauthorized_options">#</a></span></h3><p class="tip_wrap"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v5.0.0</td>
+<td><p>ALPN options are supported now.</p></td></tr>
+<tr><td>v0.11.3</td>
+<td><p><span>弃用于: v0.11.3</span></p></td></tr>
+<tr><td>v0.3.2</td>
+<td><p><span>新增于: v0.3.2</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p></p><div class="api_stability api_stability_0"><a href="documentation.html#documentation_stability_index">稳定性: 0</a> - 弃用: 改为使用 <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> 。</div><p></p>
+<ul>
+<li><code>context</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a> A secure context object as returned by
+<code>tls.createSecureContext()</code></li>
+<li><code>isServer</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> <code>true</code> to specify that this TLS connection should be
+opened as a server.</li>
+<li><code>requestCert</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> <code>true</code> to specify whether a server should request a
+certificate from a connecting client. Only applies when <code>isServer</code> is <code>true</code>.</li>
+<li><code>rejectUnauthorized</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If not <code>false</code> a server automatically reject
+clients with invalid certificates. Only applies when <code>isServer</code> is <code>true</code>.</li>
+<li><code>options</code>
+<ul>
+<li><code>enableTrace</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>secureContext</code>: A TLS context object from <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a></li>
+<li><code>isServer</code>: If <code>true</code> the TLS socket will be instantiated in server-mode.
+<strong>默认值:</strong> <code>false</code>。</li>
+<li><code>server</code> <a href="net.html#net_class_net_server" rel="nofollow" class="type">&lt;net.Server&gt;</a> A <a href="net.html#net_class_net_server"><code>net.Server</code></a> instance</li>
+<li><code>requestCert</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>rejectUnauthorized</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>ALPNProtocols</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>SNICallback</code>: See <a href="tls.html#tls_tls_createserver_options_secureconnectionlistener"><code>tls.createServer()</code></a></li>
+<li><code>session</code> <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> A <code>Buffer</code> instance containing a TLS session.</li>
+<li><code>requestOCSP</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If <code>true</code>, specifies that the OCSP status request
+extension will be added to the client hello and an <code>'OCSPResponse'</code> event
+will be emitted on the socket before establishing a secure communication.</li>
+</ul>
+</li>
+</ul>
+<p>Creates a new secure pair object with two streams, one of which reads and writes
+the encrypted data and the other of which reads and writes the cleartext data.
+Generally, the encrypted stream is piped to/from an incoming encrypted data
+stream and the cleartext one is used as a replacement for the initial encrypted
+stream.</p>
+<p><code>tls.createSecurePair()</code> returns a <code>tls.SecurePair</code> object with <code>cleartext</code> and
+<code>encrypted</code> stream properties.</p>
+<p>Using <code>cleartext</code> has the same API as <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a>.</p>
+<p>The <code>tls.createSecurePair()</code> method is now deprecated in favor of
+<code>tls.TLSSocket()</code>. For example, the code:</p>
+<pre><code class="language-js">pair = tls.createSecurePair(<span class="hljs-comment">/* ... */</span>);
+pair.encrypted.pipe(socket);
+socket.pipe(pair.encrypted);</code></pre>
+<p>can be replaced by:</p>
+<pre><code class="language-js">secureSocket = tls.TLSSocket(socket, options);</code></pre>
+<p>where <code>secureSocket</code> has the same API as <code>pair.cleartext</code>.</p>
+</section><section><h3><code>tls.createServer([options][, secureConnectionListener])</code><span><a class="mark" href="#tls_tls_createserver_options_secureconnectionlistener" id="tls_tls_createserver_options_secureconnectionlistener">#</a></span></h3><p class="tip_wrap" data-item_id="tls_createserver_options_secureconnectionlistener"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.3.0</td>
+<td><p>The <code>options</code> parameter now supports <code>net.createServer()</code> options.</p></td></tr>
+<tr><td>v9.3.0</td>
+<td><p>The <code>options</code> parameter can now include <code>clientCertEngine</code>.</p></td></tr>
+<tr><td>v8.0.0</td>
+<td><p>The <code>ALPNProtocols</code> option can be a <code>TypedArray</code> or <code>DataView</code> now.</p></td></tr>
+<tr><td>v5.0.0</td>
+<td><p>ALPN options are supported now.</p></td></tr>
+<tr><td>v0.3.2</td>
+<td><p><span>新增于: v0.3.2</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>ALPNProtocols</code>: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer[]&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray[]&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView[]&gt;</a> | <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a>
+An array of strings, <code>Buffer</code>s or <code>TypedArray</code>s or <code>DataView</code>s, or a single
+<code>Buffer</code> or <code>TypedArray</code> or <code>DataView</code> containing the supported ALPN
+protocols. <code>Buffer</code>s should have the format <code>[len][name][len][name]...</code>
+e.g. <code>0x05hello0x05world</code>, where the first byte is the length of the next
+protocol name. Passing an array is usually much simpler, e.g.
+<code>['hello', 'world']</code>. (Protocols should be ordered by their priority.)</li>
+<li><code>clientCertEngine</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Name of an OpenSSL engine which can provide the
+client certificate.</li>
+<li><code>enableTrace</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If <code>true</code>, <a href="tls.html#tls_tlssocket_enabletrace"><code>tls.TLSSocket.enableTrace()</code></a> will be
+called on new connections. Tracing can be enabled after the secure
+connection is established, but this option must be used to trace the secure
+connection setup. <strong>默认值:</strong> <code>false</code>。</li>
+<li><code>handshakeTimeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> Abort the connection if the SSL/TLS handshake
+does not finish in the specified number of milliseconds.
+A <code>'tlsClientError'</code> is emitted on the <code>tls.Server</code> object whenever
+a handshake times out. <strong>默认值:</strong> <code>120000</code> (120 seconds).</li>
+<li><code>rejectUnauthorized</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If not <code>false</code> the server will reject any
+connection which is not authorized with the list of supplied CAs. This
+option only has an effect if <code>requestCert</code> is <code>true</code>. <strong>默认值:</strong> <code>true</code>。</li>
+<li><code>requestCert</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> If <code>true</code> the server will request a certificate from
+clients that connect and attempt to verify that certificate. <strong>默认值:</strong>
+<code>false</code>.</li>
+<li><code>sessionTimeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> The number of seconds after which a TLS session
+created by the server will no longer be resumable. See
+<a href="tls.html#tls_session_resumption">Session Resumption</a> for more information. <strong>默认值:</strong> <code>300</code>。</li>
+<li><code>SNICallback(servername, callback)</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a> A function that will be
+called if the client supports SNI TLS extension. Two arguments will be
+passed when called: <code>servername</code> and <code>callback</code>. <code>callback</code> is an
+error-first callback that takes two optional arguments: <code>error</code> and <code>ctx</code>.
+<code>ctx</code>, if provided, is a <code>SecureContext</code> instance.
+<a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> can be used to get a proper <code>SecureContext</code>.
+If <code>callback</code> is called with a falsy <code>ctx</code> argument, the default secure
+context of the server will be used. If <code>SNICallback</code> wasn't provided the
+default callback with high-level API will be used (see below).</li>
+<li><code>ticketKeys</code>: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> 48-bytes of cryptographically strong pseudorandom
+data. See <a href="tls.html#tls_session_resumption">Session Resumption</a> for more information.</li>
+<li><code>pskCallback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li>socket: <a href="tls.html#tls_class_tls_tlssocket" rel="nofollow" class="type">&lt;tls.TLSSocket&gt;</a> the server <a href="tls.html#tls_class_tls_tlssocket"><code>tls.TLSSocket</code></a> instance for
+this connection.</li>
+<li>identity: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> identity parameter sent from the client.</li>
+<li>返回: <a href="buffer.html#buffer_class_buffer" rel="nofollow" class="type">&lt;Buffer&gt;</a> | <a href="http://url.nodejs.cn/oh3CkV" rel="nofollow" class="type">&lt;TypedArray&gt;</a> | <a href="http://url.nodejs.cn/yCdVkD" rel="nofollow" class="type">&lt;DataView&gt;</a> pre-shared key that must either be
+a buffer or <code>null</code> to stop the negotiation process. Returned PSK must be
+compatible with the selected cipher's digest.</li>
+</ul>
+When negotiating TLS-PSK (pre-shared keys), this function is called
+with the identity provided by the client.
+If the return value is <code>null</code> the negotiation process will stop and an
+"unknown_psk_identity" alert message will be sent to the other party.
+If the server wishes to hide the fact that the PSK identity was not known,
+the callback must provide some random data as <code>psk</code> to make the connection
+fail with "decrypt_error" before negotiation is finished.
+PSK ciphers are disabled by default, and using TLS-PSK thus
+requires explicitly specifying a cipher suite with the <code>ciphers</code> option.
+More information can be found in the <a href="http://url.nodejs.cn/Gq5awY">RFC 4279</a>.</li>
+<li><code>pskIdentityHint</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> optional hint to send to a client to help
+with selecting the identity during TLS-PSK negotiation. Will be ignored
+in TLS 1.3. Upon failing to set pskIdentityHint <code>'tlsClientError'</code> will be
+emitted with <code>'ERR_TLS_PSK_SET_IDENTIY_HINT_FAILED'</code> code.</li>
+<li>...: Any <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> option can be provided. For
+servers, the identity options (<code>pfx</code>, <code>key</code>/<code>cert</code> or <code>pskCallback</code>)
+are usually required.</li>
+<li>...: Any <a href="net.html#net_net_createserver_options_connectionlistener"><code>net.createServer()</code></a> option can be provided.</li>
+</ul>
+</li>
+<li><code>secureConnectionListener</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a></li>
+<li>返回: <a href="tls.html#tls_class_tls_server" rel="nofollow" class="type">&lt;tls.Server&gt;</a></li>
+</ul>
+<p>Creates a new <a href="tls.html#tls_class_tls_server"><code>tls.Server</code></a>. The <code>secureConnectionListener</code>, if provided, is
+automatically set as a listener for the <a href="tls.html#tls_event_secureconnection"><code>'secureConnection'</code></a> event.</p>
+<p>The <code>ticketKeys</code> options is automatically shared between <code>cluster</code> module
+workers.</p>
+<p>The following illustrates a simple echo server:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> tls = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tls'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'server-key.pem'</span>),
+  <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'server-cert.pem'</span>),
+
+  <span class="hljs-comment">// This is necessary only if using client certificate authentication.</span>
+  <span class="hljs-attr">requestCert</span>: <span class="hljs-literal">true</span>,
+
+  <span class="hljs-comment">// This is necessary only if the client uses a self-signed certificate.</span>
+  <span class="hljs-attr">ca</span>: [ fs.readFileSync(<span class="hljs-string">'client-cert.pem'</span>) ]
+};
+
+<span class="hljs-keyword">const</span> server = tls.createServer(options, <span class="hljs-function">(<span class="hljs-params">socket</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'server connected'</span>,
+              socket.authorized ? <span class="hljs-string">'authorized'</span> : <span class="hljs-string">'unauthorized'</span>);
+  socket.write(<span class="hljs-string">'welcome!\n'</span>);
+  socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+  socket.pipe(socket);
+});
+server.listen(<span class="hljs-number">8000</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'server bound'</span>);
+});</code></pre>
+<p>The server can be tested by connecting to it using the example client from
+<a href="tls.html#tls_tls_connect_options_callback"><code>tls.connect()</code></a>.</p>
+</section><section><h3><code>tls.getCiphers()</code><span><a class="mark" href="#tls_tls_getciphers" id="tls_tls_getciphers">#</a></span></h3><p class="tip_wrap" data-item_id="tls_getciphers"></p>
+<div class="api_metadata">
+<span>新增于: v0.10.2</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+<p>Returns an array with the names of the supported TLS ciphers. The names are
+lower-case for historical reasons, but must be uppercased to be used in
+the <code>ciphers</code> option of <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a>.</p>
+<p>Cipher names that start with <code>'tls_'</code> are for TLSv1.3, all the others are for
+TLSv1.2 and below.</p>
+<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(tls.getCiphers()); <span class="hljs-comment">// ['aes128-gcm-sha256', 'aes128-sha', ...]</span></code></pre>
+</section><section><h3><code>tls.rootCertificates</code><span><a class="mark" href="#tls_tls_rootcertificates" id="tls_tls_rootcertificates">#</a></span></h3><p class="tip_wrap" data-item_id="tls_rootcertificates"></p>
+<div class="api_metadata">
+<span>新增于: v12.3.0</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+<p>An immutable array of strings representing the root certificates (in PEM format)
+from the bundled Mozilla CA store as supplied by current Node.js version.</p>
+<p>The bundled CA store, as supplied by Node.js, is a snapshot of Mozilla CA store
+that is fixed at release time. It is identical on all supported platforms.</p>
+</section><section><h3><code>tls.DEFAULT_ECDH_CURVE</code><span><a class="mark" href="#tls_tls_default_ecdh_curve" id="tls_tls_default_ecdh_curve">#</a></span></h3><p class="tip_wrap" data-item_id="tls_default_ecdh_curve"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v10.0.0</td>
+<td><p>Default value changed to <code>'auto'</code>.</p></td></tr>
+<tr><td>v0.11.13</td>
+<td><p><span>新增于: v0.11.13</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>The default curve name to use for ECDH key agreement in a tls server. The
+default value is <code>'auto'</code>. See <a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a> for further
+information.</p>
+</section><section><h3><code>tls.DEFAULT_MAX_VERSION</code><span><a class="mark" href="#tls_tls_default_max_version" id="tls_tls_default_max_version">#</a></span></h3><p class="tip_wrap" data-item_id="tls_default_max_version"></p>
+<div class="api_metadata">
+<span>新增于: v11.4.0</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The default value of the <code>maxVersion</code> option of
+<a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a>. It can be assigned any of the supported TLS
+protocol versions, <code>'TLSv1.3'</code>, <code>'TLSv1.2'</code>, <code>'TLSv1.1'</code>, or <code>'TLSv1'</code>.
+<strong>默认值:</strong> <code>'TLSv1.3'</code>, unless changed using CLI options. Using
+<code>--tls-max-v1.2</code> sets the default to <code>'TLSv1.2'</code>. Using <code>--tls-max-v1.3</code> sets
+the default to <code>'TLSv1.3'</code>. If multiple of the options are provided, the
+highest maximum is used.</li>
+</ul>
+</section><section><h3><code>tls.DEFAULT_MIN_VERSION</code><span><a class="mark" href="#tls_tls_default_min_version" id="tls_tls_default_min_version">#</a></span></h3><p class="tip_wrap" data-item_id="tls_default_min_version"></p>
+<div class="api_metadata">
+<span>新增于: v11.4.0</span>
+</div>
+<ul>
+<li><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> The default value of the <code>minVersion</code> option of
+<a href="tls.html#tls_tls_createsecurecontext_options"><code>tls.createSecureContext()</code></a>. It can be assigned any of the supported TLS
+protocol versions, <code>'TLSv1.3'</code>, <code>'TLSv1.2'</code>, <code>'TLSv1.1'</code>, or <code>'TLSv1'</code>.
+<strong>默认值:</strong> <code>'TLSv1.2'</code>, unless changed using CLI options. Using
+<code>--tls-min-v1.0</code> sets the default to <code>'TLSv1'</code>. Using <code>--tls-min-v1.1</code> sets
+the default to <code>'TLSv1.1'</code>. Using <code>--tls-min-v1.3</code> sets the default to
+<code>'TLSv1.3'</code>. If multiple of the options are provided, the lowest minimum is
+used.</li>
+</ul></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>
