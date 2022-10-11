@@ -1,0 +1,15 @@
+{
+  "name": "Node中文文档",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.1.0"
+  },
+  "dependencies": {
+    "tauri": "^0.14.1"
+  }
+}
