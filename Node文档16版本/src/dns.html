@@ -1,0 +1,1563 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>dns 域名服务器 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411139914" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="dns" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_2"><a href="#dns_dns">dns 域名服务器</a></span>
+<ul>
+<li><a href="#dns_class_dns_resolver"><code>dns.Resolver</code> 类</a>
+<ul>
+<li><a href="#dns_resolver_options"><code>Resolver([options])</code></a></li>
+<li><a href="#dns_resolver_cancel"><code>resolver.cancel()</code></a></li>
+<li><a href="#dns_resolver_setlocaladdress_ipv4_ipv6"><code>resolver.setLocalAddress([ipv4][, ipv6])</code></a></li>
+</ul>
+</li>
+<li><a href="#dns_dns_getservers"><code>dns.getServers()</code></a></li>
+<li><a href="#dns_dns_lookup_hostname_options_callback"><code>dns.lookup(hostname[, options], callback)</code></a>
+<ul>
+<li><a href="#dns_supported_getaddrinfo_flags">支持的 getaddrinfo</a></li>
+</ul>
+</li>
+<li><a href="#dns_dns_lookupservice_address_port_callback"><code>dns.lookupService(address, port, callback)</code></a></li>
+<li><a href="#dns_dns_resolve_hostname_rrtype_callback"><code>dns.resolve(hostname[, rrtype], callback)</code></a></li>
+<li><a href="#dns_dns_resolve4_hostname_options_callback"><code>dns.resolve4(hostname[, options], callback)</code></a></li>
+<li><a href="#dns_dns_resolve6_hostname_options_callback"><code>dns.resolve6(hostname[, options], callback)</code></a></li>
+<li><a href="#dns_dns_resolveany_hostname_callback"><code>dns.resolveAny(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvecname_hostname_callback"><code>dns.resolveCname(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvecaa_hostname_callback"><code>dns.resolveCaa(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvemx_hostname_callback"><code>dns.resolveMx(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvenaptr_hostname_callback"><code>dns.resolveNaptr(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvens_hostname_callback"><code>dns.resolveNs(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolveptr_hostname_callback"><code>dns.resolvePtr(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvesoa_hostname_callback"><code>dns.resolveSoa(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvesrv_hostname_callback"><code>dns.resolveSrv(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_resolvetxt_hostname_callback"><code>dns.resolveTxt(hostname, callback)</code></a></li>
+<li><a href="#dns_dns_reverse_ip_callback"><code>dns.reverse(ip, callback)</code></a></li>
+<li><a href="#dns_dns_setdefaultresultorder_order"><code>dns.setDefaultResultOrder(order)</code></a></li>
+<li><a href="#dns_dns_setservers_servers"><code>dns.setServers(servers)</code></a></li>
+<li><a href="#dns_dns_promises_api">Promise 形式的 API</a>
+<ul>
+<li><a href="#dns_class_dnspromises_resolver"><code>dnsPromises.Resolver</code> 类</a></li>
+<li><a href="#dns_resolver_cancel_1"><code>resolver.cancel()</code></a></li>
+<li><a href="#dns_dnspromises_getservers"><code>dnsPromises.getServers()</code></a></li>
+<li><a href="#dns_dnspromises_lookup_hostname_options"><code>dnsPromises.lookup(hostname[, options])</code></a></li>
+<li><a href="#dns_dnspromises_lookupservice_address_port"><code>dnsPromises.lookupService(address, port)</code></a></li>
+<li><a href="#dns_dnspromises_resolve_hostname_rrtype"><code>dnsPromises.resolve(hostname[, rrtype])</code></a></li>
+<li><a href="#dns_dnspromises_resolve4_hostname_options"><code>dnsPromises.resolve4(hostname[, options])</code></a></li>
+<li><a href="#dns_dnspromises_resolve6_hostname_options"><code>dnsPromises.resolve6(hostname[, options])</code></a></li>
+<li><a href="#dns_dnspromises_resolveany_hostname"><code>dnsPromises.resolveAny(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvecaa_hostname"><code>dnsPromises.resolveCaa(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvecname_hostname"><code>dnsPromises.resolveCname(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvemx_hostname"><code>dnsPromises.resolveMx(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvenaptr_hostname"><code>dnsPromises.resolveNaptr(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvens_hostname"><code>dnsPromises.resolveNs(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolveptr_hostname"><code>dnsPromises.resolvePtr(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvesoa_hostname"><code>dnsPromises.resolveSoa(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvesrv_hostname"><code>dnsPromises.resolveSrv(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_resolvetxt_hostname"><code>dnsPromises.resolveTxt(hostname)</code></a></li>
+<li><a href="#dns_dnspromises_reverse_ip"><code>dnsPromises.reverse(ip)</code></a></li>
+<li><a href="#dns_dnspromises_setdefaultresultorder_order"><code>dnsPromises.setDefaultResultOrder(order)</code></a></li>
+<li><a href="#dns_dnspromises_setservers_servers"><code>dnsPromises.setServers(servers)</code></a></li>
+</ul>
+</li>
+<li><a href="#dns_error_codes">错误码</a></li>
+<li><a href="#dns_implementation_considerations">实现的注意事项</a>
+<ul>
+<li><a href="#dns_dns_lookup"><code>dns.lookup()</code></a></li>
+<li><a href="#dns_dns_resolve_dns_resolve_and_dns_reverse">dns.resolve()、dns.resolve*() 与 dns.reverse()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>dns 域名服务器<span><a class="mark" href="#dns_dns" id="dns_dns">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="dns">
+                <a href="dns/dns.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.10.0-->
+<p></p><div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> - 稳定</div><p></p>
+<p><strong>源代码:</strong> <a rel="nofollow" href="http://url.nodejs.cn/VQ3LGG">lib/dns.js</a></p>
+<p><code>dns</code> 模块用于启用名称解析。
+例如，使用它来查找主机名的 IP 地址。</p>
+<p>尽管以<a href="http://url.nodejs.cn/pQKTKQ">域名系统（DNS）</a>命名，但它并不总是使用 DNS 协议进行查找。
+<a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 使用操作系统功能来执行名称解析。
+它可能不需要执行任何网络通信。
+若要像同一系统上其他应用程序一样执行名称解析，则使用 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dns = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+
+dns.lookup(<span class="hljs-string">'example.org'</span>, <span class="hljs-function">(<span class="hljs-params">err, address, family</span>) =&gt;</span> {
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'地址: %j 地址族: IPv%s'</span>, address, family);
+});
+<span class="hljs-comment">// 地址: "93.184.216.34" 地址族: IPv4</span></code></pre>
+<p><code>dns</code> 模块中的所有其他函数都连接到实际的 DNS 服务器以执行名称解析。
+它们将会始终使用网络执行 DNS 查询。
+这些函数不使用与 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 使用的同一组配置文件（例如 <code>/etc/hosts</code>）。
+使用这些函数可以始终执行 DNS 查询（绕过其他的名称解析功能）。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dns = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+
+dns.resolve4(<span class="hljs-string">'archive.org'</span>, <span class="hljs-function">(<span class="hljs-params">err, addresses</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`地址: <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(addresses)}</span>`</span>);
+
+  addresses.forEach(<span class="hljs-function">(<span class="hljs-params">a</span>) =&gt;</span> {
+    dns.reverse(a, <span class="hljs-function">(<span class="hljs-params">err, hostnames</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-keyword">throw</span> err;
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`地址 <span class="hljs-subst">${a}</span> 逆向到: <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(hostnames)}</span>`</span>);
+    });
+  });
+});</code></pre>
+<p>有关更多信息，参见<a href="dns.html#dns_implementation_considerations">实现的注意事项</a>。</p>
+<section><h3><code>dns.Resolver</code> 类<span><a class="mark" href="#dns_class_dns_resolver" id="dns_class_dns_resolver">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="class_dns_resolver">
+                <a href="dns/class_dns_resolver.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v8.3.0</span>
+</div>
+<p>DNS 请求的独立解析程序。</p>
+<p>使用默认的设置创建一个新的解析程序。
+使用 <a href="dns.html#dns_dns_setservers_servers"><code>resolver.setServers()</code></a> 为解析程序设置使用的服务器，则不会影响其他的解析程序：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { Resolver } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+<span class="hljs-keyword">const</span> resolver = <span class="hljs-keyword">new</span> Resolver();
+resolver.setServers([<span class="hljs-string">'4.4.4.4'</span>]);
+
+<span class="hljs-comment">// 此请求将使用 4.4.4.4 中的服务器，与全局设置无关。</span>
+resolver.resolve4(<span class="hljs-string">'example.org'</span>, <span class="hljs-function">(<span class="hljs-params">err, addresses</span>) =&gt;</span> {
+  <span class="hljs-comment">// ...</span>
+});</code></pre>
+<p>可以使用的 <code>dns</code> 模块的方法如下：</p>
+<ul>
+<li><a href="dns.html#dns_dns_getservers"><code>resolver.getServers()</code></a></li>
+<li><a href="dns.html#dns_dns_resolve_hostname_rrtype_callback"><code>resolver.resolve()</code></a></li>
+<li><a href="dns.html#dns_dns_resolve4_hostname_options_callback"><code>resolver.resolve4()</code></a></li>
+<li><a href="dns.html#dns_dns_resolve6_hostname_options_callback"><code>resolver.resolve6()</code></a></li>
+<li><a href="dns.html#dns_dns_resolveany_hostname_callback"><code>resolver.resolveAny()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvecname_hostname_callback"><code>resolver.resolveCname()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvemx_hostname_callback"><code>resolver.resolveMx()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvenaptr_hostname_callback"><code>resolver.resolveNaptr()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvens_hostname_callback"><code>resolver.resolveNs()</code></a></li>
+<li><a href="dns.html#dns_dns_resolveptr_hostname_callback"><code>resolver.resolvePtr()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvesoa_hostname_callback"><code>resolver.resolveSoa()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvesrv_hostname_callback"><code>resolver.resolveSrv()</code></a></li>
+<li><a href="dns.html#dns_dns_resolvetxt_hostname_callback"><code>resolver.resolveTxt()</code></a></li>
+<li><a href="dns.html#dns_dns_reverse_ip_callback"><code>resolver.reverse()</code></a></li>
+<li><a href="dns.html#dns_dns_setservers_servers"><code>resolver.setServers()</code></a></li>
+</ul>
+<h4><code>Resolver([options])</code><span><a class="mark" href="#dns_resolver_options" id="dns_resolver_options">#</a></span></h4><p class="tip_wrap" data-item_id="resolver_options"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v12.18.3</td>
+<td><p>The constructor now accepts an <code>options</code> object. The single supported option is <code>timeout</code>.</p></td></tr>
+<tr><td>v8.3.0</td>
+<td><p><span>新增于: v8.3.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Create a new resolver.</p>
+<ul>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>timeout</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> Query timeout in milliseconds, or <code>-1</code> to use the
+default timeout.</li>
+</ul>
+</li>
+</ul>
+<h4><code>resolver.cancel()</code><span><a class="mark" href="#dns_resolver_cancel" id="dns_resolver_cancel">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="resolver_cancel">
+                <a href="dns/resolver_cancel.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v8.3.0</span>
+</div>
+<p>取消此解析程序所做的所有未完成的DNS查询。
+使用错误码 <code>ECANCELLED</code> 调用相应的回调。</p>
+<h4><code>resolver.setLocalAddress([ipv4][, ipv6])</code><span><a class="mark" href="#dns_resolver_setlocaladdress_ipv4_ipv6" id="dns_resolver_setlocaladdress_ipv4_ipv6">#</a></span></h4><p class="tip_wrap" data-item_id="resolver_setlocaladdress_ipv4_ipv6"></p>
+<div class="api_metadata">
+<span>新增于: v15.1.0</span>
+</div>
+<ul>
+<li><code>ipv4</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> A string representation of an IPv4 address.
+<strong>默认值:</strong> <code>'0.0.0.0'</code></li>
+<li><code>ipv6</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> A string representation of an IPv6 address.
+<strong>默认值:</strong> <code>'::0'</code></li>
+</ul>
+<p>The resolver instance will send its requests from the specified IP address.
+This allows programs to specify outbound interfaces when used on multi-homed
+systems.</p>
+<p>If a v4 or v6 address is not specified, it is set to the default, and the
+operating system will choose a local address automatically.</p>
+<p>The resolver will use the v4 local address when making requests to IPv4 DNS
+servers, and the v6 local address when making requests to IPv6 DNS servers.
+The <code>rrtype</code> of resolution requests has no impact on the local address used.</p>
+</section><section><h3><code>dns.getServers()</code><span><a class="mark" href="#dns_dns_getservers" id="dns_dns_getservers">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_getservers">
+                <a href="dns/dns_getservers.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.3</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+<p>返回一个用于当前 DNS 解析的 IP 地址字符串的数组，格式根据 <a href="http://url.nodejs.cn/jzbgfM">RFC 5952</a>。
+如果使用自定义端口，则字符串将会包括端口部分。</p>
+<!-- eslint-disable semi-->
+<pre><code class="language-js">[
+  <span class="hljs-string">'4.4.4.4'</span>,
+  <span class="hljs-string">'2001:4860:4860::8888'</span>,
+  <span class="hljs-string">'4.4.4.4:1053'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]:1053'</span>
+]</code></pre>
+</section><section><h3><code>dns.lookup(hostname[, options], callback)</code><span><a class="mark" href="#dns_dns_lookup_hostname_options_callback" id="dns_dns_lookup_hostname_options_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_lookup_hostname_options_callback">
+                <a href="dns/dns_lookup_hostname_options_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v8.5.0</td>
+<td><p>The <code>verbatim</code> option is supported now.</p></td></tr>
+<tr><td>v1.2.0</td>
+<td><p>The <code>all</code> option is supported now.</p></td></tr>
+<tr><td>v0.1.90</td>
+<td><p><span>新增于: v0.1.90</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>options</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>family</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 记录的地址族。必须为 <code>4</code>、<code>6</code> 或 <code>0</code>。<code>0</code> 值表示返回 IPv4 和 IPv6 地址。<strong>默认值:</strong> <code>0</code>。</li>
+<li><code>hints</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 一个或多个<a href="dns.html#dns_supported_getaddrinfo_flags">受支持的 <code>getaddrinfo</code> 标志</a>。可以通过按位 <code>OR</code> 运算它们的值来传递多个标志。</li>
+<li><code>all</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当为 <code>true</code>  时，则回调将会返回数组中所有已解析的地址。否则，返回单个地址。<strong>默认值：</strong> <code>false</code>。</li>
+<li><code>verbatim</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当为 <code>true</code> 时，则回调按 DNS 解析器返回的顺序接收 IPv4 和 IPv6 地址。当为 <code>false</code> 时，则 IPv4 地址放在 IPv6 地址之前。
+<strong>默认值:</strong> 当前为 <code>false</code>（地址已重新排序）但预计在不久的将来会发生变化。新代码应使用 <code>{ verbatim: true }</code>。</li>
+</ul>
+</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>address</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> IPv4 或 IPv6 地址的字符串表示形式。</li>
+<li><code>family</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> <code>4</code> 或 <code>6</code>，表示 <code>address</code> 的地址族，如果地址不是 IPv4 或 IPv6 地址，则为 <code>0</code>。<code>0</code> 可能是操作系统使用的名称解析服务中的错误的指示符。</li>
+</ul>
+</li>
+</ul>
+<p>解析主机名（例如：<code>'nodejs.cn'</code>）为第一个找到的 A（IPv4）或 AAAA（IPv6）记录。
+所有的 <code>option</code> 属性都是可选的。
+如果 <code>options</code> 是整数，则只能是 <code>4</code> 或 <code>6</code>。
+如果 <code>options</code> 没有被提供，则 IPv4 和 IPv6 都是有效的。</p>
+<p>当 <code>all</code> 选项被设置为 <code>true</code> 时，<code>callback</code> 的参数会变为 <code>(err, addresses)</code>，其中 <code>addresses</code> 变成一个由 <code>address</code> 和 <code>family</code> 属性组成的对象数组。</p>
+<p>当发生错误时，<code>err</code> 是一个 <a href="errors.html#errors_class_error"><code>Error</code></a> 对象，其中 <code>err.code</code> 是错误码。
+不仅在主机名不存在时，在如没有可用的文件描述符等情况下查找失败，<code>err.code</code> 也会被设置为 <code>'ENOTFOUND'</code>。</p>
+<p><code>dns.lookup()</code> 不需要与 DNS 协议有任何关系。
+它仅仅是一个连接名字和地址的操作系统功能。
+在任何的 Node.js 程序中，它的实现对表现有一些微妙但是重要的影响。
+在使用 <code>dns.lookup()</code> 之前请花些时间查询<a href="dns.html#dns_implementation_considerations">实现的注意事项</a>章节。</p>
+<p>使用示例：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dns = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">family</span>: <span class="hljs-number">6</span>,
+  <span class="hljs-attr">hints</span>: dns.ADDRCONFIG | dns.V4MAPPED,
+};
+dns.lookup(<span class="hljs-string">'example.com'</span>, options, <span class="hljs-function">(<span class="hljs-params">err, address, family</span>) =&gt;</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'地址: %j 地址族: IPv%s'</span>, address, family));
+<span class="hljs-comment">// 地址: "2606:2800:220:1:248:1893:25c8:1946" 地址族: IPv6</span>
+
+<span class="hljs-comment">// 当 options.all 为 true 时，则结果将会是一个数组。</span>
+options.all = <span class="hljs-literal">true</span>;
+dns.lookup(<span class="hljs-string">'example.com'</span>, options, <span class="hljs-function">(<span class="hljs-params">err, addresses</span>) =&gt;</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'地址: %j'</span>, addresses));
+<span class="hljs-comment">// 地址: [{"address":"2606:2800:220:1:248:1893:25c8:1946","family":6}]</span></code></pre>
+<p>如果调用此方法的 <a href="util.html#util_util_promisify_original"><code>util.promisify()</code></a> 化的版本，并且 <code>all</code> 未设置为 <code>true</code>，则它返回的 Promise 会返回一个具有 <code>address</code> 和 <code>family</code> 属性的对象。</p>
+<h4>支持的 getaddrinfo<span><a class="mark" href="#dns_supported_getaddrinfo_flags" id="dns_supported_getaddrinfo_flags">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="supported_getaddrinfo_flags">
+                <a href="dns/supported_getaddrinfo_flags.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.0.0</td>
+<td><p>Added support for the <code>dns.ALL</code> flag.</p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>以下内容可以作为 hints 标志传给 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>。</p>
+<ul>
+<li><code>dns.ADDRCONFIG</code>: Limits returned address types to the types of non-loopback addresses configured on the system. 例如，如果当前系统至少配置了一个 IPv4 地址，则返回 IPv4 地址。</li>
+<li><code>dns.V4MAPPED</code>: 如果指定了 IPv6 地址族，但是没有找到 IPv6 地址，则返回 IPv4 映射的 IPv6 地址。在有些操作系统中不支持（例如 FreeBSD 10.1）。</li>
+<li><code>dns.ALL</code>: 如果指定了 <code>dns.V4MAPPED</code>，则返回解析的 IPv6 地址以及 IPv4 映射的 IPv6 地址。</li>
+</ul>
+</section><section><h3><code>dns.lookupService(address, port, callback)</code><span><a class="mark" href="#dns_dns_lookupservice_address_port_callback" id="dns_dns_lookupservice_address_port_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_lookupservice_address_port_callback">
+                <a href="dns/dns_lookupservice_address_port_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.14</span>
+</div>
+<ul>
+<li><code>address</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>port</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 例如 <code>nodejs.cn</code>。</li>
+<li><code>service</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 例如 <code>http</code>。</li>
+</ul>
+</li>
+</ul>
+<p>使用操作系统的底层 <code>getnameinfo</code> 实现将给定的 <code>address</code> 和 <code>port</code> 解析为主机名和服务。</p>
+<p>如果 <code>address</code> 不是有效的 IP 地址，则将会抛出 <code>TypeError</code>。
+<code>port</code> 会被强制转换为数字。
+如果它不是合法的端口，则抛出 <code>TypeError</code>。</p>
+<p>出错情况下，<code>err</code> 是一个 <a href="errors.html#errors_class_error"><code>Error</code></a> 对象，其中 <code>err.code</code> 是错误码。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dns = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+dns.lookupService(<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-number">22</span>, <span class="hljs-function">(<span class="hljs-params">err, hostname, service</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(hostname, service);
+  <span class="hljs-comment">// 打印: localhost ssh</span>
+});</code></pre>
+<p>如果调用此方法的 <a href="util.html#util_util_promisify_original"><code>util.promisify()</code></a> 化的版本，则它返回的 <code>Promise</code> 会返回一个具有 <code>hostname</code> 和 <code>service</code> 属性的 <code>Object</code>。</p>
+</section><section><h3><code>dns.resolve(hostname[, rrtype], callback)</code><span><a class="mark" href="#dns_dns_resolve_hostname_rrtype_callback" id="dns_dns_resolve_hostname_rrtype_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolve_hostname_rrtype_callback">
+                <a href="dns/dns_resolve_hostname_rrtype_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.27</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 解析的主机名。</li>
+<li><code>rrtype</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 资源记录类型。<strong>默认值:</strong> <code>'A'</code>。</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>records</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议将主机名（例如 <code>'nodejs.cn'</code>）解析为一个资源记录的数组。
+<code>callback</code> 函数的参数为 <code>(err, records)</code>。
+当成功时，<code>records</code> 将会是一个资源记录的数组。
+它的类型和结构取决于 <code>rrtype</code>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>rrtype</code></th><th><code>records</code> 包含</th><th>结果的类型</th><th>快捷方法</th></tr></thead><tbody><tr><td><code>'A'</code></td><td>IPv4 地址 (默认)</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dns_resolve4_hostname_options_callback"><code>dns.resolve4()</code></a></td></tr><tr><td><code>'AAAA'</code></td><td>IPv6 地址</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dns_resolve6_hostname_options_callback"><code>dns.resolve6()</code></a></td></tr><tr><td><code>'ANY'</code></td><td>任何记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dns_resolveany_hostname_callback"><code>dns.resolveAny()</code></a></td></tr><tr><td><code>'CNAME'</code></td><td>规范名称记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dns_resolvecname_hostname_callback"><code>dns.resolveCname()</code></a></td></tr><tr><td><code>'MX'</code></td><td>邮件交换记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dns_resolvemx_hostname_callback"><code>dns.resolveMx()</code></a></td></tr><tr><td><code>'NAPTR'</code></td><td>名称权限指针记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dns_resolvenaptr_hostname_callback"><code>dns.resolveNaptr()</code></a></td></tr><tr><td><code>'NS'</code></td><td>名称服务器记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dns_resolvens_hostname_callback"><code>dns.resolveNs()</code></a></td></tr><tr><td><code>'PTR'</code></td><td>指针记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dns_resolveptr_hostname_callback"><code>dns.resolvePtr()</code></a></td></tr><tr><td><code>'SOA'</code></td><td>开始授权记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dns_resolvesoa_hostname_callback"><code>dns.resolveSoa()</code></a></td></tr><tr><td><code>'SRV'</code></td><td>服务记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dns_resolvesrv_hostname_callback"><code>dns.resolveSrv()</code></a></td></tr><tr><td><code>'TXT'</code></td><td>文本记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></td><td><a href="dns.html#dns_dns_resolvetxt_hostname_callback"><code>dns.resolveTxt()</code></a></td></tr></tbody></table>
+<p>当出错时，<code>err</code> 是一个 <a href="errors.html#errors_class_error"><code>Error</code></a> 对象，其中 <code>err.code</code> 是 <a href="dns.html#dns_error_codes">DNS 错误码</a>的一种。</p>
+</section><section><h3><code>dns.resolve4(hostname[, options], callback)</code><span><a class="mark" href="#dns_dns_resolve4_hostname_options_callback" id="dns_dns_resolve4_hostname_options_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolve4_hostname_options_callback">
+                <a href="dns/dns_resolve4_hostname_options_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v7.2.0</td>
+<td><p>This method now supports passing <code>options</code>, specifically <code>options.ttl</code>.</p></td></tr>
+<tr><td>v0.1.16</td>
+<td><p><span>新增于: v0.1.16</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 需要解析的主机名。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>ttl</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 记录每一条记录的存活次数 (TTL)。当为 <code>true</code> 时，回调会接收一个带有 TTL 秒数记录的类似 <code>{ address: '1.2.3.4', ttl: 60 }</code> 对象的数组，而不是字符串的数组。</li>
+</ul>
+</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析 IPv4 地址（<code>A</code> 记录）。
+<code>adresses</code> 参数是传给 <code>callback</code> 函数的 IPv4 地址数组（例如：<code>['74.125.79.104', '74.125.79.105', '74.125.79.106']</code>）。</p>
+</section><section><h3><code>dns.resolve6(hostname[, options], callback)</code><span><a class="mark" href="#dns_dns_resolve6_hostname_options_callback" id="dns_dns_resolve6_hostname_options_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolve6_hostname_options_callback">
+                <a href="dns/dns_resolve6_hostname_options_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v7.2.0</td>
+<td><p>This method now supports passing <code>options</code>, specifically <code>options.ttl</code>.</p></td></tr>
+<tr><td>v0.1.16</td>
+<td><p><span>新增于: v0.1.16</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 需要解析的主机名。</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>ttl</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 记录每一条记录的存活次数 (TTL)。当为 <code>true</code> 时，回调会接收一个带有 TTL 秒数记录的类似 <code>{ address: '0:1:2:3:4:5:6:7', ttl: 60 }</code> 对象的数组，而不是字符串的数组。</li>
+</ul>
+</li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析 IPv6 地址（<code>AAAA</code> 记录）。
+<code>adresses</code> 参数是传给 <code>callback</code> 函数的 IPv6 地址数组。</p>
+</section><section><h3><code>dns.resolveAny(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolveany_hostname_callback" id="dns_dns_resolveany_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolveany_hostname_callback">
+                <a href="dns/dns_resolveany_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>ret</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议解析所有记录（也称为 <code>ANY</code> 或 <code>*</code> 查询）。
+传给 <code>callback</code> 函数的 <code>ret</code> 参数将会是一个包含各种类型记录的数组。
+每个对象都有一个 <code>callback</code> 属性，表明当前记录的类型。
+根据 <code>type</code>，对象上将会显示其他属性：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>属性</th></tr></thead><tbody><tr><td><code>'A'</code></td><td><code>address</code>/<code>ttl</code></td></tr><tr><td><code>'AAAA'</code></td><td><code>address</code>/<code>ttl</code></td></tr><tr><td><code>'CNAME'</code></td><td><code>value</code></td></tr><tr><td><code>'MX'</code></td><td>指向 <a href="dns.html#dns_dns_resolvemx_hostname_callback"><code>dns.resolveMx()</code></a></td></tr><tr><td><code>'NAPTR'</code></td><td>指向 <a href="dns.html#dns_dns_resolvenaptr_hostname_callback"><code>dns.resolveNaptr()</code></a></td></tr><tr><td><code>'NS'</code></td><td><code>value</code></td></tr><tr><td><code>'PTR'</code></td><td><code>value</code></td></tr><tr><td><code>'SOA'</code></td><td>指向 <a href="dns.html#dns_dns_resolvesoa_hostname_callback"><code>dns.resolveSoa()</code></a></td></tr><tr><td><code>'SRV'</code></td><td>指向 <a href="dns.html#dns_dns_resolvesrv_hostname_callback"><code>dns.resolveSrv()</code></a></td></tr><tr><td><code>'TXT'</code></td><td>这种类型的记录包含一个名为 <code>entries</code> 的数组属性，它指向 <a href="dns.html#dns_dns_resolvetxt_hostname_callback"><code>dns.resolveTxt()</code></a>，例如：<code>{ entries: ['...'], type: 'TXT' }</code></td></tr></tbody></table>
+<p>以下是传给回调的 <code>ret</code> 对象的示例：</p>
+<!-- eslint-disable semi -->
+<pre><code class="language-js">[ { <span class="hljs-attr">type</span>: <span class="hljs-string">'A'</span>, <span class="hljs-attr">address</span>: <span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-attr">ttl</span>: <span class="hljs-number">299</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'CNAME'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'example.com'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'MX'</span>, <span class="hljs-attr">exchange</span>: <span class="hljs-string">'alt4.aspmx.l.example.com'</span>, <span class="hljs-attr">priority</span>: <span class="hljs-number">50</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'NS'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'ns1.example.com'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'TXT'</span>, <span class="hljs-attr">entries</span>: [ <span class="hljs-string">'v=spf1 include:_spf.example.com ~all'</span> ] },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'SOA'</span>,
+    <span class="hljs-attr">nsname</span>: <span class="hljs-string">'ns1.example.com'</span>,
+    <span class="hljs-attr">hostmaster</span>: <span class="hljs-string">'admin.example.com'</span>,
+    <span class="hljs-attr">serial</span>: <span class="hljs-number">156696742</span>,
+    <span class="hljs-attr">refresh</span>: <span class="hljs-number">900</span>,
+    <span class="hljs-attr">retry</span>: <span class="hljs-number">900</span>,
+    <span class="hljs-attr">expire</span>: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">minttl</span>: <span class="hljs-number">60</span> } ]</code></pre>
+<p>DNS 服务器运营商可以选择不响应 <code>ANY</code> 查询。
+调用 <a href="dns.html#dns_dns_resolve4_hostname_options_callback"><code>dns.resolve4()</code></a>、<a href="dns.html#dns_dns_resolvemx_hostname_callback"><code>dns.resolveMx()</code></a> 等单个方法可能更好。
+有关更多详细信息，请参见 <a href="http://url.nodejs.cn/RFFP6n">RFC 8482</a>。</p>
+</section><section><h3><code>dns.resolveCname(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvecname_hostname_callback" id="dns_dns_resolvecname_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvecname_hostname_callback">
+                <a href="dns/dns_resolvecname_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.3.2</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析 <code>CNAME</code> 记录。
+传给 <code>callback</code> 函数的 <code>adresses</code> 参数将会包含可用于 <code>hostname</code> 的规范名称记录的数组（例如：<code>['bar.example.com']</code>）。</p>
+</section><section><h3><code>dns.resolveCaa(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvecaa_hostname_callback" id="dns_dns_resolvecaa_hostname_callback">#</a></span></h3><p class="tip_wrap" data-item_id="dns_resolvecaa_hostname_callback"></p>
+<div class="api_metadata">
+<span>新增于: v15.0.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>records</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>Uses the DNS protocol to resolve <code>CAA</code> records for the <code>hostname</code>. The
+<code>addresses</code> argument passed to the <code>callback</code> function
+will contain an array of certification authority authorization records
+available for the <code>hostname</code> (e.g. <code>[{critical: 0, iodef: 'mailto:pki@example.com'}, {critical: 128, issue: 'pki.example.com'}]</code>).</p>
+</section><section><h3><code>dns.resolveMx(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvemx_hostname_callback" id="dns_dns_resolvemx_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvemx_hostname_callback">
+                <a href="dns/dns_resolvemx_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.27</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析邮件交换记录（<code>MX</code> 记录）。
+传给 <code>callback</code> 函数的 <code>adresses</code> 参数将会包含具有 <code>priority</code> 和 <code>exchange</code> 属性的对象的数组（例如：<code>[{priority: 10, exchange: 'mx.example.com'}, ...]</code>）。</p>
+</section><section><h3><code>dns.resolveNaptr(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvenaptr_hostname_callback" id="dns_dns_resolvenaptr_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvenaptr_hostname_callback">
+                <a href="dns/dns_resolvenaptr_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.9.12</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析基于正则表达式的记录（<code>NAPTR</code> 记录）。
+传给 <code>callback</code> 函数的 <code>adresses</code> 参数将会包含具有以下属性的对象数组：</p>
+<ul>
+<li><code>flags</code></li>
+<li><code>service</code></li>
+<li><code>regexp</code></li>
+<li><code>replacement</code></li>
+<li><code>order</code></li>
+<li><code>preference</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">flags</span>: <span class="hljs-string">'s'</span>,
+  <span class="hljs-attr">service</span>: <span class="hljs-string">'SIP+D2U'</span>,
+  <span class="hljs-attr">regexp</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">replacement</span>: <span class="hljs-string">'_sip._udp.example.com'</span>,
+  <span class="hljs-attr">order</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">preference</span>: <span class="hljs-number">100</span>
+}</code></pre>
+</section><section><h3><code>dns.resolveNs(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvens_hostname_callback" id="dns_dns_resolvens_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvens_hostname_callback">
+                <a href="dns/dns_resolvens_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.90</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析名称服务器记录（<code>NS</code> 记录）。
+传给 <code>callback</code> 函数的 <code>adresses</code> 参数将会包含用于 <code>hostname</code> 的有效的名称服务器记录的数组（例如 <code>['ns1.example.com', 'ns2.example.com']</code>）。</p>
+</section><section><h3><code>dns.resolvePtr(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolveptr_hostname_callback" id="dns_dns_resolveptr_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolveptr_hostname_callback">
+                <a href="dns/dns_resolveptr_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析指针记录（<code>PTR</code> 记录）。
+传给 <code>callback</code> 函数的 <code>addresses</code> 参数将会是一个包含回复记录的字符串数组。</p>
+</section><section><h3><code>dns.resolveSoa(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvesoa_hostname_callback" id="dns_dns_resolvesoa_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvesoa_hostname_callback">
+                <a href="dns/dns_resolvesoa_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.10</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>address</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析开始权限记录（<code>SOA</code> 记录）。
+传给 <code>callback</code> 函数的 <code>addresses</code> 参数将会是一个具有以下属性的对象：</p>
+<ul>
+<li><code>nsname</code></li>
+<li><code>hostmaster</code></li>
+<li><code>serial</code></li>
+<li><code>refresh</code></li>
+<li><code>retry</code></li>
+<li><code>expire</code></li>
+<li><code>minttl</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">nsname</span>: <span class="hljs-string">'ns.example.com'</span>,
+  <span class="hljs-attr">hostmaster</span>: <span class="hljs-string">'root.example.com'</span>,
+  <span class="hljs-attr">serial</span>: <span class="hljs-number">2013101809</span>,
+  <span class="hljs-attr">refresh</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">retry</span>: <span class="hljs-number">2400</span>,
+  <span class="hljs-attr">expire</span>: <span class="hljs-number">604800</span>,
+  <span class="hljs-attr">minttl</span>: <span class="hljs-number">3600</span>
+}</code></pre>
+</section><section><h3><code>dns.resolveSrv(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvesrv_hostname_callback" id="dns_dns_resolvesrv_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvesrv_hostname_callback">
+                <a href="dns/dns_resolvesrv_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.27</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>addresses</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>使用 DNS 协议为 <code>hostname</code> 解析服务记录（<code>SRV</code> 记录）。
+传给 <code>callback</code> 函数的 <code>addresses</code> 参数将会是一个具有以下属性的对象数组：</p>
+<ul>
+<li><code>priority</code></li>
+<li><code>weight</code></li>
+<li><code>port</code></li>
+<li><code>name</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">priority</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-attr">weight</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">port</span>: <span class="hljs-number">21223</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'service.example.com'</span>
+}</code></pre>
+</section><section><h3><code>dns.resolveTxt(hostname, callback)</code><span><a class="mark" href="#dns_dns_resolvetxt_hostname_callback" id="dns_dns_resolvetxt_hostname_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolvetxt_hostname_callback">
+                <a href="dns/dns_resolvetxt_hostname_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.27</span>
+</div>
+<!--lint disable no-undefined-references list-item-bullet-indent-->
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>records</code> <a href="http://url.nodejs.cn/9Tw2bK">&lt;string[][]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<!--lint enable no-undefined-references list-item-bullet-indent-->
+<p>使用 DNS 协议为 <code>hostname</code> 解析文本查询（<code>TXT</code> 记录）。
+传给 <code>callback</code> 函数的 <code>records</code> 参数是一个具有用于 <code>hostname</code> 的可用的文本记录的二维数组(例如：<code>[ ['v=spf1 ip4:0.0.0.0 ', '~all' ] ]</code>)。
+每个子数组包含一条 TXT 记录块。
+根据用例，这些可以是连接在一起或单独对待。</p>
+</section><section><h3><code>dns.reverse(ip, callback)</code><span><a class="mark" href="#dns_dns_reverse_ip_callback" id="dns_dns_reverse_ip_callback">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_reverse_ip_callback">
+                <a href="dns/dns_reverse_ip_callback.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.16</span>
+</div>
+<ul>
+<li><code>ip</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>callback</code> <a href="http://url.nodejs.cn/ceTQa6" rel="nofollow" class="type">&lt;Function&gt;</a>
+<ul>
+<li><code>err</code> <a href="http://url.nodejs.cn/qZ873x" rel="nofollow" class="type">&lt;Error&gt;</a></li>
+<li><code>hostnames</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+</li>
+</ul>
+<p>执行一个反向 DNS 查询，将 IPv4 或 IPv6 地址解析为主机名数组。</p>
+<p>当出错时，<code>err</code> 是一个 <a href="errors.html#errors_class_error"><code>Error</code></a> 对象，其中 <code>err.code</code> 是 <a href="dns.html#dns_error_codes">DNS 错误码</a>之一。</p>
+</section><section><h3><code>dns.setDefaultResultOrder(order)</code><span><a class="mark" href="#dns_dns_setdefaultresultorder_order" id="dns_dns_setdefaultresultorder_order">#</a></span></h3><p class="tip_wrap" data-item_id="dns_setdefaultresultorder_order"></p>
+<div class="api_metadata">
+<span>新增于: v16.4.0</span>
+</div>
+<ul>
+<li><code>order</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> must be <code>'ipv4first'</code> or <code>'verbatim'</code>.</li>
+</ul>
+<p>Set the default value of <code>verbatim</code> in <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> and
+<a href="dns.html#dns_dnspromises_lookup_hostname_options"><code>dnsPromises.lookup()</code></a>. The value could be:</p>
+<ul>
+<li><code>ipv4first</code>: sets default <code>verbatim</code> <code>false</code>.</li>
+<li><code>verbatim</code>: sets default <code>verbatim</code> <code>true</code>.</li>
+</ul>
+<p>The default is <code>ipv4first</code> and <a href="dns.html#dns_dns_setdefaultresultorder_order"><code>dns.setDefaultResultOrder()</code></a> have higher
+priority than <a href="cli.html#cli_dns_result_order_order"><code>--dns-result-order</code></a>. When using <a href="worker_threads.html">worker threads</a>,
+<a href="dns.html#dns_dns_setdefaultresultorder_order"><code>dns.setDefaultResultOrder()</code></a> from the main thread won't affect the default
+dns orders in workers.</p>
+</section><section><h3><code>dns.setServers(servers)</code><span><a class="mark" href="#dns_dns_setservers_servers" id="dns_dns_setservers_servers">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_setservers_servers">
+                <a href="dns/dns_setservers_servers.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.3</span>
+</div>
+<ul>
+<li><code>servers</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> <a href="http://url.nodejs.cn/jzbgfM">RFC 5952</a> 格式的地址数组。</li>
+</ul>
+<p>设置执行 DNS 解析时要使用的服务器的 IP 地址和端口。
+<code>servers</code> 参数是 <a href="http://url.nodejs.cn/jzbgfM">RFC 5952</a> 格式的地址数组。
+如果端口是 IANA 默认的 DNS 端口（53），则可以省略。</p>
+<pre><code class="language-js">dns.setServers([
+  <span class="hljs-string">'4.4.4.4'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]'</span>,
+  <span class="hljs-string">'4.4.4.4:1053'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]:1053'</span>
+]);</code></pre>
+<p>如果提供了无效地址，则会抛出错误。</p>
+<p>DNS 查询正在进行时，不得调用 <code>dns.setServers()</code> 方法。</p>
+<p><a href="dns.html#dns_dns_setservers_servers"><code>dns.setServers()</code></a> 方法仅影响 <a href="dns.html#dns_dns_resolve_hostname_rrtype_callback"><code>dns.resolve()</code></a>、<code>dns.resolve*()</code> 和 <a href="dns.html#dns_dns_reverse_ip_callback"><code>dns.reverse()</code></a>（特别是 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>）。</p>
+<p>这个方法很像 <a href="http://url.nodejs.cn/azKRAV">resolve.conf</a>。
+也就是说，如果尝试使用提供的第一个服务器解析会导致 <code>NOTFOUND</code> 错误，则 <code>resolve()</code> 方法将不会尝试使用提供的后续服务器进行解析。
+仅当较早的 DNS 服务器超时或导致其他一些错误时，才会使用后备 DNS 服务器。</p>
+</section><section><h3>Promise 形式的 API<span><a class="mark" href="#dns_dns_promises_api" id="dns_dns_promises_api">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="dns_promises_api">
+                <a href="dns/dns_promises_api.html" class="tip_trans">中英对照</a>
+                </p>
+<p>在使用<code>dns.promises</code>时，它也提供了API的另一种调用形式，即使用<code>Promise</code>来代替callbacks。这个DNS的<code>Promise</code>对象来自<code>require('dns').promises</code>。</p>
+<h4><code>dnsPromises.Resolver</code> 类<span><a class="mark" href="#dns_class_dnspromises_resolver" id="dns_class_dnspromises_resolver">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="class_dnspromises_resolver">
+                <a href="dns/class_dnspromises_resolver.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<p>一个DNS请求的独立解析器。</p>
+<p>创建新的解析器将使用默认服务器设置。使用<a href="dns.html#dns_dnspromises_setservers_servers"><code>resolver.setServers()</code></a>设置解析器的服务器并不会影响其他的解析器：</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> { Resolver } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>).promises;
+<span class="hljs-keyword">const</span> resolver = <span class="hljs-keyword">new</span> Resolver();
+resolver.setServers([<span class="hljs-string">'4.4.4.4'</span>]);
+
+<span class="hljs-comment">// 该请求使用4.4.4.4的服务器，独立于全局设置。</span>
+resolver.resolve4(<span class="hljs-string">'example.org'</span>).then(<span class="hljs-function">(<span class="hljs-params">addresses</span>) =&gt;</span> {
+  <span class="hljs-comment">// ...</span>
+});
+
+<span class="hljs-comment">// 或者, 你可以用`async-await`编写异步代码。</span>
+(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> addresses = <span class="hljs-keyword">await</span> resolver.resolve4(<span class="hljs-string">'example.org'</span>);
+})();</code></pre>
+<p>以下是<code>dns.Promises</code> API提供的方法。</p>
+<ul>
+<li><a href="dns.html#dns_dnspromises_getservers"><code>resolver.getServers()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolve_hostname_rrtype"><code>resolver.resolve()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolve4_hostname_options"><code>resolver.resolve4()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolve6_hostname_options"><code>resolver.resolve6()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolveany_hostname"><code>resolver.resolveAny()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvecname_hostname"><code>resolver.resolveCname()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvemx_hostname"><code>resolver.resolveMx()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvenaptr_hostname"><code>resolver.resolveNaptr()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvens_hostname"><code>resolver.resolveNs()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolveptr_hostname"><code>resolver.resolvePtr()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvesoa_hostname"><code>resolver.resolveSoa()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvesrv_hostname"><code>resolver.resolveSrv()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_resolvetxt_hostname"><code>resolver.resolveTxt()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_reverse_ip"><code>resolver.reverse()</code></a></li>
+<li><a href="dns.html#dns_dnspromises_setservers_servers"><code>resolver.setServers()</code></a></li>
+</ul>
+<h4><code>resolver.cancel()</code><span><a class="mark" href="#dns_resolver_cancel_1" id="dns_resolver_cancel_1">#</a></span></h4><p class="tip_wrap" data-item_id="resolver_cancel_1"></p>
+<div class="api_metadata">
+<span>新增于: v15.3.0</span>
+</div>
+<p>Cancel all outstanding DNS queries made by this resolver. The corresponding
+promises will be rejected with an error with code <code>ECANCELLED</code>.</p>
+<h4><code>dnsPromises.getServers()</code><span><a class="mark" href="#dns_dnspromises_getservers" id="dns_dnspromises_getservers">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_getservers">
+                <a href="dns/dnspromises_getservers.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li>返回: <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></li>
+</ul>
+<p>返回一个格式为<code>[RFC 5952][]</code>的IP地址字符串数组，
+这个IP地址字符串数组配置于DNS解析文件。如果使用了自定义的端口，那么字符串将包含端口值。</p>
+<!-- eslint-disable semi-->
+<pre><code class="language-js">[
+  <span class="hljs-string">'4.4.4.4'</span>,
+  <span class="hljs-string">'2001:4860:4860::8888'</span>,
+  <span class="hljs-string">'4.4.4.4:1053'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]:1053'</span>
+]</code></pre>
+<h4><code>dnsPromises.lookup(hostname[, options])</code><span><a class="mark" href="#dns_dnspromises_lookup_hostname_options" id="dns_dnspromises_lookup_hostname_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_lookup_hostname_options">
+                <a href="dns/dnspromises_lookup_hostname_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li>
+<p><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></p>
+</li>
+<li>
+<p><code>options</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> | <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></p>
+<ul>
+<li><code>family</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;integer&gt;</a> 地址类型必须是<code>4</code>, <code>6</code>, or <code>0</code>。其中，</li>
+</ul>
+<p><code>0</code>代表同时返回了IPv4和IPv6地址。默认值是<code>0</code>。</p>
+<ul>
+<li><code>hints</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a> 传递一个或者多个支持的 <code>getaddrinfo</code>类型标志。多个类型记录可以或运算符连接起来。</li>
+<li><code>all</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为<code>true</code>的时候, <code>Promise</code>会承诺解决数组里面的全部IP地址。</li>
+</ul>
+<p>否则的话，仅仅解决单一地址。默认值是<code>false</code>。</p>
+<ul>
+<li><code>verbatim</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 当值为<code>true</code>的时候, <code>Promise</code>的API使用DNS解析器根据他们返回的顺序使用IPv4和IPv6地址进行解析。</li>
+</ul>
+<p>如果为false，则将IPv4地址放在IPv6地址之前进行解析。 默认值：<code>false</code>（地址已重新排序），
+但预计在不久的将来会改变。新代码应使用<code>{ verbatim: true }</code>。</p>
+<p>把一个主机名（例如'nodejs.org'）解析为第一个找到的A（IPv4）或AAAA（IPv6）IP地址。
+所有<code>option</code>属性都是可选的。如果<code>options</code>为整型，则值必须为<code>4</code>或<code>6</code></p>
+<ul>
+<li>如果<code>options</code>未提供，则返回能够找到的IPv4和IPv6地址。</li>
+</ul>
+</li>
+</ul>
+<p>当<code>all</code>选项设置为<code>true</code>时，将使用地址为具有属性<code>address</code>和<code>family</code>属性的对象数组来解析<code>Promise</code>。</p>
+<p>发生错误时，<code>Promise</code>会被<a href="errors.html#errors_class_error"><code>Error</code></a>对象拒绝，其中“ err.code”是错误代码，
+请注意一点，<code>err.code</code>的值，不仅仅在主机名不存在时，同时在查找以其他方式
+（例如，没有可用的文件描述符）失败时，<code>err.code</code>都将被设置为 <code>'ENOTFOUND'</code>。</p>
+<p><a href="dns.html#dns_dnspromises_lookup_hostname_options"><code>dnsPromises.lookup()</code></a> 不一定与DNS协议有关。该实现使用操作系统工具，该工具可以将名称与地址相关联，反之亦然。
+这种操作实现会对任何Node.js程序的行为产生微妙重要的后果。
+因此，在使用<code>dnsPromises.lookup()</code>之前，请花一些时间查看注意事项<a href="dns.html#dns_implementation_considerations">Implementation considerations section</a>。</p>
+<p>Example usage:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dns = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>);
+<span class="hljs-keyword">const</span> dnsPromises = dns.promises;
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">family</span>: <span class="hljs-number">6</span>,
+  <span class="hljs-attr">hints</span>: dns.ADDRCONFIG | dns.V4MAPPED,
+};
+
+dnsPromises.lookup(<span class="hljs-string">'example.com'</span>, options).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'address: %j family: IPv%s'</span>, result.address, result.family);
+  <span class="hljs-comment">// address: "2606:2800:220:1:248:1893:25c8:1946" family: IPv6</span>
+});
+
+<span class="hljs-comment">// 当options.all为true时，结果将为数组。</span>
+options.all = <span class="hljs-literal">true</span>;
+dnsPromises.lookup(<span class="hljs-string">'example.com'</span>, options).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'addresses: %j'</span>, result);
+  <span class="hljs-comment">// addresses: [{"address":"2606:2800:220:1:248:1893:25c8:1946","family":6}]</span>
+});</code></pre>
+<h4><code>dnsPromises.lookupService(address, port)</code><span><a class="mark" href="#dns_dnspromises_lookupservice_address_port" id="dns_dnspromises_lookupservice_address_port">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_lookupservice_address_port">
+                <a href="dns/dnspromises_lookupservice_address_port.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>address</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+<li><code>port</code> <a href="http://url.nodejs.cn/SXbo1v" rel="nofollow" class="type">&lt;number&gt;</a></li>
+</ul>
+<p>使用操作系统底层的<code>getnameinfo</code>实现去解析<code>address</code> and <code>port</code>得到主机名和服务。</p>
+<p>如果<code>address</code>不是有效的IP地址，则将引发<code>TypeError</code>。 该<code>端口</code>必须为一个数字。 如果不是合法端口，则将引发<code>TypeError</code>。</p>
+<p>发生错误时，<code>Promise</code>将被<a href="errors.html#errors_class_error"><code>Error</code></a>对象拒绝，其中<code>err.code</code>是错误代码。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> dnsPromises = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dns'</span>).promises;
+dnsPromises.lookupService(<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-number">22</span>).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result.hostname, result.service);
+  <span class="hljs-comment">// Prints: localhost ssh</span>
+});</code></pre>
+<h4><code>dnsPromises.resolve(hostname[, rrtype])</code><span><a class="mark" href="#dns_dnspromises_resolve_hostname_rrtype" id="dns_dnspromises_resolve_hostname_rrtype">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolve_hostname_rrtype">
+                <a href="dns/dnspromises_resolve_hostname_rrtype.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Host name to resolve.</li>
+<li><code>rrtype</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> Resource record type. <strong>默认值:</strong> <code>'A'</code>。</li>
+</ul>
+<p>使用DNS协议将主机名（例如“ nodejs.org”）解析为资源记录的数组。
+成功后，将通过一系列资源记录来解决实现<code>Promise</code>。
+各个结果的类型和结构根据<code>rrtype</code>的不同而有所不同：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>rrtype</code></th><th><code>records</code> contains</th><th>Result type</th><th>Shorthand method</th></tr></thead><tbody><tr><td><code>'A'</code></td><td>IPv4 地址（默认）</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolve4_hostname_options"><code>dnsPromises.resolve4()</code></a></td></tr><tr><td><code>'AAAA'</code></td><td>IPv6 地址</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolve6_hostname_options"><code>dnsPromises.resolve6()</code></a></td></tr><tr><td><code>'ANY'</code></td><td>任何记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolveany_hostname"><code>dnsPromises.resolveAny()</code></a></td></tr><tr><td><code>'CNAME'</code></td><td>规范名称记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvecname_hostname"><code>dnsPromises.resolveCname()</code></a></td></tr><tr><td><code>'MX'</code></td><td>将域名指向邮件服务器地址</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvemx_hostname"><code>dnsPromises.resolveMx()</code></a></td></tr><tr><td><code>'NAPTR'</code></td><td>名称权限指针记录</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvenaptr_hostname"><code>dnsPromises.resolveNaptr()</code></a></td></tr><tr><td><code>'NS'</code></td><td>将子域名指定其他DNS服务器解析</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvens_hostname"><code>dnsPromises.resolveNs()</code></a></td></tr><tr><td><code>'PTR'</code></td><td>指针记录</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolveptr_hostname"><code>dnsPromises.resolvePtr()</code></a></td></tr><tr><td><code>'SOA'</code></td><td>权限记录的开始</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvesoa_hostname"><code>dnsPromises.resolveSoa()</code></a></td></tr><tr><td><code>'SRV'</code></td><td>记录提供特定的服务的服务器</td><td><a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvesrv_hostname"><code>dnsPromises.resolveSrv()</code></a></td></tr><tr><td><code>'TXT'</code></td><td>文本长度限制512，通常做SPF记录（反垃圾邮件）</td><td><a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a></td><td><a href="dns.html#dns_dnspromises_resolvetxt_hostname"><code>dnsPromises.resolveTxt()</code></a></td></tr></tbody></table>
+<p>如果出错，则<code>Promise</code>会被<a href="errors.html#errors_class_error"><code>Error</code></a>对象拒绝，其中<code>err.code</code>是<a href="#dns_error_codes">DNS错误代码</a>之一。</p>
+<h4><code>dnsPromises.resolve4(hostname[, options])</code><span><a class="mark" href="#dns_dnspromises_resolve4_hostname_options" id="dns_dnspromises_resolve4_hostname_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolve4_hostname_options">
+                <a href="dns/dnspromises_resolve4_hostname_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li>
+<p><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 要解析的主机名。</p>
+</li>
+<li>
+<p><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a></p>
+<ul>
+<li><code>ttl</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 检索每个记录的生存时间值（TTL）。</li>
+</ul>
+<p>如果为<code>true</code>，则使用数组<code>{ address: '1.2.3.4', ttl: 60 }</code>对象而不是字符串数组来解析<code>Promise</code>，而TTL以秒表示。</p>
+<p>Retrieve the Time-To-Live value (TTL) of each record.
+When <code>true</code>, the <code>Promise</code> is resolved with an array of
+<code>{ address: '1.2.3.4', ttl: 60 }</code> objects rather than an array of strings,
+with the TTL expressed in seconds.</p>
+</li>
+</ul>
+<p>使用DNS协议为以下地址解析IPv4地址（<code>A</code> 记录）主机名。
+成功后，将通过一系列IPv4解决<code>Promise</code>地址（比如，<code>['74.125.79.104', '74.125.79.105', '74.125.79.106']</code>）</p>
+<h4><code>dnsPromises.resolve6(hostname[, options])</code><span><a class="mark" href="#dns_dnspromises_resolve6_hostname_options" id="dns_dnspromises_resolve6_hostname_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolve6_hostname_options">
+                <a href="dns/dnspromises_resolve6_hostname_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> 要解析的主机名。.</li>
+<li><code>options</code> <a href="http://url.nodejs.cn/jzn6Ao" rel="nofollow" class="type">&lt;Object&gt;</a>
+<ul>
+<li><code>ttl</code> <a href="http://url.nodejs.cn/jFbvuT" rel="nofollow" class="type">&lt;boolean&gt;</a> 检索每个记录的生存时间值（TTL）。
+如果为true，则使用数组对象<code>{ address: '0:1:2:3:4:5:6:7', ttl: 60 }</code>而不是字符串数组来解析<code>Promise</code>。 TTL以秒表示。</li>
+</ul>
+</li>
+</ul>
+<p>使用DNS协议解析<code>hostname</code>的IPv6地址（<code>AAAA</code>记录）。 成功后，将使用一系列IPv6地址解析<code>Promise</code> 。</p>
+<h4><code>dnsPromises.resolveAny(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolveany_hostname" id="dns_dnspromises_resolveany_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolveany_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve all records (also known as <code>ANY</code> or <code>*</code> query).
+On success, the <code>Promise</code> is resolved with an array containing various types of
+records. Each object has a property <code>type</code> that indicates the type of the
+current record. And depending on the <code>type</code>, additional properties will be
+present on the object:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type</th><th>Properties</th></tr></thead><tbody><tr><td><code>'A'</code></td><td><code>address</code>/<code>ttl</code></td></tr><tr><td><code>'AAAA'</code></td><td><code>address</code>/<code>ttl</code></td></tr><tr><td><code>'CNAME'</code></td><td><code>value</code></td></tr><tr><td><code>'MX'</code></td><td>Refer to <a href="dns.html#dns_dnspromises_resolvemx_hostname"><code>dnsPromises.resolveMx()</code></a></td></tr><tr><td><code>'NAPTR'</code></td><td>Refer to <a href="dns.html#dns_dnspromises_resolvenaptr_hostname"><code>dnsPromises.resolveNaptr()</code></a></td></tr><tr><td><code>'NS'</code></td><td><code>value</code></td></tr><tr><td><code>'PTR'</code></td><td><code>value</code></td></tr><tr><td><code>'SOA'</code></td><td>Refer to <a href="dns.html#dns_dnspromises_resolvesoa_hostname"><code>dnsPromises.resolveSoa()</code></a></td></tr><tr><td><code>'SRV'</code></td><td>Refer to <a href="dns.html#dns_dnspromises_resolvesrv_hostname"><code>dnsPromises.resolveSrv()</code></a></td></tr><tr><td><code>'TXT'</code></td><td>This type of record contains an array property called <code>entries</code> which refers to <a href="dns.html#dns_dnspromises_resolvetxt_hostname"><code>dnsPromises.resolveTxt()</code></a>, e.g. <code>{ entries: ['...'], type: 'TXT' }</code></td></tr></tbody></table>
+<p>Here is an example of the result object:</p>
+<!-- eslint-disable semi -->
+<pre><code class="language-js">[ { <span class="hljs-attr">type</span>: <span class="hljs-string">'A'</span>, <span class="hljs-attr">address</span>: <span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-attr">ttl</span>: <span class="hljs-number">299</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'CNAME'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'example.com'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'MX'</span>, <span class="hljs-attr">exchange</span>: <span class="hljs-string">'alt4.aspmx.l.example.com'</span>, <span class="hljs-attr">priority</span>: <span class="hljs-number">50</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'NS'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'ns1.example.com'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'TXT'</span>, <span class="hljs-attr">entries</span>: [ <span class="hljs-string">'v=spf1 include:_spf.example.com ~all'</span> ] },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'SOA'</span>,
+    <span class="hljs-attr">nsname</span>: <span class="hljs-string">'ns1.example.com'</span>,
+    <span class="hljs-attr">hostmaster</span>: <span class="hljs-string">'admin.example.com'</span>,
+    <span class="hljs-attr">serial</span>: <span class="hljs-number">156696742</span>,
+    <span class="hljs-attr">refresh</span>: <span class="hljs-number">900</span>,
+    <span class="hljs-attr">retry</span>: <span class="hljs-number">900</span>,
+    <span class="hljs-attr">expire</span>: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">minttl</span>: <span class="hljs-number">60</span> } ]</code></pre>
+<h4><code>dnsPromises.resolveCaa(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvecaa_hostname" id="dns_dnspromises_resolvecaa_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolvecaa_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v15.0.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve <code>CAA</code> records for the <code>hostname</code>. On success,
+the <code>Promise</code> is resolved with an array of objects containing available
+certification authority authorization records available for the <code>hostname</code>
+(e.g. <code>[{critical: 0, iodef: 'mailto:pki@example.com'},{critical: 128, issue: 'pki.example.com'}]</code>).</p>
+<h4><code>dnsPromises.resolveCname(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvecname_hostname" id="dns_dnspromises_resolvecname_hostname">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolvecname_hostname">
+                <a href="dns/dnspromises_resolvecname_hostname.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>使用DNS协议解析<code>hostname</code>的<code>CNAME</code>记录。 成功完成后，将使用一系列可用于主机名的规范名称记录来解决<code>Promise</code>（例如 `['bar.example.com']）。</p>
+<h4><code>dnsPromises.resolveMx(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvemx_hostname" id="dns_dnspromises_resolvemx_hostname">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolvemx_hostname">
+                <a href="dns/dnspromises_resolvemx_hostname.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>使用DNS协议解析<code>hostname</code>的邮件交换记录（<code>MX</code>记录）。 成功后，<code>Promise</code>将通过一系列包含<code>优先级</code>和<code>交换</code>属性的对象来解决（例如，<code>[{priority: 10, exchange: 'mx.example.com'}, ...]</code> ）。</p>
+<h4><code>dnsPromises.resolveNaptr(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvenaptr_hostname" id="dns_dnspromises_resolvenaptr_hostname">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dnspromises_resolvenaptr_hostname">
+                <a href="dns/dnspromises_resolvenaptr_hostname.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>使用DNS协议解析<code>主机名</code>的基于正则表达式的记录（<code>NAPTR</code>记录）。 成功后，将使用具有以下属性的对象数组来解决 <code>Promise</code> ：</p>
+<ul>
+<li><code>flags</code></li>
+<li><code>service</code></li>
+<li><code>regexp</code></li>
+<li><code>replacement</code></li>
+<li><code>order</code></li>
+<li><code>preference</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">flags</span>: <span class="hljs-string">'s'</span>,
+  <span class="hljs-attr">service</span>: <span class="hljs-string">'SIP+D2U'</span>,
+  <span class="hljs-attr">regexp</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">replacement</span>: <span class="hljs-string">'_sip._udp.example.com'</span>,
+  <span class="hljs-attr">order</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">preference</span>: <span class="hljs-number">100</span>
+}</code></pre>
+<h4><code>dnsPromises.resolveNs(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvens_hostname" id="dns_dnspromises_resolvens_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolvens_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve name server records (<code>NS</code> records) for the
+<code>hostname</code>. On success, the <code>Promise</code> is resolved with an array of name server
+records available for <code>hostname</code> (e.g.
+<code>['ns1.example.com', 'ns2.example.com']</code>).</p>
+<h4><code>dnsPromises.resolvePtr(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolveptr_hostname" id="dns_dnspromises_resolveptr_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolveptr_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve pointer records (<code>PTR</code> records) for the
+<code>hostname</code>. On success, the <code>Promise</code> is resolved with an array of strings
+containing the reply records.</p>
+<h4><code>dnsPromises.resolveSoa(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvesoa_hostname" id="dns_dnspromises_resolvesoa_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolvesoa_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve a start of authority record (<code>SOA</code> record) for
+the <code>hostname</code>. On success, the <code>Promise</code> is resolved with an object with the
+following properties:</p>
+<ul>
+<li><code>nsname</code></li>
+<li><code>hostmaster</code></li>
+<li><code>serial</code></li>
+<li><code>refresh</code></li>
+<li><code>retry</code></li>
+<li><code>expire</code></li>
+<li><code>minttl</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">nsname</span>: <span class="hljs-string">'ns.example.com'</span>,
+  <span class="hljs-attr">hostmaster</span>: <span class="hljs-string">'root.example.com'</span>,
+  <span class="hljs-attr">serial</span>: <span class="hljs-number">2013101809</span>,
+  <span class="hljs-attr">refresh</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">retry</span>: <span class="hljs-number">2400</span>,
+  <span class="hljs-attr">expire</span>: <span class="hljs-number">604800</span>,
+  <span class="hljs-attr">minttl</span>: <span class="hljs-number">3600</span>
+}</code></pre>
+<h4><code>dnsPromises.resolveSrv(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvesrv_hostname" id="dns_dnspromises_resolvesrv_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolvesrv_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve service records (<code>SRV</code> records) for the
+<code>hostname</code>. On success, the <code>Promise</code> is resolved with an array of objects with
+the following properties:</p>
+<ul>
+<li><code>priority</code></li>
+<li><code>weight</code></li>
+<li><code>port</code></li>
+<li><code>name</code></li>
+</ul>
+<!-- eslint-skip -->
+<pre><code class="language-js">{
+  <span class="hljs-attr">priority</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-attr">weight</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">port</span>: <span class="hljs-number">21223</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'service.example.com'</span>
+}</code></pre>
+<h4><code>dnsPromises.resolveTxt(hostname)</code><span><a class="mark" href="#dns_dnspromises_resolvetxt_hostname" id="dns_dnspromises_resolvetxt_hostname">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_resolvetxt_hostname"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>hostname</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Uses the DNS protocol to resolve text queries (<code>TXT</code> records) for the
+<code>hostname</code>. On success, the <code>Promise</code> is resolved with a two-dimensional array
+of the text records available for <code>hostname</code> (e.g.
+<code>[ ['v=spf1 ip4:0.0.0.0 ', '~all' ] ]</code>). Each sub-array contains TXT chunks of
+one record. Depending on the use case, these could be either joined together or
+treated separately.</p>
+<h4><code>dnsPromises.reverse(ip)</code><span><a class="mark" href="#dns_dnspromises_reverse_ip" id="dns_dnspromises_reverse_ip">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_reverse_ip"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>ip</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a></li>
+</ul>
+<p>Performs a reverse DNS query that resolves an IPv4 or IPv6 address to an
+array of host names.</p>
+<p>On error, the <code>Promise</code> is rejected with an <a href="errors.html#errors_class_error"><code>Error</code></a> object, where <code>err.code</code>
+is one of the <a href="#dns_error_codes">DNS error codes</a>.</p>
+<h4><code>dnsPromises.setDefaultResultOrder(order)</code><span><a class="mark" href="#dns_dnspromises_setdefaultresultorder_order" id="dns_dnspromises_setdefaultresultorder_order">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_setdefaultresultorder_order"></p>
+<div class="api_metadata">
+<span>新增于: v16.4.0</span>
+</div>
+<ul>
+<li><code>order</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string&gt;</a> must be <code>'ipv4first'</code> or <code>'verbatim'</code>.</li>
+</ul>
+<p>Set the default value of <code>verbatim</code> in <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> and
+<a href="dns.html#dns_dnspromises_lookup_hostname_options"><code>dnsPromises.lookup()</code></a>. The value could be:</p>
+<ul>
+<li><code>ipv4first</code>: sets default <code>verbatim</code> <code>false</code>.</li>
+<li><code>verbatim</code>: sets default <code>verbatim</code> <code>true</code>.</li>
+</ul>
+<p>The default is <code>ipv4first</code> and <a href="dns.html#dns_dnspromises_setdefaultresultorder_order"><code>dnsPromises.setDefaultResultOrder()</code></a> have
+higher priority than <a href="cli.html#cli_dns_result_order_order"><code>--dns-result-order</code></a>. When using <a href="worker_threads.html">worker threads</a>,
+<a href="dns.html#dns_dnspromises_setdefaultresultorder_order"><code>dnsPromises.setDefaultResultOrder()</code></a> from the main thread won't affect the
+default dns orders in workers.</p>
+<h4><code>dnsPromises.setServers(servers)</code><span><a class="mark" href="#dns_dnspromises_setservers_servers" id="dns_dnspromises_setservers_servers">#</a></span></h4><p class="tip_wrap" data-item_id="dnspromises_setservers_servers"></p>
+<div class="api_metadata">
+<span>新增于: v10.6.0</span>
+</div>
+<ul>
+<li><code>servers</code> <a href="http://url.nodejs.cn/9Tw2bK" rel="nofollow" class="type">&lt;string[]&gt;</a> array of <a href="http://url.nodejs.cn/jzbgfM">RFC 5952</a> formatted addresses</li>
+</ul>
+<p>Sets the IP address and port of servers to be used when performing DNS
+resolution. The <code>servers</code> argument is an array of <a href="http://url.nodejs.cn/jzbgfM">RFC 5952</a> formatted
+addresses. If the port is the IANA default DNS port (53) it can be omitted.</p>
+<pre><code class="language-js">dnsPromises.setServers([
+  <span class="hljs-string">'4.4.4.4'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]'</span>,
+  <span class="hljs-string">'4.4.4.4:1053'</span>,
+  <span class="hljs-string">'[2001:4860:4860::8888]:1053'</span>,
+]);</code></pre>
+<p>An error will be thrown if an invalid address is provided.</p>
+<p>The <code>dnsPromises.setServers()</code> method must not be called while a DNS query is in
+progress.</p>
+<p>This method works much like
+<a href="https://man7.org/linux/man-pages/man5/resolv.conf.5.html">resolve.conf</a>.
+That is, if attempting to resolve with the first server provided results in a
+<code>NOTFOUND</code> error, the <code>resolve()</code> method will <em>not</em> attempt to resolve with
+subsequent servers provided. Fallback DNS servers will only be used if the
+earlier ones time out or result in some other error.</p>
+</section><section><h3>错误码<span><a class="mark" href="#dns_error_codes" id="dns_error_codes">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="error_codes">
+                <a href="dns/error_codes.html" class="tip_trans">中英对照</a>
+                </p>
+<p>每次 DNS 查询可能返回以下错误码之一:</p>
+<ul>
+<li><code>dns.NODATA</code>: DNS 服务器返回没有数据。</li>
+<li><code>dns.FORMERR</code>: DNS 服务器查询格式错误。</li>
+<li><code>dns.SERVFAIL</code>: DNS 服务器返回常规失败。</li>
+<li><code>dns.NOTFOUND</code>: 域名未找到。</li>
+<li><code>dns.NOIMP</code>: DNS 服务器未实行请求的操作。</li>
+<li><code>dns.REFUSED</code>: DNS 服务器拒绝查询。</li>
+<li><code>dns.BADQUERY</code>:  格式错误的 DNS 查询。</li>
+<li><code>dns.BADNAME</code>: 格式错误的主机名。</li>
+<li><code>dns.BADFAMILY</code>: 不提供的地址族。</li>
+<li><code>dns.BADRESP</code>: 格式错误的 DNS 回复。</li>
+<li><code>dns.CONNREFUSED</code>: 无法连接 DNS 服务器。</li>
+<li><code>dns.TIMEOUT</code>: 连接 DNS 服务器超时。</li>
+<li><code>dns.EOF</code>: 文件结束。</li>
+<li><code>dns.FILE</code>: 读取文件错误。</li>
+<li><code>dns.NOMEM</code>: 内存溢出。</li>
+<li><code>dns.DESTRUCTION</code>: 通道正被销毁。</li>
+<li><code>dns.BADSTR</code>: 格式错误的字符串。</li>
+<li><code>dns.BADFLAGS</code>: 指定的标记非法。</li>
+<li><code>dns.NONAME</code>: 给定的主机名不是数字。</li>
+<li><code>dns.BADHINTS</code>: 指定提示标志非法。</li>
+<li><code>dns.NOTINITIALIZED</code>: 未执行 c-ares 库初始化。</li>
+<li><code>dns.LOADIPHLPAPI</code>: 加载 <code>iphlpapi.dll</code> 错误。</li>
+<li><code>dns.ADDRGETNETWORKPARAMS</code>: 找不到 <code>GetNetworkParams</code> 函数。</li>
+<li><code>dns.CANCELLED</code>: DNS 查询取消。</li>
+</ul>
+</section><section><h3>实现的注意事项<span><a class="mark" href="#dns_implementation_considerations" id="dns_implementation_considerations">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="implementation_considerations">
+                <a href="dns/implementation_considerations.html" class="tip_trans">中英对照</a>
+                </p>
+<p>尽管 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 和各种变形的 <code>dns.resolve*()/dns.reverse()</code> 函数有相同的目标，将网络的名字与网络地址联系在一起（反之亦然），但它们的行为是完全不同的。
+这些差异虽然微妙但对 Node.js 程序的行为有重大的影响。</p>
+<h4><code>dns.lookup()</code><span><a class="mark" href="#dns_dns_lookup" id="dns_dns_lookup">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dns_lookup">
+                <a href="dns/dns_lookup.html" class="tip_trans">中英对照</a>
+                </p>
+<p>在底层，<a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 使用的操作系统设施与大多数其他程序相同。
+例如，<a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 几乎总是解析给定的主机名，与 <code>ping</code> 命令一样。
+在大多数类 POSIX 操作系统中，<a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 函数的行为可以通过改变 <a href="http://url.nodejs.cn/ZSVJkK"><code>nsswitch.conf(5)</code></a> 和/或 <a href="http://url.nodejs.cn/H73V97"><code>resolv.conf(5)</code></a> 的设置进行改变，但是需要注意改变这些文件就意味着改变所有正在这个操作系统中运行的所有程序的行为。</p>
+<p>尽管以异步 JavaScript 的角度来调用 <code>dns.lookup()</code>，但在内部 libuv 底层线程池中却是同步的调用 <code>getaddrinfo(3)</code>。
+这可能会对某些应用程序产生令人惊讶的负面性能影响，有关详细信息，请参见 <a href="cli.html#cli_uv_threadpool_size_size"><code>UV_THREADPOOL_SIZE</code></a> 文档。</p>
+<p>各种网络 API 将会在内部调用 <code>dns.lookup()</code> 来解析主机名。
+如果这是一个问题，请考虑使用 <code>dns.resolve()</code> 并使用地址而不是主机名来将主机名解析为地址。
+此外，某些网络 API（例如 <a href="net.html#net_socket_connect_options_connectlistener"><code>socket.connect()</code></a> 和 <a href="dgram.html#dgram_dgram_createsocket_options_callback"><code>dgram.createSocket()</code></a> 允许替换默认解析器 <code>dns.lookup()</code>。</p>
+<h4>dns.resolve()、dns.resolve*() 与 dns.reverse()<span><a class="mark" href="#dns_dns_resolve_dns_resolve_and_dns_reverse" id="dns_dns_resolve_dns_resolve_and_dns_reverse">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="dns_resolve_dns_resolve_and_dns_reverse">
+                <a href="dns/dns_resolve_dns_resolve_and_dns_reverse.html" class="tip_trans">中英对照</a>
+                </p>
+<p>这些函数实现与 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 截然不同。
+它们没有使用 <a href="http://url.nodejs.cn/wNCF2x"><code>getaddrinfo(3)</code></a> 并且通过网络执行 DNS 查询。
+网络通信始终是异步处理的，并且没有使用 libuv 线程池。</p>
+<p>因此,这些函数不会像使用 libuv 线程池的 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 函数一样会对其它进程有负面影响。</p>
+<p>它们不像 <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> 一样使用相同的配置文件。
+例如，它们不会使用来自 <code>/etc/hosts</code> 的配置。</p></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

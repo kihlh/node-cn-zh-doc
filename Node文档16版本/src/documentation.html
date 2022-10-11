@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>关于本文档 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411140255" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="documentation" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><a href="#documentation_about_this_documentation">关于本文档</a>
+<ul>
+<li><a href="#documentation_contributing">参与贡献</a></li>
+<li><a href="#documentation_stability_index">稳定性指数</a></li>
+<li><a href="#documentation_stability_overview">稳定性概览</a></li>
+<li><a href="#documentation_json_output">JSON 输出</a></li>
+<li><a href="#documentation_system_calls_and_man_pages">系统调用与帮助手册</a></li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>关于本文档<span><a class="mark" href="#documentation_about_this_documentation" id="documentation_about_this_documentation">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="about_this_documentation">
+                <a href="documentation/about_this_documentation.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.10.0-->
+<!-- type=misc -->
+<p>欢迎来到 Node.js 的 API 参考文档！</p>
+<p>Node.js 是一个构建于 <a href="http://url.nodejs.cn/DqLJoK">V8 JavaScript 引擎</a>的 JavaScript 运行时。</p>
+<section><h3>参与贡献<span><a class="mark" href="#documentation_contributing" id="documentation_contributing">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="contributing">
+                <a href="documentation/contributing.html" class="tip_trans">中英对照</a>
+                </p>
+<p>在<a href="http://url.nodejs.cn/QJzzjJ">议题区</a>报告本文档中的错误。
+查看<a href="http://url.nodejs.cn/QSreZA">贡献指南</a>获取如何提交拉取请求的指导。</p>
+</section><section><h3>稳定性指数<span><a class="mark" href="#documentation_stability_index" id="documentation_stability_index">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="stability_index">
+                <a href="documentation/stability_index.html" class="tip_trans">中英对照</a>
+                </p>
+<!--type=misc-->
+<p>在文档中都有该章节稳定性的标志。
+有些 API 已被证明和依赖，因此它们不太可能再被更改。
+其他的则是全新的和实验的、或者被认为是危险的。</p>
+<p>稳定性指数如下：</p>
+<p></p><div class="api_stability api_stability_0">稳定性: 0 - 弃用。
+该特性可能触发警告。
+向后兼容性是不保证的。</div><p></p>
+<!-- separator -->
+<p></p><div class="api_stability api_stability_1">稳定性: 1 - 实验。
+该特性不受<a href="http://url.nodejs.cn/ePJAtd">语义化版本控制</a>规范的约束。
+不向后兼容的更改或者移除都可能发生在任何的未来版本中。
+在生产环境中，该特性的使用是不推荐的。</div><p></p>
+<!-- separator -->
+<p></p><div class="api_stability api_stability_2">稳定性: 2 - 稳定。
+与 npm 生态系统的兼容性是一个高的优先级。</div><p></p>
+<!-- separator -->
+<p></p><div class="api_stability api_stability_3">稳定性: 3 - 旧版。
+该特性不再被推荐使用。
+尽管它可能不会被移除，并且仍被语义版本控制保证所涵盖，但是该特性的使用应该被避免。</div><p></p>
+<p>当使用实验的特性时（尤其是在模块内部），务必谨慎。
+用户可能不知道实验的特性正在被使用。
+当实验的 API 的修改发生时，故障或行为的改变可能会使用户诧异。
+为了避免诧异，实验的特性的使用可能需要一个命令行标志。
+实验的特性也可能触发一个<a href="process.html#process_event_warning">警告</a>。</p>
+</section><section><h3>稳定性概览<span><a class="mark" href="#documentation_stability_overview" id="documentation_stability_overview">#</a></span></h3><p class="tip_wrap"></p>
+<!-- STABILITY_OVERVIEW_SLOT_BEGIN -->
+<table><thead><tr><th>API</th><th>稳定性</th></tr></thead><tbody><tr><td class="module_stability"><a href="assert.html">assert</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="async_hooks.html">async_hooks</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="buffer.html">buffer</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="child_process.html">child_process</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="cluster.html">cluster</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="console.html">console</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="crypto.html">crypto</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="debugger.html">debugger</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="dgram.html">dgram</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="diagnostics_channel.html">diagnostics_channel</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="dns.html">dns</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="domain.html">domain</a></td><td class="api_stability api_stability_0">(0) 弃用的</td></tr><tr><td class="module_stability"><a href="events.html">events</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="fs.html">fs</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="http.html">http</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="http2.html">http2</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="https.html">https</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="inspector.html">inspector</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="modules.html">modules</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="n-api.html">n-api</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="net.html">net</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="os.html">os</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="path.html">path</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="perf_hooks.html">perf_hooks</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="policy.html">policy</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="punycode.html">punycode</a></td><td class="api_stability api_stability_0">(0) 弃用的</td></tr><tr><td class="module_stability"><a href="querystring.html">querystring</a></td><td class="api_stability api_stability_3">(3) 旧版的</td></tr><tr><td class="module_stability"><a href="readline.html">readline</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="repl.html">repl</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="report.html">report</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="stream.html">stream</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="string_decoder.html">string_decoder</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="timers.html">timers</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="tls.html">tls</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="tracing.html">tracing</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="tty.html">tty</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="url.html">url</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="util.html">util</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="vm.html">vm</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="wasi.html">wasi</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="webcrypto.html">webcrypto</a></td><td class="api_stability api_stability_1">(1) 实验的</td></tr><tr><td class="module_stability"><a href="worker_threads.html">worker_threads</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr><tr><td class="module_stability"><a href="zlib.html">zlib</a></td><td class="api_stability api_stability_2">(2) 稳定的</td></tr></tbody></table>
+<!-- STABILITY_OVERVIEW_SLOT_END -->
+</section><section><h3>JSON 输出<span><a class="mark" href="#documentation_json_output" id="documentation_json_output">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="json_output">
+                <a href="documentation/json_output.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.6.12</span>
+</div>
+<p>每个 <code>.html</code> 文档都有一个对应的 <code>.json</code> 文档。
+这用于 IDE 和其他消费本文档的实用工具。</p>
+</section><section><h3>系统调用与帮助手册<span><a class="mark" href="#documentation_system_calls_and_man_pages" id="documentation_system_calls_and_man_pages">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="system_calls_and_man_pages">
+                <a href="documentation/system_calls_and_man_pages.html" class="tip_trans">中英对照</a>
+                </p>
+<p>封装系统调用的 Node.js 函数会在文档中描述。
+文档链接到对应的描述该系统调用的工作方式的帮助手册。</p>
+<p>大多数的 Unix 系统调用具有 Windows 类似物。
+但是，行为的差异可能是不可避免的。</p></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

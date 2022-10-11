@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>C++ 嵌入器 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411140794" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="embedding" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><a href="#embedding_c_embedder_api">C++ 嵌入器</a>
+<ul>
+<li><a href="#embedding_example_embedding_application">嵌入式应用程序的示例</a>
+<ul>
+<li><a href="#embedding_setting_up_per_process_state">设置每个进程的状态</a></li>
+<li><a href="#embedding_per_instance_state">每个实例的状态</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>C++ 嵌入器<span><a class="mark" href="#embedding_c_embedder_api" id="embedding_c_embedder_api">#</a></span></h2><p class="tip_wrap"></p>
+<!--introduced_in=v12.19.0-->
+<p>Node.js provides a number of C++ APIs that can be used to execute JavaScript
+in a Node.js environment from other C++ software.</p>
+<p>The documentation for these APIs can be found in <a href="http://url.nodejs.cn/R767D6">src/node.h</a> in the Node.js
+source tree. In addition to the APIs exposed by Node.js, some required concepts
+are provided by the V8 embedder API.</p>
+<p>Because using Node.js as an embedded library is different from writing code
+that is executed by Node.js, breaking changes do not follow typical Node.js
+<a href="deprecations.html">deprecation policy</a> and may occur on each semver-major release without prior
+warning.</p>
+<section><h3>嵌入式应用程序的示例<span><a class="mark" href="#embedding_example_embedding_application" id="embedding_example_embedding_application">#</a></span></h3><p class="tip_wrap"></p>
+<p>The following sections will provide an overview over how to use these APIs
+to create an application from scratch that will perform the equivalent of
+<code>node -e &lt;code&gt;</code>, i.e. that will take a piece of JavaScript and run it in
+a Node.js-specific environment.</p>
+<p>The full code can be found <a href="http://url.nodejs.cn/9gUr9S">in the Node.js source tree</a>.</p>
+<h4>设置每个进程的状态<span><a class="mark" href="#embedding_setting_up_per_process_state" id="embedding_setting_up_per_process_state">#</a></span></h4><p class="tip_wrap"></p>
+<p>Node.js requires some per-process state management in order to run:</p>
+<ul>
+<li>Arguments parsing for Node.js <a href="cli.html">CLI options</a>,</li>
+<li>V8 per-process requirements, such as a <code>v8::Platform</code> instance.</li>
+</ul>
+<p>The following example shows how these can be set up. Some class names are from
+the <code>node</code> and <code>v8</code> C++ namespaces, respectively.</p>
+<pre><code class="language-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>** argv)</span> </span>{
+  argv = <span class="hljs-built_in">uv_setup_args</span>(argc, argv);
+  <span class="hljs-function">std::vector&lt;std::string&gt; <span class="hljs-title">args</span><span class="hljs-params">(argv, argv + argc)</span></span>;
+  std::vector&lt;std::string&gt; exec_args;
+  std::vector&lt;std::string&gt; errors;
+  <span class="hljs-comment">// Parse Node.js CLI options, and print any errors that have occurred while</span>
+  <span class="hljs-comment">// trying to parse them.</span>
+  <span class="hljs-keyword">int</span> exit_code = node::<span class="hljs-built_in">InitializeNodeWithArgs</span>(&amp;args, &amp;exec_args, &amp;errors);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> std::string&amp; error : errors)
+    <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"%s: %s\n"</span>, args[<span class="hljs-number">0</span>].<span class="hljs-built_in">c_str</span>(), error.<span class="hljs-built_in">c_str</span>());
+  <span class="hljs-keyword">if</span> (exit_code != <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> exit_code;
+  }
+
+  <span class="hljs-comment">// Create a v8::Platform instance. `MultiIsolatePlatform::Create()` is a way</span>
+  <span class="hljs-comment">// to create a v8::Platform instance that Node.js can use when creating</span>
+  <span class="hljs-comment">// Worker threads. When no `MultiIsolatePlatform` instance is present,</span>
+  <span class="hljs-comment">// Worker threads are disabled.</span>
+  std::unique_ptr&lt;MultiIsolatePlatform&gt; platform =
+      MultiIsolatePlatform::<span class="hljs-built_in">Create</span>(<span class="hljs-number">4</span>);
+  V8::<span class="hljs-built_in">InitializePlatform</span>(platform.<span class="hljs-built_in">get</span>());
+  V8::<span class="hljs-built_in">Initialize</span>();
+
+  <span class="hljs-comment">// See below for the contents of this function.</span>
+  <span class="hljs-keyword">int</span> ret = <span class="hljs-built_in">RunNodeInstance</span>(platform.<span class="hljs-built_in">get</span>(), args, exec_args);
+
+  V8::<span class="hljs-built_in">Dispose</span>();
+  V8::<span class="hljs-built_in">ShutdownPlatform</span>();
+  <span class="hljs-keyword">return</span> ret;
+}</code></pre>
+<h4>每个实例的状态<span><a class="mark" href="#embedding_per_instance_state" id="embedding_per_instance_state">#</a></span></h4><p class="tip_wrap"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v15.0.0</td>
+<td><p>The <code>CommonEnvironmentSetup</code> and <code>SpinEventLoop</code> utilities were added.</p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Node.js has a concept of a “Node.js instance”, that is commonly being referred
+to as <code>node::Environment</code>. Each <code>node::Environment</code> is associated with:</p>
+<ul>
+<li>Exactly one <code>v8::Isolate</code>, i.e. one JS Engine instance,</li>
+<li>Exactly one <code>uv_loop_t</code>, i.e. one event loop, and</li>
+<li>A number of <code>v8::Context</code>s, but exactly one main <code>v8::Context</code>.</li>
+<li>One <code>node::IsolateData</code> instance that contains information that could be
+shared by multiple <code>node::Environment</code>s that use the same <code>v8::Isolate</code>.
+Currently, no testing if performed for this scenario.</li>
+</ul>
+<p>In order to set up a <code>v8::Isolate</code>, an <code>v8::ArrayBuffer::Allocator</code> needs
+to be provided. One possible choice is the default Node.js allocator, which
+can be created through <code>node::ArrayBufferAllocator::Create()</code>. Using the Node.js
+allocator allows minor performance optimizations when addons use the Node.js
+C++ <code>Buffer</code> API, and is required in order to track <code>ArrayBuffer</code> memory in
+<a href="process.html#process_process_memoryusage"><code>process.memoryUsage()</code></a>.</p>
+<p>Additionally, each <code>v8::Isolate</code> that is used for a Node.js instance needs to
+be registered and unregistered with the <code>MultiIsolatePlatform</code> instance, if one
+is being used, in order for the platform to know which event loop to use
+for tasks scheduled by the <code>v8::Isolate</code>.</p>
+<p>The <code>node::NewIsolate()</code> helper function creates a <code>v8::Isolate</code>,
+sets it up with some Node.js-specific hooks (e.g. the Node.js error handler),
+and registers it with the platform automatically.</p>
+<pre><code class="language-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">RunNodeInstance</span><span class="hljs-params">(MultiIsolatePlatform* platform,
+                    <span class="hljs-keyword">const</span> std::vector&lt;std::string&gt;&amp; args,
+                    <span class="hljs-keyword">const</span> std::vector&lt;std::string&gt;&amp; exec_args)</span> </span>{
+  <span class="hljs-keyword">int</span> exit_code = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Setup up a libuv event loop, v8::Isolate, and Node.js Environment.</span>
+  std::vector&lt;std::string&gt; errors;
+  std::unique_ptr&lt;CommonEnvironmentSetup&gt; setup =
+      CommonEnvironmentSetup::<span class="hljs-built_in">Create</span>(platform, &amp;errors, args, exec_args);
+  <span class="hljs-keyword">if</span> (!setup) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> std::string&amp; err : errors)
+      <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"%s: %s\n"</span>, args[<span class="hljs-number">0</span>].<span class="hljs-built_in">c_str</span>(), err.<span class="hljs-built_in">c_str</span>());
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+
+  Isolate* isolate = setup-&gt;<span class="hljs-built_in">isolate</span>();
+  Environment* env = setup-&gt;<span class="hljs-built_in">env</span>();
+
+  {
+    <span class="hljs-function">Locker <span class="hljs-title">locker</span><span class="hljs-params">(isolate)</span></span>;
+    <span class="hljs-function">Isolate::Scope <span class="hljs-title">isolate_scope</span><span class="hljs-params">(isolate)</span></span>;
+    <span class="hljs-comment">// The v8::Context needs to be entered when node::CreateEnvironment() and</span>
+    <span class="hljs-comment">// node::LoadEnvironment() are being called.</span>
+    <span class="hljs-function">Context::Scope <span class="hljs-title">context_scope</span><span class="hljs-params">(setup-&gt;context())</span></span>;
+
+    <span class="hljs-comment">// Set up the Node.js instance for execution, and run code inside of it.</span>
+    <span class="hljs-comment">// There is also a variant that takes a callback and provides it with</span>
+    <span class="hljs-comment">// the `require` and `process` objects, so that it can manually compile</span>
+    <span class="hljs-comment">// and run scripts as needed.</span>
+    <span class="hljs-comment">// The `require` function inside this script does *not* access the file</span>
+    <span class="hljs-comment">// system, and can only load built-in Node.js modules.</span>
+    <span class="hljs-comment">// `module.createRequire()` is being used to create one that is able to</span>
+    <span class="hljs-comment">// load files from the disk, and uses the standard CommonJS file loader</span>
+    <span class="hljs-comment">// instead of the internal-only `require` function.</span>
+    MaybeLocal&lt;Value&gt; loadenv_ret = node::<span class="hljs-built_in">LoadEnvironment</span>(
+        env,
+        <span class="hljs-string">"const publicRequire ="</span>
+        <span class="hljs-string">"  require('module').createRequire(process.cwd() + '/');"</span>
+        <span class="hljs-string">"globalThis.require = publicRequire;"</span>
+        <span class="hljs-string">"require('vm').runInThisContext(process.argv[1]);"</span>);
+
+    <span class="hljs-keyword">if</span> (loadenv_ret.<span class="hljs-built_in">IsEmpty</span>())  <span class="hljs-comment">// There has been a JS exception.</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+
+    exit_code = node::<span class="hljs-built_in">SpinEventLoop</span>(env).<span class="hljs-built_in">FromMaybe</span>(<span class="hljs-number">1</span>);
+
+    <span class="hljs-comment">// node::Stop() can be used to explicitly stop the event loop and keep</span>
+    <span class="hljs-comment">// further JavaScript from running. It can be called from any thread,</span>
+    <span class="hljs-comment">// and will act like worker.terminate() if called from another thread.</span>
+    node::<span class="hljs-built_in">Stop</span>(env);
+  }
+
+  <span class="hljs-keyword">return</span> exit_code;
+}</code></pre></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

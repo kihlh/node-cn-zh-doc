@@ -1,0 +1,1698 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>命令行选项 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411134873" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="cli" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><a href="#cli_command_line_options">命令行选项</a>
+<ul>
+<li><a href="#cli_synopsis">概要</a></li>
+<li><a href="#cli_options">选项</a>
+<ul>
+<li><a href="#cli"><code>-</code></a></li>
+<li><a href="#cli_1"><code>--</code></a></li>
+<li><a href="#cli_abort_on_uncaught_exception"><code>--abort-on-uncaught-exception</code></a></li>
+<li><a href="#cli_completion_bash"><code>--completion-bash</code></a></li>
+<li><span class="stability_1"><a href="#cli_c_condition_conditions_condition"><code>-C=condition</code>, <code>--conditions=condition</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_cpu_prof"><code>--cpu-prof</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_cpu_prof_dir"><code>--cpu-prof-dir</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_cpu_prof_interval"><code>--cpu-prof-interval</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_cpu_prof_name"><code>--cpu-prof-name</code></a></span></li>
+<li><a href="#cli_diagnostic_dir_directory"><code>--diagnostic-dir=directory</code></a></li>
+<li><a href="#cli_disable_proto_mode"><code>--disable-proto=mode</code></a></li>
+<li><a href="#cli_disallow_code_generation_from_strings"><code>--disallow-code-generation-from-strings</code></a></li>
+<li><a href="#cli_dns_result_order_order"><code>--dns-result-order=order</code></a></li>
+<li><a href="#cli_enable_fips"><code>--enable-fips</code></a></li>
+<li><a href="#cli_enable_source_maps"><code>--enable-source-maps</code></a></li>
+<li><a href="#cli_experimental_abortcontroller"><code>--experimental-abortcontroller</code></a></li>
+<li><a href="#cli_experimental_import_meta_resolve"><code>--experimental-import-meta-resolve</code></a></li>
+<li><a href="#cli_experimental_json_modules"><code>--experimental-json-modules</code></a></li>
+<li><a href="#cli_experimental_loader_module"><code>--experimental-loader=module</code></a></li>
+<li><a href="#cli_experimental_modules"><code>--experimental-modules</code></a></li>
+<li><a href="#cli_experimental_policy"><code>--experimental-policy</code></a></li>
+<li><a href="#cli_experimental_repl_await"><code>--experimental-repl-await</code></a></li>
+<li><a href="#cli_experimental_specifier_resolution_mode"><code>--experimental-specifier-resolution=mode</code></a></li>
+<li><a href="#cli_experimental_vm_modules"><code>--experimental-vm-modules</code></a></li>
+<li><a href="#cli_experimental_wasi_unstable_preview1"><code>--experimental-wasi-unstable-preview1</code></a></li>
+<li><a href="#cli_experimental_wasm_modules"><code>--experimental-wasm-modules</code></a></li>
+<li><a href="#cli_force_context_aware"><code>--force-context-aware</code></a></li>
+<li><a href="#cli_force_fips"><code>--force-fips</code></a></li>
+<li><span class="stability_1"><a href="#cli_frozen_intrinsics"><code>--frozen-intrinsics</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_heapsnapshot_near_heap_limit_max_count"><code>--heapsnapshot-near-heap-limit=max_count</code></a></span></li>
+<li><a href="#cli_heapsnapshot_signal_signal"><code>--heapsnapshot-signal=signal</code></a></li>
+<li><span class="stability_1"><a href="#cli_heap_prof"><code>--heap-prof</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_heap_prof_dir"><code>--heap-prof-dir</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_heap_prof_interval"><code>--heap-prof-interval</code></a></span></li>
+<li><span class="stability_1"><a href="#cli_heap_prof_name"><code>--heap-prof-name</code></a></span></li>
+<li><a href="#cli_icu_data_dir_file"><code>--icu-data-dir=file</code></a></li>
+<li><a href="#cli_input_type_type"><code>--input-type=type</code></a></li>
+<li><a href="#cli_inspect_brk_host_port"><code>--inspect-brk[=[host:]port]</code></a></li>
+<li><a href="#cli_inspect_port_host_port"><code>--inspect-port=[host:]port</code></a></li>
+<li><a href="#cli_inspect_host_port"><code>--inspect[=[host:]port]</code></a>
+<ul>
+<li><a href="#cli_warning_binding_inspector_to_a_public_ip_port_combination_is_insecure">注意：绑定检查器到公共的“IP:端口”组合是不安全的</a></li>
+</ul>
+</li>
+<li><a href="#cli_inspect_publish_uid_stderr_http"><code>--inspect-publish-uid=stderr,http</code></a></li>
+<li><a href="#cli_insecure_http_parser"><code>--insecure-http-parser</code></a></li>
+<li><a href="#cli_jitless"><code>--jitless</code></a></li>
+<li><a href="#cli_max_http_header_size_size"><code>--max-http-header-size=size</code></a></li>
+<li><a href="#cli_napi_modules"><code>--napi-modules</code></a></li>
+<li><a href="#cli_no_deprecation"><code>--no-deprecation</code></a></li>
+<li><a href="#cli_no_force_async_hooks_checks"><code>--no-force-async-hooks-checks</code></a></li>
+<li><a href="#cli_no_warnings"><code>--no-warnings</code></a></li>
+<li><a href="#cli_node_memory_debug"><code>--node-memory-debug</code></a></li>
+<li><a href="#cli_openssl_config_file"><code>--openssl-config=file</code></a></li>
+<li><a href="#cli_pending_deprecation"><code>--pending-deprecation</code></a></li>
+<li><span class="stability_1"><a href="#cli_policy_integrity_sri"><code>--policy-integrity=sri</code></a></span></li>
+<li><a href="#cli_preserve_symlinks"><code>--preserve-symlinks</code></a></li>
+<li><a href="#cli_preserve_symlinks_main"><code>--preserve-symlinks-main</code></a></li>
+<li><a href="#cli_prof"><code>--prof</code></a></li>
+<li><a href="#cli_prof_process"><code>--prof-process</code></a></li>
+<li><a href="#cli_redirect_warnings_file"><code>--redirect-warnings=file</code></a></li>
+<li><a href="#cli_report_compact"><code>--report-compact</code></a></li>
+<li><a href="#cli_report_dir_directory_report_directory_directory"><code>--report-dir=directory</code>, <code>report-directory=directory</code></a></li>
+<li><a href="#cli_report_filename_filename"><code>--report-filename=filename</code></a></li>
+<li><a href="#cli_report_on_fatalerror"><code>--report-on-fatalerror</code></a></li>
+<li><a href="#cli_report_on_signal"><code>--report-on-signal</code></a></li>
+<li><a href="#cli_report_signal_signal"><code>--report-signal=signal</code></a></li>
+<li><a href="#cli_report_uncaught_exception"><code>--report-uncaught-exception</code></a></li>
+<li><a href="#cli_secure_heap_n"><code>--secure-heap=n</code></a></li>
+<li><a href="#cli_secure_heap_min_n"><code>--secure-heap-min=n</code></a></li>
+<li><a href="#cli_throw_deprecation"><code>--throw-deprecation</code></a></li>
+<li><a href="#cli_title_title"><code>--title=title</code></a></li>
+<li><a href="#cli_tls_cipher_list_list"><code>--tls-cipher-list=list</code></a></li>
+<li><a href="#cli_tls_keylog_file"><code>--tls-keylog=file</code></a></li>
+<li><a href="#cli_tls_max_v1_2"><code>--tls-max-v1.2</code></a></li>
+<li><a href="#cli_tls_max_v1_3"><code>--tls-max-v1.3</code></a></li>
+<li><a href="#cli_tls_min_v1_0"><code>--tls-min-v1.0</code></a></li>
+<li><a href="#cli_tls_min_v1_1"><code>--tls-min-v1.1</code></a></li>
+<li><a href="#cli_tls_min_v1_2"><code>--tls-min-v1.2</code></a></li>
+<li><a href="#cli_tls_min_v1_3"><code>--tls-min-v1.3</code></a></li>
+<li><a href="#cli_trace_atomics_wait"><code>--trace-atomics-wait</code></a></li>
+<li><a href="#cli_trace_deprecation"><code>--trace-deprecation</code></a></li>
+<li><a href="#cli_trace_event_categories"><code>--trace-event-categories</code></a></li>
+<li><a href="#cli_trace_event_file_pattern"><code>--trace-event-file-pattern</code></a></li>
+<li><a href="#cli_trace_events_enabled"><code>--trace-events-enabled</code></a></li>
+<li><a href="#cli_trace_exit"><code>--trace-exit</code></a></li>
+<li><a href="#cli_trace_sigint"><code>--trace-sigint</code></a></li>
+<li><a href="#cli_trace_sync_io"><code>--trace-sync-io</code></a></li>
+<li><a href="#cli_trace_tls"><code>--trace-tls</code></a></li>
+<li><a href="#cli_trace_uncaught"><code>--trace-uncaught</code></a></li>
+<li><a href="#cli_trace_warnings"><code>--trace-warnings</code></a></li>
+<li><a href="#cli_track_heap_objects"><code>--track-heap-objects</code></a></li>
+<li><a href="#cli_unhandled_rejections_mode"><code>--unhandled-rejections=mode</code></a></li>
+<li><a href="#cli_use_bundled_ca_use_openssl_ca"><code>--use-bundled-ca</code>, <code>--use-openssl-ca</code></a></li>
+<li><a href="#cli_use_largepages_mode"><code>--use-largepages=mode</code></a></li>
+<li><a href="#cli_v8_options"><code>--v8-options</code></a></li>
+<li><a href="#cli_v8_pool_size_num"><code>--v8-pool-size=num</code></a></li>
+<li><a href="#cli_zero_fill_buffers"><code>--zero-fill-buffers</code></a></li>
+<li><a href="#cli_c_check"><code>-c</code>, <code>--check</code></a></li>
+<li><a href="#cli_e_eval_script"><code>-e</code>, <code>--eval "script"</code></a></li>
+<li><a href="#cli_h_help"><code>-h</code>, <code>--help</code></a></li>
+<li><a href="#cli_i_interactive"><code>-i</code>, <code>--interactive</code></a></li>
+<li><a href="#cli_p_print_script"><code>-p</code>, <code>--print "script"</code></a></li>
+<li><a href="#cli_r_require_module"><code>-r</code>, <code>--require module</code></a></li>
+<li><a href="#cli_v_version"><code>-v</code>, <code>--version</code></a></li>
+</ul>
+</li>
+<li><a href="#cli_environment_variables">环境变量</a>
+<ul>
+<li><a href="#cli_force_color_1_2_3"><code>FORCE_COLOR=[1, 2, 3]</code></a></li>
+<li><a href="#cli_node_debug_module"><code>NODE_DEBUG=module[,…]</code></a></li>
+<li><a href="#cli_node_debug_native_module"><code>NODE_DEBUG_NATIVE=module[,…]</code></a></li>
+<li><a href="#cli_node_disable_colors_1"><code>NODE_DISABLE_COLORS=1</code></a></li>
+<li><a href="#cli_node_extra_ca_certs_file"><code>NODE_EXTRA_CA_CERTS=file</code></a></li>
+<li><a href="#cli_node_icu_data_file"><code>NODE_ICU_DATA=file</code></a></li>
+<li><a href="#cli_node_no_warnings_1"><code>NODE_NO_WARNINGS=1</code></a></li>
+<li><a href="#cli_node_options_options"><code>NODE_OPTIONS=options...</code></a></li>
+<li><a href="#cli_node_path_path"><code>NODE_PATH=path[:…]</code></a></li>
+<li><a href="#cli_node_pending_deprecation_1"><code>NODE_PENDING_DEPRECATION=1</code></a></li>
+<li><a href="#cli_node_pending_pipe_instances_instances"><code>NODE_PENDING_PIPE_INSTANCES=instances</code></a></li>
+<li><a href="#cli_node_preserve_symlinks_1"><code>NODE_PRESERVE_SYMLINKS=1</code></a></li>
+<li><a href="#cli_node_redirect_warnings_file"><code>NODE_REDIRECT_WARNINGS=file</code></a></li>
+<li><a href="#cli_node_repl_history_file"><code>NODE_REPL_HISTORY=file</code></a></li>
+<li><a href="#cli_node_repl_external_module_file"><code>NODE_REPL_EXTERNAL_MODULE=file</code></a></li>
+<li><a href="#cli_node_skip_platform_check_value"><code>NODE_SKIP_PLATFORM_CHECK=value</code></a></li>
+<li><a href="#cli_node_tls_reject_unauthorized_value"><code>NODE_TLS_REJECT_UNAUTHORIZED=value</code></a></li>
+<li><a href="#cli_node_v8_coverage_dir"><code>NODE_V8_COVERAGE=dir</code></a>
+<ul>
+<li><a href="#cli_coverage_output">覆盖范围的输出</a></li>
+<li><span class="stability_1"><a href="#cli_source_map_cache">源码映射的缓存</a></span></li>
+</ul>
+</li>
+<li><a href="#cli_no_color_any"><code>NO_COLOR=&lt;any&gt;</code></a></li>
+<li><a href="#cli_openssl_conf_file"><code>OPENSSL_CONF=file</code></a></li>
+<li><a href="#cli_ssl_cert_dir_dir"><code>SSL_CERT_DIR=dir</code></a></li>
+<li><a href="#cli_ssl_cert_file_file"><code>SSL_CERT_FILE=file</code></a></li>
+<li><a href="#cli_tz"><code>TZ</code></a></li>
+<li><a href="#cli_uv_threadpool_size_size"><code>UV_THREADPOOL_SIZE=size</code></a></li>
+</ul>
+</li>
+<li><a href="#cli_useful_v8_options">有用的 V8 选项</a>
+<ul>
+<li><a href="#cli_max_old_space_size_size_in_megabytes">--max-old-space-size=SIZE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>命令行选项<span><a class="mark" href="#cli_command_line_options" id="cli_command_line_options">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="command_line_options">
+                <a href="cli/command_line_options.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v5.9.1-->
+<!--type=misc-->
+<p>Node.js 具有各种命令行选项。
+这些选项暴露了内置的调试、多种执行脚本的方式、以及其他有用的运行时选项。</p>
+<p>要在一个终端中以一个帮助手册的形式查看此文档，则运行 <code>man node</code>。</p>
+<section><h3>概要<span><a class="mark" href="#cli_synopsis" id="cli_synopsis">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="synopsis">
+                <a href="cli/synopsis.html" class="tip_trans">中英对照</a>
+                </p>
+<p><code>node [options] [V8 options] [script.js | -e "script" | -] [--] [arguments]</code></p>
+<p><code>node inspect [script.js | -e "script" | &lt;host&gt;:&lt;port&gt;] …</code></p>
+<p><code>node --v8-options</code></p>
+<p>执行时不带参数，则启动 <a href="repl.html">REPL</a>。</p>
+<p>查看<a href="debugger.html">调试器</a>文档获取关于 <code>node inspect</code> 的更多信息。</p>
+</section><section><h3>选项<span><a class="mark" href="#cli_options" id="cli_options">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="options">
+                <a href="cli/options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v10.12.0</td>
+<td><p>除了 V8 选项，下划线（而不是短横线）现在也被允许用于 Node.js 选项。</p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>所有的选项，包括 V8 选项，允许单词被短横线（<code>-</code>）和下划线（<code>_</code>）分隔。
+例如，<code>--pending-deprecation</code> 等效于 <code>--pending_deprecation</code>.。</p>
+<p>如果一个接受一个值的选项（例如 <code>--max-http-header-size</code>）被传入超过一次，则最后一个传入的值被使用。
+命令行中的选项优先于通过 <a href="cli.html#cli_node_options_options"><code>NODE_OPTIONS</code></a> 环境变量传入的选项。</p>
+<h4><code>-</code><span><a class="mark" href="#cli" id="cli">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="">
+                <a href="cli/_.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>stdin 的别名。
+类似于在其他命令行工具中使用 <code>-</code>，这意味着从 stdin 读取脚本，且其余的选项会传给该脚本。</p>
+<h4><code>--</code><span><a class="mark" href="#cli_1" id="cli_1">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="1">
+                <a href="cli/1.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.11.0</span>
+</div>
+<p>指示 node 选项的结束。
+其余的参数会被传给脚本。
+如果在此之前没有提供脚本的文件名或 eval/print 脚本，则下一个参数会被用作脚本的文件名。</p>
+<h4><code>--abort-on-uncaught-exception</code><span><a class="mark" href="#cli_abort_on_uncaught_exception" id="cli_abort_on_uncaught_exception">#</a></span></h4><p class="tip_wrap" data-item_id="abort_on_uncaught_exception"></p>
+<div class="api_metadata">
+<span>新增于: v0.10.8</span>
+</div>
+<p>Aborting instead of exiting causes a core file to be generated for post-mortem
+analysis using a debugger (such as <code>lldb</code>, <code>gdb</code>, and <code>mdb</code>).</p>
+<p>If this flag is passed, the behavior can still be set to not abort through
+<a href="process.html#process_process_setuncaughtexceptioncapturecallback_fn"><code>process.setUncaughtExceptionCaptureCallback()</code></a> (and through usage of the
+<code>domain</code> module that uses it).</p>
+<h4><code>--completion-bash</code><span><a class="mark" href="#cli_completion_bash" id="cli_completion_bash">#</a></span></h4><p class="tip_wrap" data-item_id="completion_bash"></p>
+<div class="api_metadata">
+<span>新增于: v10.12.0</span>
+</div>
+<p>Print source-able bash completion script for Node.js.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --completion-bash &gt; node_bash_completion</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">source</span> node_bash_completion</span></code></pre>
+<h4><code>-C=condition</code>, <code>--conditions=condition</code><span><a class="mark" href="#cli_c_condition_conditions_condition" id="cli_c_condition_conditions_condition">#</a></span></h4><p class="tip_wrap" data-item_id="c_condition_conditions_condition"></p>
+<div class="api_metadata">
+<span>新增于: v14.9.0, v12.19.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Enable experimental support for custom <a href="packages.html#packages_conditional_exports">conditional exports</a> resolution
+conditions.</p>
+<p>Any number of custom string condition names are permitted.</p>
+<p>The default Node.js conditions of <code>"node"</code>, <code>"default"</code>, <code>"import"</code>, and
+<code>"require"</code> will always apply as defined.</p>
+<p>For example, to run a module with "development" resolutions:</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node -C=development app.js</span></code></pre>
+<h4><code>--cpu-prof</code><span><a class="mark" href="#cli_cpu_prof" id="cli_cpu_prof">#</a></span></h4><p class="tip_wrap" data-item_id="cpu_prof"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Starts the V8 CPU profiler on start up, and writes the CPU profile to disk
+before exit.</p>
+<p>If <code>--cpu-prof-dir</code> is not specified, the generated profile is placed
+in the current working directory.</p>
+<p>If <code>--cpu-prof-name</code> is not specified, the generated profile is
+named <code>CPU.${yyyymmdd}.${hhmmss}.${pid}.${tid}.${seq}.cpuprofile</code>.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --cpu-prof index.js</span>
+<span class="hljs-meta">$</span><span class="bash"> ls *.cpuprofile</span>
+CPU.20190409.202950.15293.0.0.cpuprofile</code></pre>
+<h4><code>--cpu-prof-dir</code><span><a class="mark" href="#cli_cpu_prof_dir" id="cli_cpu_prof_dir">#</a></span></h4><p class="tip_wrap" data-item_id="cpu_prof_dir"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the directory where the CPU profiles generated by <code>--cpu-prof</code> will
+be placed.</p>
+<p>The default value is controlled by the
+<a href="#cli_diagnostic_dir_directory">--diagnostic-dir</a> command-line option.</p>
+<h4><code>--cpu-prof-interval</code><span><a class="mark" href="#cli_cpu_prof_interval" id="cli_cpu_prof_interval">#</a></span></h4><p class="tip_wrap" data-item_id="cpu_prof_interval"></p>
+<div class="api_metadata">
+<span>新增于: v12.2.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the sampling interval in microseconds for the CPU profiles generated
+by <code>--cpu-prof</code>. The default is 1000 microseconds.</p>
+<h4><code>--cpu-prof-name</code><span><a class="mark" href="#cli_cpu_prof_name" id="cli_cpu_prof_name">#</a></span></h4><p class="tip_wrap" data-item_id="cpu_prof_name"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the file name of the CPU profile generated by <code>--cpu-prof</code>.</p>
+<h4><code>--diagnostic-dir=directory</code><span><a class="mark" href="#cli_diagnostic_dir_directory" id="cli_diagnostic_dir_directory">#</a></span></h4><p class="tip_wrap" data-item_id="diagnostic_dir_directory"></p>
+<p>Set the directory to which all diagnostic output files are written.
+Defaults to current working directory.</p>
+<p>Affects the default output directory of:</p>
+<ul>
+<li><a href="#cli_cpu_prof_dir">--cpu-prof-dir</a></li>
+<li><a href="#cli_heap_prof_dir">--heap-prof-dir</a></li>
+<li><a href="#cli_redirect_warnings_file">--redirect-warnings</a></li>
+</ul>
+<h4><code>--disable-proto=mode</code><span><a class="mark" href="#cli_disable_proto_mode" id="cli_disable_proto_mode">#</a></span></h4><p class="tip_wrap" data-item_id="disable_proto_mode"></p>
+<div class="api_metadata">
+<span>新增于: v13.12.0, v12.17.0</span>
+</div>
+<p>Disable the <code>Object.prototype.__proto__</code> property. If <code>mode</code> is <code>delete</code>, the
+property is removed entirely. If <code>mode</code> is <code>throw</code>, accesses to the
+property throw an exception with the code <code>ERR_PROTO_ACCESS</code>.</p>
+<h4><code>--disallow-code-generation-from-strings</code><span><a class="mark" href="#cli_disallow_code_generation_from_strings" id="cli_disallow_code_generation_from_strings">#</a></span></h4><p class="tip_wrap" data-item_id="disallow_code_generation_from_strings"></p>
+<div class="api_metadata">
+<span>新增于: v9.8.0</span>
+</div>
+<p>Make built-in language features like <code>eval</code> and <code>new Function</code> that generate
+code from strings throw an exception instead. This does not affect the Node.js
+<code>vm</code> module.</p>
+<h4><code>--dns-result-order=order</code><span><a class="mark" href="#cli_dns_result_order_order" id="cli_dns_result_order_order">#</a></span></h4><p class="tip_wrap" data-item_id="dns_result_order_order"></p>
+<div class="api_metadata">
+<span>新增于: v16.4.0</span>
+</div>
+<p>Set the default value of <code>verbatim</code> in <a href="dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a> and
+<a href="dns.html#dns_dnspromises_lookup_hostname_options"><code>dnsPromises.lookup()</code></a>. The value could be:</p>
+<ul>
+<li><code>ipv4first</code>: sets default <code>verbatim</code> <code>false</code>.</li>
+<li><code>verbatim</code>: sets default <code>verbatim</code> <code>true</code>.</li>
+</ul>
+<p>The default is <code>ipv4first</code> and <a href="dns.html#dns_dns_setdefaultresultorder_order"><code>dns.setDefaultResultOrder()</code></a> have higher
+priority than <code>--dns-result-order</code>.</p>
+<h4><code>--enable-fips</code><span><a class="mark" href="#cli_enable_fips" id="cli_enable_fips">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="enable_fips">
+                <a href="cli/enable_fips.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>启动时启用符合 FIPS 标准的加密。
+（需要 Node.js 使用 <code>./configure --openssl-fips</code> 构建）</p>
+<h4><code>--enable-source-maps</code><span><a class="mark" href="#cli_enable_source_maps" id="cli_enable_source_maps">#</a></span></h4><p class="tip_wrap" data-item_id="enable_source_maps"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v15.11.0</td>
+<td><p>This API is no longer experimental.</p></td></tr>
+<tr><td>v12.12.0</td>
+<td><p><span>新增于: v12.12.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Enable <a href="http://url.nodejs.cn/GmS6fa">Source Map v3</a> support for stack traces.</p>
+<p>When using a transpiler, such as TypeScript, stack traces thrown by an
+application reference the transpiled code, not the original source position.
+<code>--enable-source-maps</code> enables caching of Source Maps and makes a best
+effort to report stack traces relative to the original source file.</p>
+<p>Overriding <code>Error.prepareStackTrace</code> prevents <code>--enable-source-maps</code> from
+modifying the stack trace.</p>
+<h4><code>--experimental-abortcontroller</code><span><a class="mark" href="#cli_experimental_abortcontroller" id="cli_experimental_abortcontroller">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_abortcontroller"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v15.0.0</td>
+<td><p>--experimental-abortcontroller is no longer required.</p></td></tr>
+<tr><td>v15.0.0</td>
+<td><p><span>新增于: v15.0.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p><code>AbortController</code> and <code>AbortSignal</code> support is enabled by default.
+Use of this command-line flag is no longer required.</p>
+<h4><code>--experimental-import-meta-resolve</code><span><a class="mark" href="#cli_experimental_import_meta_resolve" id="cli_experimental_import_meta_resolve">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_import_meta_resolve"></p>
+<div class="api_metadata">
+<span>新增于: v13.9.0, v12.16.2</span>
+</div>
+<p>Enable experimental <code>import.meta.resolve()</code> support.</p>
+<h4><code>--experimental-json-modules</code><span><a class="mark" href="#cli_experimental_json_modules" id="cli_experimental_json_modules">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_json_modules"></p>
+<div class="api_metadata">
+<span>新增于: v12.9.0</span>
+</div>
+<p>Enable experimental JSON support for the ES Module loader.</p>
+<h4><code>--experimental-loader=module</code><span><a class="mark" href="#cli_experimental_loader_module" id="cli_experimental_loader_module">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_loader_module"></p>
+<div class="api_metadata">
+<span>新增于: v9.0.0</span>
+</div>
+<p>Specify the <code>module</code> of a custom experimental <a href="esm.html#esm_loaders">ECMAScript Module loader</a>.
+<code>module</code> may be either a path to a file, or an ECMAScript Module name.</p>
+<h4><code>--experimental-modules</code><span><a class="mark" href="#cli_experimental_modules" id="cli_experimental_modules">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_modules"></p>
+<div class="api_metadata">
+<span>新增于: v8.5.0</span>
+</div>
+<p>Enable latest experimental modules features (deprecated).</p>
+<h4><code>--experimental-policy</code><span><a class="mark" href="#cli_experimental_policy" id="cli_experimental_policy">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_policy"></p>
+<div class="api_metadata">
+<span>新增于: v11.8.0</span>
+</div>
+<p>Use the specified file as a security policy.</p>
+<h4><code>--experimental-repl-await</code><span><a class="mark" href="#cli_experimental_repl_await" id="cli_experimental_repl_await">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_repl_await"></p>
+<div class="api_metadata">
+<span>新增于: v10.0.0</span>
+</div>
+<p>Enable experimental top-level <code>await</code> keyword support in REPL.</p>
+<h4><code>--experimental-specifier-resolution=mode</code><span><a class="mark" href="#cli_experimental_specifier_resolution_mode" id="cli_experimental_specifier_resolution_mode">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_specifier_resolution_mode"></p>
+<div class="api_metadata">
+<span>新增于: v13.4.0, v12.16.0</span>
+</div>
+<p>Sets the resolution algorithm for resolving ES module specifiers. Valid options
+are <code>explicit</code> and <code>node</code>.</p>
+<p>The default is <code>explicit</code>, which requires providing the full path to a
+module. The <code>node</code> mode enables support for optional file extensions and
+the ability to import a directory that has an index file.</p>
+<p>See <a href="esm.html#esm_customizing_esm_specifier_resolution_algorithm">customizing ESM specifier resolution</a> for example usage.</p>
+<h4><code>--experimental-vm-modules</code><span><a class="mark" href="#cli_experimental_vm_modules" id="cli_experimental_vm_modules">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_vm_modules"></p>
+<div class="api_metadata">
+<span>新增于: v9.6.0</span>
+</div>
+<p>Enable experimental ES Module support in the <code>vm</code> module.</p>
+<h4><code>--experimental-wasi-unstable-preview1</code><span><a class="mark" href="#cli_experimental_wasi_unstable_preview1" id="cli_experimental_wasi_unstable_preview1">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_wasi_unstable_preview1"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.6.0</td>
+<td><p>changed from <code>--experimental-wasi-unstable-preview0</code> to <code>--experimental-wasi-unstable-preview1</code>.</p></td></tr>
+<tr><td>v13.3.0, v12.16.0</td>
+<td><p><span>新增于: v13.3.0, v12.16.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Enable experimental WebAssembly System Interface (WASI) support.</p>
+<h4><code>--experimental-wasm-modules</code><span><a class="mark" href="#cli_experimental_wasm_modules" id="cli_experimental_wasm_modules">#</a></span></h4><p class="tip_wrap" data-item_id="experimental_wasm_modules"></p>
+<div class="api_metadata">
+<span>新增于: v12.3.0</span>
+</div>
+<p>Enable experimental WebAssembly module support.</p>
+<h4><code>--force-context-aware</code><span><a class="mark" href="#cli_force_context_aware" id="cli_force_context_aware">#</a></span></h4><p class="tip_wrap" data-item_id="force_context_aware"></p>
+<div class="api_metadata">
+<span>新增于: v12.12.0</span>
+</div>
+<p>Disable loading native addons that are not <a href="addons.html#addons_context_aware_addons">context-aware</a>.</p>
+<h4><code>--force-fips</code><span><a class="mark" href="#cli_force_fips" id="cli_force_fips">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="force_fips">
+                <a href="cli/force_fips.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>启动时强制使用符合 FIPS 标准的加密。
+（无法通过脚本代码禁用。）
+（要求同 <code>--enable-fips</code>）</p>
+<h4><code>--frozen-intrinsics</code><span><a class="mark" href="#cli_frozen_intrinsics" id="cli_frozen_intrinsics">#</a></span></h4><p class="tip_wrap" data-item_id="frozen_intrinsics"></p>
+<div class="api_metadata">
+<span>新增于: v11.12.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Enable experimental frozen intrinsics like <code>Array</code> and <code>Object</code>.</p>
+<p>Support is currently only provided for the root context and no guarantees are
+currently provided that <code>global.Array</code> is indeed the default intrinsic
+reference. Code may break under this flag.</p>
+<p><code>--require</code> runs prior to freezing intrinsics in order to allow polyfills to
+be added.</p>
+<h4><code>--heapsnapshot-near-heap-limit=max_count</code><span><a class="mark" href="#cli_heapsnapshot_near_heap_limit_max_count" id="cli_heapsnapshot_near_heap_limit_max_count">#</a></span></h4><p class="tip_wrap" data-item_id="heapsnapshot_near_heap_limit_max_count"></p>
+<div class="api_metadata">
+<span>新增于: v15.1.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Writes a V8 heap snapshot to disk when the V8 heap usage is approaching the
+heap limit. <code>count</code> should be a non-negative integer (in which case
+Node.js will write no more than <code>max_count</code> snapshots to disk).</p>
+<p>When generating snapshots, garbage collection may be triggered and bring
+the heap usage down, therefore multiple snapshots may be written to disk
+before the Node.js instance finally runs out of memory. These heap snapshots
+can be compared to determine what objects are being allocated during the
+time consecutive snapshots are taken. It's not guaranteed that Node.js will
+write exactly <code>max_count</code> snapshots to disk, but it will try
+its best to generate at least one and up to <code>max_count</code> snapshots before the
+Node.js instance runs out of memory when <code>max_count</code> is greater than <code>0</code>.</p>
+<p>Generating V8 snapshots takes time and memory (both memory managed by the
+V8 heap and native memory outside the V8 heap). The bigger the heap is,
+the more resources it needs. Node.js will adjust the V8 heap to accommodate
+the additional V8 heap memory overhead, and try its best to avoid using up
+all the memory available to the process. When the process uses
+more memory than the system deems appropriate, the process may be terminated
+abruptly by the system, depending on the system configuration.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --max-old-space-size=100 --heapsnapshot-near-heap-limit=3 index.js</span>
+Wrote snapshot to Heap.20200430.100036.49580.0.001.heapsnapshot
+Wrote snapshot to Heap.20200430.100037.49580.0.002.heapsnapshot
+Wrote snapshot to Heap.20200430.100038.49580.0.003.heapsnapshot
+
+&lt;--- Last few GCs ---&gt;
+
+[49580:0x110000000]     4826 ms: Mark-sweep 130.6 (147.8) -&gt; 130.5 (147.8) MB, 27.4 / 0.0 ms  (average mu = 0.126, current mu = 0.034) allocation failure scavenge might not succeed
+[49580:0x110000000]     4845 ms: Mark-sweep 130.6 (147.8) -&gt; 130.6 (147.8) MB, 18.8 / 0.0 ms  (average mu = 0.088, current mu = 0.031) allocation failure scavenge might not succeed
+
+
+&lt;--- JS stacktrace ---&gt;
+
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+....</code></pre>
+<h4><code>--heapsnapshot-signal=signal</code><span><a class="mark" href="#cli_heapsnapshot_signal_signal" id="cli_heapsnapshot_signal_signal">#</a></span></h4><p class="tip_wrap" data-item_id="heapsnapshot_signal_signal"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p>Enables a signal handler that causes the Node.js process to write a heap dump
+when the specified signal is received. <code>signal</code> must be a valid signal name.
+Disabled by default.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --heapsnapshot-signal=SIGUSR2 index.js &amp;</span>
+<span class="hljs-meta">$</span><span class="bash"> ps aux</span>
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+node         1  5.5  6.1 787252 247004 ?       Ssl  16:43   0:02 node --heapsnapshot-signal=SIGUSR2 index.js
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">kill</span> -USR2 1</span>
+<span class="hljs-meta">$</span><span class="bash"> ls</span>
+Heap.20190718.133405.15554.0.001.heapsnapshot</code></pre>
+<h4><code>--heap-prof</code><span><a class="mark" href="#cli_heap_prof" id="cli_heap_prof">#</a></span></h4><p class="tip_wrap" data-item_id="heap_prof"></p>
+<div class="api_metadata">
+<span>新增于: v12.4.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Starts the V8 heap profiler on start up, and writes the heap profile to disk
+before exit.</p>
+<p>If <code>--heap-prof-dir</code> is not specified, the generated profile is placed
+in the current working directory.</p>
+<p>If <code>--heap-prof-name</code> is not specified, the generated profile is
+named <code>Heap.${yyyymmdd}.${hhmmss}.${pid}.${tid}.${seq}.heapprofile</code>.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --heap-prof index.js</span>
+<span class="hljs-meta">$</span><span class="bash"> ls *.heapprofile</span>
+Heap.20190409.202950.15293.0.001.heapprofile</code></pre>
+<h4><code>--heap-prof-dir</code><span><a class="mark" href="#cli_heap_prof_dir" id="cli_heap_prof_dir">#</a></span></h4><p class="tip_wrap" data-item_id="heap_prof_dir"></p>
+<div class="api_metadata">
+<span>新增于: v12.4.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the directory where the heap profiles generated by <code>--heap-prof</code> will
+be placed.</p>
+<p>The default value is controlled by the
+<a href="#cli_diagnostic_dir_directory">--diagnostic-dir</a> command-line option.</p>
+<h4><code>--heap-prof-interval</code><span><a class="mark" href="#cli_heap_prof_interval" id="cli_heap_prof_interval">#</a></span></h4><p class="tip_wrap" data-item_id="heap_prof_interval"></p>
+<div class="api_metadata">
+<span>新增于: v12.4.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the average sampling interval in bytes for the heap profiles generated
+by <code>--heap-prof</code>. The default is 512 * 1024 bytes.</p>
+<h4><code>--heap-prof-name</code><span><a class="mark" href="#cli_heap_prof_name" id="cli_heap_prof_name">#</a></span></h4><p class="tip_wrap" data-item_id="heap_prof_name"></p>
+<div class="api_metadata">
+<span>新增于: v12.4.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Specify the file name of the heap profile generated by <code>--heap-prof</code>.</p>
+<h4><code>--icu-data-dir=file</code><span><a class="mark" href="#cli_icu_data_dir_file" id="cli_icu_data_dir_file">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="icu_data_dir_file">
+                <a href="cli/icu_data_dir_file.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.15</span>
+</div>
+<p>指定 ICU 数据的加载路径。
+（覆盖 <code>NODE_ICU_DATA</code>）</p>
+<h4><code>--input-type=type</code><span><a class="mark" href="#cli_input_type_type" id="cli_input_type_type">#</a></span></h4><p class="tip_wrap" data-item_id="input_type_type"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p>This configures Node.js to interpret string input as CommonJS or as an ES
+module. String input is input via <code>--eval</code>, <code>--print</code>, or <code>STDIN</code>.</p>
+<p>Valid values are <code>"commonjs"</code> and <code>"module"</code>. The default is <code>"commonjs"</code>.</p>
+<h4><code>--inspect-brk[=[host:]port]</code><span><a class="mark" href="#cli_inspect_brk_host_port" id="cli_inspect_brk_host_port">#</a></span></h4><p class="tip_wrap" data-item_id="inspect_brk_host_port"></p>
+<div class="api_metadata">
+<span>新增于: v7.6.0</span>
+</div>
+<p>Activate inspector on <code>host:port</code> and break at start of user script.
+Default <code>host:port</code> is <code>127.0.0.1:9229</code>.</p>
+<h4><code>--inspect-port=[host:]port</code><span><a class="mark" href="#cli_inspect_port_host_port" id="cli_inspect_port_host_port">#</a></span></h4><p class="tip_wrap" data-item_id="inspect_port_host_port"></p>
+<div class="api_metadata">
+<span>新增于: v7.6.0</span>
+</div>
+<p>Set the <code>host:port</code> to be used when the inspector is activated.
+Useful when activating the inspector by sending the <code>SIGUSR1</code> signal.</p>
+<p>Default host is <code>127.0.0.1</code>.</p>
+<p>See the <a href="#inspector_security">security warning</a> below regarding the <code>host</code>
+parameter usage.</p>
+<h4><code>--inspect[=[host:]port]</code><span><a class="mark" href="#cli_inspect_host_port" id="cli_inspect_host_port">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="inspect_host_port">
+                <a href="cli/inspect_host_port.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.3.0</span>
+</div>
+<p>在 <code>host:port</code> 上激活检查器。
+默认为 <code>127.0.0.1:9229</code>。</p>
+<p>V8检查器集成允许 Chrome DevTools 和 IDE 等工具调试和配置 Node.js 实例。
+这些工具通过 tcp 端口附加到 Node.js 实例，并使用 <a href="http://url.nodejs.cn/YpFEVu">Chrome DevTools 协议</a>进行通信.</p>
+<p><a id="inspector_security"></a></p>
+<h5>注意：绑定检查器到公共的“IP:端口”组合是不安全的<span><a class="mark" href="#cli_warning_binding_inspector_to_a_public_ip_port_combination_is_insecure" id="cli_warning_binding_inspector_to_a_public_ip_port_combination_is_insecure">#</a></span></h5><p class="tip_wrap" data-item_id="warning_binding_inspector_to_a_public_ip_port_combination_is_insecure"></p>
+<p>Binding the inspector to a public IP (including <code>0.0.0.0</code>) with an open port is
+insecure, as it allows external hosts to connect to the inspector and perform
+a <a href="http://url.nodejs.cn/JswVrV">remote code execution</a> attack.</p>
+<p>If specifying a host, make sure that either:</p>
+<ul>
+<li>The host is not accessible from public networks.</li>
+<li>A firewall disallows unwanted connections on the port.</li>
+</ul>
+<p><strong>More specifically, <code>--inspect=0.0.0.0</code> is insecure if the port (<code>9229</code> by
+default) is not firewall-protected.</strong></p>
+<p>See the <a href="http://url.nodejs.cn/TAYzUg">debugging security implications</a> section for more information.</p>
+<h4><code>--inspect-publish-uid=stderr,http</code><span><a class="mark" href="#cli_inspect_publish_uid_stderr_http" id="cli_inspect_publish_uid_stderr_http">#</a></span></h4><p class="tip_wrap" data-item_id="inspect_publish_uid_stderr_http"></p>
+<p>Specify ways of the inspector web socket url exposure.</p>
+<p>By default inspector websocket url is available in stderr and under <code>/json/list</code>
+endpoint on <code>http://host:port/json/list</code>.</p>
+<h4><code>--insecure-http-parser</code><span><a class="mark" href="#cli_insecure_http_parser" id="cli_insecure_http_parser">#</a></span></h4><p class="tip_wrap" data-item_id="insecure_http_parser"></p>
+<div class="api_metadata">
+<span>新增于: v13.4.0, v12.15.0, v10.19.0</span>
+</div>
+<p>Use an insecure HTTP parser that accepts invalid HTTP headers. This may allow
+interoperability with non-conformant HTTP implementations. It may also allow
+request smuggling and other HTTP attacks that rely on invalid headers being
+accepted. Avoid using this option.</p>
+<h4><code>--jitless</code><span><a class="mark" href="#cli_jitless" id="cli_jitless">#</a></span></h4><p class="tip_wrap" data-item_id="jitless"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p>Disable <a href="http://url.nodejs.cn/EKvv22">runtime allocation of executable memory</a>. This may be
+required on some platforms for security reasons. It can also reduce attack
+surface on other platforms, but the performance impact may be severe.</p>
+<p>This flag is inherited from V8 and is subject to change upstream. It may
+disappear in a non-semver-major release.</p>
+<h4><code>--max-http-header-size=size</code><span><a class="mark" href="#cli_max_http_header_size_size" id="cli_max_http_header_size_size">#</a></span></h4><p class="tip_wrap" data-item_id="max_http_header_size_size"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.13.0</td>
+<td><p>Change maximum default size of HTTP headers from 8KB to 16KB.</p></td></tr>
+<tr><td>v11.6.0, v10.15.0</td>
+<td><p><span>新增于: v11.6.0, v10.15.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Specify the maximum size, in bytes, of HTTP headers. Defaults to 16KB.</p>
+<h4><code>--napi-modules</code><span><a class="mark" href="#cli_napi_modules" id="cli_napi_modules">#</a></span></h4><p class="tip_wrap" data-item_id="napi_modules"></p>
+<div class="api_metadata">
+<span>新增于: v7.10.0</span>
+</div>
+<p>This option is a no-op. It is kept for compatibility.</p>
+<h4><code>--no-deprecation</code><span><a class="mark" href="#cli_no_deprecation" id="cli_no_deprecation">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="no_deprecation">
+                <a href="cli/no_deprecation.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.8.0</span>
+</div>
+<p>静默弃用的警告。</p>
+<h4><code>--no-force-async-hooks-checks</code><span><a class="mark" href="#cli_no_force_async_hooks_checks" id="cli_no_force_async_hooks_checks">#</a></span></h4><p class="tip_wrap" data-item_id="no_force_async_hooks_checks"></p>
+<div class="api_metadata">
+<span>新增于: v9.0.0</span>
+</div>
+<p>Disables runtime checks for <code>async_hooks</code>. These will still be enabled
+dynamically when <code>async_hooks</code> is enabled.</p>
+<h4><code>--no-warnings</code><span><a class="mark" href="#cli_no_warnings" id="cli_no_warnings">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="no_warnings">
+                <a href="cli/no_warnings.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>静默一切进程警告（包括弃用警告）。</p>
+<h4><code>--node-memory-debug</code><span><a class="mark" href="#cli_node_memory_debug" id="cli_node_memory_debug">#</a></span></h4><p class="tip_wrap" data-item_id="node_memory_debug"></p>
+<div class="api_metadata">
+<span>新增于: v15.0.0</span>
+</div>
+<p>Enable extra debug checks for memory leaks in Node.js internals. This is
+usually only useful for developers debugging Node.js itself.</p>
+<h4><code>--openssl-config=file</code><span><a class="mark" href="#cli_openssl_config_file" id="cli_openssl_config_file">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="openssl_config_file">
+                <a href="cli/openssl_config_file.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.9.0</span>
+</div>
+<p>启动时加载 OpenSSL 配置文件。
+在其他用途中，如果 Node.js 使用 <code>./configure --openssl-fips</code> 构建，它可以用于启用符合 FIPS 标准的加密。</p>
+<h4><code>--pending-deprecation</code><span><a class="mark" href="#cli_pending_deprecation" id="cli_pending_deprecation">#</a></span></h4><p class="tip_wrap" data-item_id="pending_deprecation"></p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>Emit pending deprecation warnings.</p>
+<p>Pending deprecations are generally identical to a runtime deprecation with the
+notable exception that they are turned <em>off</em> by default and will not be emitted
+unless either the <code>--pending-deprecation</code> command-line flag, or the
+<code>NODE_PENDING_DEPRECATION=1</code> environment variable, is set. Pending deprecations
+are used to provide a kind of selective "early warning" mechanism that
+developers may leverage to detect deprecated API usage.</p>
+<h4><code>--policy-integrity=sri</code><span><a class="mark" href="#cli_policy_integrity_sri" id="cli_policy_integrity_sri">#</a></span></h4><p class="tip_wrap" data-item_id="policy_integrity_sri"></p>
+<div class="api_metadata">
+<span>新增于: v12.7.0</span>
+</div>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>Instructs Node.js to error prior to running any code if the policy does not have
+the specified integrity. It expects a <a href="http://url.nodejs.cn/me6fpf">Subresource Integrity</a> string as a
+parameter.</p>
+<h4><code>--preserve-symlinks</code><span><a class="mark" href="#cli_preserve_symlinks" id="cli_preserve_symlinks">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="preserve_symlinks">
+                <a href="cli/preserve_symlinks.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.3.0</span>
+</div>
+<p>当解析和缓存模块时，命令模块加载器保持符号连接。</p>
+<p>默认情况下，当 Node.js 从一个被符号连接到另一块磁盘位置的路径加载一个模块时，Node.js 会解引用该连接，并使用模块的真实磁盘的实际路径，作为定位其他依赖模块的标识符和根路径。
+大多数情况下，默认行为是可接受的。
+但是，当使用符号连接的同行依赖，如下例子所描述的，如果 <code>moduleA</code> 试图引入 <code>moduleB</code> 作为一个同行依赖，默认行为就会抛出异常：</p>
+<pre><code class="language-text">{appDir}
+ ├── app
+ │   ├── index.js
+ │   └── node_modules
+ │       ├── moduleA -&gt; {appDir}/moduleA
+ │       └── moduleB
+ │           ├── index.js
+ │           └── package.json
+ └── moduleA
+     ├── index.js
+     └── package.json</code></pre>
+<p><code>--preserve-symlinks</code> 命令行标志命令 Node.js 使用模块的符号路径而不是真实路径，是符号连接的同行依赖能被找到。</p>
+<p>注意，使用 <code>--preserve-symlinks</code> 会有其他方面的影响。
+比如，如果符号连接的原生模块在依赖树里来自超过一个位置，它们会加载失败。
+（Node.js 会将它们视为两个独立的模块，且会试图多次加载模块，造成抛出异常。）</p>
+<p><code>--preserve-symlinks</code> 标志不适用于主模块，它允许 <code>node --preserve-symlinks node_module/.bin/&lt;foo&gt;</code> 工作。
+要对主模块应用相同的行为，也可使用 <code>--preserve-symlinks-main</code>。</p>
+<h4><code>--preserve-symlinks-main</code><span><a class="mark" href="#cli_preserve_symlinks_main" id="cli_preserve_symlinks_main">#</a></span></h4><p class="tip_wrap" data-item_id="preserve_symlinks_main"></p>
+<div class="api_metadata">
+<span>新增于: v10.2.0</span>
+</div>
+<p>Instructs the module loader to preserve symbolic links when resolving and
+caching the main module (<code>require.main</code>).</p>
+<p>This flag exists so that the main module can be opted-in to the same behavior
+that <code>--preserve-symlinks</code> gives to all other imports; they are separate flags,
+however, for backward compatibility with older Node.js versions.</p>
+<p><code>--preserve-symlinks-main</code> does not imply <code>--preserve-symlinks</code>; use
+<code>--preserve-symlinks-main</code> in addition to
+<code>--preserve-symlinks</code> when it is not desirable to follow symlinks before
+resolving relative paths.</p>
+<p>See <code>--preserve-symlinks</code> for more information.</p>
+<h4><code>--prof</code><span><a class="mark" href="#cli_prof" id="cli_prof">#</a></span></h4><p class="tip_wrap" data-item_id="prof"></p>
+<div class="api_metadata">
+<span>新增于: v2.0.0</span>
+</div>
+<p>Generate V8 profiler output.</p>
+<h4><code>--prof-process</code><span><a class="mark" href="#cli_prof_process" id="cli_prof_process">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="prof_process">
+                <a href="cli/prof_process.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v5.2.0</span>
+</div>
+<p>处理 V8 分析器的输出，通过使用 V8 选项 <code>--prof</code> 生成。</p>
+<h4><code>--redirect-warnings=file</code><span><a class="mark" href="#cli_redirect_warnings_file" id="cli_redirect_warnings_file">#</a></span></h4><p class="tip_wrap" data-item_id="redirect_warnings_file"></p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>Write process warnings to the given file instead of printing to stderr. The
+file will be created if it does not exist, and will be appended to if it does.
+If an error occurs while attempting to write the warning to the file, the
+warning will be written to stderr instead.</p>
+<p>The <code>file</code> name may be an absolute path. If it is not, the default directory it
+will be written to is controlled by the
+<a href="#cli_diagnostic_dir_directory">--diagnostic-dir</a> command-line option.</p>
+<h4><code>--report-compact</code><span><a class="mark" href="#cli_report_compact" id="cli_report_compact">#</a></span></h4><p class="tip_wrap" data-item_id="report_compact"></p>
+<div class="api_metadata">
+<span>新增于: v13.12.0, v12.17.0</span>
+</div>
+<p>Write reports in a compact format, single-line JSON, more easily consumable
+by log processing systems than the default multi-line format designed for
+human consumption.</p>
+<h4><code>--report-dir=directory</code>, <code>report-directory=directory</code><span><a class="mark" href="#cli_report_dir_directory_report_directory_directory" id="cli_report_dir_directory_report_directory_directory">#</a></span></h4><p class="tip_wrap" data-item_id="report_dir_directory_report_directory_directory"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.12.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>Changed from <code>--diagnostic-report-directory</code> to <code>--report-directory</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Location at which the report will be generated.</p>
+<h4><code>--report-filename=filename</code><span><a class="mark" href="#cli_report_filename_filename" id="cli_report_filename_filename">#</a></span></h4><p class="tip_wrap" data-item_id="report_filename_filename"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.12.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>changed from <code>--diagnostic-report-filename</code> to <code>--report-filename</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Name of the file to which the report will be written.</p>
+<h4><code>--report-on-fatalerror</code><span><a class="mark" href="#cli_report_on_fatalerror" id="cli_report_on_fatalerror">#</a></span></h4><p class="tip_wrap" data-item_id="report_on_fatalerror"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v14.0.0, v13.14.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>changed from <code>--diagnostic-report-on-fatalerror</code> to <code>--report-on-fatalerror</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Enables the report to be triggered on fatal errors (internal errors within
+the Node.js runtime such as out of memory) that lead to termination of the
+application. Useful to inspect various diagnostic data elements such as heap,
+stack, event loop state, resource consumption etc. to reason about the fatal
+error.</p>
+<h4><code>--report-on-signal</code><span><a class="mark" href="#cli_report_on_signal" id="cli_report_on_signal">#</a></span></h4><p class="tip_wrap" data-item_id="report_on_signal"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.12.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>changed from <code>--diagnostic-report-on-signal</code> to <code>--report-on-signal</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Enables report to be generated upon receiving the specified (or predefined)
+signal to the running Node.js process. The signal to trigger the report is
+specified through <code>--report-signal</code>.</p>
+<h4><code>--report-signal=signal</code><span><a class="mark" href="#cli_report_signal_signal" id="cli_report_signal_signal">#</a></span></h4><p class="tip_wrap" data-item_id="report_signal_signal"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.12.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>changed from <code>--diagnostic-report-signal</code> to <code>--report-signal</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Sets or resets the signal for report generation (not supported on Windows).
+Default signal is <code>SIGUSR2</code>.</p>
+<h4><code>--report-uncaught-exception</code><span><a class="mark" href="#cli_report_uncaught_exception" id="cli_report_uncaught_exception">#</a></span></h4><p class="tip_wrap" data-item_id="report_uncaught_exception"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v13.12.0, v12.17.0</td>
+<td><p>This option is no longer experimental.</p></td></tr>
+<tr><td>v12.0.0</td>
+<td><p>changed from <code>--diagnostic-report-uncaught-exception</code> to <code>--report-uncaught-exception</code>.</p></td></tr>
+<tr><td>v11.8.0</td>
+<td><p><span>新增于: v11.8.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Enables report to be generated on uncaught exceptions. Useful when inspecting
+the JavaScript stack in conjunction with native stack and other runtime
+environment data.</p>
+<h4><code>--secure-heap=n</code><span><a class="mark" href="#cli_secure_heap_n" id="cli_secure_heap_n">#</a></span></h4><p class="tip_wrap" data-item_id="secure_heap_n"></p>
+<div class="api_metadata">
+<span>新增于: v15.6.0</span>
+</div>
+<p>Initializes an OpenSSL secure heap of <code>n</code> bytes. When initialized, the
+secure heap is used for selected types of allocations within OpenSSL
+during key generation and other operations. This is useful, for instance,
+to prevent sensitive information from leaking due to pointer overruns
+or underruns.</p>
+<p>The secure heap is a fixed size and cannot be resized at runtime so,
+if used, it is important to select a large enough heap to cover all
+application uses.</p>
+<p>The heap size given must be a power of two. Any value less than 2
+will disable the secure heap.</p>
+<p>The secure heap is disabled by default.</p>
+<p>The secure heap is not available on Windows.</p>
+<p>See <a href="http://url.nodejs.cn/HjTorC"><code>CRYPTO_secure_malloc_init</code></a> for more details.</p>
+<h4><code>--secure-heap-min=n</code><span><a class="mark" href="#cli_secure_heap_min_n" id="cli_secure_heap_min_n">#</a></span></h4><p class="tip_wrap" data-item_id="secure_heap_min_n"></p>
+<div class="api_metadata">
+<span>新增于: v15.6.0</span>
+</div>
+<p>When using <code>--secure-heap</code>, the <code>--secure-heap-min</code> flag specifies the
+minimum allocation from the secure heap. The minimum value is <code>2</code>.
+The maximum value is the lesser of <code>--secure-heap</code> or <code>2147483647</code>.
+The value given must be a power of two.</p>
+<h4><code>--throw-deprecation</code><span><a class="mark" href="#cli_throw_deprecation" id="cli_throw_deprecation">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="throw_deprecation">
+                <a href="cli/throw_deprecation.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.14</span>
+</div>
+<p>抛出弃用的错误。</p>
+<h4><code>--title=title</code><span><a class="mark" href="#cli_title_title" id="cli_title_title">#</a></span></h4><p class="tip_wrap" data-item_id="title_title"></p>
+<div class="api_metadata">
+<span>新增于: v10.7.0</span>
+</div>
+<p>Set <code>process.title</code> on startup.</p>
+<h4><code>--tls-cipher-list=list</code><span><a class="mark" href="#cli_tls_cipher_list_list" id="cli_tls_cipher_list_list">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="tls_cipher_list_list">
+                <a href="cli/tls_cipher_list_list.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v4.0.0</span>
+</div>
+<p>指定备用的默认 TLS 加密列表。
+需要 Node.js 被构建为支持加密（默认）。</p>
+<h4><code>--tls-keylog=file</code><span><a class="mark" href="#cli_tls_keylog_file" id="cli_tls_keylog_file">#</a></span></h4><p class="tip_wrap" data-item_id="tls_keylog_file"></p>
+<div class="api_metadata">
+<span>新增于: v13.2.0, v12.16.0</span>
+</div>
+<p>Log TLS key material to a file. The key material is in NSS <code>SSLKEYLOGFILE</code>
+format and can be used by software (such as Wireshark) to decrypt the TLS
+traffic.</p>
+<h4><code>--tls-max-v1.2</code><span><a class="mark" href="#cli_tls_max_v1_2" id="cli_tls_max_v1_2">#</a></span></h4><p class="tip_wrap" data-item_id="tls_max_v1_2"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0, v10.20.0</span>
+</div>
+<p>Set <a href="tls.html#tls_tls_default_max_version"><code>tls.DEFAULT_MAX_VERSION</code></a> to 'TLSv1.2'. Use to disable support for
+TLSv1.3.</p>
+<h4><code>--tls-max-v1.3</code><span><a class="mark" href="#cli_tls_max_v1_3" id="cli_tls_max_v1_3">#</a></span></h4><p class="tip_wrap" data-item_id="tls_max_v1_3"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p>Set default <a href="tls.html#tls_tls_default_max_version"><code>tls.DEFAULT_MAX_VERSION</code></a> to 'TLSv1.3'. Use to enable support
+for TLSv1.3.</p>
+<h4><code>--tls-min-v1.0</code><span><a class="mark" href="#cli_tls_min_v1_0" id="cli_tls_min_v1_0">#</a></span></h4><p class="tip_wrap" data-item_id="tls_min_v1_0"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0, v10.20.0</span>
+</div>
+<p>Set default <a href="tls.html#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a> to 'TLSv1'. Use for compatibility with
+old TLS clients or servers.</p>
+<h4><code>--tls-min-v1.1</code><span><a class="mark" href="#cli_tls_min_v1_1" id="cli_tls_min_v1_1">#</a></span></h4><p class="tip_wrap" data-item_id="tls_min_v1_1"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0, v10.20.0</span>
+</div>
+<p>Set default <a href="tls.html#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a> to 'TLSv1.1'. Use for compatibility
+with old TLS clients or servers.</p>
+<h4><code>--tls-min-v1.2</code><span><a class="mark" href="#cli_tls_min_v1_2" id="cli_tls_min_v1_2">#</a></span></h4><p class="tip_wrap" data-item_id="tls_min_v1_2"></p>
+<div class="api_metadata">
+<span>新增于: v12.2.0, v10.20.0</span>
+</div>
+<p>Set default <a href="tls.html#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a> to 'TLSv1.2'. This is the default for
+12.x and later, but the option is supported for compatibility with older Node.js
+versions.</p>
+<h4><code>--tls-min-v1.3</code><span><a class="mark" href="#cli_tls_min_v1_3" id="cli_tls_min_v1_3">#</a></span></h4><p class="tip_wrap" data-item_id="tls_min_v1_3"></p>
+<div class="api_metadata">
+<span>新增于: v12.0.0</span>
+</div>
+<p>Set default <a href="tls.html#tls_tls_default_min_version"><code>tls.DEFAULT_MIN_VERSION</code></a> to 'TLSv1.3'. Use to disable support
+for TLSv1.2, which is not as secure as TLSv1.3.</p>
+<h4><code>--trace-atomics-wait</code><span><a class="mark" href="#cli_trace_atomics_wait" id="cli_trace_atomics_wait">#</a></span></h4><p class="tip_wrap" data-item_id="trace_atomics_wait"></p>
+<div class="api_metadata">
+<span>新增于: v14.3.0</span>
+</div>
+<p>Print short summaries of calls to <a href="http://url.nodejs.cn/UjbYfA"><code>Atomics.wait()</code></a> to stderr.
+The output could look like this:</p>
+<pre><code class="language-text">(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 0, 1, inf) started
+(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 0, 1, inf) did not wait because the values mismatched
+(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 0, 0, 10) started
+(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 0, 0, 10) timed out
+(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 4, 0, inf) started
+(node:15701) [Thread 1] Atomics.wait(&amp;lt;address&gt; + 4, -1, inf) started
+(node:15701) [Thread 0] Atomics.wait(&amp;lt;address&gt; + 4, 0, inf) was woken up by another thread
+(node:15701) [Thread 1] Atomics.wait(&amp;lt;address&gt; + 4, -1, inf) was woken up by another thread</code></pre>
+<p>The fields here correspond to:</p>
+<ul>
+<li>The thread id as given by <a href="worker_threads.html#worker_threads_worker_threadid"><code>worker_threads.threadId</code></a></li>
+<li>The base address of the <code>SharedArrayBuffer</code> in question, as well as the
+byte offset corresponding to the index passed to <code>Atomics.wait()</code></li>
+<li>The expected value that was passed to <code>Atomics.wait()</code></li>
+<li>The timeout passed to <code>Atomics.wait</code></li>
+</ul>
+<h4><code>--trace-deprecation</code><span><a class="mark" href="#cli_trace_deprecation" id="cli_trace_deprecation">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="trace_deprecation">
+                <a href="cli/trace_deprecation.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.8.0</span>
+</div>
+<p>打印弃用的堆栈跟踪。</p>
+<h4><code>--trace-event-categories</code><span><a class="mark" href="#cli_trace_event_categories" id="cli_trace_event_categories">#</a></span></h4><p class="tip_wrap" data-item_id="trace_event_categories"></p>
+<div class="api_metadata">
+<span>新增于: v7.7.0</span>
+</div>
+<p>A comma separated list of categories that should be traced when trace event
+tracing is enabled using <code>--trace-events-enabled</code>.</p>
+<h4><code>--trace-event-file-pattern</code><span><a class="mark" href="#cli_trace_event_file_pattern" id="cli_trace_event_file_pattern">#</a></span></h4><p class="tip_wrap" data-item_id="trace_event_file_pattern"></p>
+<div class="api_metadata">
+<span>新增于: v9.8.0</span>
+</div>
+<p>Template string specifying the filepath for the trace event data, it
+supports <code>${rotation}</code> and <code>${pid}</code>.</p>
+<h4><code>--trace-events-enabled</code><span><a class="mark" href="#cli_trace_events_enabled" id="cli_trace_events_enabled">#</a></span></h4><p class="tip_wrap" data-item_id="trace_events_enabled"></p>
+<div class="api_metadata">
+<span>新增于: v7.7.0</span>
+</div>
+<p>Enables the collection of trace event tracing information.</p>
+<h4><code>--trace-exit</code><span><a class="mark" href="#cli_trace_exit" id="cli_trace_exit">#</a></span></h4><p class="tip_wrap" data-item_id="trace_exit"></p>
+<div class="api_metadata">
+<span>新增于: v13.5.0, v12.16.0</span>
+</div>
+<p>Prints a stack trace whenever an environment is exited proactively,
+i.e. invoking <code>process.exit()</code>.</p>
+<h4><code>--trace-sigint</code><span><a class="mark" href="#cli_trace_sigint" id="cli_trace_sigint">#</a></span></h4><p class="tip_wrap" data-item_id="trace_sigint"></p>
+<div class="api_metadata">
+<span>新增于: v13.9.0, v12.17.0</span>
+</div>
+<p>Prints a stack trace on SIGINT.</p>
+<h4><code>--trace-sync-io</code><span><a class="mark" href="#cli_trace_sync_io" id="cli_trace_sync_io">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="trace_sync_io">
+                <a href="cli/trace_sync_io.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v2.1.0</span>
+</div>
+<p>每当事件循环的第一帧之后检测到同步 I/O 时，打印堆栈跟踪。</p>
+<h4><code>--trace-tls</code><span><a class="mark" href="#cli_trace_tls" id="cli_trace_tls">#</a></span></h4><p class="tip_wrap" data-item_id="trace_tls"></p>
+<div class="api_metadata">
+<span>新增于: v12.2.0</span>
+</div>
+<p>Prints TLS packet trace information to <code>stderr</code>. This can be used to debug TLS
+connection problems.</p>
+<h4><code>--trace-uncaught</code><span><a class="mark" href="#cli_trace_uncaught" id="cli_trace_uncaught">#</a></span></h4><p class="tip_wrap" data-item_id="trace_uncaught"></p>
+<div class="api_metadata">
+<span>新增于: v13.1.0</span>
+</div>
+<p>Print stack traces for uncaught exceptions; usually, the stack trace associated
+with the creation of an <code>Error</code> is printed, whereas this makes Node.js also
+print the stack trace associated with throwing the value (which does not need
+to be an <code>Error</code> instance).</p>
+<p>Enabling this option may affect garbage collection behavior negatively.</p>
+<h4><code>--trace-warnings</code><span><a class="mark" href="#cli_trace_warnings" id="cli_trace_warnings">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="trace_warnings">
+                <a href="cli/trace_warnings.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>打印进程警告的堆栈跟踪（包括弃用警告）。</p>
+<h4><code>--track-heap-objects</code><span><a class="mark" href="#cli_track_heap_objects" id="cli_track_heap_objects">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="track_heap_objects">
+                <a href="cli/track_heap_objects.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v2.4.0</span>
+</div>
+<p>为堆快照追踪堆栈对象的分配。</p>
+<h4><code>--unhandled-rejections=mode</code><span><a class="mark" href="#cli_unhandled_rejections_mode" id="cli_unhandled_rejections_mode">#</a></span></h4><p class="tip_wrap" data-item_id="unhandled_rejections_mode"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v15.0.0</td>
+<td><p>Changed default mode to <code>throw</code>. Previously, a warning was emitted.</p></td></tr>
+<tr><td>v12.0.0, v10.17.0</td>
+<td><p><span>新增于: v12.0.0, v10.17.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>Using this flag allows to change what should happen when an unhandled rejection
+occurs. One of the following modes can be chosen:</p>
+<ul>
+<li><code>throw</code>: Emit <a href="process.html#process_event_unhandledrejection"><code>unhandledRejection</code></a>. If this hook is not set, raise the
+unhandled rejection as an uncaught exception. This is the default.</li>
+<li><code>strict</code>: Raise the unhandled rejection as an uncaught exception.</li>
+<li><code>warn</code>: Always trigger a warning, no matter if the <a href="process.html#process_event_unhandledrejection"><code>unhandledRejection</code></a>
+hook is set or not but do not print the deprecation warning.</li>
+<li><code>warn-with-error-code</code>: Emit <a href="process.html#process_event_unhandledrejection"><code>unhandledRejection</code></a>. If this hook is not
+set, trigger a warning, and set the process exit code to 1.</li>
+<li><code>none</code>: Silence all warnings.</li>
+</ul>
+<h4><code>--use-bundled-ca</code>, <code>--use-openssl-ca</code><span><a class="mark" href="#cli_use_bundled_ca_use_openssl_ca" id="cli_use_bundled_ca_use_openssl_ca">#</a></span></h4><p class="tip_wrap" data-item_id="use_bundled_ca_use_openssl_ca"></p>
+<div class="api_metadata">
+<span>新增于: v6.11.0</span>
+</div>
+<p>Use bundled Mozilla CA store as supplied by current Node.js version
+or use OpenSSL's default CA store. The default store is selectable
+at build-time.</p>
+<p>The bundled CA store, as supplied by Node.js, is a snapshot of Mozilla CA store
+that is fixed at release time. It is identical on all supported platforms.</p>
+<p>Using OpenSSL store allows for external modifications of the store. For most
+Linux and BSD distributions, this store is maintained by the distribution
+maintainers and system administrators. OpenSSL CA store location is dependent on
+configuration of the OpenSSL library but this can be altered at runtime using
+environment variables.</p>
+<p>See <code>SSL_CERT_DIR</code> and <code>SSL_CERT_FILE</code>.</p>
+<h4><code>--use-largepages=mode</code><span><a class="mark" href="#cli_use_largepages_mode" id="cli_use_largepages_mode">#</a></span></h4><p class="tip_wrap" data-item_id="use_largepages_mode"></p>
+<div class="api_metadata">
+<span>新增于: v13.6.0, v12.17.0</span>
+</div>
+<p>Re-map the Node.js static code to large memory pages at startup. If supported on
+the target system, this will cause the Node.js static code to be moved onto 2
+MiB pages instead of 4 KiB pages.</p>
+<p>The following values are valid for <code>mode</code>:</p>
+<ul>
+<li><code>off</code>: No mapping will be attempted. This is the default.</li>
+<li><code>on</code>: If supported by the OS, mapping will be attempted. Failure to map will
+be ignored and a message will be printed to standard error.</li>
+<li><code>silent</code>: If supported by the OS, mapping will be attempted. Failure to map
+will be ignored and will not be reported.</li>
+</ul>
+<h4><code>--v8-options</code><span><a class="mark" href="#cli_v8_options" id="cli_v8_options">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="v8_options">
+                <a href="cli/v8_options.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.3</span>
+</div>
+<p>打印 V8 命令行选项。</p>
+<h4><code>--v8-pool-size=num</code><span><a class="mark" href="#cli_v8_pool_size_num" id="cli_v8_pool_size_num">#</a></span></h4><p class="tip_wrap" data-item_id="v8_pool_size_num"></p>
+<div class="api_metadata">
+<span>新增于: v5.10.0</span>
+</div>
+<p>Set V8's thread pool size which will be used to allocate background jobs.</p>
+<p>If set to <code>0</code> then V8 will choose an appropriate size of the thread pool based
+on the number of online processors.</p>
+<p>If the value provided is larger than V8's maximum, then the largest value
+will be chosen.</p>
+<h4><code>--zero-fill-buffers</code><span><a class="mark" href="#cli_zero_fill_buffers" id="cli_zero_fill_buffers">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="zero_fill_buffers">
+                <a href="cli/zero_fill_buffers.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v6.0.0</span>
+</div>
+<p>自动用 0 填充所有新分配的 <a href="buffer.html#buffer_class_buffer"><code>Buffer</code></a> 和 <a href="buffer.html#buffer_class_slowbuffer"><code>SlowBuffer</code></a> 实例。</p>
+<h4><code>-c</code>, <code>--check</code><span><a class="mark" href="#cli_c_check" id="cli_c_check">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="c_check">
+                <a href="cli/c_check.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v10.0.0</td>
+<td><p>The <code>--require</code> option is now supported when checking a file.</p></td></tr>
+<tr><td>v5.0.0, v4.2.0</td>
+<td><p><span>新增于: v5.0.0, v4.2.0</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>在不执行的情况下，对脚本进行语法检查。</p>
+<h4><code>-e</code>, <code>--eval "script"</code><span><a class="mark" href="#cli_e_eval_script" id="cli_e_eval_script">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="e_eval_script">
+                <a href="cli/e_eval_script.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v5.11.0</td>
+<td><p>Built-in libraries are now available as predefined variables.</p></td></tr>
+<tr><td>v0.5.2</td>
+<td><p><span>新增于: v0.5.2</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>把跟随的参数作为 JavaScript 来执行。
+在 REPL 中预定义的模块也可以在 <code>script</code> 中使用。</p>
+<p>在 Windows 上，使用 <code>cmd.exe</code> 单引号将会无法正常工作，因为它只识别双引号 <code>"</code>。
+在 Powershell 或 Git bash 中，<code>'</code> 和 <code>"</code> 都可用。</p>
+<h4><code>-h</code>, <code>--help</code><span><a class="mark" href="#cli_h_help" id="cli_h_help">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="h_help">
+                <a href="cli/h_help.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.3</span>
+</div>
+<p>打印 node 的命令行选项。
+此选项的输出不如本文档详细。</p>
+<h4><code>-i</code>, <code>--interactive</code><span><a class="mark" href="#cli_i_interactive" id="cli_i_interactive">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="i_interactive">
+                <a href="cli/i_interactive.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.7.7</span>
+</div>
+<p>打开 REPL，即使 stdin 看起来不像终端。</p>
+<h4><code>-p</code>, <code>--print "script"</code><span><a class="mark" href="#cli_p_print_script" id="cli_p_print_script">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="p_print_script">
+                <a href="cli/p_print_script.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v5.11.0</td>
+<td><p>Built-in libraries are now available as predefined variables.</p></td></tr>
+<tr><td>v0.6.4</td>
+<td><p><span>新增于: v0.6.4</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>与 <code>-e</code> 相同，但会打印结果。</p>
+<h4><code>-r</code>, <code>--require module</code><span><a class="mark" href="#cli_r_require_module" id="cli_r_require_module">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="r_require_module">
+                <a href="cli/r_require_module.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v1.6.0</span>
+</div>
+<p>在启动时预加载指定的模块。</p>
+<p>遵循 <code>require()</code> 的模块解析规则。
+<code>module</code> 可以是一个文件的路径，或一个 node 模块名称。</p>
+<h4><code>-v</code>, <code>--version</code><span><a class="mark" href="#cli_v_version" id="cli_v_version">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="v_version">
+                <a href="cli/v_version.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.3</span>
+</div>
+<p>打印 node 的版本号。</p>
+</section><section><h3>环境变量<span><a class="mark" href="#cli_environment_variables" id="cli_environment_variables">#</a></span></h3>
+<h4><code>FORCE_COLOR=[1, 2, 3]</code><span><a class="mark" href="#cli_force_color_1_2_3" id="cli_force_color_1_2_3">#</a></span></h4><p class="tip_wrap" data-item_id="force_color_1_2_3"></p>
+<p>The <code>FORCE_COLOR</code> environment variable is used to
+enable ANSI colorized output. The value may be:</p>
+<ul>
+<li><code>1</code>, <code>true</code>, or the empty string <code>''</code> indicate 16-color support,</li>
+<li><code>2</code> to indicate 256-color support, or</li>
+<li><code>3</code> to indicate 16 million-color support.</li>
+</ul>
+<p>When <code>FORCE_COLOR</code> is used and set to a supported value, both the <code>NO_COLOR</code>,
+and <code>NODE_DISABLE_COLORS</code> environment variables are ignored.</p>
+<p>Any other value will result in colorized output being disabled.</p>
+<h4><code>NODE_DEBUG=module[,…]</code><span><a class="mark" href="#cli_node_debug_module" id="cli_node_debug_module">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_debug_module">
+                <a href="cli/node_debug_module.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.32</span>
+</div>
+<p>以 <code>','</code> 分隔的应该打印调试信息的核心模块列表。</p>
+<h4><code>NODE_DEBUG_NATIVE=module[,…]</code><span><a class="mark" href="#cli_node_debug_native_module" id="cli_node_debug_native_module">#</a></span></h4><p class="tip_wrap" data-item_id="node_debug_native_module"></p>
+<p><code>','</code>-separated list of core C++ modules that should print debug information.</p>
+<h4><code>NODE_DISABLE_COLORS=1</code><span><a class="mark" href="#cli_node_disable_colors_1" id="cli_node_disable_colors_1">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_disable_colors_1">
+                <a href="cli/node_disable_colors_1.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.3.0</span>
+</div>
+<p>当有设置时，不会在 REPL 中使用颜色。</p>
+<h4><code>NODE_EXTRA_CA_CERTS=file</code><span><a class="mark" href="#cli_node_extra_ca_certs_file" id="cli_node_extra_ca_certs_file">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_extra_ca_certs_file">
+                <a href="cli/node_extra_ca_certs_file.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v7.3.0</span>
+</div>
+<p>当设置了此选项时，根 CA 证书（如 VeriSign）会被 <code>file</code> 指定的证书扩展。
+文件应该包括一个或多个可信的 PEM 格式的证书。
+如果文件丢失或有缺陷，则 <a href="process.html#process_process_emitwarning_warning_type_code_ctor"><code>process.emitWarning()</code></a> 会触发一个消息。</p>
+<p>当一个 TLS 或 HTTPS 的客户端或服务器的 <code>ca</code> 选项的属性被显式地指定时，则指定的证书不会被使用。</p>
+<p>当 <code>node</code> 以 setuid root 运行或设置了 Linux 文件功能时，将会忽略此环境变量。</p>
+<h4><code>NODE_ICU_DATA=file</code><span><a class="mark" href="#cli_node_icu_data_file" id="cli_node_icu_data_file">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_icu_data_file">
+                <a href="cli/node_icu_data_file.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.11.15</span>
+</div>
+<p>ICU（<code>Intl</code> 对象）数据的数据路径。
+当使用 <code>small-icu</code> 编译时，扩展链接的数据。</p>
+<h4><code>NODE_NO_WARNINGS=1</code><span><a class="mark" href="#cli_node_no_warnings_1" id="cli_node_no_warnings_1">#</a></span></h4><p class="tip_wrap" data-item_id="node_no_warnings_1"></p>
+<div class="api_metadata">
+<span>新增于: v6.11.0</span>
+</div>
+<p>When set to <code>1</code>, process warnings are silenced.</p>
+<h4><code>NODE_OPTIONS=options...</code><span><a class="mark" href="#cli_node_options_options" id="cli_node_options_options">#</a></span></h4><p class="tip_wrap" data-item_id="node_options_options"></p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>A space-separated list of command-line options. <code>options...</code> are interpreted
+before command-line options, so command-line options will override or
+compound after anything in <code>options...</code>. Node.js will exit with an error if
+an option that is not allowed in the environment is used, such as <code>-p</code> or a
+script file.</p>
+<p>If an option value contains a space, it can be escaped using double quotes:</p>
+<pre><code class="language-bash">NODE_OPTIONS=<span class="hljs-string">'--require "./my path/file.js"'</span></code></pre>
+<p>A singleton flag passed as a command-line option will override the same flag
+passed into <code>NODE_OPTIONS</code>:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># The inspector will be available on port 5555</span>
+NODE_OPTIONS=<span class="hljs-string">'--inspect=localhost:4444'</span> node --inspect=localhost:5555</code></pre>
+<p>A flag that can be passed multiple times will be treated as if its
+<code>NODE_OPTIONS</code> instances were passed first, and then its command-line
+instances afterwards:</p>
+<pre><code class="language-bash">NODE_OPTIONS=<span class="hljs-string">'--require "./a.js"'</span> node --require <span class="hljs-string">"./b.js"</span>
+<span class="hljs-comment"># is equivalent to:</span>
+node --require <span class="hljs-string">"./a.js"</span> --require <span class="hljs-string">"./b.js"</span></code></pre>
+<p>Node.js options that are allowed are:</p>
+<!-- node-options-node start -->
+<ul>
+<li><code>--conditions</code>, <code>-C</code></li>
+<li><code>--diagnostic-dir</code></li>
+<li><code>--disable-proto</code></li>
+<li><code>--dns-result-order</code></li>
+<li><code>--enable-fips</code></li>
+<li><code>--enable-source-maps</code></li>
+<li><code>--experimental-abortcontroller</code></li>
+<li><code>--experimental-import-meta-resolve</code></li>
+<li><code>--experimental-json-modules</code></li>
+<li><code>--experimental-loader</code></li>
+<li><code>--experimental-modules</code></li>
+<li><code>--experimental-policy</code></li>
+<li><code>--experimental-repl-await</code></li>
+<li><code>--experimental-specifier-resolution</code></li>
+<li><code>--experimental-top-level-await</code></li>
+<li><code>--experimental-vm-modules</code></li>
+<li><code>--experimental-wasi-unstable-preview1</code></li>
+<li><code>--experimental-wasm-modules</code></li>
+<li><code>--force-context-aware</code></li>
+<li><code>--force-fips</code></li>
+<li><code>--frozen-intrinsics</code></li>
+<li><code>--heapsnapshot-near-heap-limit</code></li>
+<li><code>--heapsnapshot-signal</code></li>
+<li><code>--http-parser</code></li>
+<li><code>--icu-data-dir</code></li>
+<li><code>--input-type</code></li>
+<li><code>--insecure-http-parser</code></li>
+<li><code>--inspect-brk</code></li>
+<li><code>--inspect-port</code>, <code>--debug-port</code></li>
+<li><code>--inspect-publish-uid</code></li>
+<li><code>--inspect</code></li>
+<li><code>--max-http-header-size</code></li>
+<li><code>--napi-modules</code></li>
+<li><code>--no-deprecation</code></li>
+<li><code>--no-force-async-hooks-checks</code></li>
+<li><code>--no-warnings</code></li>
+<li><code>--node-memory-debug</code></li>
+<li><code>--openssl-config</code></li>
+<li><code>--pending-deprecation</code></li>
+<li><code>--policy-integrity</code></li>
+<li><code>--preserve-symlinks-main</code></li>
+<li><code>--preserve-symlinks</code></li>
+<li><code>--prof-process</code></li>
+<li><code>--redirect-warnings</code></li>
+<li><code>--report-compact</code></li>
+<li><code>--report-dir</code>, <code>--report-directory</code></li>
+<li><code>--report-filename</code></li>
+<li><code>--report-on-fatalerror</code></li>
+<li><code>--report-on-signal</code></li>
+<li><code>--report-signal</code></li>
+<li><code>--report-uncaught-exception</code></li>
+<li><code>--require</code>, <code>-r</code></li>
+<li><code>--secure-heap-min</code></li>
+<li><code>--secure-heap</code></li>
+<li><code>--throw-deprecation</code></li>
+<li><code>--title</code></li>
+<li><code>--tls-cipher-list</code></li>
+<li><code>--tls-keylog</code></li>
+<li><code>--tls-max-v1.2</code></li>
+<li><code>--tls-max-v1.3</code></li>
+<li><code>--tls-min-v1.0</code></li>
+<li><code>--tls-min-v1.1</code></li>
+<li><code>--tls-min-v1.2</code></li>
+<li><code>--tls-min-v1.3</code></li>
+<li><code>--trace-atomics-wait</code></li>
+<li><code>--trace-deprecation</code></li>
+<li><code>--trace-event-categories</code></li>
+<li><code>--trace-event-file-pattern</code></li>
+<li><code>--trace-events-enabled</code></li>
+<li><code>--trace-exit</code></li>
+<li><code>--trace-sigint</code></li>
+<li><code>--trace-sync-io</code></li>
+<li><code>--trace-tls</code></li>
+<li><code>--trace-uncaught</code></li>
+<li><code>--trace-warnings</code></li>
+<li><code>--track-heap-objects</code></li>
+<li><code>--unhandled-rejections</code></li>
+<li><code>--use-bundled-ca</code></li>
+<li><code>--use-largepages</code></li>
+<li><code>--use-openssl-ca</code></li>
+<li><code>--v8-pool-size</code></li>
+<li><code>--zero-fill-buffers</code></li>
+</ul>
+<!-- node-options-node end -->
+<p>V8 options that are allowed are:</p>
+<!-- node-options-v8 start -->
+<ul>
+<li><code>--abort-on-uncaught-exception</code></li>
+<li><code>--disallow-code-generation-from-strings</code></li>
+<li><code>--huge-max-old-generation-size</code></li>
+<li><code>--interpreted-frames-native-stack</code></li>
+<li><code>--jitless</code></li>
+<li><code>--max-old-space-size</code></li>
+<li><code>--perf-basic-prof-only-functions</code></li>
+<li><code>--perf-basic-prof</code></li>
+<li><code>--perf-prof-unwinding-info</code></li>
+<li><code>--perf-prof</code></li>
+<li><code>--stack-trace-limit</code></li>
+</ul>
+<!-- node-options-v8 end -->
+<p><code>--perf-basic-prof-only-functions</code>, <code>--perf-basic-prof</code>,
+<code>--perf-prof-unwinding-info</code>, and <code>--perf-prof</code> are only available on Linux.</p>
+<h4><code>NODE_PATH=path[:…]</code><span><a class="mark" href="#cli_node_path_path" id="cli_node_path_path">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_path_path">
+                <a href="cli/node_path_path.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v0.1.32</span>
+</div>
+<p>以 <code>':'</code> 分隔的有模块搜索路径作前缀的目录列表。</p>
+<p>在 Windows 中，列表是用 <code>';'</code> 分隔的。</p>
+<h4><code>NODE_PENDING_DEPRECATION=1</code><span><a class="mark" href="#cli_node_pending_deprecation_1" id="cli_node_pending_deprecation_1">#</a></span></h4><p class="tip_wrap" data-item_id="node_pending_deprecation_1"></p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>When set to <code>1</code>, emit pending deprecation warnings.</p>
+<p>Pending deprecations are generally identical to a runtime deprecation with the
+notable exception that they are turned <em>off</em> by default and will not be emitted
+unless either the <code>--pending-deprecation</code> command-line flag, or the
+<code>NODE_PENDING_DEPRECATION=1</code> environment variable, is set. Pending deprecations
+are used to provide a kind of selective "early warning" mechanism that
+developers may leverage to detect deprecated API usage.</p>
+<h4><code>NODE_PENDING_PIPE_INSTANCES=instances</code><span><a class="mark" href="#cli_node_pending_pipe_instances_instances" id="cli_node_pending_pipe_instances_instances">#</a></span></h4><p class="tip_wrap" data-item_id="node_pending_pipe_instances_instances"></p>
+<p>Set the number of pending pipe instance handles when the pipe server is waiting
+for connections. This setting applies to Windows only.</p>
+<h4><code>NODE_PRESERVE_SYMLINKS=1</code><span><a class="mark" href="#cli_node_preserve_symlinks_1" id="cli_node_preserve_symlinks_1">#</a></span></h4><p class="tip_wrap" data-item_id="node_preserve_symlinks_1"></p>
+<div class="api_metadata">
+<span>新增于: v7.1.0</span>
+</div>
+<p>When set to <code>1</code>, instructs the module loader to preserve symbolic links when
+resolving and caching modules.</p>
+<h4><code>NODE_REDIRECT_WARNINGS=file</code><span><a class="mark" href="#cli_node_redirect_warnings_file" id="cli_node_redirect_warnings_file">#</a></span></h4><p class="tip_wrap" data-item_id="node_redirect_warnings_file"></p>
+<div class="api_metadata">
+<span>新增于: v8.0.0</span>
+</div>
+<p>When set, process warnings will be emitted to the given file instead of
+printing to stderr. The file will be created if it does not exist, and will be
+appended to if it does. If an error occurs while attempting to write the
+warning to the file, the warning will be written to stderr instead. This is
+equivalent to using the <code>--redirect-warnings=file</code> command-line flag.</p>
+<h4><code>NODE_REPL_HISTORY=file</code><span><a class="mark" href="#cli_node_repl_history_file" id="cli_node_repl_history_file">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="node_repl_history_file">
+                <a href="cli/node_repl_history_file.html" class="tip_trans">中英对照</a>
+                </p>
+<div class="api_metadata">
+<span>新增于: v3.0.0</span>
+</div>
+<p>用于存储持久性的 REPL 历史记录的文件的路径。
+默认路径是 <code>~/.node_repl_history</code>，可被该变量覆盖。
+将值设为空字符串（<code>''</code> 或 <code>' '</code>）会禁用持久性的 REPL 历史记录。</p>
+<h4><code>NODE_REPL_EXTERNAL_MODULE=file</code><span><a class="mark" href="#cli_node_repl_external_module_file" id="cli_node_repl_external_module_file">#</a></span></h4><p class="tip_wrap" data-item_id="node_repl_external_module_file"></p>
+<div class="api_metadata">
+<span>新增于: v13.0.0, v12.16.0</span>
+</div>
+<p>Path to a Node.js module which will be loaded in place of the built-in REPL.
+Overriding this value to an empty string (<code>''</code>) will use the built-in REPL.</p>
+<h4><code>NODE_SKIP_PLATFORM_CHECK=value</code><span><a class="mark" href="#cli_node_skip_platform_check_value" id="cli_node_skip_platform_check_value">#</a></span></h4><p class="tip_wrap" data-item_id="node_skip_platform_check_value"></p>
+<div class="api_metadata">
+<span>新增于: v14.5.0</span>
+</div>
+<p>If <code>value</code> equals <code>'1'</code>, the check for a supported platform is skipped during
+Node.js startup. Node.js might not execute correctly. Any issues encountered
+on unsupported platforms will not be fixed.</p>
+<h4><code>NODE_TLS_REJECT_UNAUTHORIZED=value</code><span><a class="mark" href="#cli_node_tls_reject_unauthorized_value" id="cli_node_tls_reject_unauthorized_value">#</a></span></h4><p class="tip_wrap" data-item_id="node_tls_reject_unauthorized_value"></p>
+<p>If <code>value</code> equals <code>'0'</code>, certificate validation is disabled for TLS connections.
+This makes TLS, and HTTPS by extension, insecure. The use of this environment
+variable is strongly discouraged.</p>
+<h4><code>NODE_V8_COVERAGE=dir</code><span><a class="mark" href="#cli_node_v8_coverage_dir" id="cli_node_v8_coverage_dir">#</a></span></h4><p class="tip_wrap" data-item_id="node_v8_coverage_dir"></p>
+<p>When set, Node.js will begin outputting <a href="http://url.nodejs.cn/fXHha2">V8 JavaScript code coverage</a> and
+<a href="http://url.nodejs.cn/GmS6fa">Source Map</a> data to the directory provided as an argument (coverage
+information is written as JSON to files with a <code>coverage</code> prefix).</p>
+<p><code>NODE_V8_COVERAGE</code> will automatically propagate to subprocesses, making it
+easier to instrument applications that call the <code>child_process.spawn()</code> family
+of functions. <code>NODE_V8_COVERAGE</code> can be set to an empty string, to prevent
+propagation.</p>
+<h5>覆盖范围的输出<span><a class="mark" href="#cli_coverage_output" id="cli_coverage_output">#</a></span></h5><p class="tip_wrap" data-item_id="coverage_output"></p>
+<p>Coverage is output as an array of <a href="http://url.nodejs.cn/mJFTWA">ScriptCoverage</a> objects on the top-level
+key <code>result</code>:</p>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"result"</span>: [
+    {
+      <span class="hljs-attr">"scriptId"</span>: <span class="hljs-string">"67"</span>,
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"internal/tty.js"</span>,
+      <span class="hljs-attr">"functions"</span>: []
+    }
+  ]
+}</code></pre>
+<h5>源码映射的缓存<span><a class="mark" href="#cli_source_map_cache" id="cli_source_map_cache">#</a></span></h5><p class="tip_wrap" data-item_id="source_map_cache"></p>
+<p></p><div class="api_stability api_stability_1"><a href="documentation.html#documentation_stability_index">稳定性: 1</a> - 实验</div><p></p>
+<p>If found, source map data is appended to the top-level key <code>source-map-cache</code>
+on the JSON coverage object.</p>
+<p><code>source-map-cache</code> is an object with keys representing the files source maps
+were extracted from, and values which include the raw source-map URL
+(in the key <code>url</code>), the parsed Source Map v3 information (in the key <code>data</code>),
+and the line lengths of the source file (in the key <code>lineLengths</code>).</p>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"result"</span>: [
+    {
+      <span class="hljs-attr">"scriptId"</span>: <span class="hljs-string">"68"</span>,
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"file:///absolute/path/to/source.js"</span>,
+      <span class="hljs-attr">"functions"</span>: []
+    }
+  ],
+  <span class="hljs-attr">"source-map-cache"</span>: {
+    <span class="hljs-attr">"file:///absolute/path/to/source.js"</span>: {
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"./path-to-map.json"</span>,
+      <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"version"</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">"sources"</span>: [
+          <span class="hljs-string">"file:///absolute/path/to/original.js"</span>
+        ],
+        <span class="hljs-attr">"names"</span>: [
+          <span class="hljs-string">"Foo"</span>,
+          <span class="hljs-string">"console"</span>,
+          <span class="hljs-string">"info"</span>
+        ],
+        <span class="hljs-attr">"mappings"</span>: <span class="hljs-string">"MAAMA,IACJC,YAAaC"</span>,
+        <span class="hljs-attr">"sourceRoot"</span>: <span class="hljs-string">"./"</span>
+      },
+      <span class="hljs-attr">"lineLengths"</span>: [
+        <span class="hljs-number">13</span>,
+        <span class="hljs-number">62</span>,
+        <span class="hljs-number">38</span>,
+        <span class="hljs-number">27</span>
+      ]
+    }
+  }
+}</code></pre>
+<h4><code>NO_COLOR=&lt;any&gt;</code><span><a class="mark" href="#cli_no_color_any" id="cli_no_color_any">#</a></span></h4><p class="tip_wrap" data-item_id="no_color_any"></p>
+<p><a href="http://url.nodejs.cn/Aa21ZM"><code>NO_COLOR</code></a>  is an alias for <code>NODE_DISABLE_COLORS</code>. The value of the
+environment variable is arbitrary.</p>
+<h4><code>OPENSSL_CONF=file</code><span><a class="mark" href="#cli_openssl_conf_file" id="cli_openssl_conf_file">#</a></span></h4><p class="tip_wrap" data-item_id="openssl_conf_file"></p>
+<div class="api_metadata">
+<span>新增于: v6.11.0</span>
+</div>
+<p>Load an OpenSSL configuration file on startup. Among other uses, this can be
+used to enable FIPS-compliant crypto if Node.js is built with <code>./configure --openssl-fips</code>.</p>
+<p>If the <a href="cli.html#cli_openssl_config_file"><code>--openssl-config</code></a> command-line option is used, the environment
+variable is ignored.</p>
+<h4><code>SSL_CERT_DIR=dir</code><span><a class="mark" href="#cli_ssl_cert_dir_dir" id="cli_ssl_cert_dir_dir">#</a></span></h4><p class="tip_wrap" data-item_id="ssl_cert_dir_dir"></p>
+<div class="api_metadata">
+<span>新增于: v7.7.0</span>
+</div>
+<p>If <code>--use-openssl-ca</code> is enabled, this overrides and sets OpenSSL's directory
+containing trusted certificates.</p>
+<p>Be aware that unless the child environment is explicitly set, this environment
+variable will be inherited by any child processes, and if they use OpenSSL, it
+may cause them to trust the same CAs as node.</p>
+<h4><code>SSL_CERT_FILE=file</code><span><a class="mark" href="#cli_ssl_cert_file_file" id="cli_ssl_cert_file_file">#</a></span></h4><p class="tip_wrap" data-item_id="ssl_cert_file_file"></p>
+<div class="api_metadata">
+<span>新增于: v7.7.0</span>
+</div>
+<p>If <code>--use-openssl-ca</code> is enabled, this overrides and sets OpenSSL's file
+containing trusted certificates.</p>
+<p>Be aware that unless the child environment is explicitly set, this environment
+variable will be inherited by any child processes, and if they use OpenSSL, it
+may cause them to trust the same CAs as node.</p>
+<h4><code>TZ</code><span><a class="mark" href="#cli_tz" id="cli_tz">#</a></span></h4><p class="tip_wrap" data-item_id="tz"></p>
+<div class="api_metadata">
+<details class="changelog"><summary>版本历史</summary>
+<table>
+<tbody><tr><th>版本</th><th>变更</th></tr>
+<tr><td>v16.2.0</td>
+<td><p>Changing the TZ variable using process.env.TZ = changes the timezone on Windows as well.</p></td></tr>
+<tr><td>v13.0.0</td>
+<td><p>Changing the TZ variable using process.env.TZ = changes the timezone on POSIX systems.</p></td></tr>
+<tr><td>v0.0.1</td>
+<td><p><span>新增于: v0.0.1</span></p></td></tr>
+</tbody></table>
+</details>
+</div>
+<p>The <code>TZ</code> environment variable is used to specify the timezone configuration.</p>
+<p>While the Node.js support for <code>TZ</code> will not handle all of the various
+<a href="http://url.nodejs.cn/EpTKJy">ways that <code>TZ</code> is handled in other environments</a>, it will support basic
+<a href="http://url.nodejs.cn/JcP41a">timezone IDs</a> (such as <code>'Etc/UTC'</code>, <code>'Europe/Paris'</code> or <code>'America/New_York'</code>.
+It may support a few other abbreviations or aliases, but these are strongly
+discouraged and not guaranteed.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> TZ=Europe/Dublin node -pe <span class="hljs-string">"new Date().toString()"</span></span>
+Wed May 12 2021 20:30:48 GMT+0100 (Irish Standard Time)</code></pre>
+<h4><code>UV_THREADPOOL_SIZE=size</code><span><a class="mark" href="#cli_uv_threadpool_size_size" id="cli_uv_threadpool_size_size">#</a></span></h4><p class="tip_wrap" data-item_id="uv_threadpool_size_size"></p>
+<p>Set the number of threads used in libuv's threadpool to <code>size</code> threads.</p>
+<p>Asynchronous system APIs are used by Node.js whenever possible, but where they
+do not exist, libuv's threadpool is used to create asynchronous node APIs based
+on synchronous system APIs. Node.js APIs that use the threadpool are:</p>
+<ul>
+<li>all <code>fs</code> APIs, other than the file watcher APIs and those that are explicitly
+synchronous</li>
+<li>asynchronous crypto APIs such as <code>crypto.pbkdf2()</code>, <code>crypto.scrypt()</code>,
+<code>crypto.randomBytes()</code>, <code>crypto.randomFill()</code>, <code>crypto.generateKeyPair()</code></li>
+<li><code>dns.lookup()</code></li>
+<li>all <code>zlib</code> APIs, other than those that are explicitly synchronous</li>
+</ul>
+<p>Because libuv's threadpool has a fixed size, it means that if for whatever
+reason any of these APIs takes a long time, other (seemingly unrelated) APIs
+that run in libuv's threadpool will experience degraded performance. In order to
+mitigate this issue, one potential solution is to increase the size of libuv's
+threadpool by setting the <code>'UV_THREADPOOL_SIZE'</code> environment variable to a value
+greater than <code>4</code> (its current default value). For more information, see the
+<a href="http://url.nodejs.cn/TEvh5f">libuv threadpool documentation</a>.</p>
+</section><section><h3>有用的 V8 选项<span><a class="mark" href="#cli_useful_v8_options" id="cli_useful_v8_options">#</a></span></h3><p class="tip_wrap" data-item_id="useful_v8_options"></p>
+<p>V8 has its own set of CLI options. Any V8 CLI option that is provided to <code>node</code>
+will be passed on to V8 to handle. V8's options have <em>no stability guarantee</em>.
+The V8 team themselves don't consider them to be part of their formal API,
+and reserve the right to change them at any time. Likewise, they are not
+covered by the Node.js stability guarantees. Many of the V8
+options are of interest only to V8 developers. Despite this, there is a small
+set of V8 options that are widely applicable to Node.js, and they are
+documented here:</p>
+<h4>--max-old-space-size=SIZE<span><a class="mark" href="#cli_max_old_space_size_size_in_megabytes" id="cli_max_old_space_size_size_in_megabytes">#</a></span></h4><p class="tip_wrap" data-item_id="max_old_space_size_size_in_megabytes"></p>
+<p>Sets the max memory size of V8's old memory section. As memory
+consumption approaches the limit, V8 will spend more time on
+garbage collection in an effort to free unused memory.</p>
+<p>On a machine with 2GB of memory, consider setting this to
+1536 (1.5GB) to leave some memory for other uses and avoid swapping.</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --max-old-space-size=1536 index.js</span></code></pre></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>

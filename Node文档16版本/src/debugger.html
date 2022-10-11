@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>debugger 调试器 | Node.js API 文档</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="//static.nodejs.cn/_static/img/favicon.png">
+  <link href="css/api.css?1625411138089" rel="stylesheet">
+</head>
+
+<body class="alt apidoc" id="page_api">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" rel="nofollow">
+          Node.js 中文网
+        </a>
+
+      </div>
+      <!-- <ul>
+          <li><a href="./" class="nav-documentation">v16.4.1</a></li>
+        </ul> -->
+      <div id="biz_nav"><a title="云服务器" target="_blank" rel="nofollow"><img></a></div>
+      <div class="line"></div>
+      <ul>
+<li><a href="assert.html" rel="nofollow">assert<span class="api_nav_cn_name">断言</span></a></li>
+<li><a href="async_hooks.html" rel="nofollow">async_hooks<span class="api_nav_cn_name">异步钩子</span></a></li>
+<li><a href="buffer.html" rel="nofollow">Buffer<span class="api_nav_cn_name">缓冲区</span></a></li>
+<li><a href="child_process.html" rel="nofollow">child_process<span class="api_nav_cn_name">子进程</span></a></li>
+<li><a href="cluster.html" rel="nofollow">cluster<span class="api_nav_cn_name">集群</span></a></li>
+<li><a href="console.html" rel="nofollow">console<span class="api_nav_cn_name">控制台</span></a></li>
+<li><a href="crypto.html" rel="nofollow">crypto<span class="api_nav_cn_name">加密</span></a></li>
+<li><a href="debugger.html" rel="nofollow">debugger<span class="api_nav_cn_name">调试器</span></a></li>
+<li><a href="dgram.html" rel="nofollow">dgram<span class="api_nav_cn_name">数据报</span></a></li>
+<li><a href="diagnostics_channel.html" rel="nofollow"><span style="font-size:14px;">diagnostics_channel</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:2px;">诊断通道</span></a></li>
+<li><a href="dns.html" rel="nofollow">dns<span class="api_nav_cn_name">域名服务器</span></a></li>
+<li><a href="domain.html" rel="nofollow">domain<span class="api_nav_cn_name">域</span></a></li>
+<li><a href="errors.html" rel="nofollow">Error<span class="api_nav_cn_name">错误</span></a></li>
+<li><a href="events.html" rel="nofollow">events<span class="api_nav_cn_name">事件触发器</span></a></li>
+<li><a href="fs.html" rel="nofollow">fs<span class="api_nav_cn_name">文件系统</span></a></li>
+<li><a href="globals.html" rel="nofollow">global<span class="api_nav_cn_name">全局变量</span></a></li>
+<li><a href="http.html" rel="nofollow">http<span class="api_nav_cn_name">超文本传输协议</span></a></li>
+<li><a href="http2.html" rel="nofollow">http2<span class="api_nav_cn_name">超文本传输协议2.0</span></a></li>
+<li><a href="https.html" rel="nofollow">https<span class="api_nav_cn_name">安全超文本传输协议</span></a></li>
+<li><a href="inspector.html" rel="nofollow">inspector<span class="api_nav_cn_name">检查器</span></a></li>
+<li><a href="intl.html" rel="nofollow">Intl<span class="api_nav_cn_name">国际化</span></a></li>
+<li><a href="module.html" rel="nofollow">module<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="net.html" rel="nofollow">net<span class="api_nav_cn_name">网络</span></a></li>
+<li><a href="os.html" rel="nofollow">os<span class="api_nav_cn_name">操作系统</span></a></li>
+<li><a href="path.html" rel="nofollow">path<span class="api_nav_cn_name">路径</span></a></li>
+<li><a href="perf_hooks.html" rel="nofollow">perf_hooks<span class="api_nav_cn_name">性能钩子</span></a></li>
+<li><a href="process.html" rel="nofollow">process<span class="api_nav_cn_name">进程</span></a></li>
+<li><a href="punycode.html" rel="nofollow">punycode<span class="api_nav_cn_name">域名代码</span></a></li>
+<li><a href="querystring.html" rel="nofollow">querystring<span class="api_nav_cn_name">查询字符串</span></a></li>
+<li><a href="readline.html" rel="nofollow">readline<span class="api_nav_cn_name">逐行读取</span></a></li>
+<li><a href="repl.html" rel="nofollow">repl<span class="api_nav_cn_name">交互式解释器</span></a></li>
+<li><a href="report.html" rel="nofollow">report<span class="api_nav_cn_name">诊断报告</span></a></li>
+<li><a href="stream.html" rel="nofollow">stream<span class="api_nav_cn_name">流</span></a></li>
+<li><a href="string_decoder.html" rel="nofollow"><span style="font-size:15px;">string_decoder</span><span class="api_nav_cn_name" style="font-size:12px;padding-left:6px;">字符串解码器</span></a></li>
+<li><a href="timers.html" rel="nofollow">timer<span class="api_nav_cn_name">定时器</span></a></li>
+<li><a href="tls.html" rel="nofollow">tls<span class="api_nav_cn_name">安全传输层</span></a></li>
+<li><a href="tracing.html" rel="nofollow">trace_events<span class="api_nav_cn_name">跟踪事件</span></a></li>
+<li><a href="tty.html" rel="nofollow">tty<span class="api_nav_cn_name">终端</span></a></li>
+<li><a href="url.html" rel="nofollow">url<span class="api_nav_cn_name">网址</span></a></li>
+<li><a href="util.html" rel="nofollow">util<span class="api_nav_cn_name">实用工具</span></a></li>
+<li><a href="v8.html" rel="nofollow">v8<span class="api_nav_cn_name">引擎</span></a></li>
+<li><a href="vm.html" rel="nofollow">vm<span class="api_nav_cn_name">虚拟机</span></a></li>
+<li><a href="wasi.html" rel="nofollow">wasi<span class="api_nav_cn_name">WebAssembly系统接口</span></a></li>
+<li><a href="webcrypto.html" rel="nofollow">webcrypto<span class="api_nav_cn_name">Web加密</span></a></li>
+<li><a href="worker_threads.html" rel="nofollow">worker_threads<span class="api_nav_cn_name">工作线程</span></a></li>
+<li><a href="zlib.html" rel="nofollow">zlib<span class="api_nav_cn_name">压缩</span></a></li>
+</ul>
+<hr class="line">
+<ul>
+<li><a href="documentation.html" rel="nofollow">关于本文档</a></li>
+<li><a href="synopsis.html" rel="nofollow">用法与示例</a></li>
+<li><a href="cli.html" rel="nofollow">命令行选项</a></li>
+<li><a href="modules.html" rel="nofollow">CommonJS<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="esm.html" rel="nofollow">ECMAScript<span class="api_nav_cn_name">模块</span></a></li>
+<li><a href="packages.html" rel="nofollow">包模块</a></li>
+<li><a href="addons.html" rel="nofollow">C++<span class="api_nav_cn_name">插件</span></a></li>
+<li><a href="embedding.html" rel="nofollow">C++<span class="api_nav_cn_name">嵌入器</span></a></li>
+<li><a href="n-api.html" rel="nofollow">N-API</a></li>
+<li><a href="async_context.html" rel="nofollow">异步上下文跟踪</a></li>
+<li><a href="policy.html" rel="nofollow">安全策略</a></li>
+<li><a href="deprecations.html" rel="nofollow">弃用的<span class="api_nav_cn_name">API</span></a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="debugger" class="interior">
+      <header>
+        <div class="header-container">
+          <h1>Node.js v16.4.1 文档</h1>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark mode/light mode" aria-label="Toggle dark mode/light mode" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" height="24" width="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15A4.01 4.01 0 0111 18c0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41z"></path>
+              <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" height="24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="gtoc">
+          <ul>
+            <li>
+              <a href="./">返回文档首页</a>
+            </li>
+            <li>
+              <a href="http://api.nodejs.cn/">搜索</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </header>
+
+      <details id="toc" open=""><summary>目录</summary><ul>
+<li><span class="stability_2"><a href="#debugger_debugger">debugger 调试器</a></span>
+<ul>
+<li><a href="#debugger_watchers">监视器</a></li>
+<li><a href="#debugger_command_reference">命令参考手册</a>
+<ul>
+<li><a href="#debugger_stepping">单步执行</a></li>
+<li><a href="#debugger_breakpoints">断点</a></li>
+<li><a href="#debugger_information">信息</a></li>
+<li><a href="#debugger_execution_control">执行的控制</a></li>
+<li><a href="#debugger_various">杂项</a></li>
+</ul>
+</li>
+<li><a href="#debugger_advanced_usage">高级用法</a>
+<ul>
+<li><a href="#debugger_v8_inspector_integration_for_node_js">用于Node.js的V8调试器的集成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details>
+
+      <!-- <div id="biz_content">
+          <a href="http://www.tp-shop.cn/index.php?http_referer=node" target="_blank">
+            <img src="//static.nodejs.cn/_static/img/ad/api_content_tpshop.jpg" />
+          </a>
+        </div> -->
+
+      <div id="apicontent">
+        <h2>debugger 调试器<span><a class="mark" href="#debugger_debugger" id="debugger_debugger">#</a></span></h2><p class="tip_wrap" data-show_trans="1" data-item_id="debugger">
+                <a href="debugger/debugger.html" class="tip_trans">中英对照</a>
+                </p>
+<!--introduced_in=v0.9.12-->
+<p></p><div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> - 稳定</div><p></p>
+<!-- type=misc -->
+<p>Node.js 包含了一个进程外的调试实用程序，可通过 <a href="debugger.html#debugger_v8_inspector_integration_for_node_js">V8 检查器</a>或内置的调试客户端访问。
+要使用它，请使用 <code>inspect</code> 参数启动 Node.js，并带上要调试的脚本的路径。
+如果出现提示符，则表明调试器已成功启动：</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node inspect myscript.js</span>
+&lt; Debugger listening on ws://127.0.0.1:9229/80e7a814-7cd3-49fb-921a-2e02228cd5ba
+&lt; For help, see: https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in myscript.js:1
+<span class="hljs-meta">&gt;</span><span class="bash"> 1 (<span class="hljs-keyword">function</span> (exports, require, module, __filename, __dirname) { global.x = 5;</span>
+  2 setTimeout(() =&gt; {
+  3   console.log('world');
+<span class="hljs-meta">debug&gt;</span></code></pre>
+<p>Node.js 的调试器客户端不是一个具有全部特性的调试器，但可以进行简单的单步执行和调试。</p>
+<p>把 <code>debugger;</code> 语句插入到脚本的源代码，则将会在代码中的该位置启用一个断点：</p>
+<!-- eslint-disable no-debugger -->
+<pre><code class="language-js"><span class="hljs-comment">// myscript.js</span>
+<span class="hljs-built_in">global</span>.x = <span class="hljs-number">5</span>;
+<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">debugger</span>;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'世界'</span>);
+}, <span class="hljs-number">1000</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'你好'</span>);</code></pre>
+<p>一旦执行调试器，则将会在第 3 行出现一个断点：</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node inspect myscript.js</span>
+&lt; Debugger listening on ws://127.0.0.1:9229/80e7a814-7cd3-49fb-921a-2e02228cd5ba
+&lt; For help, see: https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in myscript.js:1
+<span class="hljs-meta">&gt;</span><span class="bash"> 1 (<span class="hljs-keyword">function</span> (exports, require, module, __filename, __dirname) { global.x = 5;</span>
+  2 setTimeout(() =&gt; {
+  3   debugger;
+<span class="hljs-meta">debug&gt;</span><span class="bash"> cont</span>
+&lt; 你好
+break in myscript.js:3
+  1 (function (exports, require, module, __filename, __dirname) { global.x = 5;
+  2 setTimeout(() =&gt; {
+<span class="hljs-meta">&gt;</span><span class="bash"> 3   debugger;</span>
+  4   console.log('世界');
+  5 }, 1000);
+<span class="hljs-meta">debug&gt;</span><span class="bash"> next</span>
+break in myscript.js:4
+  2 setTimeout(() =&gt; {
+  3   debugger;
+<span class="hljs-meta">&gt;</span><span class="bash"> 4   console.log(<span class="hljs-string">'世界'</span>);</span>
+  5 }, 1000);
+  6 console.log('你好');
+<span class="hljs-meta">debug&gt;</span><span class="bash"> repl</span>
+Press Ctrl + C to leave debug repl
+<span class="hljs-meta">&gt;</span><span class="bash"> x</span>
+5
+<span class="hljs-meta">&gt;</span><span class="bash"> 2 + 2</span>
+4
+<span class="hljs-meta">debug&gt;</span><span class="bash"> next</span>
+&lt; 世界
+break in myscript.js:5
+  3   debugger;
+  4   console.log('世界');
+<span class="hljs-meta">&gt;</span><span class="bash"> 5 }, 1000);</span>
+  6 console.log('你好');
+  7
+<span class="hljs-meta">debug&gt;</span><span class="bash"> .<span class="hljs-built_in">exit</span></span></code></pre>
+<p><code>repl</code> 命令允许远程地运行代码。
+<code>next</code> 命令会单步进入下一行。
+键入 <code>help</code> 可以查看其他可用的命令。</p>
+<p>在不键入命令的情况下按 <code>enter</code> 键，则会重复上一个调试器命令。</p>
+<section><h3>监视器<span><a class="mark" href="#debugger_watchers" id="debugger_watchers">#</a></span></h3><p class="tip_wrap" data-show_trans="1" data-item_id="watchers">
+                <a href="debugger/watchers.html" class="tip_trans">中英对照</a>
+                </p>
+<p>当调试时，可以监视表达式和变量的值。
+在每个断点处，监视器列表中的每个表达式将会在当前上下文中被执行，并立刻显示在断点的源码列表之前。</p>
+<p>要开始监视表达式，则键入 <code>watch('my_expression')</code>。
+<code>watchers</code> 命令将会打印现役的监视器。
+要移除监视器，则键入 <code>unwatch('my_expression')</code>。</p>
+</section><section><h3>命令参考手册<span><a class="mark" href="#debugger_command_reference" id="debugger_command_reference">#</a></span></h3>
+<h4>单步执行<span><a class="mark" href="#debugger_stepping" id="debugger_stepping">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="stepping">
+                <a href="debugger/stepping.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>cont</code>, <code>c</code>: 继续执行。</li>
+<li><code>next</code>, <code>n</code>: 单步执行下一行。</li>
+<li><code>step</code>, <code>s</code>: 单步进入。</li>
+<li><code>out</code>, <code>o</code>: 单步退出。</li>
+<li><code>pause</code>: 暂停运行中的代码（类似于开发者工具中的暂停按钮）。</li>
+</ul>
+<h4>断点<span><a class="mark" href="#debugger_breakpoints" id="debugger_breakpoints">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="breakpoints">
+                <a href="debugger/breakpoints.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>setBreakpoint()</code>, <code>sb()</code>: 在当前行上设置断点。</li>
+<li><code>setBreakpoint(line)</code>, <code>sb(line)</code>: 在指定行上设置断点。</li>
+<li><code>setBreakpoint('fn()')</code>, <code>sb(...)</code>: 在函数体的第一个语句上设置断点。</li>
+<li><code>setBreakpoint('script.js', 1)</code>、<code>sb(...)</code>: 在 <code>script.js</code> 的第一行上设置断点。</li>
+<li><code>setBreakpoint('script.js', 1, 'num &lt; 4')</code>、<code>sb(...)</code>: 在 <code>script.js</code> 的第一行上设置条件断点，仅当 <code>num &lt; 4</code> 计算为 <code>true</code> 时才会中断。</li>
+<li><code>clearBreakpoint('script.js', 1)</code>, <code>cb(...)</code>: 清除 <code>script.js</code> 中第一行上的断点。</li>
+</ul>
+<p>也可以在尚未加载的文件（模块）中设置断点：</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node inspect main.js</span>
+&lt; Debugger listening on ws://127.0.0.1:9229/4e3db158-9791-4274-8909-914f7facf3bd
+&lt; For help, see: https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in main.js:1
+<span class="hljs-meta">&gt;</span><span class="bash"> 1 (<span class="hljs-keyword">function</span> (exports, require, module, __filename, __dirname) { const mod = require(<span class="hljs-string">'./mod.js'</span>);</span>
+  2 mod.hello();
+  3 mod.hello();
+<span class="hljs-meta">debug&gt;</span><span class="bash"> setBreakpoint(<span class="hljs-string">'mod.js'</span>, 22)</span>
+Warning: script 'mod.js' was not loaded yet.
+<span class="hljs-meta">debug&gt;</span><span class="bash"> c</span>
+break in mod.js:22
+ 20 // 软件中的其他处理。
+ 21
+<span class="hljs-meta">&gt;</span><span class="bash">22 exports.hello = <span class="hljs-function"><span class="hljs-title">function</span></span>() {</span>
+ 23   return '来自模块的问候';
+ 24 };
+<span class="hljs-meta">debug&gt;</span></code></pre>
+<p>It is also possible to set a conditional breakpoint that only breaks when a
+given expression evaluates to <code>true</code>:</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node inspect main.js</span>
+&lt; Debugger listening on ws://127.0.0.1:9229/ce24daa8-3816-44d4-b8ab-8273c8a66d35
+&lt; For help, see: https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in main.js:7
+  5 }
+  6
+<span class="hljs-meta">&gt;</span><span class="bash"> 7 addOne(10);</span>
+  8 addOne(-1);
+  9
+<span class="hljs-meta">debug&gt;</span><span class="bash"> setBreakpoint(<span class="hljs-string">'main.js'</span>, 4, <span class="hljs-string">'num &lt; 0'</span>)</span>
+  1 'use strict';
+  2
+  3 function addOne(num) {
+<span class="hljs-meta">&gt;</span><span class="bash"> 4   <span class="hljs-built_in">return</span> num + 1;</span>
+  5 }
+  6
+  7 addOne(10);
+  8 addOne(-1);
+  9
+<span class="hljs-meta">debug&gt;</span><span class="bash"> cont</span>
+break in main.js:4
+  2
+  3 function addOne(num) {
+<span class="hljs-meta">&gt;</span><span class="bash"> 4   <span class="hljs-built_in">return</span> num + 1;</span>
+  5 }
+  6
+<span class="hljs-meta">debug&gt;</span><span class="bash"> <span class="hljs-built_in">exec</span>(<span class="hljs-string">'num'</span>)</span>
+-1
+<span class="hljs-meta">debug&gt;</span></code></pre>
+<h4>信息<span><a class="mark" href="#debugger_information" id="debugger_information">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="information">
+                <a href="debugger/information.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>backtrace</code>, <code>bt</code>: 打印当前执行帧的回溯。</li>
+<li><code>list(5)</code>: 列出脚本源码的 5 行上下文（前后各 5 行）。</li>
+<li><code>watch(expr)</code>: 将表达式添加到监视列表。</li>
+<li><code>unwatch(expr)</code>: 从监视列表中移除表达式。</li>
+<li><code>watchers</code>: 列出所有的监视器和它们的值（在每个断点上自动地列出）。</li>
+<li><code>repl</code>: 打开调试器的 repl，用于调试脚本的上下文中的执行。</li>
+<li><code>exec expr</code>: 在调试脚本的上下文中执行一个表达式。</li>
+</ul>
+<h4>执行的控制<span><a class="mark" href="#debugger_execution_control" id="debugger_execution_control">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="execution_control">
+                <a href="debugger/execution_control.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>run</code>: 运行脚本（在调试器启动时自动地运行）。</li>
+<li><code>restart</code>: 重启脚本。</li>
+<li><code>kill</code>: 杀死脚本。</li>
+</ul>
+<h4>杂项<span><a class="mark" href="#debugger_various" id="debugger_various">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="various">
+                <a href="debugger/various.html" class="tip_trans">中英对照</a>
+                </p>
+<ul>
+<li><code>scripts</code>: 列出所有已加载的脚本。</li>
+<li><code>version</code>: 显示 V8 的版本。</li>
+</ul>
+</section><section><h3>高级用法<span><a class="mark" href="#debugger_advanced_usage" id="debugger_advanced_usage">#</a></span></h3>
+<h4>用于Node.js的V8调试器的集成<span><a class="mark" href="#debugger_v8_inspector_integration_for_node_js" id="debugger_v8_inspector_integration_for_node_js">#</a></span></h4><p class="tip_wrap" data-show_trans="1" data-item_id="v8_inspector_integration_for_node_js">
+                <a href="debugger/v8_inspector_integration_for_node_js.html" class="tip_trans">中英对照</a>
+                </p>
+<p>V8 检查器的集成允许将 Chrome 开发者工具附加到 Node.js 实例，以便进行调试和性能分析。
+它使用了 <a href="http://url.nodejs.cn/YpFEVu">Chrome 开发者工具协议</a>。</p>
+<p>可以通过在启动 Node.js 应用程序时传入 <code>--inspect</code> 标志来启用 V8 检查器。
+也可以使用该标志提供自定义的端口，例如 <code>--inspect=9222</code> 将会在 9222 端口上接受开发者工具的连接。</p>
+<p>如果要在应用程序代码的第一行进行断点，则传入 <code>--inspect-brk</code> 标志而不是 <code>--inspect</code>。</p>
+<pre><code class="language-console"><span class="hljs-meta">$</span><span class="bash"> node --inspect index.js</span>
+Debugger listening on ws://127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29
+For help, see: https://nodejs.org/en/docs/inspector</code></pre>
+<p>（在上面的示例中，URL 末尾的 UUID dc9010dd-f8b8-4ac5-a510-c1a114ec7d29 是动态生成的，它在不同的调试会话中是不一样的。）</p>
+<p>如果 Chrome 浏览器的版本低于 66.0.3345.0，则在上述的 URL 中使用 <code>inspector.html</code> 而不是 <code>js_app.html</code>。</p>
+<p>Chrome 开发者工具目前还不支持调试<a href="worker_threads.html">工作线程</a>。
+可以使用 <a href="http://url.nodejs.cn/iBCQ2L">ndb</a> 来调试它们。</p></section>
+        <!-- API END -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="//cdn.staticfile.org/highlight.js/10.2.1/highlight.min.js"></script> -->
+  
+  
+
+
+</body></html>
